@@ -693,6 +693,22 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 | `Wetenschap` | |
 | `Praatprogramma` | Een televisieprogramma of radioprogramma waarbij het hoofdaandeel uit spreken bestaat; een talkshow. |
 
+## Object type
+
+{: #ebu_objecttype }
+
+Het type uitzending (programma of item).
+
+| **XML element**            | `<ebu_objecttype/>`                                                                                                                                             |
+| **Datatype**               | Vrije tekst                                                                                                                                                  |
+| **Verplichting**           | Nee                                                                                                                                                            |
+| **Herhaalbaar**            | Nee                                                                                                                                                          |
+
+```xml
+<ebu_objecttype>item</ebu_objecttype>
+<ebu_objecttype>programma</ebu_objecttype>
+```
+
 ## Coverage (ruimtelijk)
 
 Een beschrijvende afbakening van het geografisch gebied (straat, stad, land, continent) waar de inhoud van het item betrekking op heeft.
