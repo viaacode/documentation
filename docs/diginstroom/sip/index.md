@@ -21,6 +21,7 @@ This second release adds support for the intake of digital reproductions of muse
 - Two new content profiles: _Material Artwork_ and _Newspaper_
 - A description on how to package 2D artworks, 3D museum objects, and gigapixel digital reproductions of artworks in a SIP (using the _Material Artwork_ profile)
 - A description on how to package newspapers with or without PDF representation in a SIP (using the _Newspaper_ profile)
+- The vocabulary for `mets/@TYPE` was aligned with [Recommended Formats Statement](https://www.loc.gov/preservation/resources/rfs/TOC.html)
 
 ### What was **changed** compared to the previous version?
 
