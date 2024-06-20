@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<premis:premis version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:premis="http://www.loc.gov/premis/v3" xmlns:haObj="https://data.hetarchief.be/ns/object/"
+  xsi:schemaLocation="http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd">
+
+  <!-- IE for the film as a whole -->
+  <premis:object xsi:type="premis:intellectualEntity">
+
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-b1c5fa36-6bb6-460b-836b-ade5541fe89e</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>MEEMOO-LOCAL-ID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>2891#422</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <!-- relationship with the (abstract) carrier representation -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType"
+        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
+        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType"
+        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType"
+        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr">is represented
+        by</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-e2f092de-f800-486c-a291-3160ce740544</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+    <!-- relationship with representation 1: zip -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType"
+        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
+        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <!-- #? is it a good idea to replace the rel. subtype by the specific relationship we defined
+      instead of the generic 'is represented by'? -->
+      <premis:relationshipSubType authority="haObj"
+        authorityURI="https://data.hetarchief.be/ns/object/"
+        valueURI="https://data.hetarchief.be/ns/object/hasMasterCopy">has master</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-67be6f63-0d3d-4507-959d-67d8c8b949bb</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+    <!-- relationship with representation 2: mov -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType"
+        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
+        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="haObj"
+        authorityURI="https://data.hetarchief.be/ns/object/"
+        valueURI="https://data.hetarchief.be/ns/object/hasMezzanineCopy">has mezzanine</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-46c95c30-6dd8-4b13-8f2b-0b8d0308e02e</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+    <!-- relationship with representation 3: dpx -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType"
+        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
+        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType"
+        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType"
+        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr">is represented
+        by</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-3dbe8998-49b8-4006-8be1-354b3a9e38e0</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+  </premis:object>
+
+
+  <!-- the object for the carrier representation is included here rather than in the representations
+  directory, since it doesn't include any files -->
+  <premis:object xsi:type="premis:representation">
+
+    <!-- Create PREMIS object for the representation itself -->
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-e2f092de-f800-486c-a291-3160ce740544</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <premis:significantProperties>
+      <premis:significantPropertiesType>batch_name</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>FLMB20</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>batch_id</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>FLMB20</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>barcode_image_reels</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>AFLM_FEL_001392</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>material_type</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>Original positive</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>is_the_sound_sync</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>projection_speed</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>is_there_a_sync_point</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>value_cp</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>3 somewhat interesting, LR digitisation</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>image_sound</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>image</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>aspect_ratio</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>1:37</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>num_reels</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>1</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>projection_speed</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>preservation_problems</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>Base Scratching remarks: Light scratches, lines and
+        stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>film_base</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>acetate</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>duration_viaa</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>0:32:48</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>subtitles</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>length</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>135 Meter</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>color_or_bw</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>Color</premis:significantPropertiesValue>
+    </premis:significantProperties>
+
+    <premis:storage>
+      <premis:storageMedium>
+        super8mmfilm
+      </premis:storageMedium>
+    </premis:storage>
+
+    <!-- relationship between representation and its IE -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType"
+        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
+        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType"
+        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType"
+        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep">represents</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-b1c5fa36-6bb6-460b-836b-ade5541fe89e</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+  </premis:object>
+
+  <!-- events defined:
+      - registration
+      - check-out
+      - inspection
+      - digitization
+      - editing
+      - transfer
+ -->
+
+  <!-- registration event; performed by the CP -->
+  <premis:event>
+    <premis:eventIdentifier>
+
+      <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+      <premis:eventIdentifierValue>uuid-aba62b7b-dd7a-43cf-b077-45f8b96deae8</premis:eventIdentifierValue>
+
+    </premis:eventIdentifier>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/registration">
+      registration
+    </premis:eventType>
+    <premis:eventDateTime>
+      2021-04-02T09:04:04
+    </premis:eventDateTime>
+    <premis:eventDetailInformation>
+      <premis:eventDetail>Base Scratching remarks: Light scratches, lines and stripes. Some cables. vinegar date: 2021-06-30 pH value:PH 4.8</premis:eventDetail>
+      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
+        <schema:name>estimate_preparation_time_for_digitisation</schema:name>
+        <schema:value>1:30:00</schema:value>
+      </premis:eventDetailExtension>
+      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
+        <schema:name>estimate_manual_cleaning_time</schema:name>
+        <schema:value>0:00:00</schema:value>
+      </premis:eventDetailExtension>
+      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
+        <schema:name>physical_state_film</schema:name>
+        <schema:value>film in good state</schema:value>
+      </premis:eventDetailExtension>
+    </premis:eventDetailInformation>
+
+    <premis:eventOutcomeInformation>
+      <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+    </premis:eventOutcomeInformation>
+    <!-- reference to the content partner -->
+    <!-- organizations acting as agents have an additional implementer role -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>OR-jw86m54</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+    </premis:linkingAgentIdentifier>
+    <!-- reference to the premis:Representation object of the carrier representation -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-e2f092de-f800-486c-a291-3160ce740544</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+  </premis:event>
+
+  <!-- check-out event; performed by the SP -->
+  <premis:event>
+    <premis:eventIdentifier>
+
+      <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+      <premis:eventIdentifierValue>uuid-851887e6-038a-4eaa-a335-c0c5a02c573f</premis:eventIdentifierValue>
+
+    </premis:eventIdentifier>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/check-out">
+      check-out
+    </premis:eventType>
+    <premis:eventDateTime>
+      2021-12-28T00:00:00
+    </premis:eventDateTime>
+    <premis:eventOutcomeInformation>
+      <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+    </premis:eventOutcomeInformation>
+    <!-- reference to the service provider -->
+    <!-- organizations acting as agents have an additional implementer role -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>OR-183420s</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+    </premis:linkingAgentIdentifier>
+    <!-- reference to the premis:Representation object of the carrier representation -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-e2f092de-f800-486c-a291-3160ce740544</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+  </premis:event>
+
+  <!-- inspection event; performed by the SP -->
+  <premis:event>
+    <premis:eventIdentifier>
+      <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+      <premis:eventIdentifierValue>uuid-1f523a46-bf30-4506-8284-5fa103284e26</premis:eventIdentifierValue>
+    </premis:eventIdentifier>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/inspection">inspection</premis:eventType>
+    <premis:eventDateTime>2022-03-25T00:00:00</premis:eventDateTime>
+    <premis:eventDetailInformation>
+      <premis:eventDetail>
+            CEX / COLOR / MUTE
+      </premis:eventDetail>
+    </premis:eventDetailInformation>
+
+    <premis:eventOutcomeInformation>
+      <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+    </premis:eventOutcomeInformation>
+
+    <!-- reference to the agent of the service provider -->
+    <!-- people part of an organization acting as agent don't have a role assigned  -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>SP-AGENT</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>David</premis:linkingAgentIdentifierValue>
+    </premis:linkingAgentIdentifier>
+
+    <!-- reference to the service provider -->
+    <!-- organizations acting as agents have an additional implementer role -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>OR-183420s</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+    </premis:linkingAgentIdentifier>
+
+    <!-- reference to the premis:Representation object of the carrier representation -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-e2f092de-f800-486c-a291-3160ce740544</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+
+
+  </premis:event>
+
+  <!-- digitization event; performed by the SP -->
+  <premis:event>
+    <premis:eventIdentifier>
+      <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+      <premis:eventIdentifierValue>uuid-3e945992-dd71-46b3-acaa-ac68170d213b</premis:eventIdentifierValue>
+    </premis:eventIdentifier>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/digitization">digitization</premis:eventType>
+    <premis:eventDateTime>2022-04-26T00:00:00</premis:eventDateTime>
+    <premis:eventDetailInformation>
+      <premis:eventDetail>
+            Abrasion marks, many scratches, many inlaid dust/dirt, grain, slight instability, blur, under/overexposure related to camera capture.
+      </premis:eventDetail>
+    </premis:eventDetailInformation>
+    <premis:eventDetailInformation>
+      <premis:eventDetail>
+        digitisation_format: SD (720x576) 
+      </premis:eventDetail>
+    </premis:eventDetailInformation>
+
+    <premis:eventOutcomeInformation>
+      <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+    </premis:eventOutcomeInformation>
+
+    <!-- reference to the agent of the service provider -->
+    <!-- people part of an organization acting as agent don't have a role assigned  -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>SP-AGENT</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>David/ScanStation</premis:linkingAgentIdentifierValue>
+    </premis:linkingAgentIdentifier>
+
+    <!-- reference to the service provider -->
+    <!-- organizations acting as agents have an additional implementer role -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>OR-183420s</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+    </premis:linkingAgentIdentifier>
+
+    <!-- reference to the premis:Representation object of the carrier representation -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-e2f092de-f800-486c-a291-3160ce740544</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+
+    <!-- reference to the premis:Representation object that contains the ZIP file (i.e. the archive
+    master) -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-67be6f63-0d3d-4507-959d-67d8c8b949bb</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+
+
+  </premis:event>
+
+  <!-- editing event; performed by the SP -->
+  <premis:event>
+    <premis:eventIdentifier>
+      <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+      <premis:eventIdentifierValue>uuid-4530f090-fd6e-4039-baf5-d16088b21510</premis:eventIdentifierValue>
+    </premis:eventIdentifier>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/editing">editing</premis:eventType>
+    <premis:eventDateTime>2022-04-28T00:00:00</premis:eventDateTime>
+    <premis:eventDetailInformation>
+      <premis:eventDetail>
+            Abrasion marks, scratches, inlaid dust/dirt, important grain, slight instability, under/overexposure related to camera capture, slight color fading/shift on some scenes.
+          </premis:eventDetail>
+    </premis:eventDetailInformation>
+
+    <premis:eventOutcomeInformation>
+      <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+    </premis:eventOutcomeInformation>
+
+    <!-- reference to the agent of the service provider -->
+    <!-- people part of an organization acting as agent don't have a role assigned  -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>SP-AGENT</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>JulienS/Nucoda</premis:linkingAgentIdentifierValue>
+    </premis:linkingAgentIdentifier>
+
+    <!-- reference to the service provider -->
+    <!-- organizations acting as agents have an additional implementer role -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>OR-183420s</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+    </premis:linkingAgentIdentifier>
+
+    <!-- reference to the premis:Representation object of the carrier representation -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-e2f092de-f800-486c-a291-3160ce740544</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+
+    <!-- reference to the premis:Representation object that contains the MOV file (i.e. the
+    mezzanine copy) -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-46c95c30-6dd8-4b13-8f2b-0b8d0308e02e</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+
+
+  </premis:event>
+
+  <premis:event>
+    <premis:eventIdentifier>
+
+      <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+      <premis:eventIdentifierValue>uuid-51196827-7d97-4b93-9323-1c835bfdbb39</premis:eventIdentifierValue>
+
+    </premis:eventIdentifier>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/transfer">
+      transfer
+    </premis:eventType>
+    <premis:eventDateTime>
+      2022-05-07T00:00:00
+    </premis:eventDateTime>
+    <premis:eventDetailInformation>
+      <premis:eventDetailExtension xmlns:schema="https://schema.org">
+        <schema:name>lto_id</schema:name>
+        <schema:value>I61842L6</schema:value>
+      </premis:eventDetailExtension>
+    </premis:eventDetailInformation>
+    <premis:eventOutcomeInformation>
+      <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+    </premis:eventOutcomeInformation>
+    <!-- reference to the service provider -->
+    <!-- organizations acting as agents have an additional implementer role -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>OR-183420s</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+    </premis:linkingAgentIdentifier>
+    <!-- reference to the premis:Representation object that contains the ZIP file (i.e. the archive
+    master) -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-67be6f63-0d3d-4507-959d-67d8c8b949bb</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+  </premis:event>
+
+  <!-- reference to the content partner -->
+  <premis:agent>
+    <premis:agentIdentifier>
+      <premis:agentIdentifierType>MEEMOO-OR-ID</premis:agentIdentifierType>
+      <premis:agentIdentifierValue>OR-jw86m54</premis:agentIdentifierValue>
+    </premis:agentIdentifier>
+    <premis:agentName>FelixArchief</premis:agentName>
+    <premis:agentType>CP-AGENT</premis:agentType>
+  </premis:agent>
+
+  <!-- reference to the service provider -->
+  <premis:agent>
+    <premis:agentIdentifier>
+      <premis:agentIdentifierType>MEEMOO-OR-ID</premis:agentIdentifierType>
+      <premis:agentIdentifierValue>OR-183420s</premis:agentIdentifierValue>
+    </premis:agentIdentifier>
+    <premis:agentName>Vectracom</premis:agentName>
+    <premis:agentType>SP-AGENT</premis:agentType>
+  </premis:agent>
+
+</premis:premis>
+ 
