@@ -1,0 +1,12 @@
+0f7ae1dc37bcc4760168b49ff190ee6c  data/METS.xml
+1a79e01b086d0c0dbf4bcf105fb2c384  data/metadata/descriptive/dcterms.xml
+ba7300b959a2a30f4223df1c9a1ef178  data/metadata/preservation/premis.xml
+8adb546389d623f3c690a1aae487af3c  data/representations/uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4/METS.xml
+0666ed8b7832d87bac146da58756b9aa  data/representations/uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4/data/dummy_n58cg2782p_001_zip.zip
+0537a462aff75e2783b70c7196e5e48b  data/representations/uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4/metadata/preservation/premis.xml
+d14506f69c2631d6ea7f515f79625a56  data/representations/uuid-9868b185-3644-452d-9412-d127e555b5e5/METS.xml
+0225bb8f6298a73ec3ea8acc20a1e9ab  data/representations/uuid-9868b185-3644-452d-9412-d127e555b5e5/data/dummy_n58cg2782p_mezzanine.mov
+be7cef6ed350e6bab0dd35dca3fecd7c  data/representations/uuid-9868b185-3644-452d-9412-d127e555b5e5/metadata/preservation/premis.xml
+2f8b7842333811372562851c3c1339fb  data/representations/uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b/METS.xml
+a7cf1ae7933a08462f3dc17b08e24eee  data/representations/uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b/data/dummy_n58cg2782p_001_000000.dpx
+cbfaf34b96ffc1486265c4ce4f19bcae  data/representations/uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b/metadata/preservation/premis.xml
