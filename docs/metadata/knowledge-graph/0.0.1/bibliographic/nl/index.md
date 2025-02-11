@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Bibliografisch datamodel "
-parent: "Datamodel Descriptie"
+parent: "Knowledge Graph"
 nav_order: 1
 nav_exclude: True
 ---
@@ -25,9 +25,9 @@ Bibliografisch datamodel
 , [fr](../fr)
 
 **Auteurs:**
-[Milan Valadou](mailto:milan.valadou@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Datamodel voor de gedetailleerde beschrijving van bibliografische objecten en hun componenten.
