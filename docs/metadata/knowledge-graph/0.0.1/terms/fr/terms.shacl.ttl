@@ -11,17 +11,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n0eda34ab87e64af8be809e1d9077553ab1 a rdfs:Class,
+_:n5dd2ea68cae442438941dea357177820b1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
+
+_:n5dd2ea68cae442438941dea357177820b17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
+
+_:na0b3f7515817443ab486fc7c0a6d48d5b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
-
-_:na87fcceb263b4ca493cedf23101c1dd8b1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
-
-_:na87fcceb263b4ca493cedf23101c1dd8b17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
 dct:FileFormat a rdfs:Class ;
     rdfs:label "File format"@en,
@@ -538,7 +538,7 @@ skosxl:Label a rdfs:Class,
         "Représentation fragment"@fr,
         "Fragment representatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
-    rdfs:subClassOf <http://www.loc.gov/premis/rdf/v3/DigitalRepresentation> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/object/DigitalRepresentation> ;
     owl:equivalentClass <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
     skos:definition "A spatial or temporal segment of a file that serves as a partial digital representation of an archived Intellectual Entity."@en,
         "Un segment spatial ou temporel d'un fichier qui sert de représentation numérique partielle d'une entité intellectuelle archivée."@fr,
@@ -580,7 +580,7 @@ skosxl:Label a rdfs:Class,
         "Partenaire de digitalisation"@fr,
         "Digitaliseringspartner"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
-    rdfs:subClassOf <http://www.w3.org/ns/org#ServiceProvider> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/organization/ServiceProvider> ;
     skos:definition "An organization that provides digitisation services to meemoo."@en,
         "Une organisation qui fournit des services de digitalisation à meemoo."@fr,
         "Een organisatie die aan meemoo digitaliseringsdiensten levert."@nl .
@@ -1037,9 +1037,9 @@ dct:format a rdf:Property ;
         "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl .
 
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationConfidence> a rdf:Property ;
-    rdfs:label "Annotation confidence"@en,
-        "Fiabilité des annotations"@fr,
-        "Annotatievertrouwen"@nl ;
+    rdfs:label "annotation confidence"@en,
+        "fiabilité des annotations"@fr,
+        "annotatievertrouwen"@nl ;
     rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
     rdfs:range xsd:string ;
     skos:definition "To estimate the confidence in an Annotation."@en,
@@ -1047,9 +1047,9 @@ dct:format a rdf:Property ;
         "Om het vertrouwen in een annotatie te schatten."@nl .
 
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationType> a rdf:Property ;
-    rdfs:label "Annotation type"@en,
-        "Type d'annotation"@fr,
-        "Annotatietype"@nl ;
+    rdfs:label "annotation type"@en,
+        "type d'annotation"@fr,
+        "annotatietype"@nl ;
     rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
     rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation_Type>,
         xsd:anyURI,
@@ -1059,10 +1059,22 @@ dct:format a rdf:Property ;
         "Pour définir un type d'annotation."@fr,
         "Om een type annotatie te definiëren."@nl .
 
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedAgent> a rdf:Property ;
+    rdfs:label "annotation related Agent"@en,
+        "agent lié à l'Annotation"@fr,
+        "agent verbonden aan de Annotatie"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose> ;
+    skos:definition "To identify an Agent subject of the Annotation."@en,
+        "Pour identifier un Agent de l'annotation."@fr,
+        "Om een Agent van de annotatie te identificeren."@nl .
+
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedArtefact> a rdf:Property ;
-    rdfs:label "Annotation related artefact"@en,
-        "Artefact lié à l'Annotation"@fr,
-        "Artefact verbonden aan de Annotatie"@nl ;
+    rdfs:label "annotation related artefact"@en,
+        "artefact lié à l'Annotation"@fr,
+        "artefact verbonden aan de Annotatie"@nl ;
     rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
     rdfs:range xsd:anyURI,
         xsd:string ;
@@ -1072,9 +1084,9 @@ dct:format a rdf:Property ;
         "Om een artefactonderwerp van de annotatie te identificeren."@nl .
 
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget> a rdf:Property ;
-    rdfs:label "Annotation target"@en,
-        "Cible d'annotation"@fr,
-        "Annotatiedoel"@nl ;
+    rdfs:label "annotation target"@en,
+        "cible d'annotation"@fr,
+        "annotatiedoel"@nl ;
     rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
     rdfs:range xsd:anyURI ;
     skos:definition "To define the target object to which the Annotation applies."@en,
@@ -1093,11 +1105,10 @@ dct:format a rdf:Property ;
         "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
 
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember> a rdf:Property ;
-    rdfs:label "Cast member"@en,
-        "Membre de la distribution"@fr,
-        "Cast lid"@nl ;
+    rdfs:label "cast member"@en,
+        "membre de la distribution"@fr,
+        "cast lid"@nl ;
     rdfs:comment "A member of the cast."@en,
-        "Range: a string or a Cast"@en,
         "A member of the cast."@fr,
         "Een lid van de cast."@nl ;
     rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset> ;
@@ -1143,26 +1154,74 @@ dct:format a rdf:Property ;
         "Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."@fr,
         "Om een ObjectType te definiëren voor een BusinessObject (bv. boek, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."@nl .
 
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height> a rdf:Property ;
+    rdfs:label "height"@en,
+        "hauteur"@fr,
+        "hoogte"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose> ;
+    skos:definition "The Height of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en,
+        "La Hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr,
+        "De Hoogte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl .
+
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnnotatedMediaResource> a rdf:Property ;
-    rdfs:label "Media resource"@en,
-        "Media resource"@fr,
-        "Media resource"@nl ;
+    rdfs:label "media resource"@en,
+        "media resource"@fr,
+        "media resource"@nl ;
     rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
     rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> ;
     skos:definition "To link an Annotation to a MediaResource."@en,
         "Pour lier une annotation à un MediaResource."@fr,
         "Om een annotatie te koppelen aan een mediaresource."@nl .
 
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#regionDelimX> a rdf:Property ;
+    rdfs:label "region delimiter (x-axis)"@en,
+        "regio-afbakening (x-as)"@fr,
+        "délimiteur de région (axe des x)"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose> ;
+    skos:definition "To define the top left corner of a zone on the x-axis."@en,
+        "Définir le coin supérieur gauche d'une zone sur l'axe des x."@fr,
+        "Het definiëren van de linkerbovenhoek van een zone op de x-as."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#regionDelimY> a rdf:Property ;
+    rdfs:label "region delimiter (y-axis)"@en,
+        "regio-afbakening (y-as)"@fr,
+        "délimiteur de région (axe des y)"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose> ;
+    skos:definition "To define the top left corner of a zone on the y-axis."@en,
+        "Définir le coin supérieur gauche d'une zone sur l'axe des y."@fr,
+        "Het definiëren van de linkerbovenhoek van een zone op de y-as."@nl .
+
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#synopsis> a rdf:Property ;
-    rdfs:label "Synopsis"@en,
+    rdfs:label "synopsis"@en,
         "synopsis"@fr,
-        "Korte inhoud"@nl ;
+        "korte inhoud"@nl ;
     rdfs:comment "To provide a summary."@en,
         "To provide a summary."@fr,
         "Om een samenvatting te geven."@nl ;
     rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description> .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width> a rdf:Property ;
+    rdfs:label "width"@en,
+        "largeur"@fr,
+        "breedte"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose> ;
+    skos:definition "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en,
+        "La largeur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr,
+        "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl .
 
 <http://www.europeana.eu/schemas/edm/isNextInSequence> a owl:ObjectProperty ;
     rdfs:label "is next in sequence of"@en,
@@ -1178,7 +1237,7 @@ dct:format a rdf:Property ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:na87fcceb263b4ca493cedf23101c1dd8b1 ;
+    rdfs:domain _:n5dd2ea68cae442438941dea357177820b1 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1239,7 +1298,7 @@ dct:format a rdf:Property ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:na87fcceb263b4ca493cedf23101c1dd8b17 ;
+    rdfs:domain _:n5dd2ea68cae442438941dea357177820b17 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -2797,7 +2856,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n0eda34ab87e64af8be809e1d9077553ab1 ;
+    rdfs:range _:na0b3f7515817443ab486fc7c0a6d48d5b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -2950,6 +3009,22 @@ skosxl:prefLabel a rdf:Property,
     rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
     owl:inverseOf <https://data.hetarchief.be/ns/object/isAccessCopyOf> .
 
+<https://data.hetarchief.be/ns/object/hasCarrierCopy> a rdf:Property ;
+    rdfs:label "has carrier copy"@en,
+        "a copie sur porteur"@fr,
+        "heeft dragerkopie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    owl:inverseOf <https://data.hetarchief.be/ns/object/isCarrierCopyOf> .
+
+<https://data.hetarchief.be/ns/object/hasFragmentRepresentation> a rdf:Property ;
+    rdfs:label "has fragment "@en,
+        "a un fragment"@fr,
+        "heeft fragment"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    owl:inverseOf <https://data.hetarchief.be/ns/object/isFragmentRepresentationOf> .
+
 <https://data.hetarchief.be/ns/object/hasIIIFCopy> a rdf:Property ;
     rdfs:label "has IIIF copy"@en,
         "a copie IIIF"@fr,
@@ -2989,6 +3064,22 @@ skosxl:prefLabel a rdf:Property,
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
     rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
     owl:inverseOf <https://data.hetarchief.be/ns/object/hasAccessCopy> .
+
+<https://data.hetarchief.be/ns/object/isCarrierCopyOf> a rdf:Property ;
+    rdfs:label "is carrier copy of"@en,
+        "est copie sur porteur de"@fr,
+        "is dragerkopie van"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    owl:inverseOf <https://data.hetarchief.be/ns/object/hasCarrierCopy> .
+
+<https://data.hetarchief.be/ns/object/isFragmentRepresentationOf> a rdf:Property ;
+    rdfs:label "is fragement of"@en,
+        "est fragment de"@fr,
+        "is fragment van"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    owl:inverseOf <https://data.hetarchief.be/ns/object/hasFragmentRepresentation> .
 
 <https://data.hetarchief.be/ns/object/isIIIFCopyOf> a rdf:Property ;
     rdfs:label "is IIIF copy of"@en,
@@ -3469,26 +3560,6 @@ skos:relatedMatch a rdf:Property,
     sh:path skos:scopeNote ;
     sh:severity sh:Violation .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> a owl:ObjectProperty ;
-    rdfs:label "is Represented by"@en,
-        "est représenté par"@fr,
-        "wordt gerepresenteerd door"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf <http://www.loc.gov/premis/rdf/v3/relationship> ;
-    skos:definition "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en,
-        "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
-        "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl .
-
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> a owl:ObjectProperty ;
-    rdfs:label "represents"@en,
-        "représente"@fr,
-        "representeert"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf <http://www.loc.gov/premis/rdf/v3/relationship> ;
-    skos:definition "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en,
-        "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr,
-        "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl .
-
 skos:closeMatch a rdf:Property,
         owl:ObjectProperty,
         owl:SymmetricProperty ;
@@ -3564,6 +3635,26 @@ skos:broadMatch a rdf:Property,
     dct:title "SKOS XL Vocabulary"@en ;
     rdfs:seeAlso <http://www.w3.org/2008/05/skos> ;
     owl:imports <http://www.w3.org/2004/02/skos/core> .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> a owl:ObjectProperty ;
+    rdfs:label "is Represented by"@en,
+        "est représenté par"@fr,
+        "wordt gerepresenteerd door"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf <http://www.loc.gov/premis/rdf/v3/relationship> ;
+    skos:definition "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en,
+        "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
+        "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> a owl:ObjectProperty ;
+    rdfs:label "represents"@en,
+        "représente"@fr,
+        "representeert"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf <http://www.loc.gov/premis/rdf/v3/relationship> ;
+    skos:definition "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en,
+        "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr,
+        "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl .
 
 skos:note a rdf:Property,
         owl:AnnotationProperty ;
