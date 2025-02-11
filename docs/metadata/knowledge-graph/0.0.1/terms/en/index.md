@@ -26,8 +26,8 @@ Data model List of terms
 
 **Authors:**
 [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Milan Valadou](mailto:milan.valadou@meemoo.be)
+, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 
 
 Data model to describe structured lists of terms such as thesauri.
@@ -161,7 +161,7 @@ The class of RDF Lists.
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='_%3Ance489dedc34b48c896968d190ef765e5b14'></a>None <br> <small>[(_:nce489dedc34b48c896968d190ef765e5b14)](nce489dedc34b48c896968d190ef765e5b14)</small> |  | `0..*` | [Concept](#skos%3AConcept) _or_ [Collection](#skos%3ACollection)  |
+| <a id='_%3Anf534011ce082434a9ae1e595c79bfef0b14'></a>None <br> <small>[(_:nf534011ce082434a9ae1e595c79bfef0b14)](nf534011ce082434a9ae1e595c79bfef0b14)</small> |  | `0..*` | [Concept](#skos%3AConcept) _or_ [Collection](#skos%3ACollection)  |
 
 ## <a id="skos%3AOrderedCollection"></a>Ordered collection <small>[(skos:OrderedCollection)](http://www.w3.org/2004/02/skos/core#OrderedCollection)</small>
 
