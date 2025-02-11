@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Modèle de données Objets d'archive audiovisuelle"
-parent: "Modèle de données Description"
+parent: "Knowledge Graph"
 nav_order: 1
 nav_exclude: True
 ---
