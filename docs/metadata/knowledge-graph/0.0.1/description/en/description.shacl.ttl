@@ -17,17 +17,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n0eda34ab87e64af8be809e1d9077553ab1 a rdfs:Class,
+_:n5dd2ea68cae442438941dea357177820b1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:n5dd2ea68cae442438941dea357177820b17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:na0b3f7515817443ab486fc7c0a6d48d5b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
-
-_:na87fcceb263b4ca493cedf23101c1dd8b1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:na87fcceb263b4ca493cedf23101c1dd8b17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 dct:FileFormat a rdfs:Class ;
     rdfs:label "File format"@en,
@@ -544,7 +544,7 @@ haObj:FragmentRepresentation a rdfs:Class ;
         "Représentation fragment"@fr,
         "Fragment representatie"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subClassOf premis:DigitalRepresentation ;
+    rdfs:subClassOf haObj:DigitalRepresentation ;
     owl:equivalentClass ebucore:MediaFragment ;
     skos:definition "A spatial or temporal segment of a file that serves as a partial digital representation of an archived Intellectual Entity."@en,
         "Un segment spatial ou temporel d'un fichier qui sert de représentation numérique partielle d'une entité intellectuelle archivée."@fr,
@@ -586,7 +586,7 @@ haOrg:DigitizationPartner a rdfs:Class ;
         "Partenaire de digitalisation"@fr,
         "Digitaliseringspartner"@nl ;
     rdfs:isDefinedBy haOrg: ;
-    rdfs:subClassOf org:ServiceProvider ;
+    rdfs:subClassOf haOrg:ServiceProvider ;
     skos:definition "An organization that provides digitisation services to meemoo."@en,
         "Une organisation qui fournit des services de digitalisation à meemoo."@fr,
         "Een organisatie die aan meemoo digitaliseringsdiensten levert."@nl .
@@ -1034,7 +1034,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:na87fcceb263b4ca493cedf23101c1dd8b1 ;
+    rdfs:domain _:n5dd2ea68cae442438941dea357177820b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1095,7 +1095,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:na87fcceb263b4ca493cedf23101c1dd8b17 ;
+    rdfs:domain _:n5dd2ea68cae442438941dea357177820b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1210,7 +1210,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n0eda34ab87e64af8be809e1d9077553ab1 ;
+    rdfs:range _:na0b3f7515817443ab486fc7c0a6d48d5b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1475,7 +1475,7 @@ foaf:homepage a rdf:Property ;
     dct:description "Data model to describe the content of objects."@en,
         "Modèle de données pour décrire le contenu des objets."@fr,
         "Datamodel voor de beschrijving van de inhoud van objecten."@nl ;
-    dct:modified "2024-01-17" ;
+    dct:modified "2024-10-02" ;
     dct:title "Data model Description"@en,
         "Modèle de données Description"@fr,
         "Datamodel Descriptie"@nl ;
@@ -1542,6 +1542,17 @@ foaf:homepage a rdf:Property ;
                 "Annotatie onderwerp"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path ebucore:hasAnnotationRelatedArtefact ;
+            sh:severity sh:Violation ],
+        [ sh:description "The subject (person) of the Annotation."@en,
+                "Le sujet (person) de l'annotation."@fr,
+                "Het onderwerp (persoon) van de annotatie."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:hasAnnotationRelatedAgent is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
+            sh:name "Annotation  person subject"@en,
+                "Sujet d'annotation person"@fr,
+                "Annotatie persoon onderwerp"@nl ;
+            sh:nodeKind sh:IRI ;
+            sh:path ebucore:hasAnnotationRelatedAgent ;
             sh:severity sh:Violation ] ;
     sh:targetClass ebucore:Annotation .
 
@@ -2143,9 +2154,9 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
-            sh:description "De castleden van een tv- of theaterproductie."@en,
-                "Les acteurs d'une production télévisée ou théâtrale."@en,
-                "The cast members of a TV or theatre production."@en ;
+            sh:description "The cast members of a TV or theatre production."@en,
+                "Les acteurs d'une production télévisée ou théâtrale."@fr,
+                "De castleden van een tv- of theaterproductie."@nl ;
             sh:maxCount 1 ;
             sh:message "ebucore:hasCastMember is not of type string"@en ;
             sh:name "castmembers"@en,
@@ -2202,6 +2213,66 @@ foaf:homepage a rdf:Property ;
                 "eindtijd"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path schema:endTime ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:integer ;
+            sh:description "To define the top left corner of a zone on the x-axis."@en,
+                "Définir le coin supérieur gauche d'une zone sur l'axe des x."@fr,
+                "Het definiëren van de linkerbovenhoek van een zone op de x-as."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:regionDelimX is not of type xsd:integer"@en,
+                "ebucore:regionDelimX n'est pas de type xsd:integer"@fr,
+                "ebucore:regionDelimX is niet van het type xsd:integer"@nl ;
+            sh:name "Region delimiter (x-axis)"@en,
+                "Délimiteur de région (axe des x)"@fr,
+                "Regio-afbakening (x-as)"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path ebucore:regionDelimX ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:integer ;
+            sh:description "To define the top left corner of a zone on the y-axis."@en,
+                "Définir le coin supérieur gauche d'une zone sur l'axe des y."@fr,
+                "Het definiëren van de linkerbovenhoek van een zone op de y-as."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:regionDelimY is not of type xsd:integer"@en,
+                "ebucore:regionDelimY n'est pas de type xsd:integer"@fr,
+                "ebucore:regionDelimY is niet van het type xsd:integer"@nl ;
+            sh:name "Region delimiter (y-axis)"@en,
+                "Délimiteur de région (axe des y)"@fr,
+                "Regio-afbakening (y-as)"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path ebucore:regionDelimY ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:integer ;
+            sh:description "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en,
+                "La largeur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr,
+                "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:width is not of type xsd:integer"@en,
+                "ebucore:width n'est pas de type xsd:integer"@fr,
+                "ebucore:width is niet van het type xsd:integer"@nl ;
+            sh:name "Width"@en,
+                "Largeur"@fr,
+                "Breedte"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path ebucore:width ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:integer ;
+            sh:description "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en,
+                "La hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr,
+                "De hoogte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:height is not of type xsd:integer"@en,
+                "ebucore:height n'est pas de type xsd:integer"@fr,
+                "ebucore:height is niet van het type xsd:integer"@nl ;
+            sh:name "Width"@en,
+                "Hauteur"@fr,
+                "Hoogte"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path ebucore:height ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
             sh:description "The file of which this is a fragment."@en,
@@ -2314,7 +2385,17 @@ foaf:homepage a rdf:Property ;
     sh:targetClass haObj:PhysicalCarrier .
 
 <https://data.hetarchief.be/ns/description#PlaceShape> a sh:NodeShape ;
-    sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
+    sh:property [ a sh:PropertyShape ;
+            sh:class schema:Place ;
+            sh:message "schema:containedInPlace is not of class schema:Place"@en,
+                "schema:containedInPlace n'est pas de la classe schema:Place"@fr,
+                "schema:containedInPlace is niet van de klasse schema:Place"@nl ;
+            sh:name "is contained in place"@en,
+                "fait partie de"@fr,
+                "is deel van plaats"@nl ;
+            sh:path schema:containedInPlace ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:Place .
 
@@ -2377,6 +2458,7 @@ foaf:homepage a rdf:Property ;
 
 <https://data.hetarchief.be/ns/description#RoleNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
+            sh:maxCount 1 ;
             sh:message "schema:creator is not of class schema:Thing, schema:Person or org:Organization"@en,
                 "schema:creator n'est pas de la classe schema:Thing, schema:Person ou org:Organization"@fr,
                 "schema:creator is niet van de klasse schema:Thing, schema:Person of org:Organization"@nl ;
@@ -2387,6 +2469,7 @@ foaf:homepage a rdf:Property ;
             sh:path schema:creator ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
+            sh:maxCount 1 ;
             sh:message "schema:contributor is not of class schema:Person or org:Organization"@en,
                 "schema:contributor n'est pas de la classe schema:Person ou org:Organization"@fr,
                 "schema:contributor is niet van de klasse schema:Person of org:Organization"@nl ;
@@ -2397,6 +2480,7 @@ foaf:homepage a rdf:Property ;
             sh:path schema:contributor ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
+            sh:maxCount 1 ;
             sh:message "schema:publisher is not of class schema:Person or org:Organization"@en,
                 "schema:publisher n'est pas de la classe schema:Person ou org:Organization"@fr,
                 "schema:publisher is niet van de klasse schema:Person of org:Organization"@nl ;
@@ -2408,6 +2492,7 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class schema:Person ;
+            sh:maxCount 1 ;
             sh:message "schema:actor is not of class schema:Person"@en,
                 "schema:actor n'est pas de la classe schema:Person"@fr,
                 "schema:actor is niet van de klasse schema:Person"@nl ;
@@ -2417,6 +2502,7 @@ foaf:homepage a rdf:Property ;
             sh:path schema:actor ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
+            sh:maxCount 1 ;
             sh:message "schema:roleName is missing or not of type string or of class skos:Concept"@en,
                 "schema:roleName est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr,
                 "schema:roleName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
@@ -2430,6 +2516,9 @@ foaf:homepage a rdf:Property ;
             sh:path schema:roleName ;
             sh:severity sh:Violation ] ;
     sh:targetClass schema:Role .
+
+<https://data.hetarchief.be/ns/description#TextAnnotationShape> a sh:NodeShape ;
+    sh:targetClass ebucore:TextAnnotation .
 
 <https://data.hetarchief.be/ns/description#ThingShape> a sh:NodeShape ;
     sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
@@ -2971,9 +3060,9 @@ dct:medium a rdf:Property ;
         "Het materiaal of fysieke drager van de bron"@nl .
 
 ebucore:annotationConfidence a rdf:Property ;
-    rdfs:label "Annotation confidence"@en,
-        "Fiabilité des annotations"@fr,
-        "Annotatievertrouwen"@nl ;
+    rdfs:label "annotation confidence"@en,
+        "fiabilité des annotations"@fr,
+        "annotatievertrouwen"@nl ;
     rdfs:domain ebucore:Annotation ;
     rdfs:range xsd:string ;
     skos:definition "To estimate the confidence in an Annotation."@en,
@@ -2981,9 +3070,9 @@ ebucore:annotationConfidence a rdf:Property ;
         "Om het vertrouwen in een annotatie te schatten."@nl .
 
 ebucore:annotationType a rdf:Property ;
-    rdfs:label "Annotation type"@en,
-        "Type d'annotation"@fr,
-        "Annotatietype"@nl ;
+    rdfs:label "annotation type"@en,
+        "type d'annotation"@fr,
+        "annotatietype"@nl ;
     rdfs:domain ebucore:Annotation ;
     rdfs:range ebucore:Annotation_Type,
         xsd:anyURI,
@@ -2993,10 +3082,22 @@ ebucore:annotationType a rdf:Property ;
         "Pour définir un type d'annotation."@fr,
         "Om een type annotatie te definiëren."@nl .
 
+ebucore:hasAnnotationRelatedAgent a rdf:Property ;
+    rdfs:label "annotation related Agent"@en,
+        "agent lié à l'Annotation"@fr,
+        "agent verbonden aan de Annotatie"@nl ;
+    rdfs:domain ebucore:Annotation ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+    skos:definition "To identify an Agent subject of the Annotation."@en,
+        "Pour identifier un Agent de l'annotation."@fr,
+        "Om een Agent van de annotatie te identificeren."@nl .
+
 ebucore:hasAnnotationRelatedArtefact a rdf:Property ;
-    rdfs:label "Annotation related artefact"@en,
-        "Artefact lié à l'Annotation"@fr,
-        "Artefact verbonden aan de Annotatie"@nl ;
+    rdfs:label "annotation related artefact"@en,
+        "artefact lié à l'Annotation"@fr,
+        "artefact verbonden aan de Annotatie"@nl ;
     rdfs:domain ebucore:Annotation ;
     rdfs:range xsd:anyURI,
         xsd:string ;
@@ -3006,9 +3107,9 @@ ebucore:hasAnnotationRelatedArtefact a rdf:Property ;
         "Om een artefactonderwerp van de annotatie te identificeren."@nl .
 
 ebucore:hasAnnotationTarget a rdf:Property ;
-    rdfs:label "Annotation target"@en,
-        "Cible d'annotation"@fr,
-        "Annotatiedoel"@nl ;
+    rdfs:label "annotation target"@en,
+        "cible d'annotation"@fr,
+        "annotatiedoel"@nl ;
     rdfs:domain ebucore:Annotation ;
     rdfs:range xsd:anyURI ;
     skos:definition "To define the target object to which the Annotation applies."@en,
@@ -3027,11 +3128,10 @@ ebucore:hasCaptioning a rdf:Property ;
         "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
 
 ebucore:hasCastMember a rdf:Property ;
-    rdfs:label "Cast member"@en,
-        "Membre de la distribution"@fr,
-        "Cast lid"@nl ;
+    rdfs:label "cast member"@en,
+        "membre de la distribution"@fr,
+        "cast lid"@nl ;
     rdfs:comment "A member of the cast."@en,
-        "Range: a string or a Cast"@en,
         "A member of the cast."@fr,
         "Een lid van de cast."@nl ;
     rdfs:domain ebucore:Asset ;
@@ -3064,26 +3164,74 @@ ebucore:hasObjectType a rdf:Property ;
         "Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."@fr,
         "Om een ObjectType te definiëren voor een BusinessObject (bv. boek, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."@nl .
 
+ebucore:height a rdf:Property ;
+    rdfs:label "height"@en,
+        "hauteur"@fr,
+        "hoogte"@nl ;
+    rdfs:domain ebucore:MediaFragment ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+    skos:definition "The Height of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en,
+        "La Hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr,
+        "De Hoogte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl .
+
 ebucore:isAnnotatedMediaResource a rdf:Property ;
-    rdfs:label "Media resource"@en,
-        "Media resource"@fr,
-        "Media resource"@nl ;
+    rdfs:label "media resource"@en,
+        "media resource"@fr,
+        "media resource"@nl ;
     rdfs:domain ebucore:Annotation ;
     rdfs:range ebucore:MediaResource ;
     skos:definition "To link an Annotation to a MediaResource."@en,
         "Pour lier une annotation à un MediaResource."@fr,
         "Om een annotatie te koppelen aan een mediaresource."@nl .
 
+ebucore:regionDelimX a rdf:Property ;
+    rdfs:label "region delimiter (x-axis)"@en,
+        "regio-afbakening (x-as)"@fr,
+        "délimiteur de région (axe des x)"@nl ;
+    rdfs:domain ebucore:MediaFragment ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+    skos:definition "To define the top left corner of a zone on the x-axis."@en,
+        "Définir le coin supérieur gauche d'une zone sur l'axe des x."@fr,
+        "Het definiëren van de linkerbovenhoek van een zone op de x-as."@nl .
+
+ebucore:regionDelimY a rdf:Property ;
+    rdfs:label "region delimiter (y-axis)"@en,
+        "regio-afbakening (y-as)"@fr,
+        "délimiteur de région (axe des y)"@nl ;
+    rdfs:domain ebucore:MediaFragment ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+    skos:definition "To define the top left corner of a zone on the y-axis."@en,
+        "Définir le coin supérieur gauche d'une zone sur l'axe des y."@fr,
+        "Het definiëren van de linkerbovenhoek van een zone op de y-as."@nl .
+
 ebucore:synopsis a rdf:Property ;
-    rdfs:label "Synopsis"@en,
+    rdfs:label "synopsis"@en,
         "synopsis"@fr,
-        "Korte inhoud"@nl ;
+        "korte inhoud"@nl ;
     rdfs:comment "To provide a summary."@en,
         "To provide a summary."@fr,
         "Om een samenvatting te geven."@nl ;
     rdfs:domain ebucore:Asset ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ebucore:description .
+
+ebucore:width a rdf:Property ;
+    rdfs:label "width"@en,
+        "largeur"@fr,
+        "breedte"@nl ;
+    rdfs:domain ebucore:MediaFragment ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+    skos:definition "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en,
+        "La largeur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr,
+        "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl .
 
 premis:identifier a owl:ObjectProperty ;
     rdfs:label "has identifier"@en,
@@ -3405,6 +3553,22 @@ haObj:hasAccessCopy a rdf:Property ;
     rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
     owl:inverseOf haObj:isAccessCopyOf .
 
+haObj:hasCarrierCopy a rdf:Property ;
+    rdfs:label "has carrier copy"@en,
+        "a copie sur porteur"@fr,
+        "heeft dragerkopie"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    owl:inverseOf haObj:isCarrierCopyOf .
+
+haObj:hasFragmentRepresentation a rdf:Property ;
+    rdfs:label "has fragment "@en,
+        "a un fragment"@fr,
+        "heeft fragment"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    owl:inverseOf haObj:isFragmentRepresentationOf .
+
 haObj:hasIIIFCopy a rdf:Property ;
     rdfs:label "has IIIF copy"@en,
         "a copie IIIF"@fr,
@@ -3444,6 +3608,22 @@ haObj:isAccessCopyOf a rdf:Property ;
     rdfs:isDefinedBy haObj: ;
     rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
     owl:inverseOf haObj:hasAccessCopy .
+
+haObj:isCarrierCopyOf a rdf:Property ;
+    rdfs:label "is carrier copy of"@en,
+        "est copie sur porteur de"@fr,
+        "is dragerkopie van"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    owl:inverseOf haObj:hasCarrierCopy .
+
+haObj:isFragmentRepresentationOf a rdf:Property ;
+    rdfs:label "is fragement of"@en,
+        "est fragment de"@fr,
+        "is fragment van"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    owl:inverseOf haObj:hasFragmentRepresentation .
 
 haObj:isIIIFCopyOf a rdf:Property ;
     rdfs:label "is IIIF copy of"@en,
@@ -4164,26 +4344,6 @@ skos:semanticRelation a rdf:Property,
         "Cette propriété ne doit pas être utilisée directement, mais comme super-propriété pour toutes les propriétés désignant une relation de sens entre concepts."@fr,
         "Deze eigenschap moet niet direct gebruikt worden, maar als super-eigenschap voor alle eigenschappen die een betekenisrelatie tussen concepten aanduiden."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> a owl:ObjectProperty ;
-    rdfs:label "is Represented by"@en,
-        "est représenté par"@fr,
-        "wordt gerepresenteerd door"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf premis:relationship ;
-    skos:definition "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en,
-        "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
-        "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl .
-
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> a owl:ObjectProperty ;
-    rdfs:label "represents"@en,
-        "représente"@fr,
-        "representeert"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf premis:relationship ;
-    skos:definition "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en,
-        "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr,
-        "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl .
-
 skos:note a rdf:Property,
         owl:AnnotationProperty ;
     rdfs:label "note"@en,
@@ -4217,6 +4377,26 @@ schema:identifier a rdf:Property ;
     skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
         "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
         "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> a owl:ObjectProperty ;
+    rdfs:label "is Represented by"@en,
+        "est représenté par"@fr,
+        "wordt gerepresenteerd door"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship ;
+    skos:definition "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en,
+        "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
+        "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> a owl:ObjectProperty ;
+    rdfs:label "represents"@en,
+        "représente"@fr,
+        "representeert"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship ;
+    skos:definition "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en,
+        "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr,
+        "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl .
 
 <https://data.hetarchief.be/ns/description#DescriptionShape> a sh:PropertyShape ;
     sh:datatype rdf:langString ;
