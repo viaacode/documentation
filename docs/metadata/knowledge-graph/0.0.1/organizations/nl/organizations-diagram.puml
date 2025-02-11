@@ -22,6 +22,7 @@ class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrgan
 class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Digitaliseringspartner</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
+class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
 class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Land</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
@@ -68,6 +69,7 @@ haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
 haOrg_ServiceProvider : heeft een identificator : <i>xsd:string</i> [1..1]
 
 
+haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
 
 haOrg_DigitizationPartner : heeft een identificator : <i>xsd:string</i> [1..1]
 
@@ -115,8 +117,11 @@ schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 schema_Person : email : <i>xsd:string</i> [0..*]
 schema_Person : familienaam : <i>xsd:string</i> [1..1]
 schema_Person : geboortedatum : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : geboorteplaats : <i>xsd:string</i> [0..1]
 schema_Person : naam : <i>xsd:string</i> [0..1]
 schema_Person : sterfdatum : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : sterfplaats : <i>xsd:string</i> [0..1]
+schema_Person : telefoon : <i>xsd:string</i> [0..*]
 schema_Person : voornaam : <i>xsd:string</i> [1..1]
 
 schema_Person --> org_Organization :is account manager van [0..*]  > 
