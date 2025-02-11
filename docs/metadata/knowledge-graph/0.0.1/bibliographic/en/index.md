@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Bibliographic data model"
-parent: "Data model Description"
+parent: "Knowledge Graph"
 nav_order: 1
 nav_exclude: False
 ---
@@ -25,9 +25,9 @@ Bibliographic data model
 , [fr](../fr)
 
 **Authors:**
-[Milan Valadou](mailto:milan.valadou@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Data model to provide a detailed description of bibliographic objects and their components.
