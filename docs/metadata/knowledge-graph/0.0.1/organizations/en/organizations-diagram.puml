@@ -19,6 +19,7 @@ class "<b>Content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Country</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
 class "<b>Digitization partner</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
+class "<b>Service provider</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
 class "<b>Educational partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
@@ -62,6 +63,7 @@ haOrg_ContentPartner --> skos_Concept :has preference [0..*]  >
 schema_Country : name : <i>xsd:string</i> [1..1]
 
 
+haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
 
 haOrg_DigitizationPartner : has identifier : <i>xsd:string</i> [1..1]
 
@@ -103,11 +105,14 @@ org_OrganizationalUnit --> org_Organization :unit of [1..*]  >
 schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_Person : birth date : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : birth place : <i>xsd:string</i> [0..1]
 schema_Person : death date : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : death place : <i>xsd:string</i> [0..1]
 schema_Person : email : <i>xsd:string</i> [0..*]
 schema_Person : family name : <i>xsd:string</i> [1..1]
 schema_Person : given name : <i>xsd:string</i> [1..1]
 schema_Person : name : <i>xsd:string</i> [0..1]
+schema_Person : telephone : <i>xsd:string</i> [0..*]
 
 schema_Person --> org_Organization :is account manager of [0..*]  > 
 schema_Person --> org_Post :holds [0..*]  > 
