@@ -48,7 +48,7 @@ haObj_CarrierRepresentation --> haDes_ImageReel :stored at [1..*]  >
 
 haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
-haDes_Film --> haObj_CarrierRepresentation :is Represented By [1..*]  > 
+haDes_Film --> haObj_CarrierRepresentation :has carrier copy [1..1]  > 
 
 
 haDes_ImageReel --> ebucore_OpenCaptions :has (embedded) captioning [0..*]  > 
