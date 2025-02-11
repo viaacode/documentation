@@ -14,8 +14,8 @@ top to bottom direction
 
 
 class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
-class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/en#schema%3ABrand]]
 class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
+class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/en#schema%3ABrand]]
 class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>Archive component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
@@ -49,9 +49,15 @@ class "<b>Representation</b> (premis:Representation)" as premis_Representation [
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Text Annotation</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
+class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 
 
+ebucore_MediaFragment : Region delimiter (x-axis) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : Region delimiter (y-axis) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : Width : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : Width : <i>xsd:integer</i> [0..1]
 ebucore_MediaFragment : endTime : <i>xsd:time</i> [0..1]
 ebucore_MediaFragment : startTime : <i>xsd:time</i> [0..1]
 ebucore_MediaFragment --> premis_File :is Media Fragment Of [0..*]  > 
@@ -62,6 +68,8 @@ ebucore_MediaFragment --> premis_File :is Media Fragment Of [0..*]  >
 
 
 
+
+ebucore_Annotation : Annotation  person subject : <i>IRI</i> [0..1]
 ebucore_Annotation : Annotation subject : <i>IRI</i> [1..1]
 ebucore_Annotation : annotation confidence : <i>xsd:integer</i> [1..1]
 
@@ -152,8 +160,6 @@ premis_IntellectualEntity : alternate name : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : art medium : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : artform : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : castmembers : <i>xsd:string</i> [0..1]
-premis_IntellectualEntity : castmembers : <i>xsd:string</i> [0..1]
-premis_IntellectualEntity : castmembers : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : copyright notice : <i>xsd:string</i> [0..*]
 premis_IntellectualEntity : copyright year : <i>xsd:integer</i> [0..*]
 premis_IntellectualEntity : credit text : <i>rdf:langString</i> [0..*]
@@ -215,6 +221,7 @@ schema_Place --|> schema_Thing #blue;line.dotted;text:blue
 schema_Place : description : <i>rdf:langString</i> [0..*]
 schema_Place : name : <i>rdf:langString</i> [1..*]
 
+schema_Place --> schema_Place :is contained in place [0..*]  > 
 
 schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
 
@@ -234,11 +241,14 @@ premis_Representation : name : <i>rdf:langString</i> [1..*]
 
 schema_Role --|> schema_Thing #blue;line.dotted;text:blue
 
-schema_Role : role name : <i>xsd:string</i> [1..*]
-schema_Role --> org_Organization :contributor [0..*]  \lcreator [0..*]  \lpublisher [0..*]  > 
-schema_Role --> schema_Person :actor [0..*]  \lcontributor [0..*]  \lcreator [0..*]  \lpublisher [0..*]  > 
-schema_Role --> schema_Thing :contributor [0..*]  \lcreator [0..*]  \lpublisher [0..*]  > 
-schema_Role --> skos_Concept :role name [1..*]  > 
+schema_Role : role name : <i>xsd:string</i> [1..1]
+schema_Role --> org_Organization :contributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> schema_Person :actor [0..1]  \lcontributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> schema_Thing :contributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> skos_Concept :role name [1..1]  > 
+
+
+ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
 
 
 
