@@ -14,8 +14,8 @@ top to bottom direction
 
 
 class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
-class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/nl#schema%3ABrand]]
 class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
+class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/nl#schema%3ABrand]]
 class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
@@ -50,11 +50,18 @@ class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Tekstannotatie</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
+class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 
 
+ebucore_MediaFragment : Breedte : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : Hoogte : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : Regio-afbakening (x-as) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : Regio-afbakening (y-as) : <i>xsd:integer</i> [0..1]
 ebucore_MediaFragment : eindtijd : <i>xsd:time</i> [0..1]
 ebucore_MediaFragment : starttijd : <i>xsd:time</i> [0..1]
 ebucore_MediaFragment --> premis_File :is media fragment van [0..*]  > 
+
 
 
 
@@ -72,6 +79,7 @@ schema_Episode --> premis_IntellectualEntity :is deel van [0..*]  >
 
 
 ebucore_Annotation : Annotatie onderwerp : <i>IRI</i> [1..1]
+ebucore_Annotation : Annotatie persoon onderwerp : <i>IRI</i> [0..1]
 ebucore_Annotation : annotatie vertrouwen : <i>xsd:integer</i> [1..1]
 
 ebucore_Annotation --> ebucore_MediaFragment :annoteert [1..*]  > 
@@ -215,6 +223,7 @@ schema_Place --|> schema_Thing #blue;line.dotted;text:blue
 schema_Place : naam : <i>rdf:langString</i> [1..*]
 schema_Place : omschrijving : <i>rdf:langString</i> [0..*]
 
+schema_Place --> schema_Place :is deel van plaats [0..*]  > 
 
 premis_Representation --|> premis_Object #blue;line.dotted;text:blue
 
@@ -226,11 +235,11 @@ premis_Representation : omschrijving : <i>rdf:langString</i> [0..*]
 
 schema_Role --|> schema_Thing #blue;line.dotted;text:blue
 
-schema_Role : rolenaam : <i>xsd:string</i> [1..*]
-schema_Role --> org_Organization :bijdrager [0..*]  \lmaker [0..*]  \luitgever [0..*]  > 
-schema_Role --> schema_Person :acteur [0..*]  \lbijdrager [0..*]  \lmaker [0..*]  \luitgever [0..*]  > 
-schema_Role --> schema_Thing :bijdrager [0..*]  \lmaker [0..*]  \luitgever [0..*]  > 
-schema_Role --> skos_Concept :rolenaam [1..*]  > 
+schema_Role : rolenaam : <i>xsd:string</i> [1..1]
+schema_Role --> org_Organization :bijdrager [0..1]  \lmaker [0..1]  \luitgever [0..1]  > 
+schema_Role --> schema_Person :acteur [0..1]  \lbijdrager [0..1]  \lmaker [0..1]  \luitgever [0..1]  > 
+schema_Role --> schema_Thing :bijdrager [0..1]  \lmaker [0..1]  \luitgever [0..1]  > 
+schema_Role --> skos_Concept :rolenaam [1..1]  > 
 
 
 schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -243,6 +252,9 @@ schema_CreativeWorkSeries --> premis_IntellectualEntity :is deel van [0..*]  >
 
 schema_CreativeWorkSeries --> schema_CreativeWorkSeries :is deel van [0..*]  \lis een deel van [0..*]  > 
 
+
+
+ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
 
 
 
