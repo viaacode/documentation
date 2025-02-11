@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Modèle de données bibliographiques"
-parent: "Knowledge Graph"
+parent: "Modèle de données Description"
 nav_order: 1
 nav_exclude: True
 ---

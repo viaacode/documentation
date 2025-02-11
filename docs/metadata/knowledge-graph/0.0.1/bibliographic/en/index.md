@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Bibliographic data model"
-parent: "Knowledge Graph"
+parent: "Data model Description"
 nav_order: 1
 nav_exclude: False
 ---
