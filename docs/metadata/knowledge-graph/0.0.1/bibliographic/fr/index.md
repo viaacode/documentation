@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Modèle de données bibliographiques"
-parent: "Modèle de données Description"
+parent: "Knowledge Graph"
 nav_order: 1
 nav_exclude: True
 ---
@@ -25,9 +25,9 @@ Modèle de données bibliographiques
 , [nl](../nl)
 
 **Auteurs:**
-[Milan Valadou](mailto:milan.valadou@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Modèle de données pour fournir une description détaillée des objets bibliographiques et leurs composants.
