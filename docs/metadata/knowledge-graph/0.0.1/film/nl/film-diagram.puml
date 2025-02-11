@@ -50,7 +50,7 @@ haObj_CarrierRepresentation --> haDes_ImageReel :opgeslagen op [1..*]  >
 
 haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
-haDes_Film --> haObj_CarrierRepresentation :wordt gerepresenteerd door [1..*]  > 
+haDes_Film --> haObj_CarrierRepresentation :heeft dragerkopie [1..1]  > 
 
 haDes_SoundFilm --|> haDes_Film #blue;line.dotted;text:blue
 
