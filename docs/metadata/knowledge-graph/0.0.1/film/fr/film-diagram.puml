@@ -40,7 +40,7 @@ haDes_ImageReel --> skos_Concept :type de coloration [0..1]  >
 
 haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
-haDes_Film --> haObj_CarrierRepresentation :est représenté par [1..*]  > 
+haDes_Film --> haObj_CarrierRepresentation :est porteur du copie [1..1]  > 
 
 haDes_SilentFilm --|> haDes_Film #blue;line.dotted;text:blue
 
