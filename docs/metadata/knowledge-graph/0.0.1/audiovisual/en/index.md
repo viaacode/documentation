@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Data model Audiovisual archive objects"
-parent: "Data model Description"
+parent: "Knowledge Graph"
 nav_order: 1
 nav_exclude: False
 ---
