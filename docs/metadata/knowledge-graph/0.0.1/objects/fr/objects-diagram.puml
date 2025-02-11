@@ -35,6 +35,7 @@ class "<b>Représentation</b> (premis:Representation)" as premis_Representation 
 class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
 class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Représentation fragment</b> (haObj:FragmentRepresentation)" as haObj_FragmentRepresentation [[#haObj%3AFragmentRepresentation]]
+class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
 class "<b>Support de stockage</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 class "<b>Valeur quantitative</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[../../description/fr#schema%3AQuantitativeValue]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
@@ -50,7 +51,9 @@ mh_Record : a identifiant d'enregistrement : <i>xsd:string</i> [1..1]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
+premis_IntellectualEntity --> haObj_CarrierRepresentation :est copie sur porteur [0..1]  > 
 premis_IntellectualEntity --> haObj_DigitalRepresentation :a copie d'accès [0..*]  \la copie de IIIF [0..*]  \la copie de transcription [0..*]  \la maître [0..*]  \la mezzanine [0..*]  > 
+premis_IntellectualEntity --> haObj_FragmentRepresentation :a fragment [0..*]  > 
 premis_IntellectualEntity --> haObj_LocalIdentifier :a identifiant principal [0..*]  \lidentificateur local [0..*]  > 
 premis_IntellectualEntity --> mh_Fragment :était dérivé de [1..1]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :a partie [0..*]  \lest partie de [0..*]  \ll'entité intellectuelle suivante dans l'ordre [0..1]  > 
@@ -109,6 +112,7 @@ premis_Representation --> premis_IntellectualEntity :représente [1..1]  >
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stocké à [1..1]  > 
+haObj_CarrierRepresentation --> premis_IntellectualEntity :est un copie sur porteur de [0..1]  > 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
@@ -117,11 +121,13 @@ haObj_DigitalRepresentation --> premis_File :a racine [1..*]  \lcomprend [1..*] 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :est copie IIIF de [0..1]  \lest copie d'accès de [0..1]  \lest copie transcription de [0..1]  \lest maître de [0..1]  \lest mezzanine de [0..1]  > 
 haObj_DigitalRepresentation --> premis_Representation :a source [0..*]  > 
 
+haObj_FragmentRepresentation --|> haObj_DigitalRepresentation #blue;line.dotted;text:blue
 
 haObj_FragmentRepresentation : durée : <i>xsd:duration</i> [0..1]
 haObj_FragmentRepresentation : heure de départ : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation : heure de fin : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation --> premis_File :est fragment des médias de [1..1]  > 
+haObj_FragmentRepresentation --> premis_IntellectualEntity :est un fragment de [0..1]  > 
 
 
 
