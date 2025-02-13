@@ -1,0 +1,145 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
+class "<b>Fragment representatie</b> (haObj:FragmentRepresentation)" as haObj_FragmentRepresentation [[#haObj%3AFragmentRepresentation]]
+class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[../../description/nl#schema%3AQuantitativeValue]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Mediahavenfragment</b> (mh:Fragment)" as mh_Fragment [[#mh%3AFragment]]
+class "<b>Mediahavenrecord</b> (mh:Record)" as mh_Record [[#mh%3ARecord]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Entiteit</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>Opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
+class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+
+premis_File --|> premis_Object #blue;line.dotted;text:blue
+
+premis_File : heeft (bestands)grootte : <i>xsd:nonNegativeInteger</i> [1..1]
+premis_File : heeft originele naam : <i>xsd:string</i> [0..1]
+premis_File : mime type : <i>xsd:string</i> [1..1]
+premis_File --> dct_FileFormat :formaat [0..1]  > 
+premis_File --> haObj_DigitalRepresentation :is opgenomen in [0..*]  > 
+premis_File --> haObj_FragmentRepresentation :heeft media fragment [0..*]  > 
+premis_File --> mh_Fragment :werd afgeleid van [1..1]  > 
+premis_File --> premis_File :documenteert [0..*]  \lvervangt [0..*]  \lvolgende bestand in volgorde [0..1]  > 
+premis_File --> premis_Fixity :fixity [0..1]  > 
+premis_File --> premis_StorageLocation :opgeslagen op [1..1]  > 
+premis_File --> schema_QuantitativeValue :breedte [0..1]  \lhoogte [0..1]  > 
+
+
+
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation --> haObj_DigitalRepresentation :volgende digitale representatie in volgorde [0..1]  > 
+haObj_DigitalRepresentation --> premis_File :bevat [1..*]  \lheeft root [1..*]  > 
+haObj_DigitalRepresentation --> premis_IntellectualEntity :is IIIF-kopie van [0..1]  \lis master van [0..1]  \lis mezzanine van [0..1]  \lis toegangskopie van [0..1]  \lis transcriptiekopie van [0..1]  > 
+haObj_DigitalRepresentation --> premis_Representation :heeft bron [0..*]  > 
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation --> haObj_PhysicalCarrier :opgeslagen op [1..1]  > 
+haObj_CarrierRepresentation --> premis_IntellectualEntity :is dragerkopie van [0..1]  > 
+
+
+premis_Fixity : checksum maker : <i>xsd:string</i> [0..*]
+premis_Fixity : fixity checksum : <i>xsd:string</i> [1..1]
+
+
+haObj_FragmentRepresentation --|> haObj_DigitalRepresentation #blue;line.dotted;text:blue
+
+haObj_FragmentRepresentation : duur : <i>xsd:duration</i> [0..1]
+haObj_FragmentRepresentation : eindtijd : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation : starttijd : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation --> premis_File :is media fragment van [1..1]  > 
+haObj_FragmentRepresentation --> premis_IntellectualEntity :is een fragment van [0..1]  > 
+
+
+
+haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
+
+haObj_PhysicalCarrier --> premis_StorageMedium :opslagmedium [1..1]  > 
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+premis_IntellectualEntity --> haObj_CarrierRepresentation :heeft dragerkopie [0..1]  > 
+premis_IntellectualEntity --> haObj_DigitalRepresentation :heeft IIIF-kopie [0..*]  \lheeft master [0..*]  \lheeft mezzanine [0..*]  \lheeft toegangskopie [0..*]  \lheeft transcriptiekopie [0..*]  > 
+premis_IntellectualEntity --> haObj_FragmentRepresentation :heeft fragment [0..*]  > 
+premis_IntellectualEntity --> haObj_LocalIdentifier :heeft primaire identificatiecode [0..*]  \llokale identifier [0..*]  > 
+premis_IntellectualEntity --> mh_Fragment :werd afgeleid van [1..1]  > 
+premis_IntellectualEntity --> premis_IntellectualEntity :heeft deel [0..*]  \lis deel van [0..*]  \lvolgende intellectuele entiteit in volgorde [0..1]  > 
+premis_IntellectualEntity --> premis_Representation :wordt gerepresenteerd door [1..*]  > 
+
+schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
+
+
+haObj_LocalIdentifier --|> skos_Concept #blue;line.dotted;text:blue
+
+haObj_LocalIdentifier : waarde : <i>xsd:string</i> [1..1]
+
+
+
+mh_Fragment : datum aangemaakt : <i>xsd:dateTime</i> [1..1]
+mh_Fragment : datum gewijzigd : <i>xsd:dateTime</i> [1..1]
+mh_Fragment : datum verwijderd : <i>xsd:dateTime</i> [0..1]
+mh_Fragment : heeft fragment-ID : <i>xsd:string</i> [1..1]
+mh_Fragment --> mh_Record :heeft record [1..1]  > 
+
+
+
+
+mh_Record : heeft record-ID : <i>xsd:string</i> [1..1]
+
+
+premis_Object --|> prov_Entity #blue;line.dotted;text:blue
+
+premis_Object --> premis_Object :relatie [0..*]  > 
+
+
+
+
+premis_StorageLocation : opslagpad : <i>xsd:string</i> [0..1]
+premis_StorageLocation --> premis_StorageMedium :opslagmedium [0..*]  > 
+
+
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+premis_Representation --> mh_Fragment :werd afgeleid van [1..1]  > 
+premis_Representation --> premis_IntellectualEntity :representeert [1..1]  > 
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
