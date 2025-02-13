@@ -1,0 +1,145 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Enregistrement Mediahaven</b> (mh:Record)" as mh_Record [[#mh%3ARecord]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Fichier</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Fixité</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
+class "<b>Format de fichier</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>Fragment Mediahaven</b> (mh:Fragment)" as mh_Fragment [[#mh%3AFragment]]
+class "<b>Identifiant local</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Entité</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Représentation fragment</b> (haObj:FragmentRepresentation)" as haObj_FragmentRepresentation [[#haObj%3AFragmentRepresentation]]
+class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Support de stockage</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
+class "<b>Valeur quantitative</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[../../description/fr#schema%3AQuantitativeValue]]
+class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+
+
+premis_StorageLocation : chemin du fichier : <i>xsd:string</i> [0..1]
+premis_StorageLocation --> premis_StorageMedium :milieu de stockage [0..*]  > 
+
+
+
+mh_Record : a identifiant d'enregistrement : <i>xsd:string</i> [1..1]
+
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+premis_IntellectualEntity --> haObj_CarrierRepresentation :est copie sur porteur [0..1]  > 
+premis_IntellectualEntity --> haObj_DigitalRepresentation :a copie d'accès [0..*]  \la copie de IIIF [0..*]  \la copie de transcription [0..*]  \la maître [0..*]  \la mezzanine [0..*]  > 
+premis_IntellectualEntity --> haObj_FragmentRepresentation :a fragment [0..*]  > 
+premis_IntellectualEntity --> haObj_LocalIdentifier :a identifiant principal [0..*]  \lidentificateur local [0..*]  > 
+premis_IntellectualEntity --> mh_Fragment :était dérivé de [1..1]  > 
+premis_IntellectualEntity --> premis_IntellectualEntity :a partie [0..*]  \lest partie de [0..*]  \ll'entité intellectuelle suivante dans l'ordre [0..1]  > 
+premis_IntellectualEntity --> premis_Representation :est représenté par [1..*]  > 
+
+premis_File --|> premis_Object #blue;line.dotted;text:blue
+
+premis_File : a une taille (du fichier) : <i>xsd:nonNegativeInteger</i> [1..1]
+premis_File : mime type : <i>xsd:string</i> [1..1]
+premis_File : porte le nom d'origine : <i>xsd:string</i> [0..1]
+premis_File --> dct_FileFormat :format [0..1]  > 
+premis_File --> haObj_DigitalRepresentation :est inclus dans [0..*]  > 
+premis_File --> haObj_FragmentRepresentation :a le fragment des médias [0..*]  > 
+premis_File --> mh_Fragment :était dérivé de [1..1]  > 
+premis_File --> premis_File :document [0..*]  \lfichier suivant dans l'ordre [0..1]  \lremplace [0..*]  > 
+premis_File --> premis_Fixity :fixity [0..1]  > 
+premis_File --> premis_StorageLocation :stocké à [1..1]  > 
+premis_File --> schema_QuantitativeValue :hauteur [0..1]  \llargeur [0..1]  > 
+
+
+
+
+premis_Fixity : créateur de somme de contrôle : <i>xsd:string</i> [0..*]
+premis_Fixity : vérification de la fixation : <i>xsd:string</i> [1..1]
+
+
+
+
+
+mh_Fragment : a identifiant du fragment : <i>xsd:string</i> [1..1]
+mh_Fragment : date de création : <i>xsd:dateTime</i> [1..1]
+mh_Fragment : date modifiée : <i>xsd:dateTime</i> [1..1]
+mh_Fragment : date supprimée : <i>xsd:dateTime</i> [0..1]
+mh_Fragment --> mh_Record :a record [1..1]  > 
+
+
+
+haObj_LocalIdentifier --|> skos_Concept #blue;line.dotted;text:blue
+
+haObj_LocalIdentifier : valeur : <i>xsd:string</i> [1..1]
+
+
+premis_Object --|> prov_Entity #blue;line.dotted;text:blue
+
+premis_Object --> premis_Object :relation [0..*]  > 
+
+haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
+
+haObj_PhysicalCarrier --> premis_StorageMedium :milieu de stockage [1..1]  > 
+
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+premis_Representation --> mh_Fragment :était dérivé de [1..1]  > 
+premis_Representation --> premis_IntellectualEntity :représente [1..1]  > 
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stocké à [1..1]  > 
+haObj_CarrierRepresentation --> premis_IntellectualEntity :est un copie sur porteur de [0..1]  > 
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation --> haObj_DigitalRepresentation :la représentation numérique suivante dans l'ordre [0..1]  > 
+haObj_DigitalRepresentation --> premis_File :a racine [1..*]  \lcomprend [1..*]  > 
+haObj_DigitalRepresentation --> premis_IntellectualEntity :est copie IIIF de [0..1]  \lest copie d'accès de [0..1]  \lest copie transcription de [0..1]  \lest maître de [0..1]  \lest mezzanine de [0..1]  > 
+haObj_DigitalRepresentation --> premis_Representation :a source [0..*]  > 
+
+haObj_FragmentRepresentation --|> haObj_DigitalRepresentation #blue;line.dotted;text:blue
+
+haObj_FragmentRepresentation : durée : <i>xsd:duration</i> [0..1]
+haObj_FragmentRepresentation : heure de départ : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation : heure de fin : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation --> premis_File :est fragment des médias de [1..1]  > 
+haObj_FragmentRepresentation --> premis_IntellectualEntity :est un fragment de [0..1]  > 
+
+
+
+
+
+schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
