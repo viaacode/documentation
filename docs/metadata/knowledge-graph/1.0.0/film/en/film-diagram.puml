@@ -1,0 +1,69 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>OpenCaptions</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
+class "<b>Audio reel</b> (haDes:AudioReel)" as haDes_AudioReel [[#haDes%3AAudioReel]]
+class "<b>Carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[../../audiovisual/en#haObj%3ACarrierRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Image reel</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageReel]]
+class "<b>Silent film</b> (haDes:SilentFilm)" as haDes_SilentFilm [[#haDes%3ASilentFilm]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Sound film</b> (haDes:SoundFilm)" as haDes_SoundFilm [[#haDes%3ASoundFilm]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+
+
+ebucore_OpenCaptions : in language : <i>xsd:string</i> [0..*]
+
+
+
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation : lost audio reels : <i>xsd:boolean</i> [0..1]
+haObj_CarrierRepresentation : lost image reels : <i>xsd:boolean</i> [0..1]
+haObj_CarrierRepresentation : number of lost audio reels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of lost image reels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of reels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation --> haDes_AudioReel :stored at [1..*]  > 
+haObj_CarrierRepresentation --> haDes_ImageReel :stored at [1..*]  > 
+
+
+
+
+
+haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_Film --> haObj_CarrierRepresentation :has carrier copy [1..1]  > 
+
+
+haDes_ImageReel --> ebucore_OpenCaptions :has (embedded) captioning [0..*]  > 
+haDes_ImageReel --> skos_Concept :coloring type [0..1]  > 
+
+haDes_SilentFilm --|> haDes_Film #blue;line.dotted;text:blue
+
+
+haDes_SoundFilm --|> haDes_Film #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
