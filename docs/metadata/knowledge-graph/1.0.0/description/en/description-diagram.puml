@@ -1,0 +1,265 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
+class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/en#schema%3ABrand]]
+class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
+class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Archive component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
+class "<b>Content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/en#haOrg%3AContentPartner]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Creative work series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>File</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[../../organizations/en#org%3AOrganization]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[../../organizations/en#schema%3APerson]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Physical carrier</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Text Annotation</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
+class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+
+
+ebucore_MediaFragment : end time : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment : height : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : region delimiter (x-axis) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : region delimiter (y-axis) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : start time : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment : width : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment --> premis_File :is Media Fragment Of [0..*]  > 
+
+
+
+
+
+
+
+
+ebucore_Annotation : annotation  person subject : <i>IRI</i> [0..1]
+ebucore_Annotation : annotation confidence : <i>xsd:integer</i> [1..1]
+ebucore_Annotation : annotation subject : <i>IRI</i> [1..1]
+
+ebucore_Annotation --> ebucore_MediaFragment :annotates [1..*]  > 
+ebucore_Annotation --> premis_File :annotation target [1..1]  > 
+ebucore_Annotation --> skos_Concept :annotation type [0..1]  > 
+
+
+schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_ArchiveComponent : description : <i>rdf:langString</i> [0..*]
+schema_ArchiveComponent : name : <i>rdf:langString</i> [1..*]
+schema_ArchiveComponent --> premis_IntellectualEntity :has part [0..*]  > 
+
+schema_ArchiveComponent --> schema_ArchiveComponent :has part [0..*]  \lis part of [0..*]  > 
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : collection size : <i>xsd:integer</i> [0..*]
+schema_Collection : description : <i>rdf:langString</i> [0..*]
+schema_Collection : identifier : <i>xsd:string</i> [0..1]
+schema_Collection : name : <i>rdf:langString</i> [1..*]
+schema_Collection --> haObj_PhysicalCarrier :has part [0..*]  > 
+schema_Collection --> premis_IntellectualEntity :has part [0..*]  > 
+
+
+
+
+
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
+schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_CreativeWorkSeries : description : <i>rdf:langString</i> [0..*]
+schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [0..1]
+schema_CreativeWorkSeries : name : <i>rdf:langString</i> [1..*]
+schema_CreativeWorkSeries : season number : <i>xsd:integer</i> [0..*]
+schema_CreativeWorkSeries --> premis_IntellectualEntity :has part [0..*]  > 
+
+schema_CreativeWorkSeries --> schema_CreativeWorkSeries :has part [0..*]  \lis part of [0..*]  > 
+
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation : caption : <i>xsd:string</i> [0..1]
+haObj_DigitalRepresentation : in language : <i>xsd:string</i> [0..*]
+haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
+haObj_DigitalRepresentation --> schema_Role :creator [0..*]  > 
+
+
+schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Episode : description : <i>rdf:langString</i> [0..*]
+schema_Episode : identifier : <i>xsd:string</i> [1..1]
+schema_Episode : name : <i>rdf:langString</i> [1..*]
+schema_Episode --> premis_IntellectualEntity :has part [0..*]  > 
+
+
+
+premis_File --|> premis_Object #blue;line.dotted;text:blue
+
+premis_File : date created : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
+premis_File : description : <i>rdf:langString</i> [0..*]
+premis_File : duration : <i>xsd:duration</i> [0..1]
+premis_File : identifier : <i>xsd:string</i> [0..1]
+premis_File : name : <i>rdf:langString</i> [1..*]
+premis_File : thumbnail : <i>IRI</i> [0..1]
+
+premis_File --> ebucore_MediaFragment :has media fragment [0..*]  > 
+
+
+
+
+
+
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+premis_IntellectualEntity : about : <i>IRI</i> [0..*]
+premis_IntellectualEntity : abstract : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : alternate name : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : art medium : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : artform : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : castmembers : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : copyright notice : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : copyright year : <i>xsd:integer</i> [0..*]
+premis_IntellectualEntity : credit text : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : date available : <i>xsd:dateTime</i> [0..*]
+premis_IntellectualEntity : date created : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
+premis_IntellectualEntity : date published : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
+premis_IntellectualEntity : description : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : format : <i>xsd:string</i> [1..1]
+premis_IntellectualEntity : genre : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
+premis_IntellectualEntity : in language : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : keywords : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : name : <i>rdf:langString</i> [1..*]
+premis_IntellectualEntity : object type : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : rights information : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : synopsis : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : temporal : <i>rdf:langString</i> [0..*]
+
+
+
+
+premis_IntellectualEntity --> haOrg_ContentPartner :maintainer [1..1]  > 
+premis_IntellectualEntity --> org_Organization :copyright holder [0..*]  > 
+
+premis_IntellectualEntity --> schema_ArchiveComponent :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_Collection :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_CreativeWorkSeries :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_Episode :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_Person :copyright holder [0..*]  > 
+premis_IntellectualEntity --> schema_Place :spatial [0..*]  > 
+premis_IntellectualEntity --> schema_QuantitativeValue :depth [0..1]  \lheight [0..1]  \lwidth [0..1]  > 
+premis_IntellectualEntity --> schema_Role :contributor [0..*]  \lcreator [0..*]  \lpublisher [0..*]  > 
+premis_IntellectualEntity --> schema_Thing :copyright holder [0..*]  \lmentions [0..*]  > 
+premis_IntellectualEntity --> skos_Concept :license [0..*]  > 
+
+
+
+
+
+
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
+
+
+haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
+
+haObj_PhysicalCarrier : description : <i>rdf:langString</i> [0..*]
+haObj_PhysicalCarrier : identifier : <i>xsd:string</i> [1..1]
+haObj_PhysicalCarrier : material : <i>xsd:string</i> [0..1]
+haObj_PhysicalCarrier : material extent : <i>xsd:string</i> [0..1]
+haObj_PhysicalCarrier : name : <i>rdf:langString</i> [1..*]
+
+haObj_PhysicalCarrier --> schema_Brand :brand [0..1]  > 
+haObj_PhysicalCarrier --> schema_QuantitativeValue :depth [0..1]  \lheight [0..1]  \lwidth [0..1]  > 
+haObj_PhysicalCarrier --> skos_Concept :preservation problem [0..*]  > 
+
+
+schema_Place --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Place : description : <i>rdf:langString</i> [0..*]
+schema_Place : name : <i>rdf:langString</i> [1..*]
+
+schema_Place --> schema_Place :is contained in place [0..*]  > 
+
+schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_QuantitativeValue : unit code : <i>xsd:string</i> [1..1]
+schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..1]
+schema_QuantitativeValue : value : <i>xsd:float</i> [1..1]
+
+
+
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+premis_Representation : description : <i>rdf:langString</i> [0..*]
+premis_Representation : identifier : <i>xsd:string</i> [0..1]
+premis_Representation : name : <i>rdf:langString</i> [1..*]
+
+
+
+schema_Role --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Role : role name : <i>xsd:string</i> [1..1]
+schema_Role --> org_Organization :contributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> schema_Person :actor [0..1]  \lcontributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> schema_Thing :contributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> skos_Concept :role name [1..1]  > 
+
+
+ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
+
+
+
+schema_Thing : description : <i>rdf:langString</i> [0..*]
+schema_Thing : name : <i>rdf:langString</i> [1..*]
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
