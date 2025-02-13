@@ -1,0 +1,69 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Newspaper</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Kranteneditie</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Kranteneditiepagina</b> (haDes:NewspaperIssuePage)" as haDes_NewspaperIssuePage [[#haDes%3ANewspaperIssuePage]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Plaats</b> (schema:Place)" as schema_Place [[../../description/nl#schema%3APlace]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Rol</b> (schema:Role)" as schema_Role [[../../description/nl#schema%3ARole]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+
+
+schema_Newspaper : abraham identifier : <i>xsd:string</i> [1..1]
+schema_Newspaper : alternatieve naam : <i>rdf:langString</i> [0..*]
+schema_Newspaper : begindatum : <i>xsd:dateTime</i> [0..1]
+schema_Newspaper : einddatum : <i>xsd:dateTime</i> [0..1]
+schema_Newspaper : naam : <i>rdf:langString</i> [1..1]
+
+schema_Newspaper --> schema_Newspaper :opgevolgd door [0..1]  \lsupplement [0..1]  \lsupplement aan [0..1]  \lvoorafgegaan door [0..1]  > 
+schema_Newspaper --> schema_Place :paginanummer [0..1]  > 
+schema_Newspaper --> schema_Role :uitgever [0..1]  > 
+
+
+
+
+
+haDes_NewspaperIssue --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_NewspaperIssue : aantal pagina's : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssue : editienummer : <i>xsd:string</i> [0..1]
+haDes_NewspaperIssue --> schema_Newspaper :maakt deel uit van [0..1]  > 
+haDes_NewspaperIssue --> skos_Concept :productie methode [0..1]  \luitgavefrequentie [0..1]  \luitgavetype [0..1]  > 
+
+
+
+haDes_NewspaperIssuePage --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_NewspaperIssuePage : paginanummer : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssuePage --> haDes_NewspaperIssue :maakt deel uit van [1..1]  > 
+
+
+schema_Place --|> schema_Thing #blue;line.dotted;text:blue
+
+
+schema_Role --|> schema_Thing #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
