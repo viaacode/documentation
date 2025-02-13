@@ -1,0 +1,104 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Conceptenschema</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
+class "<b>Geordende collectie</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "<b>Verzameling</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
+class "<b>Lijst</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>Verzameling</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+
+
+skos_Concept : alternatief label : <i>rdf:langString</i> [0..*]
+skos_Concept : definitie : <i>rdf:langString</i> [1..*]
+skos_Concept : historische notitie : <i>rdf:langString</i> [0..*]
+skos_Concept : notation : <i>xsd:string</i> [0..*]
+skos_Concept : note : <i>rdf:langString</i> [0..*]
+skos_Concept : redactionele notitie : <i>rdf:langString</i> [0..*]
+skos_Concept : scope notitie : <i>rdf:langString</i> [0..*]
+skos_Concept : verborgen label : <i>rdf:langString</i> [0..*]
+skos_Concept : voorbeeld : <i>rdf:langString</i> [0..*]
+skos_Concept : voorkeurslabel : <i>rdf:langString</i> [1..*]
+skos_Concept : wijzigingsnotitie : <i>rdf:langString</i> [0..*]
+
+skos_Concept --> skos_Concept :brede match [0..*]  \lbreder [0..*]  \lbreder transitief [0..*]  \lexacte overeenkomst [0..*]  \lgerelateerd [0..*]  \lgerelateerde match [0..*]  \lheeft een hogere prioriteit dan [0..*]  \lheeft een lagere prioriteit dan [0..*]  \lmapping relatie [0..*]  \lnabije match [0..*]  \lnauwe match [0..*]  \lnauwer [0..*]  \lnauwer transitief [0..*]  \lsemantische relatie [0..*]  > 
+skos_Concept --> skos_ConceptScheme :in schema [1..*]  \ltop concept van [0..*]  > 
+skos_Concept --> skosxl_Label :voorkeurslabel [0..1]  > 
+
+
+
+skos_ConceptScheme : alternatief label : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : historische notitie : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : notation : <i>xsd:string</i> [0..*]
+skos_ConceptScheme : note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : redactionele notitie : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : scope notitie : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : verborgen label : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : voorbeeld : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : voorkeurslabel : <i>rdf:langString</i> [1..*]
+skos_ConceptScheme : wijzigingsnotitie : <i>rdf:langString</i> [0..*]
+
+skos_ConceptScheme --> skos_Concept :heeft top concept [0..*]  > 
+
+
+skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
+
+skos_OrderedCollection : alternatief label : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : definitie : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : historische notitie : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : notation : <i>xsd:string</i> [0..*]
+skos_OrderedCollection : note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : redactionele notitie : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : scope notitie : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : verborgen label : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : voorbeeld : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : voorkeurslabel : <i>rdf:langString</i> [1..*]
+skos_OrderedCollection : wijzigingsnotitie : <i>rdf:langString</i> [0..*]
+
+
+
+
+skosxl_Label : letterlijke vorm : <i>rdf:langString</i> [1..1]
+
+
+
+rdf_List --> skos_Collection :None [0..*]  > 
+rdf_List --> skos_Concept :None [0..*]  > 
+
+
+skos_Collection : alternatief label : <i>rdf:langString</i> [0..*]
+skos_Collection : definitie : <i>rdf:langString</i> [0..*]
+skos_Collection : historische notitie : <i>rdf:langString</i> [0..*]
+skos_Collection : notation : <i>xsd:string</i> [0..*]
+skos_Collection : note : <i>rdf:langString</i> [0..*]
+skos_Collection : redactionele notitie : <i>rdf:langString</i> [0..*]
+skos_Collection : scope notitie : <i>rdf:langString</i> [0..*]
+skos_Collection : verborgen label : <i>rdf:langString</i> [0..*]
+skos_Collection : voorbeeld : <i>rdf:langString</i> [0..*]
+skos_Collection : voorkeurslabel : <i>rdf:langString</i> [1..*]
+skos_Collection : wijzigingsnotitie : <i>rdf:langString</i> [0..*]
+
+skos_Collection --> skos_Collection :lid [0..*]  > 
+skos_Collection --> skos_Concept :lid [0..*]  > 
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
