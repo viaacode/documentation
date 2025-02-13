@@ -1,0 +1,167 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Adresse postale</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+class "<b>Consomatteur de services</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Fournisseur de services</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Partenaire de digitalisation</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
+class "<b>Fournisseur de services</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Partenaire de projet</b> (haOrg:ProjectPartner)" as haOrg_ProjectPartner [[#haOrg%3AProjectPartner]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Partenaire éducatif</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Pays</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
+class "<b>Personne</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Poste</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Rôle</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Site</b> (org:Site)" as org_Site [[#org%3ASite]]
+class "<b>Type de organisation</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Unité opérationnelle</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+
+schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
+
+schema_PostalAddress : l'adresse : <i>xsd:string</i> [0..1]
+schema_PostalAddress : le code postal : <i>xsd:string</i> [0..1]
+schema_PostalAddress : le numéro de boîte postale : <i>xsd:string</i> [0..1]
+schema_PostalAddress : pays : <i>xsd:string</i> [0..1]
+schema_PostalAddress : provincie : <i>xsd:string</i> [0..1]
+schema_PostalAddress : ville : <i>xsd:string</i> [0..1]
+schema_PostalAddress --> schema_Country :pays [0..1]  > 
+
+
+
+
+haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ServiceConsumer : possède un identifiant : <i>xsd:string</i> [1..1]
+
+
+haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ServiceProvider : possède un identifiant : <i>xsd:string</i> [1..1]
+
+
+
+
+
+org_Organization : description : <i>rdf:langString</i> [0..*]
+org_Organization : label alternatif : <i>rdf:langString</i> [0..*]
+org_Organization : label préféré : <i>rdf:langString</i> [1..*]
+org_Organization : nom du locataire : <i>xsd:string</i> [0..*]
+org_Organization : page d'accueil : <i>IRI</i> [0..1]
+org_Organization : possède un identifiant : <i>xsd:string</i> [1..1]
+org_Organization : secteur : <i>xsd:string</i> [0..1]
+
+org_Organization --> haOrg_Logo :logo [0..*]  \llogo principal [0..1]  > 
+org_Organization --> haOrg_OrganizationType :classification [0..*]  > 
+org_Organization --> org_OrganizationalUnit :possède une Unité [0..*]  > 
+org_Organization --> org_Post :possède un poste [0..*]  > 
+org_Organization --> org_Site :a un site [0..*]  \la un site principal [0..1]  > 
+
+org_Organization --> schema_ContactPoint :point de contact [0..*]  > 
+org_Organization --> schema_Person :a gestionnaire de comptes [0..1]  > 
+
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ContentPartner : formulaire de demande : <i>xsd:string</i> [0..*]
+haOrg_ContentPartner : possède un identifiant : <i>xsd:string</i> [1..1]
+haOrg_ContentPartner --> schema_Person :a gestionnaire de comptes [1..1]  > 
+haOrg_ContentPartner --> skos_Concept :préfère [0..*]  > 
+
+
+haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
+
+haOrg_DigitizationPartner : possède un identifiant : <i>xsd:string</i> [1..1]
+
+
+haOrg_ProjectPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ProjectPartner : possède un identifiant : <i>xsd:string</i> [1..1]
+
+
+haOrg_EducationalPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_EducationalPartner : possède un identifiant : <i>xsd:string</i> [1..1]
+haOrg_EducationalPartner --> schema_Person :a gestionnaire de comptes [1..1]  > 
+
+
+
+schema_Country : nom : <i>xsd:string</i> [1..1]
+
+
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Person : Lieu de naissance : <i>xsd:string</i> [0..1]
+schema_Person : date de décès : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : date de naissance : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : email : <i>xsd:string</i> [0..*]
+schema_Person : nom : <i>rdf:langString</i> [1..*]
+schema_Person : nom de famille : <i>xsd:string</i> [1..1]
+schema_Person : place de décès : <i>xsd:string</i> [0..1]
+schema_Person : prénom : <i>xsd:string</i> [1..1]
+schema_Person : téléphone : <i>xsd:string</i> [0..*]
+
+schema_Person --> org_Organization :est le Gestionnaire de Comptes de [0..*]  > 
+schema_Person --> org_Post :occupe [0..*]  > 
+
+
+
+
+schema_ContactPoint : e-mail : <i>xsd:string</i> [0..*]
+schema_ContactPoint : numéro de téléphone : <i>xsd:string</i> [0..*]
+schema_ContactPoint : type de contact : <i>xsd:string</i> [1..1]
+
+
+
+org_Post --> org_Organization :poste chez [1..*]  > 
+org_Post --> org_Role :rôle [1..*]  > 
+
+org_Role --|> skos_Concept #blue;line.dotted;text:blue
+
+org_Role : label préféré : <i>rdf:langString</i> [1..*]
+
+
+
+org_Site --> org_Organization :site de [1..*]  > 
+org_Site --> schema_PostalAddress :adresse du Site [0..1]  > 
+
+haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
+
+
+org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
+
+org_OrganizationalUnit --> org_Organization :unité de [1..*]  > 
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
