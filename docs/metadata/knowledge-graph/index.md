@@ -33,7 +33,7 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
     <div class="wrap">
         <div class="zoom">
             <!--<a href="0.0.1/all/nl/all-diagram.svg" target="_blank" rel="noopener noreferrer"> -->
-                <object id="svg-object" data="0.0.1/all/nl/all-diagram.svg" type="image/svg+xml"></object>
+                <object id="svg-object" data="1.0.0/all/nl/all-diagram.svg" type="image/svg+xml"></object>
             <!--</a>-->
         </div>
     </div>
@@ -43,11 +43,11 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 
 |Naam|Documentatie (NL)|Documentation (EN)|
 |----|:-----------------------------:|:-------------------------:|
-| **Objectstructuur (kernmodel)** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/objects/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/objects/en/index.md %}) |
-| **Organisaties** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organizations/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organizations/en/index.md %}) |
-| **Descriptie** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/description/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/description/en/index.md %}) |
-| **Data herkomst** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/events/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/events/en/index.md %}) |
-| **Termenlijsten** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/terms/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/terms/en/index.md %}) |
+| **Objectstructuur (kernmodel)** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/objects/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/objects/en/index.md %}) |
+| **Organisaties** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/organizations/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/organizations/en/index.md %}) |
+| **Descriptie** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/description/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/description/en/index.md %}) |
+| **Data herkomst** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/events/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/events/en/index.md %}) |
+| **Termenlijsten** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/terms/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/terms/en/index.md %}) |
 
 ## Termenlijsten
 
@@ -56,9 +56,9 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 | **Onderwijs: onderwijsstructuur** | [1.0.0](https://w3id.org/onderwijs-vlaanderen/id/structuur/) | _Nog niet beschikbaar_ |
 | **Onderwijs: vakken** | [1.0.0](https://w3id.org/onderwijs-vlaanderen/id/vak/) | _Nog niet beschikbaar_ |
 | **Onderwijs: themas** | _Nog niet beschikbaar_ | _Nog niet beschikbaar_ |
-| **Organisatie: types** | _Nog niet beschikbaar_ | _Nog niet beschikbaar_ |
-| **Organisatie: functies** | _Nog niet beschikbaar_ | _Nog niet beschikbaar_ |
-| **Data herkomst: gebeurtenistypes** | _Nog niet beschikbaar_ | _Nog niet beschikbaar_ |
+| **Organisatie: types** | [0.0.1](https://termen.meemoo.be/conceptschemes/3) | [0.0.1](https://termen.meemoo.be/conceptschemes/3) |
+| **Organisatie: functies** | [0.0.1](https://termen.meemoo.be/conceptschemes/5) | [0.0.1](https://termen.meemoo.be/conceptschemes/5) |
+| **Data herkomst: gebeurtenistypes** | [0.0.1](https://termen.meemoo.be/conceptschemes/6) | [0.0.1](https://termen.meemoo.be/conceptschemes/6) |
 
 <style>
 #svg-object {

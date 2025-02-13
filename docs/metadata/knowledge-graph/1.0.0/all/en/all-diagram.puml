@@ -1,0 +1,726 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Fragment</b> (mh:Fragment)" as mh_Fragment [[#mh%3AFragment]]
+class "<b>Record</b> (mh:Record)" as mh_Record [[#mh%3ARecord]]
+class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
+class "<b>Newspaper</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
+class "<b>Brand</b> (schema:Brand)" as schema_Brand [[#schema%3ABrand]]
+class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Archive component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Audio</b> (haDes:Audio)" as haDes_Audio [[#haDes%3AAudio]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Audio reel</b> (haDes:AudioReel)" as haDes_AudioReel [[#haDes%3AAudioReel]]
+class "<b>Carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Closed caption</b> (ebucore:ClosedCaptions)" as ebucore_ClosedCaptions [[#ebucore%3AClosedCaptions]]
+class "<b>Captioning</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
+class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Concept scheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
+class "<b>Contact point</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Country</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
+class "<b>Creative work series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>DVD</b> (haDes:DVD)" as haDes_DVD [[#haDes%3ADVD]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>DVD chapter</b> (haDes:DVDChapter)" as haDes_DVDChapter [[#haDes%3ADVDChapter]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Digitization partner</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
+class "<b>Service provider</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Educational partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Event</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
+class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>File</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>File format</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
+class "<b>Fragment representation</b> (haObj:FragmentRepresentation)" as haObj_FragmentRepresentation [[#haObj%3AFragmentRepresentation]]
+class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
+class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
+class "<b>Image</b> (haDes:Image)" as haDes_Image [[#haDes%3AImage]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Image reel</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageReel]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
+class "<b>List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>Local identifier</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Newspaper edition</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Newspaper issue page</b> (haDes:NewspaperIssuePage)" as haDes_NewspaperIssuePage [[#haDes%3ANewspaperIssuePage]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Entity</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>Open captions</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
+class "<b>Captioning</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
+class "<b>Open captions</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
+class "<b>Captioning</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
+class "<b>Ordered collection</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organization type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>OrganizationalUnit</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Outcome status</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Physical carrier</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Post</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Postal address</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Contact point</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Project partner</b> (haOrg:ProjectPartner)" as haOrg_ProjectPartner [[#haOrg%3AProjectPartner]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Role</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Service consumer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Service provider</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Silent film</b> (haDes:SilentFilm)" as haDes_SilentFilm [[#haDes%3ASilentFilm]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Site</b> (org:Site)" as org_Site [[#org%3ASite]]
+class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
+class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
+class "<b>Sound film</b> (haDes:SoundFilm)" as haDes_SoundFilm [[#haDes%3ASoundFilm]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
+class "<b>Text Annotation</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
+class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Video</b> (haDes:Video)" as haDes_Video [[#haDes%3AVideo]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+
+
+mh_Fragment : date created : <i>xsd:dateTime</i> [1..1]
+mh_Fragment : date deleted : <i>xsd:dateTime</i> [0..1]
+mh_Fragment : date modified : <i>xsd:dateTime</i> [1..1]
+mh_Fragment : has fragment identifier : <i>xsd:string</i> [1..1]
+mh_Fragment --> mh_Record :has record [1..1]  > 
+
+
+
+
+mh_Record : has record identifier : <i>xsd:string</i> [1..1]
+
+
+
+ebucore_MediaFragment : end time : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment : height : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : region delimiter (x-axis) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : region delimiter (y-axis) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : start time : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment : width : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment --> premis_File :is Media Fragment Of [0..*]  > 
+
+
+
+
+schema_Newspaper : abraham identifier : <i>xsd:string</i> [1..1]
+schema_Newspaper : alternate name : <i>rdf:langString</i> [0..*]
+schema_Newspaper : end date : <i>xsd:dateTime</i> [0..1]
+schema_Newspaper : name : <i>rdf:langString</i> [1..1]
+schema_Newspaper : start date : <i>xsd:dateTime</i> [0..1]
+
+schema_Newspaper --> schema_Newspaper :preceded by [0..1]  \lsucceeded by [0..1]  \lsupplement [0..1]  \lsupplement to [0..1]  > 
+schema_Newspaper --> schema_Place :page number [0..1]  > 
+schema_Newspaper --> schema_Role :publisher [0..1]  > 
+
+
+
+
+schema_Brand : name : <i>rdf:langString</i> [1..1]
+
+
+
+prov_Activity : has end date : <i>xsd:dateTime</i> [1..1]
+prov_Activity : has generated : <i>IRI</i> [0..1]
+prov_Activity : has start date : <i>xsd:dateTime</i> [1..1]
+
+prov_Activity --> org_Organization :was associated with [1..1]  > 
+prov_Activity --> premis_HardwareAgent :was associated with [1..1]  > 
+prov_Activity --> premis_SoftwareAgent :was associated with [1..1]  > 
+prov_Activity --> schema_Person :was associated with [1..1]  > 
+
+
+
+ebucore_Annotation : annotation  person subject : <i>IRI</i> [0..1]
+ebucore_Annotation : annotation confidence : <i>xsd:integer</i> [1..1]
+ebucore_Annotation : annotation subject : <i>IRI</i> [1..1]
+
+ebucore_Annotation --> ebucore_MediaFragment :annotates [1..*]  > 
+ebucore_Annotation --> premis_File :annotation target [1..1]  > 
+ebucore_Annotation --> skos_Concept :annotation type [0..1]  > 
+
+
+schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_ArchiveComponent : description : <i>rdf:langString</i> [0..*]
+schema_ArchiveComponent : name : <i>rdf:langString</i> [1..*]
+schema_ArchiveComponent --> premis_IntellectualEntity :has part [0..*]  > 
+
+schema_ArchiveComponent --> schema_ArchiveComponent :has part [0..*]  \lis part of [0..*]  > 
+
+haDes_Audio --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
+
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation : lost audio reels : <i>xsd:boolean</i> [0..1]
+haObj_CarrierRepresentation : lost image reels : <i>xsd:boolean</i> [0..1]
+haObj_CarrierRepresentation : number of audio channels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of audio tracks : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of lost audio reels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of lost image reels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of reels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation --> haDes_AudioReel :stored at [1..*]  > 
+haObj_CarrierRepresentation --> haDes_ImageReel :stored at [1..*]  > 
+haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stored at [1..1]  > 
+haObj_CarrierRepresentation --> premis_IntellectualEntity :is carrier copy of [0..1]  > 
+
+
+
+ebucore_ClosedCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : collection size : <i>xsd:integer</i> [0..*]
+schema_Collection : description : <i>rdf:langString</i> [0..*]
+schema_Collection : identifier : <i>xsd:string</i> [0..1]
+schema_Collection : name : <i>rdf:langString</i> [1..*]
+schema_Collection --> haObj_PhysicalCarrier :has part [0..*]  > 
+schema_Collection --> premis_IntellectualEntity :has part [0..*]  > 
+
+
+
+
+
+skos_Collection : alternative label : <i>rdf:langString</i> [0..*]
+skos_Collection : change note : <i>rdf:langString</i> [0..*]
+skos_Collection : definition : <i>rdf:langString</i> [0..*]
+skos_Collection : editorial note : <i>rdf:langString</i> [0..*]
+skos_Collection : example : <i>rdf:langString</i> [0..*]
+skos_Collection : hidden label : <i>rdf:langString</i> [0..*]
+skos_Collection : history note : <i>rdf:langString</i> [0..*]
+skos_Collection : notation : <i>xsd:string</i> [0..*]
+skos_Collection : note : <i>rdf:langString</i> [0..*]
+skos_Collection : preferred label : <i>rdf:langString</i> [1..*]
+skos_Collection : scope note : <i>rdf:langString</i> [0..*]
+
+skos_Collection --> skos_Collection :member [0..*]  > 
+skos_Collection --> skos_Concept :member [0..*]  > 
+
+
+
+skos_Concept : alternative label : <i>rdf:langString</i> [0..*]
+skos_Concept : change note : <i>rdf:langString</i> [0..*]
+skos_Concept : definition : <i>rdf:langString</i> [1..*]
+skos_Concept : editorial note : <i>rdf:langString</i> [0..*]
+skos_Concept : example : <i>rdf:langString</i> [0..*]
+skos_Concept : hidden label : <i>rdf:langString</i> [0..*]
+skos_Concept : history note : <i>rdf:langString</i> [0..*]
+skos_Concept : notation : <i>xsd:string</i> [0..*]
+skos_Concept : note : <i>rdf:langString</i> [0..*]
+skos_Concept : preferred label : <i>rdf:langString</i> [1..*]
+skos_Concept : scope note : <i>rdf:langString</i> [0..*]
+
+skos_Concept --> skos_Concept :broad match [0..*]  \lbroader [0..*]  \lbroader transitive [0..*]  \lclose match [0..*]  \lexact match [0..*]  \lhas higher priority than [0..*]  \lhas lower priority than [0..*]  \lmapping relation [0..*]  \lnarrow match [0..*]  \lnarrower [0..*]  \lnarrower transitive [0..*]  \lrelated [0..*]  \lrelated match [0..*]  \lsemantic relation [0..*]  > 
+skos_Concept --> skos_ConceptScheme :in scheme [1..*]  \ltop concept of [0..*]  > 
+skos_Concept --> skosxl_Label :pref label [0..1]  > 
+
+
+
+skos_ConceptScheme : alternative label : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : change note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : editorial note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : example : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : hidden label : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : history note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : notation : <i>xsd:string</i> [0..*]
+skos_ConceptScheme : note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : preferred label : <i>rdf:langString</i> [1..*]
+skos_ConceptScheme : scope note : <i>rdf:langString</i> [0..*]
+
+skos_ConceptScheme --> skos_Concept :has top concept [0..*]  > 
+
+
+
+schema_ContactPoint : contact type : <i>xsd:string</i> [1..1]
+schema_ContactPoint : email : <i>xsd:string</i> [0..*]
+schema_ContactPoint : telephone : <i>xsd:string</i> [0..*]
+
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ContentPartner : has identifier : <i>xsd:string</i> [1..1]
+haOrg_ContentPartner : request form : <i>xsd:string</i> [0..*]
+haOrg_ContentPartner --> schema_Person :has account manager [1..1]  > 
+haOrg_ContentPartner --> skos_Concept :has preference [0..*]  > 
+
+
+
+schema_Country : name : <i>xsd:string</i> [1..1]
+
+
+schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_CreativeWorkSeries : description : <i>rdf:langString</i> [0..*]
+schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [0..1]
+schema_CreativeWorkSeries : name : <i>rdf:langString</i> [1..*]
+schema_CreativeWorkSeries : season number : <i>xsd:integer</i> [0..*]
+schema_CreativeWorkSeries --> premis_IntellectualEntity :has part [0..*]  > 
+
+schema_CreativeWorkSeries --> schema_CreativeWorkSeries :has part [0..*]  \lis part of [0..*]  > 
+
+
+
+haDes_DVD --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_DVD --> haDes_DVDChapter :has part [0..*]  > 
+
+haDes_DVDChapter --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_DVDChapter : DVD chapter number : <i>xsd:nonNegativeInteger</i> [1..1]
+haDes_DVDChapter --> haDes_DVD :is part of [1..1]  > 
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation : caption : <i>xsd:string</i> [0..1]
+haObj_DigitalRepresentation : in language : <i>xsd:string</i> [0..*]
+haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
+haObj_DigitalRepresentation --> haObj_DigitalRepresentation :next digital representation in sequence [0..1]  > 
+haObj_DigitalRepresentation --> premis_File :has Root [1..*]  \lincludes [1..*]  > 
+haObj_DigitalRepresentation --> premis_IntellectualEntity :is Access Copy Of [0..1]  \lis IIIF copy of [0..1]  \lis Master Of [0..1]  \lis Mezzanine Of [0..1]  \lis transcription copy of [0..1]  > 
+haObj_DigitalRepresentation --> premis_Representation :has Source [0..*]  > 
+haObj_DigitalRepresentation --> schema_Role :creator [0..*]  > 
+
+
+haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
+
+haOrg_DigitizationPartner : has identifier : <i>xsd:string</i> [1..1]
+
+
+haOrg_EducationalPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_EducationalPartner : has identifier : <i>xsd:string</i> [1..1]
+haOrg_EducationalPartner --> schema_Person :has account manager [1..1]  > 
+
+
+schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Episode : description : <i>rdf:langString</i> [0..*]
+schema_Episode : identifier : <i>xsd:string</i> [1..1]
+schema_Episode : name : <i>rdf:langString</i> [1..*]
+schema_Episode --> premis_IntellectualEntity :has part [0..*]  > 
+
+
+
+premis_Event --|> prov_Activity #blue;line.dotted;text:blue
+
+premis_Event : has note : <i>xsd:string</i> [0..1]
+premis_Event : has outcome note : <i>xsd:string</i> [0..1]
+premis_Event --> org_Organization :implemented by [1..1]  > 
+premis_Event --> premis_HardwareAgent :instrument [0..*]  > 
+premis_Event --> premis_Object :has source [0..*]  \lresult [0..*]  > 
+premis_Event --> premis_OutcomeStatus :has outcome [0..1]  > 
+premis_Event --> premis_SoftwareAgent :executed by [0..1]  > 
+
+
+premis_File --|> premis_Object #blue;line.dotted;text:blue
+
+premis_File : date created : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
+premis_File : description : <i>rdf:langString</i> [0..*]
+premis_File : duration : <i>xsd:duration</i> [0..1]
+premis_File : has original name : <i>xsd:string</i> [0..1]
+premis_File : has size : <i>xsd:nonNegativeInteger</i> [1..1]
+premis_File : identifier : <i>xsd:string</i> [0..1]
+premis_File : mime type : <i>xsd:string</i> [1..1]
+premis_File : name : <i>rdf:langString</i> [1..*]
+premis_File : thumbnail : <i>IRI</i> [0..1]
+
+premis_File --> dct_FileFormat :format [0..1]  > 
+premis_File --> ebucore_MediaFragment :has media fragment [0..*]  > 
+
+
+
+premis_File --> haObj_DigitalRepresentation :is Included In [0..*]  > 
+premis_File --> haObj_FragmentRepresentation :has media fragment [0..*]  > 
+premis_File --> mh_Fragment :was derived from [1..1]  > 
+premis_File --> premis_File :documents [0..*]  \lnext file in sequence [0..1]  \lsupersedes [0..*]  > 
+premis_File --> premis_Fixity :fixity [0..1]  > 
+premis_File --> premis_StorageLocation :stored at [1..1]  > 
+
+premis_File --> schema_QuantitativeValue :height [0..1]  \lwidth [0..1]  > 
+
+
+
+
+
+
+haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_Film --> haObj_CarrierRepresentation :has carrier copy [1..1]  > 
+
+
+premis_Fixity : checksum creator : <i>xsd:string</i> [0..*]
+premis_Fixity : fixity checksum : <i>xsd:string</i> [1..1]
+
+
+haObj_FragmentRepresentation --|> haObj_DigitalRepresentation #blue;line.dotted;text:blue
+
+haObj_FragmentRepresentation : duration : <i>xsd:duration</i> [0..1]
+haObj_FragmentRepresentation : endTime : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation : startTime : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation --> premis_File :is Media Fragment Of [1..1]  > 
+haObj_FragmentRepresentation --> premis_IntellectualEntity :is fragment of [0..1]  > 
+
+
+
+premis_HardwareAgent --|> premis_Agent #blue;line.dotted;text:blue
+
+premis_HardwareAgent : model : <i>xsd:string</i> [0..1]
+premis_HardwareAgent : name : <i>rdf:langString</i> [1..1]
+premis_HardwareAgent : serialNumber : <i>xsd:string</i> [0..1]
+premis_HardwareAgent : version : <i>xsd:string</i> [0..1]
+
+premis_HardwareAgent --> schema_Brand :brand [0..1]  > 
+
+
+haDes_Image --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
+
+haDes_ImageReel --> ebucore_OpenCaptions :has (embedded) captioning [0..*]  > 
+haDes_ImageReel --> skos_Concept :coloring type [0..1]  > 
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+premis_IntellectualEntity : about : <i>IRI</i> [0..*]
+premis_IntellectualEntity : abstract : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : alternate name : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : art medium : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : artform : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : castmembers : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : copyright notice : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : copyright year : <i>xsd:integer</i> [0..*]
+premis_IntellectualEntity : credit text : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : date available : <i>xsd:dateTime</i> [0..*]
+premis_IntellectualEntity : date created : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
+premis_IntellectualEntity : date published : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
+premis_IntellectualEntity : description : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : format : <i>xsd:string</i> [1..1]
+premis_IntellectualEntity : genre : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
+premis_IntellectualEntity : in language : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : keywords : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : name : <i>rdf:langString</i> [1..*]
+premis_IntellectualEntity : object type : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : rights information : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : synopsis : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : temporal : <i>rdf:langString</i> [0..*]
+
+
+
+
+premis_IntellectualEntity --> haObj_CarrierRepresentation :has carrier copy [0..1]  > 
+premis_IntellectualEntity --> haObj_DigitalRepresentation :has Access Copy [0..*]  \lhas IIIF Copy [0..*]  \lhas Master [0..*]  \lhas Mezzanine [0..*]  \lhas transcription copy [0..*]  > 
+premis_IntellectualEntity --> haObj_FragmentRepresentation :has fragment [0..*]  > 
+premis_IntellectualEntity --> haObj_LocalIdentifier :has primary identifier [0..*]  \llocal identifier [0..*]  > 
+premis_IntellectualEntity --> haOrg_ContentPartner :maintainer [1..1]  > 
+premis_IntellectualEntity --> mh_Fragment :was derived from [1..1]  > 
+premis_IntellectualEntity --> org_Organization :copyright holder [0..*]  > 
+premis_IntellectualEntity --> premis_IntellectualEntity :has Part [0..*]  \lis Part Of [0..*]  \lnext intellectual entity in sequence [0..1]  > 
+premis_IntellectualEntity --> premis_Representation :is Represented By [1..*]  > 
+
+premis_IntellectualEntity --> schema_ArchiveComponent :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_Collection :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_CreativeWorkSeries :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_Episode :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_Person :copyright holder [0..*]  > 
+premis_IntellectualEntity --> schema_Place :spatial [0..*]  > 
+premis_IntellectualEntity --> schema_QuantitativeValue :depth [0..1]  \lheight [0..1]  \lwidth [0..1]  > 
+premis_IntellectualEntity --> schema_Role :contributor [0..*]  \lcreator [0..*]  \lpublisher [0..*]  > 
+premis_IntellectualEntity --> schema_Thing :copyright holder [0..*]  \lmentions [0..*]  > 
+premis_IntellectualEntity --> skos_Concept :license [0..*]  > 
+
+
+
+
+
+skosxl_Label : literal form : <i>rdf:langString</i> [1..1]
+
+
+
+rdf_List --> skos_Collection :None [0..*]  > 
+rdf_List --> skos_Concept :None [0..*]  > 
+
+haObj_LocalIdentifier --|> skos_Concept #blue;line.dotted;text:blue
+
+haObj_LocalIdentifier : value : <i>xsd:string</i> [1..1]
+
+
+
+
+haDes_NewspaperIssue --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_NewspaperIssue : issue number : <i>xsd:string</i> [0..1]
+haDes_NewspaperIssue : number of pages : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssue --> schema_Newspaper :is part of [0..1]  > 
+haDes_NewspaperIssue --> skos_Concept :frequency of issuance [0..1]  \lproduction method [0..1]  \lpublication type [0..1]  > 
+
+
+
+haDes_NewspaperIssuePage --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_NewspaperIssuePage : page number : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssuePage --> haDes_NewspaperIssue :is part of [1..1]  > 
+
+
+premis_Object --|> prov_Entity #blue;line.dotted;text:blue
+
+premis_Object --> premis_Event :was generated by [0..1]  > 
+premis_Object --> premis_Object :relationship [0..*]  > 
+
+ebucore_OpenCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
+
+ebucore_OpenCaptions : in language : <i>xsd:string</i> [0..*]
+
+
+ebucore_OpenCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
+
+ebucore_OpenCaptions : in language : <i>xsd:string</i> [0..*]
+
+
+skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
+
+skos_OrderedCollection : alternative label : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : change note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : definition : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : editorial note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : example : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : hidden label : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : history note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : notation : <i>xsd:string</i> [0..*]
+skos_OrderedCollection : note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : preferred label : <i>rdf:langString</i> [1..*]
+skos_OrderedCollection : scope note : <i>rdf:langString</i> [0..*]
+
+
+
+
+org_Organization : alternative label : <i>rdf:langString</i> [0..*]
+org_Organization : description : <i>rdf:langString</i> [0..*]
+org_Organization : has identifier : <i>xsd:string</i> [1..1]
+org_Organization : homepage : <i>IRI</i> [0..1]
+org_Organization : preferred label : <i>rdf:langString</i> [1..*]
+org_Organization : sector : <i>xsd:string</i> [0..1]
+org_Organization : tenant name : <i>xsd:string</i> [0..*]
+
+org_Organization --> haOrg_Logo :logo [0..*]  \lmain logo [0..1]  > 
+org_Organization --> haOrg_OrganizationType :classification [0..*]  > 
+org_Organization --> org_OrganizationalUnit :has Unit [0..*]  > 
+org_Organization --> org_Post :has post [0..*]  > 
+org_Organization --> org_Site :has primary site [0..1]  \lhas site [0..*]  > 
+
+org_Organization --> schema_ContactPoint :contact point [0..*]  > 
+org_Organization --> schema_Person :has account manager [0..1]  > 
+
+
+haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
+
+
+org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
+
+org_OrganizationalUnit --> org_Organization :unit of [1..*]  > 
+
+
+
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Person : birth date : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : birth place : <i>xsd:string</i> [0..1]
+schema_Person : death date : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : death place : <i>xsd:string</i> [0..1]
+schema_Person : email : <i>xsd:string</i> [0..*]
+schema_Person : family name : <i>xsd:string</i> [1..1]
+schema_Person : given name : <i>xsd:string</i> [1..1]
+schema_Person : name : <i>rdf:langString</i> [1..*]
+schema_Person : telephone : <i>xsd:string</i> [0..*]
+
+schema_Person --> org_Organization :is account manager of [0..*]  > 
+schema_Person --> org_Post :holds [0..*]  > 
+
+
+
+haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
+
+haObj_PhysicalCarrier : audio noise reduction : <i>xsd:string</i> [0..1]
+haObj_PhysicalCarrier : description : <i>rdf:langString</i> [0..*]
+haObj_PhysicalCarrier : identifier : <i>xsd:string</i> [1..1]
+haObj_PhysicalCarrier : material : <i>xsd:string</i> [0..1]
+haObj_PhysicalCarrier : material extent : <i>xsd:string</i> [0..1]
+haObj_PhysicalCarrier : name : <i>rdf:langString</i> [1..*]
+haObj_PhysicalCarrier --> premis_StorageMedium :storage medium [1..1]  > 
+
+haObj_PhysicalCarrier --> schema_Brand :brand [0..1]  > 
+haObj_PhysicalCarrier --> schema_QuantitativeValue :depth [0..1]  \lheight [0..1]  \lwidth [0..1]  > 
+haObj_PhysicalCarrier --> skos_Concept :audio recording speed [0..1]  \liec-60094 type [0..1]  \lpreservation problem [0..*]  > 
+
+
+schema_Place --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Place : description : <i>rdf:langString</i> [0..*]
+schema_Place : name : <i>rdf:langString</i> [1..*]
+
+schema_Place --> schema_Place :is contained in place [0..*]  > 
+
+
+org_Post --> org_Organization :post in [1..*]  > 
+org_Post --> org_Role :role [1..*]  > 
+
+schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
+
+schema_PostalAddress : address : <i>xsd:string</i> [0..1]
+schema_PostalAddress : country : <i>xsd:string</i> [0..1]
+schema_PostalAddress : locality : <i>xsd:string</i> [0..1]
+schema_PostalAddress : post office box number : <i>xsd:string</i> [0..1]
+schema_PostalAddress : postal code : <i>xsd:string</i> [0..1]
+schema_PostalAddress : region : <i>xsd:string</i> [0..1]
+schema_PostalAddress --> schema_Country :country [0..1]  > 
+
+
+haOrg_ProjectPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ProjectPartner : has identifier : <i>xsd:string</i> [1..1]
+
+
+schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_QuantitativeValue : unit code : <i>xsd:string</i> [1..1]
+schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..1]
+schema_QuantitativeValue : value : <i>xsd:float</i> [1..1]
+
+
+
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+premis_Representation : description : <i>rdf:langString</i> [0..*]
+premis_Representation : identifier : <i>xsd:string</i> [0..1]
+premis_Representation : name : <i>rdf:langString</i> [1..*]
+premis_Representation --> mh_Fragment :was derived from [1..1]  > 
+premis_Representation --> premis_IntellectualEntity :represents [1..1]  > 
+
+
+
+org_Role --|> skos_Concept #blue;line.dotted;text:blue
+
+org_Role : preferred label : <i>rdf:langString</i> [1..*]
+
+
+schema_Role --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Role : role name : <i>xsd:string</i> [1..1]
+schema_Role --> org_Organization :contributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> schema_Person :actor [0..1]  \lcontributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> schema_Thing :contributor [0..1]  \lcreator [0..1]  \lpublisher [0..1]  > 
+schema_Role --> skos_Concept :role name [1..1]  > 
+
+
+haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ServiceConsumer : has identifier : <i>xsd:string</i> [1..1]
+
+
+haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ServiceProvider : has identifier : <i>xsd:string</i> [1..1]
+
+
+haDes_SilentFilm --|> haDes_Film #blue;line.dotted;text:blue
+
+
+
+org_Site --> org_Organization :site of [1..*]  > 
+org_Site --> schema_PostalAddress :site Address [0..1]  > 
+
+premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
+
+premis_SoftwareAgent : model : <i>xsd:string</i> [0..1]
+premis_SoftwareAgent : name : <i>rdf:langString</i> [1..1]
+premis_SoftwareAgent : serialNumber : <i>xsd:string</i> [0..1]
+premis_SoftwareAgent : version : <i>xsd:string</i> [0..1]
+
+premis_SoftwareAgent --> schema_Brand :brand [0..1]  > 
+
+
+haDes_SoundFilm --|> haDes_Film #blue;line.dotted;text:blue
+
+
+
+premis_StorageLocation : file path : <i>xsd:string</i> [0..1]
+premis_StorageLocation --> premis_StorageMedium :storage medium [0..*]  > 
+
+
+
+
+ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
+
+
+
+schema_Thing : description : <i>rdf:langString</i> [0..*]
+schema_Thing : name : <i>rdf:langString</i> [1..*]
+
+
+haDes_Video --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
