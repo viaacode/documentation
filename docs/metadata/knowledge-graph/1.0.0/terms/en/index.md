@@ -12,7 +12,7 @@ Data model List of terms
 
 **Version:** 1.0.0
 
-**Previous version:** 
+**Previous version:** [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/terms/en/index.md %})
 
 **Created:** 2022-07-06
 

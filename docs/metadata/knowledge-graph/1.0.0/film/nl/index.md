@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Datamodel Film"
-parent: "Knowledge Graph"
+parent: "Datamodel Descriptie"
 nav_order: 1
 nav_exclude: True
 ---

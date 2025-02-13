@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Bibliographic data model"
-parent: "Knowledge Graph"
+parent: "Data model Description"
 nav_order: 1
 nav_exclude: False
 ---
@@ -12,7 +12,7 @@ Bibliographic data model
 
 **Version:** 1.0.0
 
-**Previous version:** 
+**Previous version:** [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/bibliographic/en/index.md %}) 
 
 **Created:** 2023-11-13
 
