@@ -1,0 +1,104 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Concept scheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
+class "<b>Label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
+class "<b>List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>Ordered collection</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+
+
+skos_Collection : alternative label : <i>rdf:langString</i> [0..*]
+skos_Collection : change note : <i>rdf:langString</i> [0..*]
+skos_Collection : definition : <i>rdf:langString</i> [0..*]
+skos_Collection : editorial note : <i>rdf:langString</i> [0..*]
+skos_Collection : example : <i>rdf:langString</i> [0..*]
+skos_Collection : hidden label : <i>rdf:langString</i> [0..*]
+skos_Collection : history note : <i>rdf:langString</i> [0..*]
+skos_Collection : notation : <i>xsd:string</i> [0..*]
+skos_Collection : note : <i>rdf:langString</i> [0..*]
+skos_Collection : preferred label : <i>rdf:langString</i> [1..*]
+skos_Collection : scope note : <i>rdf:langString</i> [0..*]
+
+skos_Collection --> skos_Collection :member [0..*]  > 
+skos_Collection --> skos_Concept :member [0..*]  > 
+
+
+
+skos_Concept : alternative label : <i>rdf:langString</i> [0..*]
+skos_Concept : change note : <i>rdf:langString</i> [0..*]
+skos_Concept : definition : <i>rdf:langString</i> [1..*]
+skos_Concept : editorial note : <i>rdf:langString</i> [0..*]
+skos_Concept : example : <i>rdf:langString</i> [0..*]
+skos_Concept : hidden label : <i>rdf:langString</i> [0..*]
+skos_Concept : history note : <i>rdf:langString</i> [0..*]
+skos_Concept : notation : <i>xsd:string</i> [0..*]
+skos_Concept : note : <i>rdf:langString</i> [0..*]
+skos_Concept : preferred label : <i>rdf:langString</i> [1..*]
+skos_Concept : scope note : <i>rdf:langString</i> [0..*]
+
+skos_Concept --> skos_Concept :broad match [0..*]  \lbroader [0..*]  \lbroader transitive [0..*]  \lclose match [0..*]  \lexact match [0..*]  \lhas higher priority than [0..*]  \lhas lower priority than [0..*]  \lmapping relation [0..*]  \lnarrow match [0..*]  \lnarrower [0..*]  \lnarrower transitive [0..*]  \lrelated [0..*]  \lrelated match [0..*]  \lsemantic relation [0..*]  > 
+skos_Concept --> skos_ConceptScheme :in scheme [1..*]  \ltop concept of [0..*]  > 
+skos_Concept --> skosxl_Label :pref label [0..1]  > 
+
+
+
+skos_ConceptScheme : alternative label : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : change note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : editorial note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : example : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : hidden label : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : history note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : notation : <i>xsd:string</i> [0..*]
+skos_ConceptScheme : note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : preferred label : <i>rdf:langString</i> [1..*]
+skos_ConceptScheme : scope note : <i>rdf:langString</i> [0..*]
+
+skos_ConceptScheme --> skos_Concept :has top concept [0..*]  > 
+
+
+
+skosxl_Label : literal form : <i>rdf:langString</i> [1..1]
+
+
+
+rdf_List --> skos_Collection :None [0..*]  > 
+rdf_List --> skos_Concept :None [0..*]  > 
+
+skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
+
+skos_OrderedCollection : alternative label : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : change note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : definition : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : editorial note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : example : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : hidden label : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : history note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : notation : <i>xsd:string</i> [0..*]
+skos_OrderedCollection : note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : preferred label : <i>rdf:langString</i> [1..*]
+skos_OrderedCollection : scope note : <i>rdf:langString</i> [0..*]
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
