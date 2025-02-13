@@ -1,0 +1,167 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Digitaliseringspartner</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
+class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Land</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Positie</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Projectpartner</b> (haOrg:ProjectPartner)" as haOrg_ProjectPartner [[#haOrg%3AProjectPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Rol</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
+
+
+schema_ContactPoint : contacttype : <i>xsd:string</i> [1..1]
+schema_ContactPoint : e-mail : <i>xsd:string</i> [0..*]
+schema_ContactPoint : telefoonnummer : <i>xsd:string</i> [0..*]
+
+
+
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ContentPartner : aanvraagformulier : <i>xsd:string</i> [0..*]
+haOrg_ContentPartner : heeft een identificator : <i>xsd:string</i> [1..1]
+haOrg_ContentPartner --> schema_Person :heeft account manager [1..1]  > 
+haOrg_ContentPartner --> skos_Concept :verkiest [0..*]  > 
+
+
+haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ServiceConsumer : heeft een identificator : <i>xsd:string</i> [1..1]
+
+
+haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ServiceProvider : heeft een identificator : <i>xsd:string</i> [1..1]
+
+
+haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
+
+haOrg_DigitizationPartner : heeft een identificator : <i>xsd:string</i> [1..1]
+
+
+haOrg_EducationalPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_EducationalPartner : heeft een identificator : <i>xsd:string</i> [1..1]
+haOrg_EducationalPartner --> schema_Person :heeft account manager [1..1]  > 
+
+
+
+schema_Country : naam : <i>xsd:string</i> [1..1]
+
+
+
+
+
+org_Organization : alternatieve naam/label : <i>rdf:langString</i> [0..*]
+org_Organization : beschrijving : <i>rdf:langString</i> [0..*]
+org_Organization : heeft een identificator : <i>xsd:string</i> [1..1]
+org_Organization : homepagina : <i>IRI</i> [0..1]
+org_Organization : sector : <i>xsd:string</i> [0..1]
+org_Organization : tenant naam : <i>xsd:string</i> [0..*]
+org_Organization : voorkeursnaam/-label : <i>rdf:langString</i> [1..*]
+
+org_Organization --> haOrg_Logo :hoofdlogo [0..1]  \llogo [0..*]  > 
+org_Organization --> haOrg_OrganizationType :classificatie [0..*]  > 
+org_Organization --> org_OrganizationalUnit :heeft een eenheid [0..*]  > 
+org_Organization --> org_Post :heeft positie [0..*]  > 
+org_Organization --> org_Site :heeft primaire vestiging [0..1]  \lheeft vestiging [0..*]  > 
+
+org_Organization --> schema_ContactPoint :aanspreekpunt [0..*]  > 
+org_Organization --> schema_Person :heeft account manager [0..1]  > 
+
+
+org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
+
+org_OrganizationalUnit --> org_Organization :organisatie-eenheid van [1..*]  > 
+
+haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
+
+
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Person : email : <i>xsd:string</i> [0..*]
+schema_Person : familienaam : <i>xsd:string</i> [1..1]
+schema_Person : geboortedatum : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : geboorteplaats : <i>xsd:string</i> [0..1]
+schema_Person : naam : <i>rdf:langString</i> [1..*]
+schema_Person : sterfdatum : <i>edtf:EDTF-level1</i> [0..1]
+schema_Person : sterfplaats : <i>xsd:string</i> [0..1]
+schema_Person : telefoon : <i>xsd:string</i> [0..*]
+schema_Person : voornaam : <i>xsd:string</i> [1..1]
+
+schema_Person --> org_Organization :is account manager van [0..*]  > 
+schema_Person --> org_Post :heeft positie [0..*]  > 
+
+
+
+
+org_Post --> org_Organization :positie in [1..*]  > 
+org_Post --> org_Role :rol [1..*]  > 
+
+schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
+
+schema_PostalAddress : adres : <i>xsd:string</i> [0..1]
+schema_PostalAddress : gemeente : <i>xsd:string</i> [0..1]
+schema_PostalAddress : land : <i>xsd:string</i> [0..1]
+schema_PostalAddress : postbusnummer : <i>xsd:string</i> [0..1]
+schema_PostalAddress : postcode : <i>xsd:string</i> [0..1]
+schema_PostalAddress : provincie : <i>xsd:string</i> [0..1]
+schema_PostalAddress --> schema_Country :land [0..1]  > 
+
+
+haOrg_ProjectPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ProjectPartner : heeft een identificator : <i>xsd:string</i> [1..1]
+
+
+org_Role --|> skos_Concept #blue;line.dotted;text:blue
+
+org_Role : voorkeursnaam/-label : <i>rdf:langString</i> [1..*]
+
+
+
+org_Site --> org_Organization :vestiging van [1..*]  > 
+org_Site --> schema_PostalAddress :adres van de vestiging [0..1]  > 
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
