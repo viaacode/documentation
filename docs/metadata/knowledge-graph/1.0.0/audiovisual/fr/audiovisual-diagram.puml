@@ -1,0 +1,71 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Audio</b> (haDes:Audio)" as haDes_Audio [[#haDes%3AAudio]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Chapitre DVD</b> (haDes:DVDChapter)" as haDes_DVDChapter [[#haDes%3ADVDChapter]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+class "<b>DVD</b> (haDes:DVD)" as haDes_DVD [[#haDes%3ADVD]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Image</b> (haDes:Image)" as haDes_Image [[#haDes%3AImage]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Vidéo</b> (haDes:Video)" as haDes_Video [[#haDes%3AVideo]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+
+haDes_Audio --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
+haDes_DVDChapter --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_DVDChapter : Numéro de chapitre DVD : <i>xsd:nonNegativeInteger</i> [1..1]
+haDes_DVDChapter --> haDes_DVD :fait partie de [1..1]  > 
+
+
+
+
+haDes_DVD --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_DVD --> haDes_DVDChapter :a une partie [0..*]  > 
+
+haDes_Image --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
+haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
+
+haObj_PhysicalCarrier : réduction du bruit audio : <i>xsd:string</i> [0..1]
+haObj_PhysicalCarrier --> skos_Concept :iec-60094 type [0..1]  \lvitesse d'enregistrement audio [0..1]  > 
+
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation : nombre de canaux audio : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : nombre de pistes audio : <i>xsd:nonNegativeInteger</i> [0..1]
+
+
+haDes_Video --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
