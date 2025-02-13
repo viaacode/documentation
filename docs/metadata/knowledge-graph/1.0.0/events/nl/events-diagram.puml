@@ -1,0 +1,94 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Brand</b> (schema:Brand)" as schema_Brand [[#schema%3ABrand]]
+class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>Gebeurtenis</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
+class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
+class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Entiteit</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[../../organizations/nl#org%3AOrganization]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organizations/nl#schema%3APerson]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
+class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
+class "<b>Uitkomststatus</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
+
+
+schema_Brand : naam : <i>rdf:langString</i> [1..1]
+
+
+
+prov_Activity : heeft einddatum : <i>xsd:dateTime</i> [1..1]
+prov_Activity : heeft gegenereerd : <i>IRI</i> [0..1]
+prov_Activity : heeft startdatum : <i>xsd:dateTime</i> [1..1]
+
+prov_Activity --> org_Organization :is geassocieerd met [1..1]  > 
+prov_Activity --> premis_HardwareAgent :is geassocieerd met [1..1]  > 
+prov_Activity --> premis_SoftwareAgent :is geassocieerd met [1..1]  > 
+prov_Activity --> schema_Person :is geassocieerd met [1..1]  > 
+
+
+premis_Event --|> prov_Activity #blue;line.dotted;text:blue
+
+premis_Event : heeft opmerking : <i>xsd:string</i> [0..1]
+premis_Event : heeft uitkomstopmerking : <i>xsd:string</i> [0..1]
+premis_Event --> org_Organization :geimplementeerd door [1..1]  > 
+premis_Event --> premis_HardwareAgent :instrument [0..*]  > 
+premis_Event --> premis_Object :heeft bron [0..*]  \lresultaat [0..*]  > 
+premis_Event --> premis_OutcomeStatus :heeft uitkomst [0..1]  > 
+premis_Event --> premis_SoftwareAgent :uitgevoerd door [0..1]  > 
+
+
+premis_HardwareAgent --|> premis_Agent #blue;line.dotted;text:blue
+
+premis_HardwareAgent : model : <i>xsd:string</i> [0..1]
+premis_HardwareAgent : naam : <i>rdf:langString</i> [1..1]
+premis_HardwareAgent : serienummer : <i>xsd:string</i> [0..1]
+premis_HardwareAgent : versie : <i>xsd:string</i> [0..1]
+
+premis_HardwareAgent --> schema_Brand :merk [0..1]  > 
+
+
+premis_Object --|> prov_Entity #blue;line.dotted;text:blue
+
+premis_Object --> premis_Event :is gegenereerd door [0..1]  > 
+
+
+
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
+
+
+premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
+
+premis_SoftwareAgent : model : <i>xsd:string</i> [0..1]
+premis_SoftwareAgent : naam : <i>rdf:langString</i> [1..1]
+premis_SoftwareAgent : serienummer : <i>xsd:string</i> [0..1]
+premis_SoftwareAgent : versie : <i>xsd:string</i> [0..1]
+
+premis_SoftwareAgent --> schema_Brand :merk [0..1]  > 
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
