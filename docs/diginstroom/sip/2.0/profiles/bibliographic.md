@@ -259,6 +259,7 @@ root_directory
 |-----------------------|-----------|
 | Name | MODS subject element |
 | Description | This element contains information about the subject matter of the written work. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.0/2_terminology.md %}#string) |
 | Cardinality | 0..* |
 | Obligation | MAY |
 
@@ -360,6 +361,7 @@ root_directory
 |-----------------------|-----------|
 | Name | MODS publisher element |
 | Description | The publisher of the written work, e.g., when and where it was created or published  |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.0/2_terminology.md %}#string) |
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
