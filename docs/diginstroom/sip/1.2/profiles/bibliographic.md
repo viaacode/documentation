@@ -199,7 +199,7 @@ root_directory
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element | `mods:mods/mods:language/mods:languageTerm/@type` |
+| Element | `mods:mods/mods:language/mods:languageTerm[@type="text"]` |
 |-----------------------|-----------|
 | Name | MODS language element type attribute |
 | Description | This element contains the name of the language that the work is written in.  |
