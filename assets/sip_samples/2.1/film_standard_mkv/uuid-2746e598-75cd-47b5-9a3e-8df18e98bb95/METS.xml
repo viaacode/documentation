@@ -32,8 +32,8 @@
     <!-- ref to descriptive metadata about IE and carrier (representation) -->
     <dmdSec ID="uuid-afaf863f-b9b5-48b4-88aa-1c2754bbafee" CREATED="2023-11-16T00:00:00+02:00">
         <mdRef LOCTYPE="URL" MDTYPE="OTHER" xlink:type="simple"
-            xlink:href="metadata/descriptive/dc+schema.xml" MIMETYPE="text/xml" SIZE="1797"
-            CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="a233a7315fc488976f44a18a75bf3b5b"
+            xlink:href="metadata/descriptive/dc+schema.xml" MIMETYPE="text/xml" SIZE="1890"
+            CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="97225a8317502d52e0a8912c9461f11e"
             CHECKSUMTYPE="MD5" />
     </dmdSec>
 
@@ -41,8 +41,8 @@
     <amdSec>
         <digiprovMD ID="uuid-6738f93b-1beb-4ce6-a1a8-3b99fc5e4c52">
             <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple"
-                xlink:href="metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="31547"
-                CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="7014c0f10a291752d1fb5f5d5e4f0508"
+                xlink:href="metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="29795"
+                CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="e02b1effe66bdf51ee44d473970d728a"
                 CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
