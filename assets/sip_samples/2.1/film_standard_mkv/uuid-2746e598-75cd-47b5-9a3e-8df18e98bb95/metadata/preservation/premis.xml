@@ -103,10 +103,6 @@
     </premis:objectIdentifier>
 
     <premis:significantProperties>
-      <premis:significantPropertiesType>batch_name</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>FLMB20</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
       <premis:significantPropertiesType>batch_id</premis:significantPropertiesType>
       <premis:significantPropertiesValue>FLMB20</premis:significantPropertiesValue>
     </premis:significantProperties>
@@ -119,16 +115,8 @@
       <premis:significantPropertiesValue>Original positive</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>is_the_sound_sync</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
       <premis:significantPropertiesType>projection_speed</premis:significantPropertiesType>
       <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>is_there_a_sync_point</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
       <premis:significantPropertiesType>value_cp</premis:significantPropertiesType>
@@ -147,10 +135,6 @@
       <premis:significantPropertiesValue>1</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>projection_speed</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
       <premis:significantPropertiesType>preservation_problems</premis:significantPropertiesType>
       <premis:significantPropertiesValue>Base Scratching remarks: Light scratches, lines and
         stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</premis:significantPropertiesValue>
@@ -158,10 +142,6 @@
     <premis:significantProperties>
       <premis:significantPropertiesType>film_base</premis:significantPropertiesType>
       <premis:significantPropertiesValue>acetate</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>duration_viaa</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>0:32:48</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
       <premis:significantPropertiesType>subtitles</premis:significantPropertiesType>
@@ -222,21 +202,6 @@
     <premis:eventDateTime>
       2021-04-02T09:04:04
     </premis:eventDateTime>
-    <premis:eventDetailInformation>
-      <premis:eventDetail>Base Scratching remarks: Light scratches, lines and stripes. Some cables. vinegar date: 2021-06-30 pH value:PH 4.8</premis:eventDetail>
-      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
-        <schema:name>estimate_preparation_time_for_digitisation</schema:name>
-        <schema:value>1:30:00</schema:value>
-      </premis:eventDetailExtension>
-      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
-        <schema:name>estimate_manual_cleaning_time</schema:name>
-        <schema:value>0:00:00</schema:value>
-      </premis:eventDetailExtension>
-      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
-        <schema:name>physical_state_film</schema:name>
-        <schema:value>film in good state</schema:value>
-      </premis:eventDetailExtension>
-    </premis:eventDetailInformation>
 
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
@@ -300,11 +265,6 @@
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/inspection">inspection</premis:eventType>
     <premis:eventDateTime>2022-03-25T00:00:00</premis:eventDateTime>
-    <premis:eventDetailInformation>
-      <premis:eventDetail>
-            CEX / COLOR / MUTE
-      </premis:eventDetail>
-    </premis:eventDetailInformation>
 
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
@@ -348,11 +308,6 @@
     <premis:eventDetailInformation>
       <premis:eventDetail>
             Abrasion marks, many scratches, many inlaid dust/dirt, grain, slight instability, blur, under/overexposure related to camera capture.
-      </premis:eventDetail>
-    </premis:eventDetailInformation>
-    <premis:eventDetailInformation>
-      <premis:eventDetail>
-        digitisation_format: SD (720x576) 
       </premis:eventDetail>
     </premis:eventDetailInformation>
 
@@ -464,11 +419,6 @@
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/editing">editing</premis:eventType>
     <premis:eventDateTime>2022-04-28T00:00:00</premis:eventDateTime>
-    <premis:eventDetailInformation>
-      <premis:eventDetail>
-            Abrasion marks, scratches, inlaid dust/dirt, important grain, slight instability, under/overexposure related to camera capture, slight color fading/shift on some scenes.
-          </premis:eventDetail>
-    </premis:eventDetailInformation>
 
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
