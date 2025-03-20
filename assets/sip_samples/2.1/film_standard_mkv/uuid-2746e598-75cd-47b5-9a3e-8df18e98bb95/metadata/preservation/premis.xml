@@ -16,6 +16,11 @@
       <premis:objectIdentifierValue>2891#422</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>MEEMOO-PID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>kiodik2z9x</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
     <!-- relationship with the (abstract) carrier representation -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType"
@@ -101,65 +106,70 @@
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>uuid-eb2175c9-56f9-4e7e-9192-0a11a297c1e2</premis:objectIdentifierValue>
     </premis:objectIdentifier>
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>Batch ID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>FLMB20</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>Image reels' barcode</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>AFLM_FEL_001392</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
 
     <premis:significantProperties>
-      <premis:significantPropertiesType>batch_id</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>FLMB20</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>barcode_image_reels</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>AFLM_FEL_001392</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>material_type</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>Original positive</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>projection_speed</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Projection speed</premis:significantPropertiesType>
       <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>value_cp</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>3 somewhat interesting, LR digitisation</premis:significantPropertiesValue>
+      <premis:significantPropertiesType>CP evaluation</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>4 interesting, HR digitisation</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>image_sound</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Image/sound</premis:significantPropertiesType>
       <premis:significantPropertiesValue>image</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>aspect_ratio</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Aspect ratio</premis:significantPropertiesType>
       <premis:significantPropertiesValue>1:37</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>num_reels</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Number of reels</premis:significantPropertiesType>
       <premis:significantPropertiesValue>1</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>preservation_problems</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Preservation problems</premis:significantPropertiesType>
       <premis:significantPropertiesValue>Base Scratching remarks: Light scratches, lines and
         stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>film_base</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Film base</premis:significantPropertiesType>
       <premis:significantPropertiesValue>acetate</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>subtitles</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Subtitles present</premis:significantPropertiesType>
       <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>length</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>135 Meter</premis:significantPropertiesValue>
+      <premis:significantPropertiesType>Silent/spoken movie</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>Silent Movie</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>color_or_bw</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>Color</premis:significantPropertiesValue>
+      <premis:significantPropertiesType>Color/Black and white</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>B/W and Color</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesExtension xmlns:schema='https://schema.org'>
+        <schema:duration>0:04:55</schema:duration>
+        <schema:material>Original positive</schema:material>
+        <schema:size>
+          <schema:unitCode>MTR</schema:unitCode>
+          <schema:QuantitativeValue>135</schema:QuantitativeValue>
+        </schema:size>
+      </premis:significantPropertiesExtension>
+
     </premis:significantProperties>
 
     <premis:storage>
-      <premis:storageMedium>
-        super8mmfilm
-      </premis:storageMedium>
+      <premis:storageMedium>8mm</premis:storageMedium>
     </premis:storage>
 
     <!-- relationship between representation and its IE -->
@@ -182,7 +192,8 @@
       - registration (source: carrier representation)
       - check-out (source: carrier representation)
       - inspection (source: carrier representation)
-      - digitization (source: carrier representation; outcome: intermediate object representing DPXs or digitised sound)
+      - digitization (source: carrier representation; outcome: intermediate object representing DPXs or
+  digitised sound)
       - compression (source: intermediate object representing DPXs; outcome: archive master MKV)
       - editing (source: archive master MKV; outcome: MOV mezzanine)
       - transfer (source: archive master MVK)
@@ -268,6 +279,9 @@
 
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+      <premis:eventOutcomeDetail>
+        <premis:eventOutcomeDetailNote>CEX / COLOR / MUTE</premis:eventOutcomeDetailNote>
+      </premis:eventOutcomeDetail>
     </premis:eventOutcomeInformation>
 
     <!-- reference to the agent of the service provider -->
@@ -305,14 +319,12 @@
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/digitization">digitization</premis:eventType>
     <premis:eventDateTime>2022-04-26T00:00:00</premis:eventDateTime>
-    <premis:eventDetailInformation>
-      <premis:eventDetail>
-            Abrasion marks, many scratches, many inlaid dust/dirt, grain, slight instability, blur, under/overexposure related to camera capture.
-      </premis:eventDetail>
-    </premis:eventDetailInformation>
 
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+      <premis:eventOutcomeDetail>
+        <premis:eventOutcomeDetailNote>Abrasion marks, scratches, inlaid dust/dirt, important grain, apparent vignetting, slight instability, under/overexposure related to camera capture, slightly overscanned because of image between perfs or changing framing, dirty camera gate on some scenes</premis:eventOutcomeDetailNote>
+      </premis:eventOutcomeDetail>
     </premis:eventOutcomeInformation>
 
     <!-- reference to the agent of the service provider -->
@@ -392,14 +404,15 @@
     </premis:linkingAgentIdentifier>
 
     <!-- reference to the source of the event -->
-    <!-- reference to the intermediary premis:Representation object that contains the digitized DPXs and/or sound, created in digitization event above -->
+    <!-- reference to the intermediary premis:Representation object that contains the digitized DPXs
+    and/or sound, created in digitization event above -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
       <premis:linkingObjectIdentifierValue>uuid-93199782-ab90-4ec4-ae43-92eb708a151d</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>
-    
+
     <!-- reference to the output of the event -->
     <!-- reference to the master representation that contains the MKV -->
     <premis:linkingObjectIdentifier>
@@ -422,6 +435,9 @@
 
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+      <premis:eventOutcomeDetail>
+        <premis:eventOutcomeDetailNote>Abrasion marks, scratches, inlaid dust/dirt, important grain, slight instability, under/overexposure related to camera capture, slight color fading/shift on some scenes. MUTE . Speed 16 fps. MIX COLOR/BW.</premis:eventOutcomeDetailNote>
+      </premis:eventOutcomeDetail>
     </premis:eventOutcomeInformation>
 
     <!-- reference to the agent of the service provider -->
