@@ -14,11 +14,13 @@ The meemoo SIP specification is available in the following versions:
 
 ## Version [2.1]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/index.md %}) <span class="label label-yellow">Editor's Draft</span>
 
-This release adds support for digitised film via a dedicated Film content profile. This version is being drafted and is **not yet supported**.
+This release adds support for digitised film via a dedicated Film content profile.
+This version is being drafted and is **not yet supported**.
 
 ### What was **added** compared to the previous version?
 
-- The content profile Film.
+- The content profile Film;
+- The ISO 3166 data type for country codes, used in descriptive metadata such as `schema:countryOfOrigin`.
 
 ### What was **removed** compared to the previous version?
 
