@@ -107,53 +107,53 @@
       <premis:objectIdentifierValue>uuid-eb2175c9-56f9-4e7e-9192-0a11a297c1e2</premis:objectIdentifierValue>
     </premis:objectIdentifier>
     <premis:objectIdentifier>
-      <premis:objectIdentifierType>Batch ID</premis:objectIdentifierType>
+      <premis:objectIdentifierType>Batch-ID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>FLMB20</premis:objectIdentifierValue>
     </premis:objectIdentifier>
     <premis:objectIdentifier>
-      <premis:objectIdentifierType>Image reels' barcode</premis:objectIdentifierType>
+      <premis:objectIdentifierType>Barcode-image-reels</premis:objectIdentifierType>
       <premis:objectIdentifierValue>AFLM_FEL_001392</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
     <premis:significantProperties>
-      <premis:significantPropertiesType>Projection speed</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Projection-speed</premis:significantPropertiesType>
       <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>CP evaluation</premis:significantPropertiesType>
+      <premis:significantPropertiesType>CP-evaluation</premis:significantPropertiesType>
       <premis:significantPropertiesValue>4 interesting, HR digitisation</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>Image/sound</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Image-or-sound</premis:significantPropertiesType>
       <premis:significantPropertiesValue>image</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>Aspect ratio</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Aspect-ratio</premis:significantPropertiesType>
       <premis:significantPropertiesValue>1:37</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>Number of reels</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Number-of-reels</premis:significantPropertiesType>
       <premis:significantPropertiesValue>1</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>Preservation problems</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Preservation-problems</premis:significantPropertiesType>
       <premis:significantPropertiesValue>Base Scratching remarks: Light scratches, lines and
         stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>Film base</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Film-base</premis:significantPropertiesType>
       <premis:significantPropertiesValue>acetate</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>Subtitles present</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Subtitles-present</premis:significantPropertiesType>
       <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>Silent/spoken movie</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Silent-or-spoken-movie</premis:significantPropertiesType>
       <premis:significantPropertiesValue>Silent Movie</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesType>Color/Black and white</premis:significantPropertiesType>
+      <premis:significantPropertiesType>Color-or-Black-and-white</premis:significantPropertiesType>
       <premis:significantPropertiesValue>B/W and Color</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
@@ -169,7 +169,7 @@
     </premis:significantProperties>
 
     <premis:storage>
-      <premis:storageMedium>8mm</premis:storageMedium>
+      <premis:storageMedium>8mmfilm</premis:storageMedium>
     </premis:storage>
 
     <!-- relationship between representation and its IE -->
