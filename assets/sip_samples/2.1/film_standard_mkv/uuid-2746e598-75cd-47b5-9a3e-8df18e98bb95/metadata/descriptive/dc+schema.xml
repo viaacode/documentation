@@ -5,21 +5,25 @@
   xmlns:edtf="http://id.loc.gov/datatypes/edtf/" xmlns:schema="https://schema.org/">
 
   <!-- general title for the resource -->
-  <dcterms:title xml:lang="nl">Dummyfilmtitel</dcterms:title>
+  <dcterms:title xml:lang="nl">Katten in de tuin</dcterms:title>
+
+  <!-- alternative title for the resource -->
+  <dcterms:alternative xml:lang="nl">Ons katten in den hof</dcterms:alternative>
 
   <!-- general description for the resource -->
-  <dcterms:description xml:lang="nl">Een dummybeschrijving</dcterms:description>
+  <dcterms:description xml:lang="nl">Katten ravotten in de tuin</dcterms:description>
 
   <!-- linking id between dc and premis -->
   <dcterms:identifier>uuid-f9ef158c-f03c-4840-836e-8ffb8e8ebe04</dcterms:identifier>
 
   <!-- creationdate -->
-  <dcterms:created xsi:type="edtf:EDTF-level1">2024-XX-XX</dcterms:created>
+  <dcterms:created xsi:type="edtf:EDTF-level1">XXXX-XX-XX</dcterms:created>
 
-  <!-- keywords for the resource -->
-  <dcterms:subject xml:lang="en">amateur recording</dcterms:subject>
-  <dcterms:subject xml:lang="en">silent movie</dcterms:subject>
-  <dcterms:subject xml:lang="en">Belgium</dcterms:subject>
+  <!-- genre of the resource -->
+  <schema:genre>amateur recording</schema:genre>
+
+  <!-- Country where the resource originated -->
+  <schema:countryOfOrigin>BE</schema:countryOfOrigin>
 
   <!-- archiefvormer role -->
   <schema:creator schema:roleName="archiefvormer">
