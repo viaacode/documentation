@@ -122,7 +122,7 @@ Stel dat het object 'De bespotting van Christus (Ecce Homo)' van James Ensor get
 Indien de identifier wordt ingevuld, is de URL als volgt: 
 
 ```shell 
-https://images.meemoo.be/iiif/h12v432j8x.jp2/full/full/0/default.jpg
+https://images.meemoo.be/iiif/h12v432j8x.jp2/full/max/0/default.jpg
 ```
 
 Wanneer je naar deze URL surft, wordt de volledige afbeelding teruggegeven, zonder enige toegepaste transformaties.  
