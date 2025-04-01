@@ -182,7 +182,7 @@ The various requirements are listed in the table below.
 | Name | Other content information type specification |
 | Description | This attribute is used to declare the Content Information Type Specification used when creating the SIP.<br>Meemoo uses this attribute to indicate which of meemoo's content profiles a SIP uses. Its value MUST be a valid URI which can be found on the different content profile pages, e.g. the URI `https://data.hetarchief.be/id/sip/1.1/basic` for the basic content profile which can be found on [its content profile page]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/profiles/basic.md %}).<br>ote that the sample above has the value of the basic profile as an example. |
 | Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri) |
-| Vocabulary | `https://data.hetarchief.be/id/sip/1.0/basic`<br>`https://data.hetarchief.be/id/sip/1.1/newspaper`<br>`https://data.hetarchief.be/id/sip/1.1/material-artwork` |
+| Vocabulary | `https://data.hetarchief.be/id/sip/1.1/basic`<br>`https://data.hetarchief.be/id/sip/1.1/newspaper`<br>`https://data.hetarchief.be/id/sip/1.1/material-artwork` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -1306,7 +1306,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@LABEL` |
 |-----------------------|-----------|
 | Name | Schema division label |
 | Description | The schemas `div` element’s `@LABEL` attribute value MUST be `Schemas`. |
@@ -1729,7 +1729,7 @@ TODO: figure out the IDs
             <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">succes</premis:eventOutcome>
         </premis:eventOutcomeInformation>
         <premis:linkingAgentIdentifier>
-            <premis:linkingAgentIdentifierType>OR-id</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
             <premis:linkingAgentIdentifierValue>OR-m30wc4t</premis:linkingAgentIdentifierValue>
             <premis:linkingAgentRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
         </premis:linkingAgentIdentifier>
@@ -1808,7 +1808,7 @@ TODO: figure out the IDs
 | Name | Event datetime  |
 | Description | The moment on which the event occurred. |
 | Datatype | [XML Schema datetime]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#xsd-datetime) |
-| Cardinality | 0..1 |
+| Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Element | `premis:premis/premis:event/premis:eventDetailInformation` |

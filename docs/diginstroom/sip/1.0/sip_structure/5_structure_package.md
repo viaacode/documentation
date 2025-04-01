@@ -1268,7 +1268,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@LABEL` |
 |-----------------------|-----------|
 | Name | Documentation division label |
 | Description | The documentation `div` element’s `@LABEL` attribute value MUST be `Documentation`. |
@@ -1307,7 +1307,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@LABEL` |
 |-----------------------|-----------|
 | Name | Schema division label |
 | Description | The schemas `div` element’s `@LABEL` attribute value MUST be `Schemas`. |
@@ -1730,7 +1730,7 @@ TODO: figure out the IDs
             <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">succes</premis:eventOutcome>
         </premis:eventOutcomeInformation>
         <premis:linkingAgentIdentifier>
-            <premis:linkingAgentIdentifierType>OR-id</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
             <premis:linkingAgentIdentifierValue>OR-m30wc4t</premis:linkingAgentIdentifierValue>
             <premis:linkingAgentRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
         </premis:linkingAgentIdentifier>
@@ -1809,7 +1809,7 @@ TODO: figure out the IDs
 | Name | Event datetime  |
 | Description | The moment on which the event occurred. |
 | Datatype | [XML Schema datetime]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#xsd-datetime) |
-| Cardinality | 0..1 |
+| Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Element | `premis:premis/premis:event/premis:eventDetailInformation` |
