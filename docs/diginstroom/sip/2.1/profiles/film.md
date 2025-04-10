@@ -106,14 +106,6 @@ root_directory
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element | `metadata/schema:creditText` |
-|-----------------------|-----------|
-| Name | Credit text |
-| Description | Text that can be used to credit person(s) and/or organization(s) associated with a film. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 0..* |
-| Obligation | MAY |
-
 | Element | `metadata/schema:genre` |
 |-----------------------|-----------|
 | Name | Genre |
