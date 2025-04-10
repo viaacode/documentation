@@ -111,6 +111,58 @@ root_directory
 | Name | Genre |
 | Description | Genre of the film. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Vocabulary | Amateuropname<br>
+Andere<br>
+Animatiefilm<br>
+Bedrijfsfilm<br>
+Biografie<br>
+Burlesque<br>
+Cinemagazine<br>
+Compilatie<br>
+Dierenfilm<br>
+Documentaire<br>
+Educatieve film<br>
+Erotics<br>
+Ethnografische film<br>
+Experimentele film<br>
+Familiefilm<br>
+Feeërie<br>
+Filmbrief<br>
+Fragmenten<br>
+Gefilmd Spektakel<br>
+Griezelfilm<br>
+Historische film<br>
+Industriefilm<br>
+Journaal<br>
+Kinderfilm<br>
+Komedie<br>
+Kunstfilm<br>
+Medische film<br>
+Melodrama<br>
+Militange film<br>
+Montagefilm<br>
+Muzikale film<br>
+Natuurfilm<br>
+Onafgewerkte film<br>
+Onbekend<br>
+Oorlogsfilm<br>
+Opdrachtfilm<br>
+Overheidsvoorlichting<br>
+Parodie<br>
+Pornografische film<br>
+Poëtische film<br>
+Promotiefilm<br>
+Propagandafilm<br>
+Reclamefilm<br>
+Reisverslag<br>
+Reportage<br>
+Rushes<br>
+Televisie Programma<br>
+Televisiefilm<br>
+Toeristische Film<br>
+Trailer<br>
+Westerns<br>
+Wetenschappelijke Film |
 | Cardinality | 0..* |
 | Obligation | MAY |
 
