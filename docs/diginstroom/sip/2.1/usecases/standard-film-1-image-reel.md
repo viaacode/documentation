@@ -239,10 +239,9 @@ Using a number of `<premis:significantProperties>` elements, this representation
       <premis:relationshipType authority="relationshipType"
         authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType"
-        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType"
-        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr">is represented
-        by</premis:relationshipSubType>
+      <premis:relationshipSubType authority="haObj"
+        authorityURI="https://data.hetarchief.be/ns/object/"
+        valueURI="https://data.hetarchief.be/ns/object/hasCarrierCopy">has carrier copy</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-eb2175c9-56f9-4e7e-9192-0a11a297c1e2</premis:relatedObjectIdentifierValue>
@@ -390,9 +389,9 @@ Using a number of `<premis:significantProperties>` elements, this representation
       <premis:relationshipType authority="relationshipType"
         authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType"
-        authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType"
-        valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep">represents</premis:relationshipSubType>
+      <premis:relationshipSubType authority="haObj"
+        authorityURI="https://data.hetarchief.be/ns/object/"
+        valueURI="https://data.hetarchief.be/ns/object/isCarrierCopyOf">is carrier copy of</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-f9ef158c-f03c-4840-836e-8ffb8e8ebe04</premis:relatedObjectIdentifierValue>
