@@ -119,7 +119,7 @@ root_directory
 | Name | Genre |
 | Description | Genre of the film. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 0..1 |
+| Cardinality | 0..* |
 | Obligation | MAY |
 
 ### Package Preservation Metadata
