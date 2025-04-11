@@ -246,8 +246,6 @@ premis:premis
 - Any descriptive metadata in the carrier representation `<premis:object>` MUST be placed in separate `<premis:significantProperties>` elements;
 - Each `<premis:significantProperties>` element MUST either contain a combination of a `<premis:significantPropertiesType>` element (for the metadata field name) and a `<premis:significantPropertiesValue>` element (for the metadata field value), or a `<premis:significantPropertiesExtension>` element with the use of external metadata schemas;
 - If a `<premis:significantPropertiesExtension>` element is used, it MUST declare the namespaces of the external metadata schemas using the `@xmlns` attribute;
-- Each digitized reel in the SIP MUST be reflected in the carrier representation `<premis:object>` by using separate `<premis:storageMedium>` elements;
-- Each `<premis:storageMedium>` element MUST contain a `<premis:storage>` element with the specific carrier type of a reel;
 - Any events related to the handling of the real-life, physical carrier(s) MUST refer to the carrier representation `<premis:object>` with a `<premis:linkingObjectIdentifier>` element (see [Adding provenance of representations](https://developer.meemoo.be/docs/diginstroom/sip/2.1/sip_structure/5_structure_package.html#adding-provenance-of-representations);
 
 _Example 4_ below contains an illustration of a simplified carrier representation (preceded by its intellectual entity) and a registration event involving the carrier representation in the package `premis.xml` file:
