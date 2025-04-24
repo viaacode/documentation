@@ -96,7 +96,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element | `metadata/dcterms:alternative` |
+| Element | `metadata/dcterms:alternative[@xml:lang=*]` |
 |-----------------------|-----------|
 | Name | Alternative title |
 | Description | An alternative to the main title given to the Intellectual Entity.<br>The `alternative` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). There MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
@@ -220,6 +220,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 |-----------------------|-----------|
 | Name | License |
 | Description | A legal document giving official permission to meemoo, end users of the meemoo platforms, or any other user, to do something with the Intellectual Entity. |
+| Vocabulary | See the lists of [licenses](https://developer.meemoo.be/docs/metadata/viaa/licenties.html)  |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.2/2_terminology.md %}#string) |
 | Cardinality | 0..* |
 | Obligation | SHOULD |
@@ -232,7 +233,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element | `metadata/dcterms:rights` |
+| Element | `metadata/dcterms:rights[@xml:lang=*]` |
 |-----------------------|-----------|
 | Name | Rights |
 | Description | A copyright notice on the Intellectual Entity. The `rights` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). If the element is present, there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
@@ -364,7 +365,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Description | A string or text indicating the unit of the height or width measurement value. Useful if you cannot provide a standard unit code for `schema:unitCode`.  |
 | Vocabulary | `mm`, `cm`, `m` |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.2/2_terminology.md %}#string) |
-| Cardinality | 0..1 |
+| Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Element | `metadata/schema:weight/schema:unitText` |
@@ -373,7 +374,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Description | A string or text indicating the unit of the weight measurement value, which MUST be set to `kg` (kilograms). Useful if you cannot provide a standard unit code for `schema:unitCode`.  |
 | Vocabulary | `kg` |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.2/2_terminology.md %}#string) |
-| Cardinality | 0..1 |
+| Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Element | `metadata/schema:artMedium[@xml:lang=*]` |
@@ -448,7 +449,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Element | `metadata/schema:isPartOf[@xsi:type=schema:CreativeWorkSeries]/schema:hasPart` |
 |-----------------------|-----------|
 | Name | Has subseries |
-| Description | Indicates a subseries that is part of this series.  |
+| Description | Indicates a creative work that is part of this series.  |
 | Cardinality | 0..* |
 | Obligation | MAY |
 
