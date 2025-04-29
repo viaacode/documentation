@@ -159,7 +159,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Element | `metadata/dcterms:publisher` |
 |-----------------------|-----------|
 | Name | Publisher |
-| Description | A publisher of the Intellectual Entity. This element is an alias for `metadata/schema:creator` without the attribute `@roleName`. |
+| Description | A publisher of the Intellectual Entity. This element is an alias for `metadata/schema:publisher` without the attribute `@roleName`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
 | Cardinality | 0..* |
 | Obligation | MAY |
@@ -167,7 +167,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Element | `metadata/dcterms:contributor` |
 |-----------------------|-----------|
 | Name | Contributor |
-| Description | A contributor to the Intellectual Entity. This element is an alias for `metadata/schema:creator` without the attribute `@roleName`. |
+| Description | A contributor to the Intellectual Entity. This element is an alias for `metadata/schema:contributor` without the attribute `@roleName`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
 | Cardinality | 0..* |
 | Obligation | MAY |
