@@ -122,6 +122,53 @@ root_directory
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
+| Element | `metadata/schema:actor` |
+|-----------------------|-----------|
+| Name | actor |
+| Description | An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.  |
+| Cardinality | 0..* |
+| Obligation | MAY |
+
+| Attribute | `metadata/schema:actor/@roleName` |
+|-----------------------|-----------|
+| Name | Role actor |
+| Description | The role with which the actor was involved in creating the artwork e.g. lead actor.  |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Attribute | `metadata/schema:actor/@characterName` |
+|-----------------------|-----------|
+| Name | Role actor |
+| Description | The name of the character played by the actor.  |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element | `metadata/schema:actor/schema:name` |
+|-----------------------|-----------|
+| Name | Name actor |
+| Description | The name of the actor.  |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element | `metadata/schema:actor/schema:birthDate` |
+|-----------------------|-----------|
+| Name | Birth date actor |
+| Description | The actor's date of .  |
+| Datatype | [EDTF]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#edtf) |
+| Cardinality | 0..1 |
+| Obligation | MAY |
+
+| Element | `metadata/schema:actor/schema:deathDate` |
+|-----------------------|-----------|
+| Name | Death date actor |
+| Description | The actor's date of death.  |
+| Datatype | [EDTF]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#edtf) |
+| Cardinality | 0..1 |
+| Obligation | MAY |
+
 ### Package Preservation Metadata
 
 The addition of a separate PREMIS representation for the carrier(s) (i.e. the carrier representation) leads to a number of additional requirements in the package `premis.xml` file.
