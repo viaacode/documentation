@@ -287,8 +287,8 @@
     <!-- reference to the agent of the service provider -->
     <!-- people part of an organization acting as agent don't have a role assigned  -->
     <premis:linkingAgentIdentifier>
-      <premis:linkingAgentIdentifierType>SP-AGENT</premis:linkingAgentIdentifierType>
-      <premis:linkingAgentIdentifierValue>David</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>uuid-ef2f95b3-529a-4226-af41-f103021d8089</premis:linkingAgentIdentifierValue>
     </premis:linkingAgentIdentifier>
 
     <!-- reference to the service provider -->
@@ -330,8 +330,8 @@
     <!-- reference to the agent of the service provider -->
     <!-- people part of an organization acting as agent don't have a role assigned  -->
     <premis:linkingAgentIdentifier>
-      <premis:linkingAgentIdentifierType>SP-AGENT</premis:linkingAgentIdentifierType>
-      <premis:linkingAgentIdentifierValue>David/ScanStation</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>uuid-2cbc112a-84e2-4999-8f49-03156509a784</premis:linkingAgentIdentifierValue>
     </premis:linkingAgentIdentifier>
 
     <!-- reference to the service provider -->
@@ -390,8 +390,8 @@
     <!-- reference to the agent of the service provider -->
     <!-- people part of an organization acting as agent don't have a role assigned  -->
     <premis:linkingAgentIdentifier>
-      <premis:linkingAgentIdentifierType>SP-AGENT</premis:linkingAgentIdentifierType>
-      <premis:linkingAgentIdentifierValue>JulienS/RAWcooked 23.09.20241109, FFmpeg 7.1</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>uuid-6e7385e3-97e7-43ea-b6d5-06ba039c2db6</premis:linkingAgentIdentifierValue>
     </premis:linkingAgentIdentifier>
 
     <!-- reference to the service provider -->
@@ -443,8 +443,8 @@
     <!-- reference to the agent of the service provider -->
     <!-- people part of an organization acting as agent don't have a role assigned  -->
     <premis:linkingAgentIdentifier>
-      <premis:linkingAgentIdentifierType>SP-AGENT</premis:linkingAgentIdentifierType>
-      <premis:linkingAgentIdentifierValue>JulienS/Nucoda</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>uuid-b16df46f-69cb-4899-8f64-7bc77808a11e</premis:linkingAgentIdentifierValue>
     </premis:linkingAgentIdentifier>
 
     <!-- reference to the service provider -->
@@ -532,6 +532,42 @@
       <premis:agentIdentifierValue>OR-183420s</premis:agentIdentifierValue>
     </premis:agentIdentifier>
     <premis:agentName>Vectracom</premis:agentName>
+    <premis:agentType>SP-AGENT</premis:agentType>
+  </premis:agent>
+
+  <premis:agent>
+    <premis:agentIdentifier>
+      <premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+      <premis:agentIdentifierValue>uuid-ef2f95b3-529a-4226-af41-f103021d8089</premis:agentIdentifierValue>
+    </premis:agentIdentifier>
+    <premis:agentName>David</premis:agentName>
+    <premis:agentType>SP-AGENT</premis:agentType>
+  </premis:agent>
+
+  <premis:agent>
+    <premis:agentIdentifier>
+      <premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+      <premis:agentIdentifierValue>uuid-2cbc112a-84e2-4999-8f49-03156509a784</premis:agentIdentifierValue>
+    </premis:agentIdentifier>
+    <premis:agentName>David/ScanStation</premis:agentName>
+    <premis:agentType>SP-AGENT</premis:agentType>
+  </premis:agent>
+
+  <premis:agent>
+    <premis:agentIdentifier>
+      <premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+      <premis:agentIdentifierValue>uuid-6e7385e3-97e7-43ea-b6d5-06ba039c2db6</premis:agentIdentifierValue>
+    </premis:agentIdentifier>
+    <premis:agentName>JulienS/RAWcooked 23.09.20241109, FFmpeg 7.1</premis:agentName>
+    <premis:agentType>SP-AGENT</premis:agentType>
+  </premis:agent>
+
+  <premis:agent>
+    <premis:agentIdentifier>
+      <premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+      <premis:agentIdentifierValue>uuid-b16df46f-69cb-4899-8f64-7bc77808a11e</premis:agentIdentifierValue>
+    </premis:agentIdentifier>
+    <premis:agentName>JulienS/Nucoda</premis:agentName>
     <premis:agentType>SP-AGENT</premis:agentType>
   </premis:agent>
 
