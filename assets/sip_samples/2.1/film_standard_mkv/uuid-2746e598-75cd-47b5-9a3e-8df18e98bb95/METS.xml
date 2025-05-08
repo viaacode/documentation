@@ -95,25 +95,25 @@
                 ADMID="uuid-6738f93b-1beb-4ce6-a1a8-3b99fc5e4c52"
                 DMDID="uuid-afaf863f-b9b5-48b4-88aa-1c2754bbafee" />
             <div ID="uuid-46f5c225-cdf9-4480-9b36-c2226b921d02"
-                LABEL="representations/uuid-5d7d4281-6a06-4b0e-ab88-cd430cb751ce">
+                LABEL="Representations/uuid-5d7d4281-6a06-4b0e-ab88-cd430cb751ce">
                 <mptr xlink:type="simple"
                     xlink:href="representations/uuid-5d7d4281-6a06-4b0e-ab88-cd430cb751ce/METS.xml"
                     LOCTYPE="URL" xlink:title="uuid-5d7d4281-6a06-4b0e-ab88-cd430cb751ce" />
             </div>
             <div ID="uuid-90b2b9c9-3a1c-48c6-8846-9ceb6f867b5f"
-                LABEL="representations/uuid-e3000091-b0c2-459b-9863-e5d2da8270c8">
+                LABEL="Representations/uuid-e3000091-b0c2-459b-9863-e5d2da8270c8">
                 <mptr xlink:type="simple"
                     xlink:href="representations/uuid-e3000091-b0c2-459b-9863-e5d2da8270c8/METS.xml"
                     LOCTYPE="URL" xlink:title="uuid-e3000091-b0c2-459b-9863-e5d2da8270c8" />
             </div>
             <div ID="uuid-3da9f019-03fa-431e-b818-751bf4afd519"
-                LABEL="representations/uuid-e2765c34-68dd-4f36-a230-5483c4bed076">
+                LABEL="Representations/uuid-e2765c34-68dd-4f36-a230-5483c4bed076">
                 <mptr xlink:type="simple"
                     xlink:href="representations/uuid-e2765c34-68dd-4f36-a230-5483c4bed076/METS.xml/METS.xml"
                     LOCTYPE="URL" xlink:title="uuid-e2765c34-68dd-4f36-a230-5483c4bed076/METS.xml" />
             </div>
             <div ID="uuid-8c62fb7c-4147-4c4f-a956-dcb060b4561e"
-                LABEL="representations/uuid-46b16a3e-3dbe-472d-9e9e-47c99457389d">
+                LABEL="Representations/uuid-46b16a3e-3dbe-472d-9e9e-47c99457389d">
                 <mptr xlink:type="simple"
                     xlink:href="representations/uuid-46b16a3e-3dbe-472d-9e9e-47c99457389d/METS.xml"
                     LOCTYPE="URL" xlink:title="uuid-46b16a3e-3dbe-472d-9e9e-47c99457389d/METS.xml" />
