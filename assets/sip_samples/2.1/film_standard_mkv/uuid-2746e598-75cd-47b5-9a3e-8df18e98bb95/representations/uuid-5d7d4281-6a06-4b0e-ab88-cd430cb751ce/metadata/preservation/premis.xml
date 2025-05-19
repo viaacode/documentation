@@ -32,7 +32,7 @@
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
       <premis:relationshipSubType authority="haObj"
         authorityURI="https://data.hetarchief.be/ns/object/"
-        valueURI="https://data.hetarchief.be/ns/object/isMasterCopyOf">is master of</premis:relationshipSubType>
+        valueURI="https://data.hetarchief.be/ns/object/isMasterCopyOf">is master copy of</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-f9ef158c-f03c-4840-836e-8ffb8e8ebe04</premis:relatedObjectIdentifierValue>
