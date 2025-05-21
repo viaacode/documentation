@@ -70,6 +70,8 @@ root_directory
 - Some descriptive metadata elements of datatype [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) MUST contain an attribute `@xml:lang` that indicates the language of the metadata element's value (in order to, for example, specify a title or description in multiple languages); these are indicated with `[@xml:lang=*]` in the table below. Other elements MUST NOT contain this attribute.
 - The value of the `@xml:lang` attribute MUST be a valid [IETF BCP 47 language tag](https://www.rfc-editor.org/info/bcp47)(see [here](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) for a list). 
 
+When an element includes the `@xml:lang` attribute in this specification, a cardinality of `1..*` means that the element can appear multiple times, each in a different language. However, all versions must express the same meaning or concept. An unbounded maximum cardinality does not indicate that different concepts can be provided in different languages—only one concept may be repeated across languages. [^1]
+
 {: .important }
 For elements that require the `@xml:lang` attribute, it is still necessary to supply an element with `@xml:lang` set to `nl` even if there is no Dutch content available (e.g., the original title is in English or French and no translation was ever made, or the title is the same in both languages). In that case, a title in another language can be copied as if it were Dutch. 
 
@@ -89,7 +91,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Name | Title |
 | Description | A name given to the Intellectual Entity. <br>The `title` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). There MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 1..1 |
+| Cardinality | 1..* [^1] |
 | Obligation | MUST |
 
 | Element | `metadata/dcterms:alternative[@xml:lang=*]` |
@@ -97,7 +99,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Name | Alternative title |
 | Description | An alternative to the main title given to the Intellectual Entity.<br>The `alternative` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). There MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 0..* |
+| Cardinality | 0..* [^1] |
 | Obligation | MAY |
 
 | Element | `metadata/dcterms:identifier` |
@@ -129,7 +131,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Name | Description |
 | Description | An account of the Intellectual Entity.<br>The `description` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). There MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 1..1 |
+| Cardinality | 1..* [^1] |
 | Obligation | MUST |
 
 | Element | `metadata/dcterms:abstract[@xml:lang=*]` |
@@ -201,7 +203,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Name | Subject |
 | Description | Subjects or keywords related to the Intellectual Entity.<br> If the element is present, the applied language MUST be provided by a `@xml:lang` attribute (see requirements above) and there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 0..* |
+| Cardinality | 0..* [^1] |
 | Obligation | SHOULD |
 
 | Element | `metadata/dcterms:language` |
@@ -233,7 +235,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Name | Rights |
 | Description | A copyright notice on the Intellectual Entity. The `rights` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). If the element is present, there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 0..1 |
+| Cardinality | 0..* [^1] |
 | Obligation | SHOULD |
 
 | Element | `metadata/dcterms:type` |
@@ -377,7 +379,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Name | Art medium |
 | Description | The material used to create the physical artwork, e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). There MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 0..* |
+| Cardinality | 0..* [^1] |
 | Obligation | MAY |
 
 | Element | `metadata/schema:artform[@xml:lang=*]` |
@@ -385,7 +387,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Name | Artform |
 | Description | The type of artform, e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). There MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Cardinality | 0..* |
+| Cardinality | 0..* [^1] |
 | Obligation | MAY |
 
 | Element | `metadata/schema:isPartOf[@xsi:type=schema:Episode]` |
@@ -546,3 +548,7 @@ Please note that additional IDs must be dealt with in the `preservation/premis.x
 Some use cases that implement this profile are:
 
 {% include _usecases.liquid  %}
+
+---
+
+[^1]: Unique language tag required
