@@ -110,67 +110,34 @@
       <premis:objectIdentifierType>Batch-ID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>FLMB20</premis:objectIdentifierValue>
     </premis:objectIdentifier>
-    <premis:objectIdentifier>
-      <premis:objectIdentifierType>Barcode-image-reels</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>AFLM_FEL_001392</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
 
     <premis:significantProperties>
-      <premis:significantPropertiesType>Projection-speed</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>CP-evaluation</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>4 interesting, HR digitisation</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>Image-or-sound</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>image</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>Aspect-ratio</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>1:37</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>Number-of-reels</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>1</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>Preservation-problems</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>Base Scratching remarks: Light scratches, lines and
-        stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>Film-base</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>acetate</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>Subtitles-present</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>Silent-or-spoken-movie</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>Silent Movie</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesType>Color-or-Black-and-white</premis:significantPropertiesType>
-      <premis:significantPropertiesValue>B/W and Color</premis:significantPropertiesValue>
-    </premis:significantProperties>
-    <premis:significantProperties>
-      <premis:significantPropertiesExtension xmlns:schema='https://schema.org'>
-        <schema:duration>0:04:55</schema:duration>
-        <schema:material>Original positive</schema:material>
-        <schema:size>
-          <schema:unitCode>MTR</schema:unitCode>
-          <schema:QuantitativeValue>135</schema:QuantitativeValue>
-        </schema:size>
+      <premis:significantPropertiesExtension xmlns:schema='https://schema.org'
+        xmlns:haObj='https://data.hetarchief.be/ns/object/' xmlns:haDes='https://data.hetarchief.be/ns/description/'>
+
+        <haObj:CarrierRepresentation>
+          <haDes:numberOfReels>1</haDes:numberOfReels>
+          <schema:inLanguage>Silent Movie</schema:inLanguage>
+        </haObj:CarrierRepresentation>
+
+        <haDes:ImageReel>
+          <schema:identifier>AFLM_FEL_001392</schema:identifier>
+          
+          <haDes:coloringType>B/W and Color</haDes:coloringType> 
+          <schema:material>acetate</schema:material>
+          <haObj:preservationProblem>Base Scratching remarks: Light scratches, lines and stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</haObj:preservationProblem>
+
+          <premis:storageMedium>
+            <premis:medium>8mmfilm</premis:medium>
+          </premis:storageMedium>
+
+          <haDes:aspectRatio>1:37</haDes:aspectRatio>
+
+          <!-- TODO: look for a suitable mapping for material type -->
+          <!-- <material_type>Original positive</material_type> -->
+        </haDes:ImageReel>
       </premis:significantPropertiesExtension>
-
     </premis:significantProperties>
-
-    <premis:storage>
-      <premis:storageMedium>8mmfilm</premis:storageMedium>
-    </premis:storage>
 
     <!-- relationship between representation and its IE -->
     <premis:relationship>

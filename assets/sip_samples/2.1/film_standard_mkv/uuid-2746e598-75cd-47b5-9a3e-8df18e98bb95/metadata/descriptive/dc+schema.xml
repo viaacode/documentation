@@ -34,6 +34,7 @@
   <dcterms:rightsHolder>© dummyorganisatie</dcterms:rightsHolder>
 
   <!-- IE type -->
+  <dcterms:type>silent film</dcterms:type>
   <dcterms:format>film</dcterms:format>
 
   <!-- VIAA licenses for the resource -->
