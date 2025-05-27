@@ -11,15 +11,15 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:nabd1817a9e684499b69c09a188bba74eb1 a rdfs:Class,
+_:n5ea7bd684f8a427792e8e077fb6a065bb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
-_:ne5ed0ce43ad143dc870041acaeae7951b1 a rdfs:Class,
+_:na3ce833a3ef643c88ea79b75b812dfcfb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
-_:ne5ed0ce43ad143dc870041acaeae7951b17 a rdfs:Class,
+_:na3ce833a3ef643c88ea79b75b812dfcfb17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
@@ -44,6 +44,33 @@ dct:FileFormat a rdfs:Class ;
     skos:definition "A class used to annotate Assets."@en,
         "Une classe utilisée pour annoter les éléments."@fr,
         "Een klasse die wordt gebruikt om items te annoteren."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning> a rdfs:Class ;
+    rdfs:label "Captioning"@en,
+        "Sous-titrage"@fr,
+        "Ondertitels"@nl ;
+    rdfs:subClassOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Track> ;
+    skos:definition "To signal the presence of hard of hearing captioning."@en,
+        "Pour signaler la présence de sous-titres pour le durcissement dur."@fr,
+        "Om de aanwezigheid van ondertitels voor hardhorigen te signaleren."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ClosedCaptions> a rdfs:Class ;
+    rdfs:label "Closed caption"@en,
+        "Légende fermée"@fr,
+        "Gesloten ondertitels"@nl ;
+    rdfs:subClassOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning> ;
+    skos:definition "Closed captioning is provided as separate content."@en,
+        "Le sous-titrage fermé est fourni en tant que contenu distinct."@fr,
+        "Gesloten bijschrift wordt verstrekt als afzonderlijke inhoud."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#OpenCaptions> a rdfs:Class ;
+    rdfs:label "Open captions"@en,
+        "Sous-titres ouverts"@fr,
+        "Open ondertitels"@nl ;
+    rdfs:subClassOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning> ;
+    skos:definition "Open Captions are burned in the image."@en,
+        "Open bijschriften worden in de afbeelding gebrand."@en,
+        "Les légendes ouvertes sont brûlées dans l'image."@fr .
 
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TextAnnotation> a rdfs:Class ;
     rdfs:label "Text Annotation"@en,
@@ -392,6 +419,7 @@ skosxl:Label a rdfs:Class,
         "Bobine audio"@fr,
         "Geluidsspoel"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
     skos:definition "A reel of an analog film carrier that contains audio."@en,
         "Une bobine d'un porte-film analogique qui contient de l'audio."@fr,
         "Een band van een analoge film drager die audio bevat."@nl .
@@ -441,6 +469,7 @@ skosxl:Label a rdfs:Class,
         "Bobine d'image"@fr,
         "Beeldspoel"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
     skos:definition "A reel of an analog film carrier that contains video."@en,
         "Une bobine d'un porte-film analogique qui contient une vidéo."@fr,
         "Een speo van een analoge film drager die beeld bevat."@nl .
@@ -655,6 +684,16 @@ schema:ArchiveComponent a rdfs:Class ;
         "Un type intangible à appliquer à tout contenu d'archives, portant avec lui un ensemble de propriétés nécessaires pour la description d'éléments d'archives et de collections."@fr,
         "Een immaterieel type dat toegepast moet worden op elke inhoud van het archief, met daarbij een set van eigenschappen die nodig zijn om archiefitems en -collecties te beschrijven."@nl .
 
+schema:BroadcastEvent a rdfs:Class ;
+    rdfs:label "Broadcast event"@en,
+        "Événement de radiodiffusion"@fr,
+        "Uitzendingsevenement"@nl ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:subClassOf schema:Event ;
+    skos:definition "An over the air or online broadcast event."@en,
+        "Un événement diffusé par voie hertzienne ou en ligne."@fr,
+        "Een evenement dat via de ether of online wordt uitgezonden."@nl .
+
 schema:Collection a rdfs:Class ;
     rdfs:label "Collection"@en,
         "Collection"@fr,
@@ -734,6 +773,16 @@ schema:Event a rdfs:Class ;
     skos:definition "An event happening at a certain time and location, such as a concert, lecture, or festival."@en,
         "Un événement qui se déroule à un moment et dans un lieu donnés, comme un concert, une conférence ou un festival."@fr,
         "Een gebeurtenis die plaatsvindt op een gegeven moment en locatie, zoals een concert, een lezing of een festival."@nl .
+
+schema:Newspaper a rdfs:Class ;
+    rdfs:label "Newspaper"@en,
+        "Journal"@fr,
+        "Krant"@nl ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:subClassOf schema:CreativeWorkSeries ;
+    skos:definition "A publication containing information about varied topics that are pertinent to general information, a geographic area, or a specific subject matter (i.e. business, culture, education). Often published daily."@en,
+        "Publication contenant des informations sur des sujets variés relatifs à l'information générale, à une zone géographique ou à un sujet spécifique (par exemple, les affaires, la culture, l'éducation). Souvent publié quotidiennement."@fr,
+        "Een publicatie met informatie over gevarieerde onderwerpen die relevant zijn voor algemene informatie, een geografisch gebied of een specifiek onderwerp (bijv. zaken, cultuur, onderwijs). Wordt vaak dagelijks gepubliceerd."@nl .
 
 schema:Organization a rdfs:Class ;
     rdfs:label "Organisation"@en,
@@ -1238,7 +1287,7 @@ dct:format a rdf:Property ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:ne5ed0ce43ad143dc870041acaeae7951b1 ;
+    rdfs:domain _:na3ce833a3ef643c88ea79b75b812dfcfb1 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1299,7 +1348,7 @@ dct:format a rdf:Property ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:ne5ed0ce43ad143dc870041acaeae7951b17 ;
+    rdfs:domain _:na3ce833a3ef643c88ea79b75b812dfcfb17 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -2170,6 +2219,17 @@ schema:caption a rdf:Property ;
         "Les sous-titres de cet objet."@fr,
         "De ondertiteling voor dit object."@nl .
 
+schema:characterName a rdf:Property ;
+    rdfs:label "character name"@en,
+        "nom du personnage"@fr,
+        "karakternaam"@nl ;
+    rdfs:domain schema:PerformanceRole ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    skos:definition "The name of a character played in some acting or performing role, i.e. in a PerformanceRole."@en,
+        "Le nom d'un personnage joué dans un rôle d'acteur ou d'interprète, c'est-à-dire dans un PerformanceRole."@fr,
+        "De naam van een personage dat wordt gespeeld in een acteer- of uitvoerende rol, d.w.z. in een PerformanceRole."@nl .
+
 schema:contactPoint a rdf:Property ;
     rdfs:label "contactPoint"@en,
         "pointDeContact"@fr,
@@ -2588,7 +2648,7 @@ schema:roleName a rdf:Property ;
     rdfs:label "role name"@en,
         "nom du rôle"@fr,
         "rolnaam"@nl ;
-    rdfs:domain schema:PerformanceRole ;
+    rdfs:domain schema:Role ;
     rdfs:isDefinedBy schema: ;
     rdfs:range skos:Concept ;
     skos:definition "A role played, performed or filled by a person or organization."@en,
@@ -2890,7 +2950,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:nabd1817a9e684499b69c09a188bba74eb1 ;
+    rdfs:range _:n5ea7bd684f8a427792e8e077fb6a065bb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -3190,7 +3250,7 @@ skosxl:prefLabel a rdf:Property,
 schema:identifier a rdf:Property ;
     rdfs:label "identifier"@en,
         "identifiant"@fr,
-        "identifier"@nl ;
+        "identificator"@nl ;
     rdfs:domain schema:Thing ;
     rdfs:isDefinedBy schema: ;
     rdfs:range xsd:string ;
@@ -3318,6 +3378,17 @@ haTer:lowerPriority a rdf:Property ;
     skos:example "File format XML1.1 is a more recent and thus preferable format over XML1.0; XML1.0 thus holds a lower priority than XML1.1."@en,
         "Le format de fichier XML1.1 est un format plus récent et donc préférable à XML1.0; XML1.0 a donc une priorité inférieure à XML1.1."@fr,
         "Het bestandsformaat XML1.1 is een recenter en dus verkieslijker formaat dan XML1.0; XML1.0 heeft dus een lagere prioriteit dan XML1.1."@nl .
+
+schema:position a rdf:Property ;
+    rdfs:label "position"@en,
+        "position"@fr,
+        "positie"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:integer ;
+    skos:definition "The position of an item in a series or sequence of items."@en,
+        "La position d'un élément dans une série ou une séquence d'éléments."@fr,
+        "De positie van een item in een reeks of opeenvolging van items."@nl .
 
 skos:altLabel a rdf:Property,
         owl:AnnotationProperty ;
