@@ -49,7 +49,7 @@ haDes_DVD --> haDes_DVDChapter :heeft een onderdeel [0..*]  >
 
 haDes_DVDChapter --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
-haDes_DVDChapter : Dvd-hoofdstuknummer : <i>xsd:nonNegativeInteger</i> [1..1]
+haDes_DVDChapter : hoofdstuknummer : <i>xsd:nonNegativeInteger</i> [1..1]
 haDes_DVDChapter --> haDes_DVD :is onderdeel van [1..1]  > 
 
 
