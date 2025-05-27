@@ -13,8 +13,8 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>OpenCaptions</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
 class "<b>Beeldspoel</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageReel]]
+class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
 class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[../../audiovisual/nl#haObj%3ACarrierRepresentation]]
 class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
@@ -23,16 +23,16 @@ class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_Inte
 class "<b>Geluidsfilm</b> (haDes:SoundFilm)" as haDes_SoundFilm [[#haDes%3ASoundFilm]]
 class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
 class "<b>Geluidsspoel</b> (haDes:AudioReel)" as haDes_AudioReel [[#haDes%3AAudioReel]]
+class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Open ondertitels</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
+class "<b>Ondertitels</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
 class "<b>Stomme film</b> (haDes:SilentFilm)" as haDes_SilentFilm [[#haDes%3ASilentFilm]]
 class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
 
-
-ebucore_OpenCaptions : in taal : <i>xsd:string</i> [0..*]
-
-
+haDes_ImageReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
 haDes_ImageReel --> ebucore_OpenCaptions :heeft (ingebedde) ondertiteling [0..*]  > 
-haDes_ImageReel --> skos_Concept :type kleuring [0..1]  > 
+haDes_ImageReel --> skos_Concept :type kleuring [0..*]  > 
 
 
 
@@ -55,6 +55,12 @@ haDes_Film --> haObj_CarrierRepresentation :heeft dragerkopie [1..1]  >
 haDes_SoundFilm --|> haDes_Film #blue;line.dotted;text:blue
 
 
+haDes_AudioReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
+
+
+ebucore_OpenCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
+
+ebucore_OpenCaptions : in taal : <i>xsd:string</i> [0..*]
 
 
 haDes_SilentFilm --|> haDes_Film #blue;line.dotted;text:blue
