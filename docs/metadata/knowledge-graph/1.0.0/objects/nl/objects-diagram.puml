@@ -67,7 +67,7 @@ haObj_DigitalRepresentation --> premis_Representation :heeft bron [0..*]  >
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation --> haObj_PhysicalCarrier :opgeslagen op [1..1]  > 
+haObj_CarrierRepresentation --> haObj_PhysicalCarrier :opgeslagen op [1..*]  > 
 haObj_CarrierRepresentation --> premis_IntellectualEntity :is dragerkopie van [0..1]  > 
 
 

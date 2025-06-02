@@ -111,7 +111,7 @@ premis_Representation --> premis_IntellectualEntity :représente [1..1]  >
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stocké à [1..1]  > 
+haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stocké à [1..*]  > 
 haObj_CarrierRepresentation --> premis_IntellectualEntity :est un copie sur porteur de [0..1]  > 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue

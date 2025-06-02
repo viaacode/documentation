@@ -29,7 +29,7 @@ class "<b>Événement</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
 class "<b>Activité</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
 
 
-schema_Brand : nom : <i>rdf:langString</i> [1..1]
+schema_Brand : nom : <i>rdf:langString</i> [1..*]
 
 
 
@@ -37,16 +37,16 @@ prov_Activity : a date de début : <i>xsd:dateTime</i> [1..1]
 prov_Activity : a date de fin : <i>xsd:dateTime</i> [1..1]
 prov_Activity : a généré : <i>IRI</i> [0..1]
 
-prov_Activity --> org_Organization :a été associé à [1..1]  > 
-prov_Activity --> premis_HardwareAgent :a été associé à [1..1]  > 
-prov_Activity --> premis_SoftwareAgent :a été associé à [1..1]  > 
-prov_Activity --> schema_Person :a été associé à [1..1]  > 
+prov_Activity --> org_Organization :a été associé à [0..*]  > 
+prov_Activity --> premis_HardwareAgent :a été associé à [0..*]  > 
+prov_Activity --> premis_SoftwareAgent :a été associé à [0..*]  > 
+prov_Activity --> schema_Person :a été associé à [0..*]  > 
 
 
 premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
 
 premis_SoftwareAgent : modèle : <i>xsd:string</i> [0..1]
-premis_SoftwareAgent : nom : <i>rdf:langString</i> [1..1]
+premis_SoftwareAgent : nom : <i>rdf:langString</i> [1..*]
 premis_SoftwareAgent : numéro de série : <i>xsd:string</i> [0..1]
 premis_SoftwareAgent : version : <i>xsd:string</i> [0..1]
 
@@ -56,7 +56,7 @@ premis_SoftwareAgent --> schema_Brand :marque [0..1]  >
 premis_HardwareAgent --|> premis_Agent #blue;line.dotted;text:blue
 
 premis_HardwareAgent : modèle : <i>xsd:string</i> [0..1]
-premis_HardwareAgent : nom : <i>rdf:langString</i> [1..1]
+premis_HardwareAgent : nom : <i>rdf:langString</i> [1..*]
 premis_HardwareAgent : numéro de série : <i>xsd:string</i> [0..1]
 premis_HardwareAgent : version : <i>xsd:string</i> [0..1]
 

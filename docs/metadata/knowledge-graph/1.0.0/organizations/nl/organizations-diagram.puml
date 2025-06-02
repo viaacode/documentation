@@ -54,29 +54,29 @@ schema_ContactPoint : telefoonnummer : <i>xsd:string</i> [0..*]
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_ContentPartner : aanvraagformulier : <i>xsd:string</i> [0..*]
-haOrg_ContentPartner : heeft een identificator : <i>xsd:string</i> [1..1]
+haOrg_ContentPartner : identificator : <i>xsd:string</i> [1..1]
 haOrg_ContentPartner --> schema_Person :heeft account manager [1..1]  > 
 haOrg_ContentPartner --> skos_Concept :verkiest [0..*]  > 
 
 
 haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ServiceConsumer : heeft een identificator : <i>xsd:string</i> [1..1]
+haOrg_ServiceConsumer : identificator : <i>xsd:string</i> [1..1]
 
 
 haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ServiceProvider : heeft een identificator : <i>xsd:string</i> [1..1]
+haOrg_ServiceProvider : identificator : <i>xsd:string</i> [1..1]
 
 
 haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
 
-haOrg_DigitizationPartner : heeft een identificator : <i>xsd:string</i> [1..1]
+haOrg_DigitizationPartner : identificator : <i>xsd:string</i> [1..1]
 
 
 haOrg_EducationalPartner --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_EducationalPartner : heeft een identificator : <i>xsd:string</i> [1..1]
+haOrg_EducationalPartner : identificator : <i>xsd:string</i> [1..1]
 haOrg_EducationalPartner --> schema_Person :heeft account manager [1..1]  > 
 
 
@@ -89,8 +89,8 @@ schema_Country : naam : <i>xsd:string</i> [1..1]
 
 org_Organization : alternatieve naam/label : <i>rdf:langString</i> [0..*]
 org_Organization : beschrijving : <i>rdf:langString</i> [0..*]
-org_Organization : heeft een identificator : <i>xsd:string</i> [1..1]
 org_Organization : homepagina : <i>IRI</i> [0..1]
+org_Organization : identificator : <i>xsd:string</i> [1..1]
 org_Organization : sector : <i>xsd:string</i> [0..1]
 org_Organization : tenant naam : <i>xsd:string</i> [0..*]
 org_Organization : voorkeursnaam/-label : <i>rdf:langString</i> [1..*]
@@ -146,7 +146,7 @@ schema_PostalAddress --> schema_Country :land [0..1]  >
 
 haOrg_ProjectPartner --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ProjectPartner : heeft een identificator : <i>xsd:string</i> [1..1]
+haOrg_ProjectPartner : identificator : <i>xsd:string</i> [1..1]
 
 
 org_Role --|> skos_Concept #blue;line.dotted;text:blue

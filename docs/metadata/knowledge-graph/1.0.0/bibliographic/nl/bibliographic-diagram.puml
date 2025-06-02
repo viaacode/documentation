@@ -13,8 +13,9 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Newspaper</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Krant</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
+class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Kranteneditie</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
 class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Kranteneditiepagina</b> (haDes:NewspaperIssuePage)" as haDes_NewspaperIssuePage [[#haDes%3ANewspaperIssuePage]]
@@ -25,17 +26,18 @@ class "<b>Rol</b> (schema:Role)" as schema_Role [[../../description/nl#schema%3A
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 
 
+
+schema_Newspaper --|> schema_CreativeWorkSeries #blue;line.dotted;text:blue
+
 schema_Newspaper : abraham identifier : <i>xsd:string</i> [1..1]
 schema_Newspaper : alternatieve naam : <i>rdf:langString</i> [0..*]
 schema_Newspaper : begindatum : <i>xsd:dateTime</i> [0..1]
 schema_Newspaper : einddatum : <i>xsd:dateTime</i> [0..1]
-schema_Newspaper : naam : <i>rdf:langString</i> [1..1]
+schema_Newspaper : naam : <i>rdf:langString</i> [1..*]
 
 schema_Newspaper --> schema_Newspaper :opgevolgd door [0..1]  \lsupplement [0..1]  \lsupplement aan [0..1]  \lvoorafgegaan door [0..1]  > 
-schema_Newspaper --> schema_Place :paginanummer [0..1]  > 
+schema_Newspaper --> schema_Place :plaats van creatie [0..1]  > 
 schema_Newspaper --> schema_Role :uitgever [0..1]  > 
-
-
 
 
 
