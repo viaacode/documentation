@@ -204,9 +204,7 @@
       <premis:eventIdentifierValue>uuid-e435a1eb-fa72-4221-b673-3cc9289d0904</premis:eventIdentifierValue>
 
     </premis:eventIdentifier>
-    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/registration">
-      registration
-    </premis:eventType>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/registration">registration</premis:eventType>
     <premis:eventDateTime>
       2021-04-02T09:04:04
     </premis:eventDateTime>
@@ -239,9 +237,7 @@
       <premis:eventIdentifierValue>uuid-54c8c6f6-2981-41fd-bd02-edcb6e5b8871</premis:eventIdentifierValue>
 
     </premis:eventIdentifier>
-    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/check-out">
-      check-out
-    </premis:eventType>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/check-out">check-out</premis:eventType>
     <premis:eventDateTime>
       2021-12-28T00:00:00
     </premis:eventDateTime>
@@ -480,9 +476,7 @@
       <premis:eventIdentifierValue>uuid-019a16cf-9d35-469d-8c14-a8ed1564003d</premis:eventIdentifierValue>
 
     </premis:eventIdentifier>
-    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/transfer">
-      transfer
-    </premis:eventType>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/transfer">transfer</premis:eventType>
     <premis:eventDateTime>
       2022-05-07T00:00:00
     </premis:eventDateTime>
