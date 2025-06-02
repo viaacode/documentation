@@ -354,7 +354,7 @@ root_directory
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
 | Vocabulary | `publication` |
 | Cardinality | 0..1 |
-| Obligation | MUST |
+| Obligation | MAY |
 
 | Element | `mods:mods/mods:originInfo/mods:publisher` |
 |-----------------------|-----------|
