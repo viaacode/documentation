@@ -112,30 +112,29 @@
     </premis:objectIdentifier>
 
     <premis:significantProperties>
-      <premis:significantPropertiesExtension xmlns:schema='https://schema.org'
-        xmlns:haObj='https://data.hetarchief.be/ns/object/' xmlns:haDes='https://data.hetarchief.be/ns/description/'>
+      <premis:significantPropertiesExtension>
 
-        <haObj:CarrierRepresentation>
-          <haDes:numberOfReels>1</haDes:numberOfReels>
-          <schema:inLanguage>Silent Movie</schema:inLanguage>
-        </haObj:CarrierRepresentation>
+        <CarrierRepresentation>
+          <numberOfReels>1</numberOfReels>
+          <inLanguage>Silent Movie</inLanguage>
+        </CarrierRepresentation>
 
-        <haDes:ImageReel>
-          <schema:identifier>AFLM_FEL_001392</schema:identifier>
+        <ImageReel>
+          <identifier>AFLM_FEL_001392</identifier>
           
-          <haDes:coloringType>B/W and Color</haDes:coloringType> 
-          <schema:material>acetate</schema:material>
-          <haObj:preservationProblem>Base Scratching remarks: Light scratches, lines and stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</haObj:preservationProblem>
+          <coloringType>B/W and Color</coloringType> 
+          <material>acetate</material>
+          <preservationProblem>Base Scratching remarks: Light scratches, lines and stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</preservationProblem>
 
-          <premis:storageMedium>
-            <premis:medium>8mmfilm</premis:medium>
-          </premis:storageMedium>
+          <storageMedium>
+            <medium>8mmfilm</medium>
+          </storageMedium>
 
-          <haDes:aspectRatio>1:37</haDes:aspectRatio>
+          <aspectRatio>1:37</aspectRatio>
 
           <!-- TODO: look for a suitable mapping for material type -->
-          <!-- <material_type>Original positive</material_type> -->
-        </haDes:ImageReel>
+          <materialType>Original positive</materialType>
+        </ImageReel>
       </premis:significantPropertiesExtension>
     </premis:significantProperties>
 
