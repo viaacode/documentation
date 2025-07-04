@@ -403,6 +403,14 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
+| Element | `metadata/schema:isPartOf[@xsi:type=schema:Episode]/schema:alternateName[@xml:lang=*]` |
+|-----------------------|-----------|
+| Name | Alternate name episode |
+| Description | The alternate name of the episode. The `name` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). If the element is present, there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..* |
+| Obligation | MAY |
+
 | Element | `metadata/schema:isPartOf[@xsi:type=schema:ArchiveComponent]` |
 |-----------------------|-----------|
 | Name | Is part of archive |
@@ -418,6 +426,14 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
+| Element | `metadata/schema:isPartOf[@xsi:type=schema:ArchiveComponent]/schema:alternateName[@xml:lang=*]` |
+|-----------------------|-----------|
+| Name | Alternate name archive |
+| Description | The alternate name of the archive. The `name` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). If the element is present, there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..* |
+| Obligation | MAY |
+
 | Element | `metadata/schema:isPartOf[@xsi:type=schema:CreativeWorkSeries]` |
 |-----------------------|-----------|
 | Name | Is part of series |
@@ -432,6 +448,14 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
+
+| Element | `metadata/schema:isPartOf[@xsi:type=schema:CreativeWorkSeries]/schema:alternateName[@xml:lang=*]` |
+|-----------------------|-----------|
+| Name | Alternate name series |
+| Description | The alternative name of the series. The `name` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). If the element is present, there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..* |
+| Obligation | MAY |
 
 | Element | `metadata/schema:isPartOf[@xsi:type=schema:CreativeWorkSeries]/schema:position` |
 |-----------------------|-----------|
@@ -471,6 +495,14 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
+| Element | `metadata/schema:isPartOf[@xsi:type=schema:BroadcastEvent]/schema:alternateName[@xml:lang=*]` |
+|-----------------------|-----------|
+| Name | Alternate name broadcast event |
+| Description |  The alternate name of the broadcast. The `name` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). If the element is present, there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..* |
+| Obligation | MAY |
+
 | Element | `metadata/schema:isPartOf[@xsi:type=schema:CreativeWorkSeason]` |
 |-----------------------|-----------|
 | Name | Is part of season |
@@ -485,6 +517,14 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
+
+| Element | `metadata/schema:isPartOf[@xsi:type=schema:CreativeWorkSeason]/schema:alternateName[@xml:lang=*]` |
+|-----------------------|-----------|
+| Name | Alternate name season |
+| Description |  The alternate name of the season. The `name` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). If the element is present, there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..* |
+| Obligation | MAY |
 
 | Element | `metadata/schema:isPartOf[@xsi:type=schema:CreativeWorkSeason]/schema:seasonNumber` |
 |-----------------------|-----------|
