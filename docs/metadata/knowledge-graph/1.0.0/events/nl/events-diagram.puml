@@ -29,7 +29,7 @@ class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
 class "<b>Uitkomststatus</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
 
 
-schema_Brand : naam : <i>rdf:langString</i> [1..1]
+schema_Brand : naam : <i>rdf:langString</i> [1..*]
 
 
 
@@ -37,10 +37,10 @@ prov_Activity : heeft einddatum : <i>xsd:dateTime</i> [1..1]
 prov_Activity : heeft gegenereerd : <i>IRI</i> [0..1]
 prov_Activity : heeft startdatum : <i>xsd:dateTime</i> [1..1]
 
-prov_Activity --> org_Organization :is geassocieerd met [1..1]  > 
-prov_Activity --> premis_HardwareAgent :is geassocieerd met [1..1]  > 
-prov_Activity --> premis_SoftwareAgent :is geassocieerd met [1..1]  > 
-prov_Activity --> schema_Person :is geassocieerd met [1..1]  > 
+prov_Activity --> org_Organization :is geassocieerd met [0..*]  > 
+prov_Activity --> premis_HardwareAgent :is geassocieerd met [0..*]  > 
+prov_Activity --> premis_SoftwareAgent :is geassocieerd met [0..*]  > 
+prov_Activity --> schema_Person :is geassocieerd met [0..*]  > 
 
 
 premis_Event --|> prov_Activity #blue;line.dotted;text:blue
@@ -57,7 +57,7 @@ premis_Event --> premis_SoftwareAgent :uitgevoerd door [0..1]  >
 premis_HardwareAgent --|> premis_Agent #blue;line.dotted;text:blue
 
 premis_HardwareAgent : model : <i>xsd:string</i> [0..1]
-premis_HardwareAgent : naam : <i>rdf:langString</i> [1..1]
+premis_HardwareAgent : naam : <i>rdf:langString</i> [1..*]
 premis_HardwareAgent : serienummer : <i>xsd:string</i> [0..1]
 premis_HardwareAgent : versie : <i>xsd:string</i> [0..1]
 
@@ -76,7 +76,7 @@ schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
 
 premis_SoftwareAgent : model : <i>xsd:string</i> [0..1]
-premis_SoftwareAgent : naam : <i>rdf:langString</i> [1..1]
+premis_SoftwareAgent : naam : <i>rdf:langString</i> [1..*]
 premis_SoftwareAgent : serienummer : <i>xsd:string</i> [0..1]
 premis_SoftwareAgent : versie : <i>xsd:string</i> [0..1]
 

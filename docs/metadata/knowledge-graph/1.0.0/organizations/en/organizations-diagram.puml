@@ -53,7 +53,7 @@ schema_ContactPoint : telephone : <i>xsd:string</i> [0..*]
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ContentPartner : has identifier : <i>xsd:string</i> [1..1]
+haOrg_ContentPartner : identifier : <i>xsd:string</i> [1..1]
 haOrg_ContentPartner : request form : <i>xsd:string</i> [0..*]
 haOrg_ContentPartner --> schema_Person :has account manager [1..1]  > 
 haOrg_ContentPartner --> skos_Concept :has preference [0..*]  > 
@@ -65,12 +65,12 @@ schema_Country : name : <i>xsd:string</i> [1..1]
 
 haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
 
-haOrg_DigitizationPartner : has identifier : <i>xsd:string</i> [1..1]
+haOrg_DigitizationPartner : identifier : <i>xsd:string</i> [1..1]
 
 
 haOrg_EducationalPartner --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_EducationalPartner : has identifier : <i>xsd:string</i> [1..1]
+haOrg_EducationalPartner : identifier : <i>xsd:string</i> [1..1]
 haOrg_EducationalPartner --> schema_Person :has account manager [1..1]  > 
 
 
@@ -79,8 +79,8 @@ haOrg_EducationalPartner --> schema_Person :has account manager [1..1]  >
 
 org_Organization : alternative label : <i>rdf:langString</i> [0..*]
 org_Organization : description : <i>rdf:langString</i> [0..*]
-org_Organization : has identifier : <i>xsd:string</i> [1..1]
 org_Organization : homepage : <i>IRI</i> [0..1]
+org_Organization : identifier : <i>xsd:string</i> [1..1]
 org_Organization : preferred label : <i>rdf:langString</i> [1..*]
 org_Organization : sector : <i>xsd:string</i> [0..1]
 org_Organization : tenant name : <i>xsd:string</i> [0..*]
@@ -136,7 +136,7 @@ schema_PostalAddress --> schema_Country :country [0..1]  >
 
 haOrg_ProjectPartner --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ProjectPartner : has identifier : <i>xsd:string</i> [1..1]
+haOrg_ProjectPartner : identifier : <i>xsd:string</i> [1..1]
 
 
 org_Role --|> skos_Concept #blue;line.dotted;text:blue
@@ -146,12 +146,12 @@ org_Role : preferred label : <i>rdf:langString</i> [1..*]
 
 haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ServiceConsumer : has identifier : <i>xsd:string</i> [1..1]
+haOrg_ServiceConsumer : identifier : <i>xsd:string</i> [1..1]
 
 
 haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ServiceProvider : has identifier : <i>xsd:string</i> [1..1]
+haOrg_ServiceProvider : identifier : <i>xsd:string</i> [1..1]
 
 
 

@@ -58,23 +58,23 @@ schema_PostalAddress --> schema_Country :pays [0..1]  >
 
 haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ServiceConsumer : possède un identifiant : <i>xsd:string</i> [1..1]
+haOrg_ServiceConsumer : identifiant : <i>xsd:string</i> [1..1]
 
 
 haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ServiceProvider : possède un identifiant : <i>xsd:string</i> [1..1]
+haOrg_ServiceProvider : identifiant : <i>xsd:string</i> [1..1]
 
 
 
 
 
 org_Organization : description : <i>rdf:langString</i> [0..*]
+org_Organization : identifiant : <i>xsd:string</i> [1..1]
 org_Organization : label alternatif : <i>rdf:langString</i> [0..*]
 org_Organization : label préféré : <i>rdf:langString</i> [1..*]
 org_Organization : nom du locataire : <i>xsd:string</i> [0..*]
 org_Organization : page d'accueil : <i>IRI</i> [0..1]
-org_Organization : possède un identifiant : <i>xsd:string</i> [1..1]
 org_Organization : secteur : <i>xsd:string</i> [0..1]
 
 org_Organization --> haOrg_Logo :logo [0..*]  \llogo principal [0..1]  > 
@@ -90,24 +90,24 @@ org_Organization --> schema_Person :a gestionnaire de comptes [0..1]  >
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_ContentPartner : formulaire de demande : <i>xsd:string</i> [0..*]
-haOrg_ContentPartner : possède un identifiant : <i>xsd:string</i> [1..1]
+haOrg_ContentPartner : identifiant : <i>xsd:string</i> [1..1]
 haOrg_ContentPartner --> schema_Person :a gestionnaire de comptes [1..1]  > 
 haOrg_ContentPartner --> skos_Concept :préfère [0..*]  > 
 
 
 haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
 
-haOrg_DigitizationPartner : possède un identifiant : <i>xsd:string</i> [1..1]
+haOrg_DigitizationPartner : identifiant : <i>xsd:string</i> [1..1]
 
 
 haOrg_ProjectPartner --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ProjectPartner : possède un identifiant : <i>xsd:string</i> [1..1]
+haOrg_ProjectPartner : identifiant : <i>xsd:string</i> [1..1]
 
 
 haOrg_EducationalPartner --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_EducationalPartner : possède un identifiant : <i>xsd:string</i> [1..1]
+haOrg_EducationalPartner : identifiant : <i>xsd:string</i> [1..1]
 haOrg_EducationalPartner --> schema_Person :a gestionnaire de comptes [1..1]  > 
 
 

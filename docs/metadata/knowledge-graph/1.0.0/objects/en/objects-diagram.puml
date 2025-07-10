@@ -42,7 +42,7 @@ class "<b>Storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stored at [1..1]  > 
+haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stored at [1..*]  > 
 haObj_CarrierRepresentation --> premis_IntellectualEntity :is carrier copy of [0..1]  > 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
@@ -58,7 +58,7 @@ premis_File : has original name : <i>xsd:string</i> [0..1]
 premis_File : has size : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
 premis_File --> dct_FileFormat :format [0..1]  > 
-premis_File --> haObj_DigitalRepresentation :is Include In [0..*]  > 
+premis_File --> haObj_DigitalRepresentation :is Included In [0..*]  > 
 premis_File --> haObj_FragmentRepresentation :has media fragment [0..*]  > 
 premis_File --> mh_Fragment :was derived from [1..1]  > 
 premis_File --> premis_File :documents [0..*]  \lnext file in sequence [0..1]  \lsupersedes [0..*]  > 
