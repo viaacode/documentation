@@ -308,7 +308,7 @@ Het startpunt van de tijdscodering zoals die op de originele drager wordt bijgeh
 
 | **XML element**        | `<OTC_start/>`                                                                                                     |
 | **Datatype**           | Tijdscode (`uu:mm:ss:SS`)                                                                                          |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be). |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in de [registratietool](http://registratie.meemoo.be). |
 | **Herhaalbaar**        | Nee                                                                                                                |
 
 ```xml
@@ -322,7 +322,7 @@ De gekende of geschatte duur van de inhoud van de originele drager.
 
 | **XML element**        | `<file_duration/>`                                                                                                 |
 | **Datatype**           | Duur (`uu:mm:ss.SS`)                                                                                               |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be). |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in de [registratietool](http://registratie.meemoo.be). |
 | **Herhaalbaar**        | Nee                                                                                                                |
 
 ```xml
@@ -336,7 +336,7 @@ De opnamesnelheid van de drager. Dit is hoofdzakelijk van toepassing voor opensp
 
 | **XML element**        | `<audio_carrier_speed/>`                                                                                          |
 | **Datatype**           | `x.xx cm/s`                                                                                                         |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be). |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in de [registratietool](http://registratie.meemoo.be). |
 | **Herhaalbaar**        | Nee                                                                                                               |
 
 ```xml
@@ -350,7 +350,7 @@ De bij audiocassettes gebruikte technologie van ruisonderdrukking.
 
 | **XML element**        | `<audio_noise_reduction/>`                                                                                        |
 | **Datatype**           | Vrije tekst                                                                                                       |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be). |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in de [registratietool](http://registratie.meemoo.be). |
 | **Herhaalbaar**        | Nee                                                                                                               |
 
 ```xml
@@ -363,8 +363,8 @@ Het type magnetische coating gebruikt voor de tape van een audiocassette.
 
 
 | **XML element**        | `<audio_iec_type/>`                                                                                                                                                   |
-| **Datatype**           | I-IV (IEC 60094) (zie ook onze pagina over [drager registratie in AMS](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)) |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be).                                                    |
+| **Datatype**           | I-IV (IEC 60094) (zie ook onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)) |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in de [registratietool](http://registratie.meemoo.be).                                                    |
 | **Herhaalbaar**        | Nee                                                                                                                                                                   |
 
 ```xml
@@ -378,7 +378,7 @@ Het aantal geluidssporen dat op de drager werd vastgelegd.
 
 | **XML element**        | `<audio_tracks/>`                                                                                                  |
 | **Datatype**           | Integer                                                                                                            |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be). |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in de [registratietool](http://registratie.meemoo.be). |
 | **Herhaalbaar**        | Nee                                                                                                                |
 
 ```xml
