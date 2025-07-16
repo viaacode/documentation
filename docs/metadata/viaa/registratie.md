@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 {: .fw-300 }
-Deze velden worden ingevuld door contentpartners tijdens de registratie van analoog materiaal, met oog op een digitaliseringsproject uitgevoerd door meemoo. Deze informatie wordt standaard automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be).
+Deze velden worden ingevuld door contentpartners tijdens de registratie van analoog materiaal, met oog op een digitaliseringsproject uitgevoerd door meemoo. Deze informatie wordt standaard automatisch overgenomen uit de registratieinformatie in de [registratietool](http://registratie.meemoo.be).
 
 {: .important }
 Deze pagina dient louter ter documentatie van de relevante velden bij registratie. Onderstaande velden kunnen dus niet gebruikt worden bij bv. een digitaal instroomproces.
@@ -28,7 +28,7 @@ Type drager (onderverdeeld in `audio`, `video`, `film`, en `paper`).
 
 
 | **XML element**            | `<type/>`                                                                                                                                           |
-| **Datatype**               | Gecontroleerde lijst: zie onze pagina over [drager registratie in AMS](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
+| **Datatype**               | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
 | **Verplichting**           | Verplicht indien gekend                                   |
 | **Herhaalbaar**            | Nee                                                                                                                                                 |
 
@@ -42,7 +42,7 @@ Een omschrijving van het type materiële drager waarop het item oorspronkelijk i
 
 
 | **XML element**        | `<format/>`                                                                                                                                         |
-| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in AMS](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
+| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
 | **Verplichting**       | Verplicht indien gekend                                   |
 | **Herhaalbaar**        | Nee                                                                                                                                                 |
 
@@ -56,7 +56,7 @@ Een specifieke formaatversie, die voor sommige dragerformaten wordt gevraagd, zo
 
 
 | **XML element**        | `<format_version/>`                                                                                                                                         |
-| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in AMS](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
+| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
 | **Verplichting**       | Verplicht                                   |
 | **Herhaalbaar**        | Nee                                                                                                                                                 |
 
@@ -100,7 +100,7 @@ Dit is het merk of de fabrikant van de materiële drager.
 
 
 | **XML element**        | `<brand/>`                                                                                                                                          |
-| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in AMS](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
+| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
 | **Verplichting**       | Verplicht                                   |
 | **Herhaalbaar**        | Nee                                                                                                                                                 |
 
@@ -128,7 +128,7 @@ In dit veld kan worden aangegeven of de tape op een kern dan wel op een open spo
 
 
 | **XML element**        | `<core_reel/>`                                                                                                                                                        |
-| **Datatype**           | "Kern" / "Spoel" (zie ook onze pagina over [drager registratie in AMS](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)) |
+| **Datatype**           | "Kern" / "Spoel" (zie ook onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)) |
 | **Verplichting**       | Verplicht indien gekend                                                    |
 | **Herhaalbaar**        | Nee                                                                                                                                                                   |
 
@@ -142,7 +142,7 @@ Fenomenen -- doorgaans onder invloed van fysische of chemische factoren -- die m
 
 
 | **XML element**        | `<preservation_problems/>`                                                                                                                           |
-| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in AMS](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)) |
+| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)) |
 | **Verplichting**       | Optioneel                                   |
 | **Herhaalbaar**        | Ja                                                                                                                                                   |
 
@@ -481,7 +481,7 @@ De afmetingen van het object in mm, volgens hoogte x breedte x (indien driedimen
 
 ## Registratiedatum drager
 
-De datum waarop de drager in AMS werd geregistreerd.
+De datum waarop de drager in de registratietool werd geregistreerd.
 
 
 | **XML element**        | `<created_on/>`                                                                                                   |

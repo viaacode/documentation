@@ -68,9 +68,9 @@ De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing ind
 
 De hoofd ID van de oorspronkelijke drager of het *born digital* item. Dit is de registratiecode die het meest courant wordt gebruikt door de CP binnen ***het eigen*** archief- of collectiemanagementsysteem.
 
-Dit is de unieke ID van de content partner die de linkt vormt naar het eigen collectiebeheerssysteem. Dit kan later gebruikt worden om metadata te koppelen in het meemoo archiefsysteem. Voor digitalisering door meemoo is deze ID al in Mediahaven aanwezig, indien deze mee wordt gegeven in [AMS](http://registratie.meemoo.be) `<original_carrier_id/>`.
+Dit is de unieke ID van de content partner die de linkt vormt naar het eigen collectiebeheerssysteem. Dit kan later gebruikt worden om metadata te koppelen in het meemoo archiefsysteem. Voor digitalisering door meemoo is deze ID al in Mediahaven aanwezig, indien deze mee wordt gegeven in de [registratietool](http://registratie.meemoo.be) `<original_carrier_id/>`.
 
-Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registratienummer bijhoudt (ook al raadt meemoo aan om vóór registratie in [AMS](http://registratie.meemoo.be) dit alsnog toe te kennen). In dat geval blijft dit veld leeg.
+Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registratienummer bijhoudt (ook al raadt meemoo aan om vóór registratie in de [registratietool](http://registratie.meemoo.be) dit alsnog toe te kennen). In dat geval blijft dit veld leeg.
 
 | **XML element**            | `<dc_identifier_localid>`                                                                        |
 | **Data type**              | ID                                                                                               |
@@ -378,9 +378,9 @@ Een reeks, een onderdeel van een bovenliggende reeks zoals hierboven omschreven.
 
 ## Secundaire titel: Registratie
 
-Dit is de registratie-titel zoals ingegeven in [AMS](http://registratie.meemoo.be).
+Dit is de registratie-titel zoals ingegeven in de [registratietool](http://registratie.meemoo.be).
 
-_Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens de registratie werd ingegeven in de[AMS](http://registratie.meemoo.be) registratiesoftware opgeschoond dient te worden maar tegelijk ook interessante informatie bevat. Op dat moment kan de registratietitel bewaard worden onder de secundaire titel 'registratie' en kan de hoofdtitel vervangen worden door een opgeschoonde titel._
+_Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens de registratie werd ingegeven in dede [registratietool](http://registratie.meemoo.be) registratiesoftware opgeschoond dient te worden maar tegelijk ook interessante informatie bevat. Op dat moment kan de registratietitel bewaard worden onder de secundaire titel 'registratie' en kan de hoofdtitel vervangen worden door een opgeschoonde titel._
 
 | **XML element**        | `<dc_titles type="list"><registratie/></dc_titles>` |
 | **Datatype**           | Vrije tekst                                         |
@@ -403,7 +403,7 @@ De datum waarop de inhoud van het object werd gecreëerd.
 
 _Bij de mapping naar het meemoo datamodel wordt de creatiedatum ook gemapt naar het veld `<date>`. Dit metadataveld verwacht een exacte datum om zo ook een facet toe te kunnen voegen in de zoekinterface. Bijkomend wordt hierdoor het item ook zichtbaar op de tijdslijn in de meemoo archiefwebsite._
 
-_Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht bij registratie in [AMS](http://registratie.meemoo.be)) gekozen, aangezien deze doorgaans met de datum van de creatie van de originele inhoud samenvalt of er toch dicht bij aansluit. Het is evenwel mogelijk dat de intellectuele inhoud ('content') vastgelegd op de drager een latere kopie is van een ouder origineel (bijvoorbeeld een kopie van een film op Umatic). In dit geval verschillen de datum van creatie van de datum van de originele drager._
+_Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht bij registratie in de [registratietool](http://registratie.meemoo.be)) gekozen, aangezien deze doorgaans met de datum van de creatie van de originele inhoud samenvalt of er toch dicht bij aansluit. Het is evenwel mogelijk dat de intellectuele inhoud ('content') vastgelegd op de drager een latere kopie is van een ouder origineel (bijvoorbeeld een kopie van een film op Umatic). In dit geval verschillen de datum van creatie van de datum van de originele drager._
 
 
 | **XML element**            | `<dcterms_created/>`                                                                             |
