@@ -250,7 +250,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Name | Format |
 | Description | The format of this Intellectual Entity . |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
-| Vocabulary | `audio`, `video`, `film`, `paper`, `newspaper`, `newspaperpage`, `videofragment`, `audiofragment`  |
+| Vocabulary | `audio`, `video`, `film`, `paper`, `newspaper`, `newspaperpage`, `videofragment`, `audiofragment`, `image`  |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -283,8 +283,8 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Description | The role with which the creator, publisher, or contributor was involved in creating, publishing or contributing to the digitally reproduced artwork.  |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
 | Vocabulary | See the lists of roles for [makers](https://developer.meemoo.be/docs/metadata/viaa/algemeen.html#mogelijke-sleutels-1), [contributors](https://developer.meemoo.be/docs/metadata/viaa/algemeen.html#bijdrager), and [publisher](https://developer.meemoo.be/docs/metadata/viaa/algemeen.html#mogelijke-sleutels-3).  |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
+| Cardinality | 1..1 |
+| Obligation | MUST |
 
 | Element | `metadata/(schema:creator|schema:publisher|schema:contributor)/schema:name[@xml:lang=*]` |
 |-----------------------|-----------|
@@ -394,6 +394,22 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 |-----------------------|-----------|
 | Name | Artform |
 | Description | The type of artform, e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). There MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..* |
+| Obligation | MAY |
+
+| Element | `metadata/schema:creditText[@xml:lang=*]` |
+|-----------------------|-----------|
+| Name | Credit text |
+| Description | Text that can be used to credit person(s) and/or organization(s) associated with this Intellectual Entity. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
+| Cardinality | 0..* |
+| Obligation | MAY |
+
+| Element | `metadata/schema:genre[@xml:lang=*]` |
+|-----------------------|-----------|
+| Name | Genre |
+| Description | Genre of this Intellectual Entity. The `genre` term MAY only be used multiple times when it uses a different language. The applied language MUST be provided by a `@xml:lang` attribute (see requirements above). If the element is present, there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/2_terminology.md %}#string) |
 | Cardinality | 0..* |
 | Obligation | MAY |
