@@ -12,10 +12,10 @@ parent:       Digitale instroom
 
 The meemoo SIP specification is available in the following versions:
 
-## Version [2.1]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/index.md %}) <span class="label label-yellow">Editor's Draft</span>
+## Version [2.1]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/index.md %}) <span class="label label-blue">Release Candidate</span>
 
 This release adds support for digitised film via a dedicated Film content profile.
-This version is being drafted and is **not yet supported**.
+This version is being implemented and is **not yet supported**.
 
 ### What was **added** compared to the previous version?
 
@@ -26,9 +26,9 @@ This version is being drafted and is **not yet supported**.
 
 Not applicable.
 
-## Version [2.0]({{ site.baseurl }}{% link docs/diginstroom/sip/2.0/index.md %}) <span class="label label-yellow">Editor's Draft</span>
+## Version [2.0]({{ site.baseurl }}{% link docs/diginstroom/sip/2.0/index.md %}) <span class="label label-blue">Release Candidate</span>
 
-This major release ensures adherence of the meemoo SIP to the [EARK (C)SIP specification](https://earksip.dilcis.eu/). This version is being drafted and is **not yet supported**.
+This major release ensures adherence of the meemoo SIP to the [EARK (C)SIP specification](https://earksip.dilcis.eu/). This version is being implemented and is **not yet supported**.
 
 ### What was **added** compared to the previous version?
 
@@ -41,9 +41,9 @@ This major release ensures adherence of the meemoo SIP to the [EARK (C)SIP speci
 
 - The _Bag_ level was removed from the SIP, thereby also removing its dependency on the BagIt specification.
 
-## Version [1.2]({{ site.baseurl }}{% link docs/diginstroom/sip/1.2/index.md %}) <span class="label label-blue">Release Candidate</span>
+## Version [1.2]({{ site.baseurl }}{% link docs/diginstroom/sip/1.2/index.md %}) <span class="label label-green">Stable</span>
 
-This third release broadens support for written works and extends the metadata for the basic profile. This version is **not yet supported**.
+This third release broadens support for written works and extends the metadata for the basic profile. This version is **supported since March 2024**.
 
 ### What was **added** compared to the previous version?
 
@@ -54,9 +54,9 @@ This third release broadens support for written works and extends the metadata f
 
 - The content profile _Bibliographic_, formerly known as _Newspaper_, does no longer allow the use of `dc+schema.xml` metadata.
 
-## Version [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-green">Stable</span>
+## Version [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-orange">Deprecated</span>
 
-This second release adds support for the intake of digital reproductions of museum objects and digitized newspapers. This version is **supported since March 2023**.
+This second release adds support for the intake of digital reproductions of museum objects and digitized newspapers. This version is **deprecated since August 2025**.
 
 ### What was **added** compared to the previous version?
 
