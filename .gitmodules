@@ -18,3 +18,7 @@
 	path = docs/diginstroom/sip/2.1
 	url = https://github.com/viaacode/sip-specification.git
 	branch = 2.1
+[submodule "_data/2_1"]
+	path = _data/2_1
+	url = https://github.com/viaacode/sip-specification.git
+	branch = 2.1
