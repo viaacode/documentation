@@ -13,7 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/en#skos%3AConcept]]
 class "<b>Contact point</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>Content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
