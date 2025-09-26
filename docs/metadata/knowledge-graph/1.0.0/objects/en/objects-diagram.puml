@@ -54,8 +54,8 @@ haObj_DigitalRepresentation --> premis_Representation :has Source [0..*]  >
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
+premis_File : filesize : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : has original name : <i>xsd:string</i> [0..1]
-premis_File : has size : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
 premis_File --> dct_FileFormat :format [0..1]  > 
 premis_File --> haObj_DigitalRepresentation :is Included In [0..*]  > 
@@ -90,7 +90,7 @@ premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 premis_IntellectualEntity --> haObj_CarrierRepresentation :has carrier copy [0..1]  > 
 premis_IntellectualEntity --> haObj_DigitalRepresentation :has Access Copy [0..*]  \lhas IIIF Copy [0..*]  \lhas Master [0..*]  \lhas Mezzanine [0..*]  \lhas transcription copy [0..*]  > 
 premis_IntellectualEntity --> haObj_FragmentRepresentation :has fragment [0..*]  > 
-premis_IntellectualEntity --> haObj_LocalIdentifier :has primary identifier [0..*]  \llocal identifier [0..*]  > 
+premis_IntellectualEntity --> haObj_LocalIdentifier :local identifier [0..*]  \lprimary local identifier [0..*]  > 
 premis_IntellectualEntity --> mh_Fragment :was derived from [1..1]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :has Part [0..*]  \lis Part Of [0..*]  \lnext intellectual entity in sequence [0..1]  > 
 premis_IntellectualEntity --> premis_Representation :is Represented By [1..*]  > 
