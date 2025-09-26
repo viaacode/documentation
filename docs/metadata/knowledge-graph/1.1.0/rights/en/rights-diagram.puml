@@ -1,0 +1,127 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Action</b> (odrl:Action)" as odrl_Action [[#odrl%3AAction]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Constraint</b> (odrl:Constraint)" as odrl_Constraint [[#odrl%3AConstraint]]
+class "<b>Content range</b> (haRig:ContentRange)" as haRig_ContentRange [[#haRig%3AContentRange]]
+class "<b>Right Operand</b> (odrl:RightOperand)" as odrl_RightOperand [[#odrl%3ARightOperand]]
+class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>License</b> (premis:License)" as premis_License [[#premis%3ALicense]]
+class "<b>Rights basis</b> (premis:RightsBasis)" as premis_RightsBasis [[#premis%3ARightsBasis]]
+class "<b>Metadata range</b> (haRig:MetadataRange)" as haRig_MetadataRange [[#haRig%3AMetadataRange]]
+class "<b>Right Operand</b> (odrl:RightOperand)" as odrl_RightOperand [[#odrl%3ARightOperand]]
+class "<b>Motivation</b> (haRig:Motivation)" as haRig_Motivation [[#haRig%3AMotivation]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Permission</b> (odrl:Permission)" as odrl_Permission [[#odrl%3APermission]]
+class "<b>Rule</b> (odrl:Rule)" as odrl_Rule [[#odrl%3ARule]]
+class "<b>Policy</b> (odrl:Policy)" as odrl_Policy [[#odrl%3APolicy]]
+class "<b>Prohibition</b> (odrl:Prohibition)" as odrl_Prohibition [[#odrl%3AProhibition]]
+class "<b>Rule</b> (odrl:Rule)" as odrl_Rule [[#odrl%3ARule]]
+class "<b>Rights Statement</b> (dct:RightsStatement)" as dct_RightsStatement [[#dct%3ARightsStatement]]
+class "<b>Rights status</b> (premis:RightsStatus)" as premis_RightsStatus [[#premis%3ARightsStatus]]
+class "<b>User group</b> (haRig:UserGroup)" as haRig_UserGroup [[#haRig%3AUserGroup]]
+class "<b>Right Operand</b> (odrl:RightOperand)" as odrl_RightOperand [[#odrl%3ARightOperand]]
+class "<b>public domain</b> (copyrightStatus:pub)" as copyrightStatus_pub [[#copyrightStatus%3Apub]]
+class "<b>Rights status</b> (premis:RightsStatus)" as premis_RightsStatus [[#premis%3ARightsStatus]]
+
+
+
+
+
+
+odrl_Constraint : constraint name : <i>IRI</i> [1..1]
+odrl_Constraint : operator : <i>IRI</i> [1..1]
+
+odrl_Constraint --> haRig_ContentRange :constraint value [1..1]  > 
+odrl_Constraint --> haRig_MetadataRange :constraint value [1..1]  > 
+odrl_Constraint --> haRig_UserGroup :constraint value [1..1]  > 
+
+haRig_ContentRange --|> odrl_RightOperand #blue;line.dotted;text:blue
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation --> odrl_Policy :Target Policy [0..1]  > 
+haObj_DigitalRepresentation --> premis_License :condition for reuse [0..1]  > 
+haObj_DigitalRepresentation --> premis_RightsStatus :rights status [1..3]  > 
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+premis_IntellectualEntity --> copyrightStatus_pub :rights status [1..3]  > 
+premis_IntellectualEntity --> dct_RightsStatement :rights statement [1..1]  > 
+premis_IntellectualEntity --> premis_License :condition for reuse [0..1]  > 
+premis_IntellectualEntity --> premis_RightsStatus :rights status [1..3]  > 
+
+premis_License --|> premis_RightsBasis #blue;line.dotted;text:blue
+
+
+haRig_MetadataRange --|> odrl_RightOperand #blue;line.dotted;text:blue
+
+
+haRig_Motivation --|> skos_Concept #blue;line.dotted;text:blue
+
+
+odrl_Permission --|> odrl_Rule #blue;line.dotted;text:blue
+
+odrl_Permission : end date : <i>xsd:dateTime</i> [0..1]
+odrl_Permission : note : <i>xsd:string</i> [0..1]
+odrl_Permission : start date : <i>xsd:dateTime</i> [0..1]
+odrl_Permission --> odrl_Action :None [1..*]  > 
+odrl_Permission --> odrl_Constraint :constraint [0..5]  > 
+
+
+
+
+odrl_Policy --> haObj_DigitalRepresentation :doelrepresentatie [1..*]  \lreprésentation cible [1..*]  \ltarget representation [1..*]  > 
+odrl_Policy --> odrl_Permission :ontsluitingstoestemming [0..*]  > 
+odrl_Policy --> odrl_Prohibition :limitation of access [0..*]  > 
+
+odrl_Prohibition --|> odrl_Rule #blue;line.dotted;text:blue
+
+odrl_Prohibition : end date : <i>xsd:dateTime</i> [0..1]
+odrl_Prohibition : note : <i>xsd:string</i> [0..1]
+odrl_Prohibition : start date : <i>xsd:dateTime</i> [0..1]
+odrl_Prohibition --> haRig_Motivation :is motivated by [1..*]  > 
+odrl_Prohibition --> odrl_Action :None [1..*]  > 
+odrl_Prohibition --> odrl_Constraint :constraint [0..5]  > 
+
+
+
+
+
+
+premis_RightsStatus : end date : <i>xsd:dateTime</i> [0..1]
+premis_RightsStatus : note : <i>xsd:string</i> [0..1]
+premis_RightsStatus : start date : <i>xsd:dateTime</i> [0..1]
+
+
+
+haRig_UserGroup --|> odrl_RightOperand #blue;line.dotted;text:blue
+
+
+copyrightStatus_pub --|> premis_RightsStatus #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
