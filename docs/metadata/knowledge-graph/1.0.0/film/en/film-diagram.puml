@@ -17,7 +17,7 @@ class "<b>Audio reel</b> (haDes:AudioReel)" as haDes_AudioReel [[#haDes%3AAudioR
 class "<b>Physical carrier</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[../../audiovisual/en#haObj%3ACarrierRepresentation]]
 class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/en#skos%3AConcept]]
 class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
 class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Image reel</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageReel]]
@@ -50,7 +50,9 @@ haObj_CarrierRepresentation --> haDes_ImageReel :stored at [1..*]  >
 
 haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
+haDes_Film : broadcasting organization : <i>org:Organization</i> [0..1]
 haDes_Film --> haObj_CarrierRepresentation :has carrier copy [1..1]  > 
+
 
 haDes_ImageReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
