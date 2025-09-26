@@ -54,16 +54,16 @@ premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 premis_IntellectualEntity --> haObj_CarrierRepresentation :est copie sur porteur [0..1]  > 
 premis_IntellectualEntity --> haObj_DigitalRepresentation :a copie d'accès [0..*]  \la copie de IIIF [0..*]  \la copie de transcription [0..*]  \la maître [0..*]  \la mezzanine [0..*]  > 
 premis_IntellectualEntity --> haObj_FragmentRepresentation :a fragment [0..*]  > 
-premis_IntellectualEntity --> haObj_LocalIdentifier :a identifiant principal [0..*]  \lidentificateur local [0..*]  > 
+premis_IntellectualEntity --> haObj_LocalIdentifier :identificateur local [0..*]  \lidentificateur local principal [0..*]  > 
 premis_IntellectualEntity --> mh_Fragment :était dérivé de [1..1]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :a partie [0..*]  \lest partie de [0..*]  \ll'entité intellectuelle suivante dans l'ordre [0..1]  > 
 premis_IntellectualEntity --> premis_Representation :est représenté par [1..*]  > 
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
-premis_File : a une taille (du fichier) : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
 premis_File : porte le nom d'origine : <i>xsd:string</i> [0..1]
+premis_File : taille de fichier : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File --> dct_FileFormat :format [0..1]  > 
 premis_File --> haObj_DigitalRepresentation :est inclus dans [0..*]  > 
 premis_File --> haObj_FragmentRepresentation :a le fragment des médias [0..*]  > 
