@@ -42,7 +42,7 @@ class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
-premis_File : heeft (bestands)grootte : <i>xsd:nonNegativeInteger</i> [1..1]
+premis_File : bestandsgrootte : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : heeft originele naam : <i>xsd:string</i> [0..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
 premis_File --> dct_FileFormat :formaat [0..1]  > 
@@ -94,7 +94,7 @@ premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 premis_IntellectualEntity --> haObj_CarrierRepresentation :heeft dragerkopie [0..1]  > 
 premis_IntellectualEntity --> haObj_DigitalRepresentation :heeft IIIF-kopie [0..*]  \lheeft master [0..*]  \lheeft mezzanine [0..*]  \lheeft toegangskopie [0..*]  \lheeft transcriptiekopie [0..*]  > 
 premis_IntellectualEntity --> haObj_FragmentRepresentation :heeft fragment [0..*]  > 
-premis_IntellectualEntity --> haObj_LocalIdentifier :heeft primaire identificatiecode [0..*]  \llokale identifier [0..*]  > 
+premis_IntellectualEntity --> haObj_LocalIdentifier :lokale identifier [0..*]  \lprimaire lokale identifier [0..*]  > 
 premis_IntellectualEntity --> mh_Fragment :werd afgeleid van [1..1]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :heeft deel [0..*]  \lis deel van [0..*]  \lvolgende intellectuele entiteit in volgorde [0..1]  > 
 premis_IntellectualEntity --> premis_Representation :wordt gerepresenteerd door [1..*]  > 
