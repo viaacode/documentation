@@ -1,0 +1,119 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>//data.hetarchief.be/Motivation></b> (<https://data.hetarchief.be/Motivation>)" as <https_//data.hetarchief.be/Motivation> [[#%3Chttps%3A//data.hetarchief.be/Motivation%3E]]
+class "<b>//data.hetarchief.be/UserGroup></b> (<https://data.hetarchief.be/UserGroup>)" as <https_//data.hetarchief.be/UserGroup> [[#%3Chttps%3A//data.hetarchief.be/UserGroup%3E]]
+class "<b>//data.hetarchief.be/MetadataRange></b> (<https://data.hetarchief.be/MetadataRange>)" as <https_//data.hetarchief.be/MetadataRange> [[#%3Chttps%3A//data.hetarchief.be/MetadataRange%3E]]
+class "<b>//data.hetarchief.be/ContentRange></b> (<https://data.hetarchief.be/ContentRange>)" as <https_//data.hetarchief.be/ContentRange> [[#%3Chttps%3A//data.hetarchief.be/ContentRange%3E]]
+class "<b>Action</b> (odrl:Action)" as odrl_Action [[#odrl%3AAction]]
+class "<b>Autorisation</b> (odrl:Permission)" as odrl_Permission [[#odrl%3APermission]]
+class "<b>Règle</b> (odrl:Rule)" as odrl_Rule [[#odrl%3ARule]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Contrainte</b> (odrl:Constraint)" as odrl_Constraint [[#odrl%3AConstraint]]
+class "<b>Déclaration des droits</b> (dct:RightsStatement)" as dct_RightsStatement [[#dct%3ARightsStatement]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Interdiction</b> (odrl:Prohibition)" as odrl_Prohibition [[#odrl%3AProhibition]]
+class "<b>Règle</b> (odrl:Rule)" as odrl_Rule [[#odrl%3ARule]]
+class "<b>Licence</b> (premis:License)" as premis_License [[#premis%3ALicense]]
+class "<b>Base des droits</b> (premis:RightsBasis)" as premis_RightsBasis [[#premis%3ARightsBasis]]
+class "<b>Politique</b> (odrl:Policy)" as odrl_Policy [[#odrl%3APolicy]]
+class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Statut de droits</b> (premis:RightsStatus)" as premis_RightsStatus [[#premis%3ARightsStatus]]
+class "<b>domaine public</b> (copyrightStatus:pub)" as copyrightStatus_pub [[#copyrightStatus%3Apub]]
+class "<b>Statut de droits</b> (premis:RightsStatus)" as premis_RightsStatus [[#premis%3ARightsStatus]]
+
+
+
+
+
+
+
+
+
+
+
+odrl_Permission --|> odrl_Rule #blue;line.dotted;text:blue
+
+odrl_Permission : date de début : <i>xsd:dateTime</i> [0..1]
+odrl_Permission : fin : <i>xsd:dateTime</i> [0..1]
+odrl_Permission : note : <i>xsd:string</i> [0..1]
+odrl_Permission --> odrl_Action :None [1..*]  > 
+odrl_Permission --> odrl_Constraint :contrainte [0..5]  > 
+
+
+
+
+
+
+odrl_Constraint : nom de la contrainte : <i>IRI</i> [1..1]
+odrl_Constraint : opérateur : <i>IRI</i> [1..1]
+odrl_Constraint --> <https_//data.hetarchief.be/ContentRange> :valeur de contrainte [1..1]  > 
+odrl_Constraint --> <https_//data.hetarchief.be/MetadataRange> :valeur de contrainte [1..1]  > 
+odrl_Constraint --> <https_//data.hetarchief.be/UserGroup> :valeur de contrainte [1..1]  > 
+
+
+
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+premis_IntellectualEntity --> copyrightStatus_pub :statut de droit [1..3]  > 
+premis_IntellectualEntity --> dct_RightsStatement :déclaration des droits [1..1]  > 
+premis_IntellectualEntity --> premis_License :condition de réutilisation [0..1]  > 
+premis_IntellectualEntity --> premis_RightsStatus :statut de droit [1..3]  > 
+
+odrl_Prohibition --|> odrl_Rule #blue;line.dotted;text:blue
+
+odrl_Prohibition : date de début : <i>xsd:dateTime</i> [0..1]
+odrl_Prohibition : fin : <i>xsd:dateTime</i> [0..1]
+odrl_Prohibition : note : <i>xsd:string</i> [0..1]
+odrl_Prohibition --> <https_//data.hetarchief.be/Motivation> :est motivé par [1..*]  > 
+odrl_Prohibition --> odrl_Action :None [1..*]  > 
+odrl_Prohibition --> odrl_Constraint :contrainte [0..5]  > 
+
+
+
+premis_License --|> premis_RightsBasis #blue;line.dotted;text:blue
+
+
+
+odrl_Policy --> haObj_DigitalRepresentation :Cible [1..*]  > 
+odrl_Policy --> odrl_Permission :autorisation d'accès [0..*]  > 
+odrl_Policy --> odrl_Prohibition :limitation de l'accès [0..*]  > 
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation --> odrl_Policy :Politique cible [0..1]  > 
+haObj_DigitalRepresentation --> premis_License :condition de réutilisation [0..1]  > 
+haObj_DigitalRepresentation --> premis_RightsStatus :statut de droit [1..3]  > 
+
+
+premis_RightsStatus : date de début : <i>xsd:dateTime</i> [0..1]
+premis_RightsStatus : fin : <i>xsd:dateTime</i> [0..1]
+premis_RightsStatus : note : <i>xsd:string</i> [0..1]
+
+
+
+copyrightStatus_pub --|> premis_RightsStatus #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
