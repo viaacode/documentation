@@ -1,0 +1,311 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
+class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/nl#schema%3ABrand]]
+class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/nl#skos%3AConcept]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/nl#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Creatief werk seizoen</b> (schema:CreativeWorkSeason)" as schema_CreativeWorkSeason [[#schema%3ACreativeWorkSeason]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Gesloten ondertitels</b> (ebucore:ClosedCaptions)" as ebucore_ClosedCaptions [[#ebucore%3AClosedCaptions]]
+class "<b>Ondertitels</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[../../organizations/nl#org%3AOrganization]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organizations/nl#schema%3APerson]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Rolnaam</b> (haDes:RoleName)" as haDes_RoleName [[#haDes%3ARoleName]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Tekstannotatie</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
+class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Uitvoeringsrol</b> (schema:PerformanceRole)" as schema_PerformanceRole [[#schema%3APerformanceRole]]
+class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Uitzendingsevenement</b> (schema:BroadcastEvent)" as schema_BroadcastEvent [[#schema%3ABroadcastEvent]]
+class "<b>Gebeurtenis</b> (schema:Event)" as schema_Event [[#schema%3AEvent]]
+
+
+ebucore_MediaFragment : breedte : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : eindtijd : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment : hoogte : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : regio-afbakening (x-as) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : regio-afbakening (y-as) : <i>xsd:integer</i> [0..1]
+ebucore_MediaFragment : starttijd : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment --> premis_File :is media fragment van [0..*]  > 
+
+
+
+
+
+schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Episode : naam : <i>rdf:langString</i> [1..*]
+schema_Episode : omschrijving : <i>rdf:langString</i> [0..*]
+schema_Episode --> premis_IntellectualEntity :heeft deel [0..*]  > 
+
+
+
+ebucore_Annotation : annotatie onderwerp : <i>IRI</i> [1..1]
+ebucore_Annotation : annotatie persoon onderwerp : <i>IRI</i> [0..1]
+ebucore_Annotation : annotatie vertrouwen : <i>xsd:decimal</i> [1..1]
+
+ebucore_Annotation --> ebucore_MediaFragment :annoteert [1..*]  > 
+ebucore_Annotation --> premis_File :annotatiedoel [1..1]  > 
+ebucore_Annotation --> skos_Concept :type annotatie [0..1]  > 
+
+
+schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_ArchiveComponent : naam : <i>rdf:langString</i> [1..*]
+schema_ArchiveComponent : omschrijving : <i>rdf:langString</i> [0..*]
+schema_ArchiveComponent --> premis_IntellectualEntity :heeft deel [0..*]  > 
+
+schema_ArchiveComponent --> schema_ArchiveComponent :heeft deel [0..*]  \lis deel van [0..*]  > 
+
+premis_File --|> premis_Object #blue;line.dotted;text:blue
+
+premis_File : aangemaakt op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
+premis_File : duur : <i>xsd:duration</i> [0..1]
+premis_File : identificator : <i>xsd:string</i> [0..1]
+premis_File : miniatuurafbeelding : <i>IRI</i> [0..1]
+premis_File : naam : <i>rdf:langString</i> [1..*]
+premis_File : omschrijving : <i>rdf:langString</i> [0..*]
+
+premis_File --> ebucore_ClosedCaptions :ondertiteling [0..*]  > 
+premis_File --> ebucore_MediaFragment :heeft media fragment [0..*]  > 
+
+
+
+premis_File --> premis_File :ondertiteling [0..*]  > 
+
+
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : aantal items : <i>xsd:integer</i> [0..*]
+schema_Collection : identificator : <i>xsd:string</i> [0..1]
+schema_Collection : naam : <i>rdf:langString</i> [1..*]
+schema_Collection : omschrijving : <i>rdf:langString</i> [0..*]
+schema_Collection --> haObj_PhysicalCarrier :heeft deel [0..*]  > 
+schema_Collection --> premis_IntellectualEntity :heeft deel [0..*]  > 
+
+
+
+
+
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
+schema_CreativeWork --|> schema_Thing #blue;line.dotted;text:blue
+
+
+schema_CreativeWorkSeason --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_CreativeWorkSeason : identifier : <i>xsd:string</i> [0..1]
+schema_CreativeWorkSeason : naam : <i>rdf:langString</i> [1..*]
+schema_CreativeWorkSeason : omschrijving : <i>rdf:langString</i> [0..*]
+schema_CreativeWorkSeason : seizoensnummer : <i>xsd:integer</i> [0..*]
+schema_CreativeWorkSeason --> premis_IntellectualEntity :heeft deel [0..*]  > 
+
+schema_CreativeWorkSeason --> schema_CreativeWork :heeft deel [0..*]  > 
+schema_CreativeWorkSeason --> schema_CreativeWorkSeries :is deel van [0..*]  > 
+
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation : aangemaakt op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
+haObj_DigitalRepresentation : gepubliceerd op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
+haObj_DigitalRepresentation : in taal : <i>xsd:string</i> [0..*]
+haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
+haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
+
+
+
+haObj_DigitalRepresentation --> schema_Role :maker [0..*]  > 
+
+
+
+schema_Thing : naam : <i>rdf:langString</i> [1..*]
+schema_Thing : omschrijving : <i>rdf:langString</i> [0..*]
+
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+
+haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
+
+haObj_PhysicalCarrier : identificator : <i>xsd:string</i> [1..1]
+haObj_PhysicalCarrier : materiaal : <i>xsd:string</i> [0..1]
+haObj_PhysicalCarrier : materiële omvang : <i>xsd:string</i> [0..1]
+haObj_PhysicalCarrier : naam : <i>rdf:langString</i> [1..*]
+haObj_PhysicalCarrier : omschrijving : <i>rdf:langString</i> [0..*]
+
+haObj_PhysicalCarrier --> schema_Brand :merk [0..1]  > 
+haObj_PhysicalCarrier --> schema_QuantitativeValue :breedte [0..1]  \ldiepte [0..1]  \lhoogte [0..1]  > 
+haObj_PhysicalCarrier --> skos_Concept :preservatieprobleem [0..*]  > 
+
+
+ebucore_ClosedCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
+
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+premis_IntellectualEntity : aangemaakt op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
+premis_IntellectualEntity : alternatieve naam : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : auteursrechtenmelding : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : beschikbaar op : <i>xsd:dateTime</i> [0..1]
+premis_IntellectualEntity : castleden : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : copyright jaar : <i>xsd:integer</i> [0..*]
+premis_IntellectualEntity : credittekst : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : duur : <i>xsd:duration</i> [0..1]
+premis_IntellectualEntity : formaat : <i>xsd:string</i> [1..1]
+premis_IntellectualEntity : genre : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : gepubliceerd op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
+premis_IntellectualEntity : identificator : <i>xsd:string</i> [1..1]
+premis_IntellectualEntity : in taal : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : korte inhoud : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : kunst medium : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : kunstvorm : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : naam : <i>rdf:langString</i> [1..*]
+premis_IntellectualEntity : omschrijving : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : over : <i>IRI</i> [0..*]
+premis_IntellectualEntity : rechteninformatie : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : samenvatting : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : temporeel : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : trefwoorden : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : type object : <i>xsd:string</i> [0..1]
+
+
+
+
+premis_IntellectualEntity --> haOrg_ContentPartner :beheerder [1..1]  > 
+premis_IntellectualEntity --> org_Organization :houder van auteursrecht [0..*]  \llicentiedistributeur [0..*]  > 
+
+premis_IntellectualEntity --> schema_BroadcastEvent :is deel van [0..*]  > 
+premis_IntellectualEntity --> schema_CreativeWork :is deel van [0..*]  > 
+premis_IntellectualEntity --> schema_PerformanceRole :acteur [0..*]  > 
+premis_IntellectualEntity --> schema_Person :houder van auteursrecht [0..*]  \llicentiedistributeur [0..*]  > 
+premis_IntellectualEntity --> schema_Place :spatiaal [0..*]  > 
+premis_IntellectualEntity --> schema_QuantitativeValue :breedte [0..1]  \ldiepte [0..1]  \lhoogte [0..1]  > 
+premis_IntellectualEntity --> schema_Role :bijdrager [0..*]  \lmaker [0..*]  \lproducent [0..*]  \luitgever [0..*]  \luitvoerder [0..*]  > 
+premis_IntellectualEntity --> schema_Thing :houder van auteursrecht [0..*]  \llicentiedistributeur [0..*]  \lvermeldt [0..*]  > 
+premis_IntellectualEntity --> skos_Concept :licentie [0..*]  > 
+
+
+
+
+
+schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_QuantitativeValue : eenheidcode : <i>xsd:string</i> [1..1]
+schema_QuantitativeValue : eenheidstekst : <i>xsd:string</i> [0..1]
+schema_QuantitativeValue : waarde : <i>xsd:float</i> [1..1]
+
+
+
+
+
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
+
+
+schema_Place --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Place : naam : <i>rdf:langString</i> [1..*]
+schema_Place : omschrijving : <i>rdf:langString</i> [0..*]
+
+schema_Place --> schema_Place :is deel van plaats [0..*]  > 
+
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+premis_Representation : identificator : <i>xsd:string</i> [0..1]
+premis_Representation : naam : <i>rdf:langString</i> [1..*]
+premis_Representation : omschrijving : <i>rdf:langString</i> [0..*]
+
+
+
+schema_Role --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_Role : rolenaam : <i>xsd:string</i> [1..1]
+schema_Role --> haDes_RoleName :rolenaam [1..1]  > 
+schema_Role --> org_Organization :acteur [0..1]  \lbijdrager [0..1]  \lmaker [0..1]  \lproducent [0..1]  \luitgever [0..1]  \luitvoerder [0..1]  > 
+schema_Role --> schema_Person :acteur [0..1]  \lbijdrager [0..1]  \lmaker [0..1]  \lproducent [0..1]  \luitgever [0..1]  \luitvoerder [0..1]  > 
+schema_Role --> schema_Thing :acteur [0..1]  \lbijdrager [0..1]  \lmaker [0..1]  \lproducent [0..1]  \luitgever [0..1]  \luitvoerder [0..1]  > 
+
+
+haDes_RoleName --|> skos_Concept #blue;line.dotted;text:blue
+
+
+schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_CreativeWorkSeries : identificator : <i>xsd:string</i> [0..1]
+schema_CreativeWorkSeries : naam : <i>rdf:langString</i> [1..*]
+schema_CreativeWorkSeries : omschrijving : <i>rdf:langString</i> [0..*]
+schema_CreativeWorkSeries : positie : <i>xsd:integer</i> [0..*]
+schema_CreativeWorkSeries --> premis_IntellectualEntity :is deel van [0..*]  > 
+
+schema_CreativeWorkSeries --> schema_CreativeWork :is deel van [0..*]  > 
+schema_CreativeWorkSeries --> schema_CreativeWorkSeries :is een deel van [0..*]  > 
+
+
+
+ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
+
+
+schema_PerformanceRole --|> schema_Role #blue;line.dotted;text:blue
+
+schema_PerformanceRole : karaternaam : <i>xsd:string</i> [0..1]
+
+
+schema_BroadcastEvent --|> schema_Event #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
