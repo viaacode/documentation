@@ -15,7 +15,7 @@ top to bottom direction
 
 class "<b>Adresse postale</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
 class "<b>Point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/fr#skos%3AConcept]]
 class "<b>Consomatteur de services</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
 class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Fournisseur de services</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]

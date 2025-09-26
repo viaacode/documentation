@@ -13,7 +13,9 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
+class "<b>Carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/en#skos%3AConcept]]
 class "<b>Newspaper</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
 class "<b>Creative work series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Newspaper edition</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
@@ -24,6 +26,10 @@ class "<b>Place</b> (schema:Place)" as schema_Place [[../../description/en#schem
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Role</b> (schema:Role)" as schema_Role [[../../description/en#schema%3ARole]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation --> skos_Concept :production method [0..1]  > 
 
 
 
@@ -45,8 +51,9 @@ haDes_NewspaperIssue --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
 haDes_NewspaperIssue : issue number : <i>xsd:string</i> [0..1]
 haDes_NewspaperIssue : number of pages : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssue --> haObj_CarrierRepresentation :has carrier copy [0..1]  > 
 haDes_NewspaperIssue --> schema_Newspaper :is part of [0..1]  > 
-haDes_NewspaperIssue --> skos_Concept :frequency of issuance [0..1]  \lproduction method [0..1]  \lpublication type [0..1]  > 
+haDes_NewspaperIssue --> skos_Concept :frequency of issuance [0..1]  \lpublication type [0..1]  > 
 
 
 

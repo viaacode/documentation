@@ -26,8 +26,8 @@ Datamodel Termenlijst
 
 **Auteurs:**
 [Milan Valadou](mailto:milan.valadou@meemoo.be)
-, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 
 
 Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri.
@@ -65,8 +65,10 @@ Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thes
 
 **Subklassen:** 
 [Lokale identificatie](#%3Chttps%3A//data.hetarchief.be/ns/object/LocalIdentifier%3E)
+, [Motivatie](#%3Chttps%3A//data.hetarchief.be/ns/rights/Motivation%3E)
 , [Organisatietype](#%3Chttps%3A//data.hetarchief.be/ns/organization/OrganizationType%3E)
 , [Rol](#%3Chttp%3A//www.w3.org/ns/org%23Role%3E)
+, [Rolnaam](#%3Chttps%3A//data.hetarchief.be/ns/description/RoleName%3E)
 
 Een SKOS-concept kan als idee of begrip worden gezien; een gedachte-eenheid. Echter, wat  een gedachte-eenheid is, is subjectief, en deze definitie is eerder suggestief dan beperkend bedoeld.
 
@@ -161,7 +163,7 @@ De klasse van RDF-lijsten.
 
 | Eigenschap | Beschrijving | Kardinaliteit | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='_%3An3e79435d169348a1b7b9a5bd16126c49b14'></a>None <br> <small>[(_:n3e79435d169348a1b7b9a5bd16126c49b14)](n3e79435d169348a1b7b9a5bd16126c49b14)</small> |  | `0..*` | [Concept](#skos%3AConcept) _of_ [Verzameling](#skos%3ACollection)  |
+| <a id='_%3Anb8f9101a227045239b573ba49eca1253b14'></a>None <br> <small>[(_:nb8f9101a227045239b573ba49eca1253b14)](nb8f9101a227045239b573ba49eca1253b14)</small> |  | `0..*` | [Concept](#skos%3AConcept) _of_ [Verzameling](#skos%3ACollection)  |
 
 ## <a id="skos%3ACollection"></a>Verzameling <small>[(skos:Collection)](http://www.w3.org/2004/02/skos/core#Collection)</small>
 

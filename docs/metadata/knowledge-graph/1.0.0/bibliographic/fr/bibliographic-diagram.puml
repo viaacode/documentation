@@ -13,7 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/fr#skos%3AConcept]]
 class "<b>Edition de journal</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
 class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Journal</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
@@ -22,6 +22,8 @@ class "<b>Lieu</b> (schema:Place)" as schema_Place [[../../description/fr#schema
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Page d'édition de journal</b> (haDes:NewspaperIssuePage)" as haDes_NewspaperIssuePage [[#haDes%3ANewspaperIssuePage]]
 class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Rôle</b> (schema:Role)" as schema_Role [[../../description/fr#schema%3ARole]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 
@@ -31,8 +33,9 @@ haDes_NewspaperIssue --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
 haDes_NewspaperIssue : nombre de pages : <i>xsd:nonNegativeInteger</i> [0..1]
 haDes_NewspaperIssue : numéro de l'édition : <i>xsd:string</i> [0..1]
+haDes_NewspaperIssue --> haObj_CarrierRepresentation :est copie sur porteur [0..1]  > 
 haDes_NewspaperIssue --> schema_Newspaper :fait partie de [0..1]  > 
-haDes_NewspaperIssue --> skos_Concept :fréquence d'émission [0..1]  \lméthode de production [0..1]  \ltype de publication [0..1]  > 
+haDes_NewspaperIssue --> skos_Concept :fréquence d'émission [0..1]  \ltype de publication [0..1]  > 
 
 
 
@@ -58,6 +61,10 @@ haDes_NewspaperIssuePage --|> premis_IntellectualEntity #blue;line.dotted;text:b
 haDes_NewspaperIssuePage : numéro de page : <i>xsd:nonNegativeInteger</i> [0..1]
 haDes_NewspaperIssuePage --> haDes_NewspaperIssue :fait partie de [1..1]  > 
 
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation --> skos_Concept :méthode de production [0..1]  > 
 
 schema_Role --|> schema_Thing #blue;line.dotted;text:blue
 

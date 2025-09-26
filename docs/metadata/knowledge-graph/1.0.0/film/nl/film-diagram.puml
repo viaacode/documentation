@@ -15,7 +15,7 @@ top to bottom direction
 
 class "<b>Beeldspoel</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageReel]]
 class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/nl#skos%3AConcept]]
 class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[../../audiovisual/nl#haObj%3ACarrierRepresentation]]
 class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
@@ -50,7 +50,9 @@ haObj_CarrierRepresentation --> haDes_ImageReel :opgeslagen op [1..*]  >
 
 haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
+haDes_Film : omroeporganisatie : <i>org:Organization</i> [0..1]
 haDes_Film --> haObj_CarrierRepresentation :heeft dragerkopie [1..1]  > 
+
 
 haDes_SoundFilm --|> haDes_Film #blue;line.dotted;text:blue
 

@@ -14,7 +14,7 @@ top to bottom direction
 
 
 class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/nl#skos%3AConcept]]
 class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
