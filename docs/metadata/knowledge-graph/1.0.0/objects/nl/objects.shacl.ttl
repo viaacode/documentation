@@ -19,17 +19,27 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n5ea7bd684f8a427792e8e077fb6a065bb1 a rdfs:Class,
+_:n4fe5f92e3f30474d9750707b605669d1b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
-_:na3ce833a3ef643c88ea79b75b812dfcfb1 a rdfs:Class,
+_:n9978407e2e92426a9942de21481d735db1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:na3ce833a3ef643c88ea79b75b812dfcfb17 a rdfs:Class,
+_:n9978407e2e92426a9942de21481d735db17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+<http://id.loc.gov/vocabulary/preservation/copyrightStatus/pub> a rdfs:Class,
+        owl:Class ;
+    rdfs:label "public domain"@en,
+        "domaine public"@fr,
+        "publiek domein"@nl ;
+    rdfs:subClassOf premis:RightsStatus ;
+    skos:definition "In the public domain and may used without copyright restriction."@en,
+        "Dans le domaine public et peut être utilisé sans restriction du droit d'auteur."@fr,
+        "In het publieke domein en kan zonder auteursrechtbeperking worden gebruikt."@nl .
 
 dct:FileFormat a rdfs:Class ;
     rdfs:label "File format"@en,
@@ -43,6 +53,16 @@ dct:FileFormat a rdfs:Class ;
     skos:definition "A digital resource format."@en,
         "Un format de ressource numérique."@fr,
         "Een formaat van een digitale bron."@nl .
+
+dct:RightsStatement a rdfs:Class ;
+    rdfs:label "Rights Statement"@en,
+        "Déclaration des droits"@fr,
+        "Rechtenverklaring"@nl ;
+    dct:issued "2008-01-14"^^xsd:date ;
+    rdfs:isDefinedBy dct: ;
+    skos:definition "A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights."@en,
+        "Une déclaration sur les droits de propriété intellectuelle (DPI) a été maintenue dans ou au-dessus d'une ressource, un document légal donnant l'autorisation officielle de faire quelque chose avec une ressource ou une déclaration sur les droits d'accès."@fr,
+        "Een verklaring over de intellectuele eigendomsrechten (IPR) van toepassing op of over een entiteit, een juridisch document dat officiële toestemming geeft om iets te doen met een entiteit, of een verklaring over toegangsrechten."@nl .
 
 ebucore:Annotation a rdfs:Class ;
     rdfs:label "Annotation"@en,
@@ -168,6 +188,20 @@ premis:IntellectualEntity a rdfs:Class,
         "Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description."@fr,
         "Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met als doeleinden beheer en beschrijving."@nl .
 
+premis:License a rdfs:Class,
+        owl:Class ;
+    rdfs:label "License"@en,
+        "Licence"@fr,
+        "Licentie"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subClassOf premis:RightsBasis ;
+    owl:disjointWith premis:Copyright,
+        premis:InstitutionalPolicy,
+        premis:Statute ;
+    skos:definition "A license agreement or other legal document that grants rights."@en,
+        "Un accord de licence ou un autre document juridique qui accorde les droits."@fr,
+        "Een licentieovereenkomst of ander juridisch document dat rechten verleent."@nl .
+
 premis:Object a rdfs:Class,
         owl:Class ;
     rdfs:label "Object"@en,
@@ -203,6 +237,27 @@ premis:Representation a rdfs:Class,
     skos:definition "Digital or physical Object instantiating or embodying an Intellectual Entity. A digital representation is the set of stored digital files and structural metadata needed to provide a complete and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a manuscript, video cassette, or printed document."@en,
         "Objet numérique ou physique instanciant ou incarnant une Entité Intellectuelle (Intellectual Entity). Une représentation numérique (Digital Representation) est l'ensemble des fichiers numériques stockés et des métadonnées structurelles nécessaires pour fournir une interprétation complète et raisonnable de l'entité intellectuelle (Intellectual Entity). Une représentation physique (Physical Representation) est un élément tel qu'un manuscrit, une cassette vidéo ou un document imprimé."@fr,
         "Digitaal of fysiek object dat een intellectuele entiteit (Intellectual Entity) vormgeeft of belichaamt. Een digitale weergave (Digital Representation) is de set van opgeslagen digitale bestanden en structurele metadata die nodig zijn om een volledige en redelijke weergave van de Intellectuele Entiteit (Intellectual Entity) te bieden. Een fysieke representatie (Physical Representation) is een item zoals een manuscript, videocassette of gedrukt document."@nl .
+
+premis:RightsBasis a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Rights basis"@en,
+        "Base des droits"@fr,
+        "Rechtenbasis"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/rightsBasis> ;
+    skos:definition "Designation of the basis for the right or permission governing the Object."@en,
+        "Désignation de la base du droit ou de l'autorisation régissant l'objet."@fr,
+        "Aanwijzing van de basis voor het recht of toestemming voor het object."@nl .
+
+premis:RightsStatus a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Rights status"@en,
+        "Statut de droits"@fr,
+        "Rechtenstatus"@nl ;
+    rdfs:isDefinedBy premis: ;
+    skos:definition "Information about how a RightsBasis applies to a particular object."@en,
+        "Informations sur la façon dont une base de droits s'applique à un objet particulier."@fr,
+        "Informatie over hoe een rechtenbasis van toepassing is op een bepaald object."@nl .
 
 premis:SoftwareAgent a rdfs:Class,
         owl:Class ;
@@ -323,6 +378,94 @@ skos:OrderedCollection a rdfs:Class,
         "Une classe spéciale d'entités lexicales."@fr,
         "Een speciale klasse van lexicale entiteiten."@nl .
 
+<http://www.w3.org/ns/odrl/2/Action> a rdfs:Class,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Action"@en,
+        "Action"@fr,
+        "Actie"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:subClassOf schema:Action ;
+    skos:definition "An operation on an Asset."@en,
+        "Une opération effectuée sur une ressource."@fr,
+        "Een handeling uitgevoerd op een middel."@nl ;
+    skos:note "Actions may be allowed by Permissions, disallowed by Prohibitions, or made mandatory by Duties."@en .
+
+<http://www.w3.org/ns/odrl/2/Constraint> a rdfs:Class,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Constraint"@en,
+        "Contrainte"@fr,
+        "Beperking"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "A boolean expression that refines the semantics of an Action and Party/Asset Collection or declare the conditions applicable to a Rule."@en,
+        "Une expression booléenne qui affine la signification d’une action et d’un ensemble de parties/ressources ou qui déclare les conditions applicables à une règle."@fr,
+        "Een booleaanse uitdrukking die de betekenis van een actie en partij-/middelenverzameling verfijnt of de voorwaarden bepaalt die op een regel van toepassing zijn."@nl .
+
+<http://www.w3.org/ns/odrl/2/Permission> a rdfs:Class,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Permission"@en,
+        "Autorisation"@fr,
+        "Toestemming"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Rule> ;
+    owl:disjointWith <http://www.w3.org/ns/odrl/2/Duty>,
+        <http://www.w3.org/ns/odrl/2/Prohibition> ;
+    skos:definition "The ability to perform an Action over an Asset."@en,
+        "La capacité d’exécuter une action sur une ressource."@fr,
+        "De mogelijkheid om een actie uit te voeren op een middel."@nl .
+
+<http://www.w3.org/ns/odrl/2/Policy> a rdfs:Class,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Policy"@en,
+        "Politique"@fr,
+        "Beleid"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "A non-empty group of Permissions and/or Prohibitions."@en,
+        "Un groupe non vide d’autorisations et/ou d’interdictions."@fr,
+        "Een niet-lege groep toestemmingen en/of verboden."@nl ;
+    skos:note "A Policy may contain multiple Rules."@en .
+
+<http://www.w3.org/ns/odrl/2/Prohibition> a rdfs:Class,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Prohibition"@en,
+        "Interdiction"@fr,
+        "Verbod"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Rule> ;
+    owl:disjointWith <http://www.w3.org/ns/odrl/2/Duty>,
+        <http://www.w3.org/ns/odrl/2/Permission> ;
+    skos:definition "The inability to perform an Action over an Asset."@en,
+        "L’impossibilité d’exécuter une action sur une ressource."@fr,
+        "De onmogelijkheid om een actie uit te voeren op een middel."@nl .
+
+<http://www.w3.org/ns/odrl/2/RightOperand> a rdfs:Class,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Right Operand"@en,
+        "Opérande droit"@fr,
+        "Rechteroperand"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "Right operand for constraint expression."@en,
+        "Opérande droit d’une expression de contrainte."@fr,
+        "Rechteroperand in een beperkingsuitdrukking."@nl ;
+    skos:note "Instances of the RightOperand class are used as the rightOperand of a Constraint."@en .
+
+<http://www.w3.org/ns/odrl/2/Rule> a rdfs:Class,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Rule"@en,
+        "Règle"@fr,
+        "Regel"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "An abstract concept that represents the common characteristics of Permissions, Prohibitions, and Duties."@en,
+        "Un concept abstrait qui représente les caractéristiques communes des autorisations, interdictions et obligations."@fr,
+        "Een abstract concept dat de gemeenschappelijke kenmerken van toestemmingen, verboden en verplichtingen vertegenwoordigt."@nl ;
+    skos:note "Rule is an abstract concept."@en .
+
 <http://www.w3.org/ns/org#Organization> a rdfs:Class,
         owl:Class ;
     rdfs:label "Organization"@en,
@@ -412,6 +555,26 @@ prov:Entity a rdfs:Class,
         "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr,
         "Een entiteit is een fysiek, digitaal, conceptueel of een ander soort ding met enkele vaste aspecten; entiteiten kunnen echt of denkbeeldig zijn."@nl .
 
+<https://data.hetarchief.be/ns/description/2DArtwork> a rdfs:Class ;
+    rdfs:label "Two-dimensional artwork"@en,
+        "Œuvres d'art bidimensionnel"@fr,
+        "Tweedimensionaal kunstwerk"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/description/MaterialArtwork> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in two dimensions. Two-dimensional artforms can include drawings, paintings, prints, and photographs. It does not include three-dimensional artworks such as sculptures, installations, and three-dimensional paintings."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui dérivent à l'origine de toute forme d'art visuel qui existe en deux dimensions. Les formes d'art bidimensionnelles peuvent inclure des dessins, des peintures, des imprimés et des photographies. Il n'inclut pas les œuvres d'art tridimensionnelles telles que les sculptures, les installations et les peintures tridimensionnelles."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van elke vorm van visuele kunst die in twee dimensies bestaat. Tweedimensionale kunstvormen kunnen tekeningen, schilderijen, prints en foto's bevatten. Het omvat geen driedimensionale kunstwerken zoals sculpturen, installaties en driedimensionale schilderijen."@nl .
+
+<https://data.hetarchief.be/ns/description/3DArtwork> a rdfs:Class ;
+    rdfs:label "Three-dimensional artwork"@en,
+        "Œuvres d'art tridimensionnelles"@fr,
+        "Driedimensionaal kunstwerk"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/description/MaterialArtwork> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in three dimensions. Two-dimensional artforms can include sculptures, installations, and three-dimensional paintings. It does not include two-dimensional artworks such as drawings, paintings, prints, and photographs."@en,
+        "Cette classe s'applique aux médias des archives de Meemoo qui dérivent à l'origine de toute forme d'art visuel qui existe en trois dimensions.Les formes d'art bidimensionnelles peuvent inclure des sculptures, des installations et des peintures tridimensionnelles.Il n'inclut pas les œuvres bidimensionnelles telles que les dessins, les peintures, les imprimés et les photographies."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van elke vorm van visuele kunst die in drie dimensies bestaat. Driedimensionale kunstvormen kunnen sculpturen, installaties en driedimensionale schilderijen bevatten. Het omvat geen tweedimensionale kunstwerken zoals tekeningen, schilderijen, prints en foto's."@nl .
+
 <https://data.hetarchief.be/ns/description/Audio> a rdfs:Class ;
     rdfs:label "Audio"@en,
         "Audio"@fr,
@@ -482,6 +645,16 @@ prov:Entity a rdfs:Class,
         "Une bobine d'un porte-film analogique qui contient une vidéo."@fr,
         "Een speo van een analoge film drager die beeld bevat."@nl .
 
+<https://data.hetarchief.be/ns/description/MaterialArtwork> a rdfs:Class ;
+    rdfs:label "Material artwork"@en,
+        "Œuvres d'art matérielles"@fr,
+        "Materieel kunstwerk"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf premis:IntellectualEntity ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from any form of visual art that entirely exists in physical reality, in space and time."@en,
+        "Cette classe s'applique aux médias dans les archives de Meemoo qui dérivent à l'origine de toute forme d'art visuel qui existe entièrement dans la réalité physique, dans l'espace et le temps."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van elke vorm van visuele kunst dat volledig in de fysieke realiteit bestaat, in ruimte en tijd."@nl .
+
 <https://data.hetarchief.be/ns/description/NewspaperIssue> a rdfs:Class ;
     rdfs:label "Newspaper edition"@en,
         "Edition de journal"@fr,
@@ -501,6 +674,16 @@ prov:Entity a rdfs:Class,
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."@en,
         "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent une page de journal spécifique."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en een specifieke krantenpagina voorstelt."@nl .
+
+<https://data.hetarchief.be/ns/description/RoleName> a rdfs:Class ;
+    rdfs:label "Role name"@en,
+        "Nom de rôle"@fr,
+        "Rolnaam"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "The role played, performed or filled by a thing, person or organization."@en,
+        "Le rôle joué, joué ou rempli par une chose, une personne ou une organisation."@fr,
+        "De rol gespeeld, uitgevoerd of gevuld door een ding, persoon of organisatie."@nl .
 
 <https://data.hetarchief.be/ns/description/SilentFilm> a rdfs:Class ;
     rdfs:label "Silent film"@en,
@@ -681,6 +864,36 @@ haObj:PhysicalCarrier a rdfs:Class ;
     skos:definition "An organization that provides services or goods to meemoo, for example related to IT, digitization, etc."@en,
         "Une organisation qui fournit des services ou des biens à meemoo, par exemple dans le domaine de l'informatique, de la numérisation, etc."@fr,
         "Een organisatie die aan meemoo diensten of goederen levert, bijvoorbeeld op het gebied van IT, digitalisering, enz."@nl .
+
+<https://data.hetarchief.be/ns/rights/ContentRange> a rdfs:Class ;
+    rdfs:label "Content range"@en,
+        "Plage de contenu"@fr,
+        "Inhoudsbereik"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> ;
+    rdfs:subClassOf <http://www.w3.org/ns/odrl/2/RightOperand> ;
+    skos:definition "The intended reach of the object's media content of the. For example, whether it is about the full content or only a part."@en,
+        "La portée prévue du contenu multimédia de l'objet du.Par exemple, qu'il s'agisse du contenu complet ou seulement une pièce."@fr,
+        "Het beoogde bereik van de mediainhoud van het object. Bijvoorbeeld, of het over de volledige inhoud gaat of slechts een deel."@nl .
+
+<https://data.hetarchief.be/ns/rights/Motivation> a rdfs:Class ;
+    rdfs:label "Motivation"@en,
+        "Motivation"@fr,
+        "Motivatie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Motivation for an access limitation."@en,
+        "Motivation pour une limitation d'accès."@fr,
+        "Motivatie voor een ontsluitingsbeperking."@nl .
+
+<https://data.hetarchief.be/ns/rights/UserGroup> a rdfs:Class ;
+    rdfs:label "User group"@en,
+        "Groupe d'utilisateurs"@fr,
+        "Gebruikersgroep"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> ;
+    rdfs:subClassOf <http://www.w3.org/ns/odrl/2/RightOperand> ;
+    skos:definition "Group of web platform users."@en,
+        "Groupe d'utilisateurs de la plate-forme Web."@fr,
+        "Groep van web platform gebruikers."@nl .
 
 schema:ArchiveComponent a rdfs:Class ;
     rdfs:label "Archive component"@en,
@@ -987,6 +1200,19 @@ dct:available a rdf:Property ;
         "Date à laquelle la ressource devient ou deviendra disponible."@fr,
         "Datum waarop de bron beschikbaar is of zal zijn."@nl .
 
+dct:license a rdf:Property ;
+    rdfs:label "License"@en,
+        "Licence"@fr,
+        "Licentie"@nl ;
+    dct:description "Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided."@en ;
+    dct:issued "2004-06-14"^^xsd:date ;
+    rdfs:isDefinedBy dct: ;
+    rdfs:subPropertyOf dc11:rights,
+        dct:rights ;
+    skos:definition "A legal document giving official permission to do something with the resource."@en,
+        "Un document juridique permettant à l'autorisation officielle de faire quelque chose avec la ressource."@fr,
+        "Een juridisch document dat officiële toestemming geeft om iets met de entiteit te doen."@nl .
+
 ebucore:annotationConfidence a rdf:Property ;
     rdfs:label "annotation confidence"@en,
         "fiabilité des annotations"@fr,
@@ -1148,11 +1374,22 @@ ebucore:width a rdf:Property ;
         "La largeur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr,
         "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl .
 
+premis:basis a owl:ObjectProperty ;
+    rdfs:label "has basis"@en,
+        "a une base"@fr,
+        "heeft basis"@nl ;
+    rdfs:domain premis:RightsStatus ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:RightsBasis ;
+    skos:definition "Links from a RightsStatus to the RightsBasis instance that supports or documents it."@en,
+        "Liens d'un RightsStatus à l'instance Droite-Basis qui le prend en charge ou le documente."@fr,
+        "Links van een rechtenstatus naar de instantie van het rechtenbasis die dit ondersteunt of documenteert."@nl .
+
 premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:na3ce833a3ef643c88ea79b75b812dfcfb1 ;
+    rdfs:domain _:n9978407e2e92426a9942de21481d735db1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1173,11 +1410,20 @@ premis:outcomeNote a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal ;
     rdfs:subPropertyOf premis:note .
 
+premis:rightsStatus a owl:ObjectProperty ;
+    rdfs:label "has rights status"@en,
+        "a le statut de droits"@fr,
+        "heeft rechtenstatus"@nl ;
+    rdfs:domain premis:Object ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:RightsStatus ;
+    rdfs:subPropertyOf dc11:rights .
+
 premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:na3ce833a3ef643c88ea79b75b812dfcfb17 ;
+    rdfs:domain _:n9978407e2e92426a9942de21481d735db17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1272,7 +1518,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n5ea7bd684f8a427792e8e077fb6a065bb1 ;
+    rdfs:range _:n4fe5f92e3f30474d9750707b605669d1b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1372,6 +1618,160 @@ skos:scopeNote a rdf:Property,
     skos:definition "The property skosxl:prefLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:prefLabel."@en,
         "La propriété skosxl:prefLabel est utilisée pour associer une skosxl:Label avec un skos:Concept. La propriété est analogue à skos:prefLabel."@fr,
         "De eigenschap skosxl:prefLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:prefLabel."@nl .
+
+<http://www.w3.org/ns/odrl/2/absoluteTemporalPosition> a owl:NamedIndividual,
+        skos:Concept,
+        <http://www.w3.org/ns/odrl/2/LeftOperand> ;
+    rdfs:label "Absolute Temporal Asset Position"@en,
+        "Position temporelle absolue de la ressource"@fr,
+        "Absolute temporele positie van middel"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "The absolute temporal positions in a media stream the target Asset has to fit."@en,
+        "Les positions temporelles absolues dans un flux multimédia où la ressource cible doit s’insérer."@fr,
+        "De absolute temporele posities in een mediastream waarin het doelmiddel moet passen."@nl .
+
+<http://www.w3.org/ns/odrl/2/constraint> a rdf:Property,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "Has Constraint"@en,
+        "A une contrainte"@fr,
+        "Heeft beperking"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( <http://www.w3.org/ns/odrl/2/Policy> <http://www.w3.org/ns/odrl/2/Rule> ) ] ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( <http://www.w3.org/ns/odrl/2/Constraint> <http://www.w3.org/ns/odrl/2/LogicalConstraint> ) ] ;
+    skos:definition "Constraint applied to a Rule."@en,
+        "Contrainte appliquée à une règle."@fr,
+        "Beperking toegepast op een regel."@nl ;
+    skos:note "Constraints on Rules are used to determine if a rule is Active or not."@en .
+
+<http://www.w3.org/ns/odrl/2/dateTime> a owl:NamedIndividual,
+        skos:Concept,
+        <http://www.w3.org/ns/odrl/2/LeftOperand> ;
+    rdfs:label "Datetime"@en,
+        "Date/heure"@fr,
+        "Datumtijd"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "The date (and optional time and timezone) of exercising the action of the Rule. Right operand value MUST be an xsd:date or xsd:dateTime as defined by [[xmlschema11-2]]."@en,
+        "La date (et l’heure et le fuseau horaire facultatifs) d’exécution de l’action de la règle."@fr,
+        "De datum (en optionele tijd en tijdzone) waarop de regelactie wordt uitgevoerd."@nl .
+
+<http://www.w3.org/ns/odrl/2/eq> a owl:NamedIndividual,
+        skos:Concept,
+        <http://www.w3.org/ns/odrl/2/Operator> ;
+    rdfs:label "Equal to"@en,
+        "Égal à"@fr,
+        "Gelijk aan"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "Indicating that a given value equals the right operand of the Constraint."@en,
+        "Indique qu’une valeur donnée est égale à l’opérande droit de la contrainte."@fr,
+        "Geeft aan dat een waarde gelijk is aan de rechteroperand van de beperking."@nl .
+
+<http://www.w3.org/ns/odrl/2/hasPolicy> a rdf:Property,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "Target Policy"@en,
+        "Politique cible"@fr,
+        "Doelbeleid"@nl ;
+    rdfs:domain <http://www.w3.org/ns/odrl/2/Asset> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range <http://www.w3.org/ns/odrl/2/Policy> ;
+    skos:definition "Identifies an ODRL Policy for which the identified Asset is the target Asset to all the Rules."@en,
+        "Identifie une politique ODRL pour laquelle la ressource identifiée est la ressource cible de toutes les règles."@fr,
+        "Identificeert een ODRL-beleid waarvoor het middel het doelmiddel is van alle regels."@nl ;
+    skos:note "The Asset being identified MUST be inferred to be the target Asset of all of the Rules of the Policy."@en .
+
+<http://www.w3.org/ns/odrl/2/leftOperand> a rdf:Property,
+        skos:Concept ;
+    rdfs:label "Has Left Operand"@en,
+        "A un opérande gauche"@fr,
+        "Heeft linkeroperand"@nl ;
+    rdfs:domain <http://www.w3.org/ns/odrl/2/Constraint> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range <http://www.w3.org/ns/odrl/2/LeftOperand> ;
+    skos:definition "The left operand in a constraint expression."@en,
+        "L’opérande gauche dans une expression de contrainte."@fr,
+        "De linkeroperand in een beperkingsuitdrukking."@nl .
+
+<http://www.w3.org/ns/odrl/2/lt> a owl:NamedIndividual,
+        skos:Concept,
+        <http://www.w3.org/ns/odrl/2/Operator> ;
+    rdfs:label "Less than"@en,
+        "Inférieur à"@fr,
+        "Kleiner dan"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "Indicating that a given value is less than the right operand of the Constraint."@en,
+        "Indique qu’une valeur donnée est inférieure à l’opérande droit de la contrainte."@fr,
+        "Geeft aan dat een waarde kleiner is dan de rechteroperand van de beperking."@nl .
+
+<http://www.w3.org/ns/odrl/2/operator> a rdf:Property,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "Has Operator"@en,
+        "A un opérateur"@fr,
+        "Heeft operator"@nl ;
+    rdfs:domain <http://www.w3.org/ns/odrl/2/Constraint> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range <http://www.w3.org/ns/odrl/2/Operator> ;
+    skos:definition "The operator function applied to operands of a Constraint."@en,
+        "La fonction opérateur appliquée aux opérandes d’une contrainte."@fr,
+        "De operatorfunctie toegepast op de operanden van een beperking."@nl .
+
+<http://www.w3.org/ns/odrl/2/permission> a rdf:Property,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "Has Permission"@en,
+        "A une autorisation"@fr,
+        "Heeft toestemming"@nl ;
+    rdfs:domain <http://www.w3.org/ns/odrl/2/Policy> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range <http://www.w3.org/ns/odrl/2/Permission> ;
+    skos:definition "Relates an individual Permission to a Policy."@en,
+        "Relie une autorisation individuelle à une politique."@fr,
+        "Verbindt een individuele toestemming aan een beleid."@nl .
+
+<http://www.w3.org/ns/odrl/2/prohibition> a rdf:Property,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "Has Prohibition"@en,
+        "A une interdiction"@fr,
+        "Heeft verbod"@nl ;
+    rdfs:domain <http://www.w3.org/ns/odrl/2/Policy> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range <http://www.w3.org/ns/odrl/2/Prohibition> ;
+    skos:definition "Relates an individual Prohibition to a Policy."@en,
+        "Relie une interdiction individuelle à une politique."@fr,
+        "Verbindt een individueel verbod aan een beleid."@nl .
+
+<http://www.w3.org/ns/odrl/2/rightOperand> a rdf:Property,
+        owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "Has Right Operand"@en,
+        "A un opérande droit"@fr,
+        "Heeft rechteroperand"@nl ;
+    rdfs:domain <http://www.w3.org/ns/odrl/2/Constraint> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( <http://www.w3.org/ns/odrl/2/RightOperand> rdfs:Literal xsd:anyURI ) ] ;
+    skos:definition "The value of the right operand in a constraint expression."@en,
+        "La valeur de l’opérande droit dans une expression de contrainte."@fr,
+        "De waarde van de rechteroperand in een beperkingsuitdrukking."@nl .
+
+<http://www.w3.org/ns/odrl/2/target> a rdf:Property,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "Target"@en,
+        "Cible"@fr,
+        "Doel"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( <http://www.w3.org/ns/odrl/2/Rule> <http://www.w3.org/ns/odrl/2/Policy> ) ] ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range <http://www.w3.org/ns/odrl/2/Asset> ;
+    rdfs:subPropertyOf <http://www.w3.org/ns/odrl/2/relation> ;
+    skos:definition "The target property indicates the Asset that is the primary subject to which the Rule action directly applies."@en,
+        "La propriété cible indique la ressource à laquelle l’action de la règle s’applique directement."@fr,
+        "De doel-eigenschap geeft het middel aan waarop de regelactie rechtstreeks van toepassing is."@nl .
 
 <http://www.w3.org/ns/org#classification> a rdf:Property,
         owl:ObjectProperty ;
@@ -1526,6 +1926,29 @@ prov:wasAttributedTo a owl:ObjectProperty ;
         "Une page d'accueil pour quelque chose"@fr,
         "Een homepagina van/voor iets"@nl .
 
+<https://data.hetarchief.be/id/collection/action> a skos:Collection ;
+    skos:member <https://data.hetarchief.be/ns/rights/available-for-consultation>,
+        <https://data.hetarchief.be/ns/rights/downloadable> ;
+    skos:prefLabel "Ontsluitingsacties"@nl .
+
+<https://data.hetarchief.be/id/collection/content-range> a skos:Collection ;
+    skos:member <https://data.hetarchief.be/ns/rights/full>,
+        <https://data.hetarchief.be/ns/rights/partial> ;
+    skos:prefLabel "Inhoudsbereik"@nl .
+
+<https://data.hetarchief.be/id/collection/metadata-range> a skos:Collection ;
+    skos:member <https://data.hetarchief.be/ns/rights/extended>,
+        <https://data.hetarchief.be/ns/rights/limited> ;
+    skos:prefLabel "Metadatabereik"@nl .
+
+<https://data.hetarchief.be/id/collection/user-group> a skos:Collection ;
+    skos:member <https://data.hetarchief.be/ns/rights/between-partners>,
+        <https://data.hetarchief.be/ns/rights/educational-public>,
+        <https://data.hetarchief.be/ns/rights/intra-muros>,
+        <https://data.hetarchief.be/ns/rights/public>,
+        <https://data.hetarchief.be/ns/rights/research-public> ;
+    skos:prefLabel "Gebruikersgroepen"@nl .
+
 <https://data.hetarchief.be/ns/description/audioNoiseReduction> a rdf:Property ;
     rdfs:label "audio noise reduction"@en,
         "réduction du bruit audio"@fr,
@@ -1547,6 +1970,17 @@ prov:wasAttributedTo a owl:ObjectProperty ;
     skos:definition "The speed with which open reel audio or a gramophone record is recorded."@en,
         "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement de gramophone est enregistré."@fr,
         "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl .
+
+<https://data.hetarchief.be/ns/description/broadcastingOrganization> a rdf:Property ;
+    rdfs:label "broadcasting organization"@en,
+        "organisation de diffusion"@fr,
+        "omroeporganisatie"@nl ;
+    rdfs:domain [ owl:unionOf ( <https://data.hetarchief.be/ns/description/Video> <https://data.hetarchief.be/ns/description/Film> <https://data.hetarchief.be/ns/description/Audio> <https://data.hetarchief.be/ns/description/DVD> ) ] ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range <http://www.w3.org/ns/org#Organization> ;
+    skos:definition "The entity primarily responsible for distributing and making accessible an audiovisual item to third parties through broadcasting, sale, rental, etc."@en,
+        "L'entité principalement responsable de la distribution et de la réalisation d'un élément audiovisuel à des tiers par le biais de la diffusion, de la vente, de la location, etc."@fr,
+        "De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een audiovisueel item voor derden door omroep, verkoop, verhuur, etc."@nl .
 
 <https://data.hetarchief.be/ns/description/chapterNumber> a rdf:Property ;
     rdfs:label "DVD chapter number"@en,
@@ -1571,6 +2005,17 @@ prov:wasAttributedTo a owl:ObjectProperty ;
     skos:definition "The type of coloring of the image reel."@en,
         "Le type de coloration de la bobine d’image."@fr,
         "Het soort kleuring van de beeldrol/-spoel."@nl .
+
+<https://data.hetarchief.be/ns/description/executor> a rdf:Property ;
+    rdfs:label "executor"@en,
+        "exécutrice"@fr,
+        "uitvoerder"@nl ;
+    rdfs:domain [ owl:unionOf ( schema:CreativeWork schema:Role ) ] ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> schema:Role ) ] ;
+    skos:definition "The executor of the CreativeWork."@en,
+        "L'interprète du travail créatif."@fr,
+        "De uitvoerder van het CreativeWork."@nl .
 
 <https://data.hetarchief.be/ns/description/hasMissingAudioReels> a rdf:Property ;
     rdfs:label "missing audio reels"@en,
@@ -1604,6 +2049,17 @@ prov:wasAttributedTo a owl:ObjectProperty ;
     skos:definition "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@en,
         "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@fr,
         "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl .
+
+<https://data.hetarchief.be/ns/description/licenseDistributor> a rdf:Property ;
+    rdfs:label "license distributor"@en,
+        "distributeur de licence"@fr,
+        "licentiegever"@nl ;
+    rdfs:domain premis:IntellectualEntity ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> ) ] ;
+    skos:definition "The license distributor of the intellectual entity."@en,
+        "Le distributeur de licences de l'entité intellectuelle."@fr,
+        "De licentiedistributeur van de intellectuele entiteit."@nl .
 
 <https://data.hetarchief.be/ns/description/numberOfAudioChannels> a rdf:Property ;
     rdfs:label "number of audio channels"@en,
@@ -2006,6 +2462,9 @@ mh:tenantName a rdf:Property ;
                 "premis:size manque, a plus d'une valeur ou n'est pas de type nonNegativeInteger"@fr,
                 "premis:size ontbreekt, heeft meer dan één waarde of is niet van het type nonNegativeInteger"@nl ;
             sh:minCount 1 ;
+            sh:name "filesize"@en,
+                "taille de fichier"@fr,
+                "bestandsgrootte"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path premis:size ;
             sh:severity sh:Violation ],
@@ -2019,6 +2478,9 @@ mh:tenantName a rdf:Property ;
                 "premis:originalName a plus d'une valeur ou n'est pas de type string"@fr,
                 "premis:originalName heeft meer dan één waarde of is niet van het type string"@nl ;
             sh:minCount 0 ;
+            sh:name "has original name"@en,
+                "porte le nom d'origine"@fr,
+                "heeft originele naam"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path premis:originalName ;
             sh:severity sh:Violation ],
@@ -2087,7 +2549,7 @@ mh:tenantName a rdf:Property ;
             sh:name "checksum creator"@en,
                 "créateur de somme de contrôle"@fr,
                 "checksum maker"@nl ;
-            sh:path dct:creator ;
+            sh:path schema:creator ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:Fixity .
 
@@ -2199,9 +2661,9 @@ mh:tenantName a rdf:Property ;
         [ a sh:PropertyShape ;
             sh:datatype xsd:duration ;
             sh:maxCount 1 ;
-            sh:message "schema:duration is not of type xsd:dateTime"@en,
-                "schema:duration n'est pas de type xsd:dateTime"@fr,
-                "schema:duration is niet van het type xsd:dateTime"@nl ;
+            sh:message "schema:duration is not of type xsd:duration"@en,
+                "schema:duration n'est pas de type xsd:duration"@fr,
+                "schema:duration is niet van het type xsd:duration"@nl ;
             sh:name "duration"@en,
                 "durée"@fr,
                 "duur"@nl ;
@@ -2360,14 +2822,14 @@ mh:tenantName a rdf:Property ;
             sh:path premis:identifier ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            rdfs:label "primary local identifier"@en,
-                "identificateur local principal"@fr,
-                "primaire lokale identifier"@nl ;
             sh:class haObj:LocalIdentifier ;
             sh:description "The primary local identifier for the intellectual entity."@en,
                 "Un identificateur local principal pour l'entité intellectuelle."@fr,
                 "De primaire lokale identifier voor de intellectuele entiteit."@nl ;
             sh:message "haObj:primaryIdentifier is not a LocalIdentifier"@en ;
+            sh:name "primary local identifier"@en,
+                "identificateur local principal"@fr,
+                "primaire lokale identifier"@nl ;
             sh:path haObj:primaryIdentifier ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
@@ -2580,6 +3042,55 @@ haObj:preservationProblem a rdf:Property ;
         "Le secteur dans lequel l'organisation est active."@fr,
         "De sector waarin de organisatie actief is."@nl .
 
+<https://data.hetarchief.be/ns/rights/contentRange> a owl:NamedIndividual,
+        skos:Concept,
+        <http://www.w3.org/ns/odrl/2/LeftOperand> ;
+    rdfs:label "Content range"@en,
+        "Plage de contenu"@fr,
+        "Inhoudsbereik"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> ;
+    skos:definition "The intended reach of the object's media content of the. For example, whether it is about the full content or only a part."@en,
+        "La portée prévue du contenu multimédia de l'objet du.Par exemple, qu'il s'agisse du contenu complet ou seulement une pièce."@fr,
+        "Het beoogde bereik van de mediainhoud van het object. Bijvoorbeeld, of het over de volledige inhoud gaat of slechts een deel."@nl ;
+    skos:prefLabel "Content range"@en,
+        "Plage de contenu"@fr,
+        "Inhoudsbereik"@nl .
+
+<https://data.hetarchief.be/ns/rights/isMotivatedBy> a rdf:Property ;
+    rdfs:label "is motivated by"@en,
+        "est motivé par"@fr,
+        "wordt gemotiveerd door"@nl ;
+    rdfs:domain <http://www.w3.org/ns/odrl/2/Prohibition> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> ;
+    rdfs:range <https://data.hetarchief.be/ns/rights/Motivation> .
+
+<https://data.hetarchief.be/ns/rights/metadataRange> a owl:NamedIndividual,
+        skos:Concept,
+        <http://www.w3.org/ns/odrl/2/LeftOperand> ;
+    rdfs:label "Metadata range"@en,
+        "Gamme de métadonnées"@fr,
+        "Metadatabereik"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> ;
+    skos:definition "The intended reach of the object's metadata. For example, whether it is about the full set of metadata or only a part."@en,
+        "La portée prévue des métadonnées de l'objet.Par exemple, qu'il s'agisse de l'ensemble complet de métadonnées ou seulement une pièce."@fr,
+        "Het beoogde bereik van de metadata van het object. Bijvoorbeeld, of het over de volledige set aan metadata gaat of slechts een deel."@nl ;
+    skos:prefLabel "Metadata range"@en,
+        "Gamme de métadonnées"@fr,
+        "Metadatabereik"@nl .
+
+<https://schema.org/:producer> a rdf:Property ;
+    rdfs:label "producer"@en,
+        "producteur"@fr,
+        "producent"@nl ;
+    rdfs:domain [ owl:unionOf ( schema:CreativeWork schema:Role ) ] ;
+    rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> schema:Role ) ] ;
+    skos:definition "The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.)."@en,
+        "La personne ou l'organisation qui a produit l'œuvre (par exemple, album de musique, film, télévision / série radio, etc.)."@fr,
+        "De persoon of organisatie die het werk produceerde (bijv. Muziekalbum, film, tv/radioserie enz.)."@nl ;
+    schema:domainIncludes schema:CreativeWork ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person .
+
 schema:about a rdf:Property ;
     rdfs:label "about"@en,
         "sur"@fr,
@@ -2768,7 +3279,7 @@ schema:contributor a rdf:Property ;
     rdfs:label "contributor"@en,
         "contributeur"@fr,
         "bijdrager"@nl ;
-    rdfs:domain schema:CreativeWork ;
+    rdfs:domain [ owl:unionOf ( schema:CreativeWork schema:Role ) ] ;
     rdfs:isDefinedBy schema: ;
     rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> schema:Role ) ] ;
     owl:equivalentProperty dct:contributor ;
@@ -2810,18 +3321,6 @@ schema:copyrightYear a rdf:Property ;
     skos:definition "The year during which the claimed copyright for the CreativeWork was first asserted."@en,
         "L'année durant laquelle le droit d'auteur revendiqué pour l'œuvre créative a été revendiqué pour la première fois."@fr,
         "Het jaar waarin het auteursrecht voor het CreativeWork voor het eerst gold/geldend gemaakt werd."@nl .
-
-schema:creator a rdf:Property ;
-    rdfs:label "creator"@en,
-        "créateur"@fr,
-        "maker"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> schema:Role ) ] ;
-    owl:equivalentProperty dct:creator ;
-    skos:definition "The creator/author of this CreativeWork."@en,
-        "Le créateur / auteur de ce travail créatif."@fr,
-        "De maker/auteur van dit creatief werk."@nl .
 
 schema:creditText a rdf:Property ;
     rdfs:label "credit text"@en,
@@ -3073,8 +3572,9 @@ schema:publisher a rdf:Property ;
     rdfs:label "publisher"@en,
         "éditeur"@fr,
         "uitgever"@nl ;
-    rdfs:domain schema:CreativeWork ;
+    rdfs:domain [ owl:unionOf ( schema:CreativeWork schema:Role ) ] ;
     rdfs:isDefinedBy schema: ;
+    rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> schema:Role ) ] ;
     owl:equivalentProperty dct:publisher ;
     skos:definition "The publisher of the creative work."@en,
         "L'éditeur du travail créatif."@fr,
@@ -3344,21 +3844,6 @@ dct:medium a rdf:Property ;
         "Le support matériel ou physique de la ressource"@fr,
         "Het materiaal of fysieke drager van de bron"@nl .
 
-dct:rights a rdf:Property ;
-    rdfs:label "Rights"@en,
-        "Droits"@fr,
-        "Rechten"@nl ;
-    dct:description "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.  Recommended practice is to refer to a rights statement with a URI.  If this is not possible or feasible, a literal value (name, label, or short text) may be provided."@en,
-        "En règle générale, les informations sur les droits comprennent une déclaration sur les différents droits de propriété associés à la ressource, y compris les droits de propriété intellectuelle.La pratique recommandée est de se référer à une déclaration de droits avec un URI.Si cela n'est pas possible ou possible, une valeur littérale (nom, étiquette ou texte court) peut être fourni."@fr,
-        "Doorgaans bevat rechteninformatie een verklaring over verschillende eigendomsrechten die verband houden met de bron, inclusief intellectuele eigendomsrechten.Aanbevolen praktijk is om te verwijzen naar een rechtenverklaring met een URI.Als dit niet mogelijk of haalbaar is, kan een letterlijke waarde (naam, label of korte tekst) worden verstrekt."@nl ;
-    dct:issued "2008-01-14"^^xsd:date ;
-    rdfs:isDefinedBy dct: ;
-    rdfs:range xsd:string ;
-    rdfs:subPropertyOf dc11:rights ;
-    skos:definition "Information about rights held in and over the resource."@en,
-        "Informations sur les droits maintenus dans et au-dessus de la ressource."@fr,
-        "Informatie over rechten in en over de bron."@nl .
-
 ebucore:hasMediaFragment a rdf:Property ;
     rdfs:label "fragment"@en,
         "a un fragment (de média)"@fr,
@@ -3608,6 +4093,27 @@ skos:topConceptOf a rdf:Property,
         "La propriété skosxl:literalForm est utilisée pour donner la forme littérale d'une skosxl:Label."@fr,
         "De eigenschap skosxl:literalForm wordt gebruikt om de letterlijke vorm van een skosxl:Label te geven."@nl .
 
+<http://www.w3.org/ns/odrl/2/display> a skos:Concept,
+        <http://www.w3.org/ns/odrl/2/Action> ;
+    rdfs:label "Display"@en,
+        "Afficher"@fr,
+        "Weergeven"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "To create a static and transient rendition of an Asset."@en,
+        "Créer une représentation statique et temporaire d’une ressource."@fr,
+        "Een statische en tijdelijke weergave van een middel creëren."@nl ;
+    skos:note "For example, displaying an image on a screen."@en .
+
+<http://www.w3.org/ns/odrl/2/distribute> a skos:Concept,
+        <http://www.w3.org/ns/odrl/2/Action> ;
+    rdfs:label "Distribute"@en,
+        "Distribuer"@fr,
+        "Verspreiden"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    skos:definition "To supply the Asset to third-parties."@en,
+        "Fournir la ressource à des tiers."@fr,
+        "Het middel aan derden leveren."@nl .
+
 <http://www.w3.org/ns/org#hasPost> a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "post"@en,
@@ -3780,6 +4286,18 @@ haObj:primaryIdentifier a rdf:Property ;
         "Le format de fichier XML1.1 est un format plus récent et donc préférable à XML1.0; XML1.0 a donc une priorité inférieure à XML1.1."@fr,
         "Het bestandsformaat XML1.1 is een recenter en dus verkieslijker formaat dan XML1.0; XML1.0 heeft dus een lagere prioriteit dan XML1.1."@nl .
 
+schema:creator a rdf:Property ;
+    rdfs:label "creator"@en,
+        "créateur"@fr,
+        "maker"@nl ;
+    rdfs:domain [ owl:unionOf ( schema:CreativeWork schema:Role ) ] ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> schema:Role ) ] ;
+    owl:equivalentProperty dct:creator ;
+    skos:definition "The creator/author of this CreativeWork."@en,
+        "Le créateur / auteur de ce travail créatif."@fr,
+        "De maker/auteur van dit creatief werk."@nl .
+
 schema:dateCreated a rdf:Property ;
     rdfs:label "date created"@en,
         "date de création"@fr,
@@ -3830,7 +4348,7 @@ schema:endTime a rdf:Property ;
     The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
     Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."""@en,
         "La fin de quelque chose.Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple.John a écrit un livre de janvier à * décembre *.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps de la fin d'un clip dans un fichier plus grand."@fr,
-        "De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand. "@nl .
+        "De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand."@nl .
 
 schema:height a rdf:Property ;
     rdfs:label "height"@en,
@@ -3871,6 +4389,20 @@ dct:description a rdfs:Property ;
     skos:definition "An account of the resource."@en,
         "Un compte rendu de la ressource."@fr,
         "Een verslag van de resource"@nl .
+
+dct:rights a rdf:Property ;
+    rdfs:label "Rights"@en,
+        "Droits"@fr,
+        "Rechten"@nl ;
+    dct:description "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.  Recommended practice is to refer to a rights statement with a URI.  If this is not possible or feasible, a literal value (name, label, or short text) may be provided."@en,
+        "En règle générale, les informations sur les droits comprennent une déclaration sur les différents droits de propriété associés à la ressource, y compris les droits de propriété intellectuelle.La pratique recommandée est de se référer à une déclaration de droits avec un URI.Si cela n'est pas possible ou possible, une valeur littérale (nom, étiquette ou texte court) peut être fourni."@fr,
+        "Doorgaans bevat rechteninformatie een verklaring over verschillende eigendomsrechten die verband houden met de bron, inclusief intellectuele eigendomsrechten.Aanbevolen praktijk is om te verwijzen naar een rechtenverklaring met een URI.Als dit niet mogelijk of haalbaar is, kan een letterlijke waarde (naam, label of korte tekst) worden verstrekt."@nl ;
+    dct:issued "2008-01-14"^^xsd:date ;
+    rdfs:isDefinedBy dct: ;
+    rdfs:subPropertyOf dc11:rights ;
+    skos:definition "Information about rights held in and over the resource."@en,
+        "Informations sur les droits maintenus dans et au-dessus de la ressource."@fr,
+        "Informatie over rechten in en over de bron."@nl .
 
 ebucore:isMediaFragmentOf a rdf:Property ;
     rdfs:label "media fragment source"@en,
@@ -4099,6 +4631,138 @@ haObj:isTranscriptionCopyOf a rdf:Property ;
     rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasTranscriptionCopy .
 
+<https://data.hetarchief.be/ns/rights/MetadataRange> a rdf:Class ;
+    rdfs:label "Metadata range"@en,
+        "Gamme de métadonnées"@fr,
+        "Metadatabereik"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> ;
+    rdfs:subClassOf <http://www.w3.org/ns/odrl/2/RightOperand> ;
+    skos:definition "The intended reach of the object's metadata. For example, whether it is about the full set of metadata or only a part."@en,
+        "La portée prévue des métadonnées de l'objet.Par exemple, qu'il s'agisse de l'ensemble complet de métadonnées ou seulement une pièce."@fr,
+        "Het beoogde bereik van de metadata van het object. Bijvoorbeeld, of het over de volledige set aan metadata gaat of slechts een deel."@nl .
+
+<https://data.hetarchief.be/ns/rights/available-for-consultation> a owl:NamedIndividual,
+        skos:Concept,
+        <http://www.w3.org/ns/odrl/2/Action> ;
+    skos:altLabel "listen"@en,
+        "view"@en,
+        "bekijken"@nl,
+        "beluisteren"@nl ;
+    skos:definition "To make a digital copy available for consultation by third-parties."@en,
+        "Om een ​​digitale kopie beschikbaar te stellen voor raadpleging door derden."@nl ;
+    skos:exactmatch <http://www.w3.org/ns/odrl/2/display> ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Make available for consultation"@en,
+        "Raadpleegbaar maken"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/between-partners> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/UserGroup> ;
+    skos:definition "Anyone who has an collaboration agreement with meemoo that includes key use as permission (meemoo collaboration agreement 6.7.3 or 5.7.3)"@en,
+        "Iedereen die een samenwerkingsovereenkomst met meemoo heeft waarin sleutelgebruik als toestemming is opgenomen (meemoo samenwerkingsovereenkomst 6.7.3 of 5.7.3)"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Between partners"@en,
+        "Tussen partners"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/downloadable> a owl:NamedIndividual,
+        skos:Concept,
+        <http://www.w3.org/ns/odrl/2/Action> ;
+    skos:altLabel "download"@en,
+        "kopie downloaden"@nl ;
+    skos:definition "To make the digital copy downloadable by third-parties."@en,
+        "Om de digitale kopie downloadbaar te maken voor derden."@nl ;
+    skos:exactmatch <http://www.w3.org/ns/odrl/2/distribute> ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Make downloadable"@en,
+        "Downloadbaar maken"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/educational-public> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/UserGroup> ;
+    skos:definition "Anyone subject to the conditions for access to the Archive for Education platform (e.g., lecturers, learners, educational support staff, etc.), see Appendix 2 of the meemoo collaboration agreement."@en,
+        "Iedereen die valt onder de voorwaarden van toegang tot het Archief voor Onderwijsplatform (bv lesgevers, lerenden, onderwijsondersteunend personeel...), zie bijlage 2 van de meemoo samenwerkingsovereenkomst."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Educational public"@en,
+        "Onderwijs"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/extended> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/MetadataRange> ;
+    skos:definition "The metadata will be displayed in the form of limited set, according to the agreements."@en,
+        "Een uitgebreide set metadata, bepaald volgens afspraken en documentatie, wordt ontsloten."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Extended"@en,
+        "Étendu"@fr,
+        "Uitgebreid"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/full> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/ContentRange> ;
+    skos:definition "The material can be displayed in full, according to the agreements made."@en,
+        "De toestemming is van toepassing op het materiaal in zijn geheel."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Full"@en,
+        "Complet"@fr,
+        "Volledig"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/intra-muros> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/UserGroup> ;
+    skos:definition "Anyone who is within the institution's buildings for the purpose of digital consultation."@en,
+        "Iedereen die zich binnen de gebouwen van de instelling bevindt met het oog op digitale raadpleging."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Intra muros"@en,
+        "Intra muros"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/limited> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/MetadataRange> ;
+    skos:definition "The metadata will be displayed in the form of a limited set, according to the agreements."@en,
+        "Een beperkte set metadata, bepaald volgens afspraken en documentatie, wordt ontsloten."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Limited"@en,
+        "Limité"@fr,
+        "Beperkt"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/partial> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/ContentRange> ;
+    skos:definition "The material can be displayed in part, according to the agreements made."@en,
+        "De toestemming is van toepassing op het materiaal in de vorm van één of meerdere fragmenten, volgens een aangegeven tijdsstempel of volgens de bilaterale afspraken (zodanig dat de duur van het fragment minder dan de helft van de totale duur van het materiaal is)."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Partial"@en,
+        "Partiel"@fr,
+        "Deels"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/public> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/UserGroup> ;
+    skos:definition "Anyone with internet access."@en,
+        "Iedereen met toegang tot internet."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "public"@en,
+        "Publiek"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
+<https://data.hetarchief.be/ns/rights/research-public> a owl:NamedIndividual,
+        skos:Concept,
+        <https://data.hetarchief.be/ns/rights/UserGroup> ;
+    skos:definition "Anyone who falls under the Scientific Research user group as described in Appendix 2 of the meemoo collaboration agreement."@en,
+        "Iedereen die valt onder de gebruikersgroep Wetenschappelijk Onderzoek zoals beschreven in bijlage 2 van de meemoo samenwerkingsovereenkomst."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
+    skos:prefLabel "Research public"@en,
+        "Onderzoek"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> .
+
 schema:position a rdf:Property ;
     rdfs:label "position"@en,
         "position"@fr,
@@ -4238,6 +4902,21 @@ premis:relationship a owl:ObjectProperty ;
     rdfs:isDefinedBy premis: ;
     rdfs:range premis:Object ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
+
+<https://data.hetarchief.be/id/constraint-operand> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/ns/rights/available-for-consultation>,
+        <https://data.hetarchief.be/ns/rights/between-partners>,
+        <https://data.hetarchief.be/ns/rights/downloadable>,
+        <https://data.hetarchief.be/ns/rights/educational-public>,
+        <https://data.hetarchief.be/ns/rights/extended>,
+        <https://data.hetarchief.be/ns/rights/full>,
+        <https://data.hetarchief.be/ns/rights/intra-muros>,
+        <https://data.hetarchief.be/ns/rights/limited>,
+        <https://data.hetarchief.be/ns/rights/partial>,
+        <https://data.hetarchief.be/ns/rights/public>,
+        <https://data.hetarchief.be/ns/rights/research-public> ;
+    skos:prefLabel "Thesaurus rechteroperanden"@nl,
+        "Thesaurus rightoperands"@nl .
 
 <http://www.w3.org/2004/02/skos/core> a owl:Ontology ;
     dct:contributor "Dave Beckett",
