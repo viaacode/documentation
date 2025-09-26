@@ -17,7 +17,7 @@ class "<b>Bobine audio</b> (haDes:AudioReel)" as haDes_AudioReel [[#haDes%3AAudi
 class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Bobine d'image</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageReel]]
 class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/fr#skos%3AConcept]]
 class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
 class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Film muet</b> (haDes:SilentFilm)" as haDes_SilentFilm [[#haDes%3ASilentFilm]]
@@ -41,7 +41,9 @@ haDes_ImageReel --> skos_Concept :type de coloration [0..*]  >
 
 haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
+haDes_Film : organisation de diffusion : <i>org:Organization</i> [0..1]
 haDes_Film --> haObj_CarrierRepresentation :est porteur du copie [1..1]  > 
+
 
 haDes_SilentFilm --|> haDes_Film #blue;line.dotted;text:blue
 
