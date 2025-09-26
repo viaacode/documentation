@@ -1,0 +1,119 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>//data.hetarchief.be/Motivation></b> (<https://data.hetarchief.be/Motivation>)" as <https_//data.hetarchief.be/Motivation> [[#%3Chttps%3A//data.hetarchief.be/Motivation%3E]]
+class "<b>//data.hetarchief.be/UserGroup></b> (<https://data.hetarchief.be/UserGroup>)" as <https_//data.hetarchief.be/UserGroup> [[#%3Chttps%3A//data.hetarchief.be/UserGroup%3E]]
+class "<b>//data.hetarchief.be/MetadataRange></b> (<https://data.hetarchief.be/MetadataRange>)" as <https_//data.hetarchief.be/MetadataRange> [[#%3Chttps%3A//data.hetarchief.be/MetadataRange%3E]]
+class "<b>//data.hetarchief.be/ContentRange></b> (<https://data.hetarchief.be/ContentRange>)" as <https_//data.hetarchief.be/ContentRange> [[#%3Chttps%3A//data.hetarchief.be/ContentRange%3E]]
+class "<b>Actie</b> (odrl:Action)" as odrl_Action [[#odrl%3AAction]]
+class "<b>Beleid</b> (odrl:Policy)" as odrl_Policy [[#odrl%3APolicy]]
+class "<b>Beperking</b> (odrl:Constraint)" as odrl_Constraint [[#odrl%3AConstraint]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Licentie</b> (premis:License)" as premis_License [[#premis%3ALicense]]
+class "<b>Rechtenbasis</b> (premis:RightsBasis)" as premis_RightsBasis [[#premis%3ARightsBasis]]
+class "<b>Rechtenstatus</b> (premis:RightsStatus)" as premis_RightsStatus [[#premis%3ARightsStatus]]
+class "<b>Rechtenverklaring</b> (dct:RightsStatement)" as dct_RightsStatement [[#dct%3ARightsStatement]]
+class "<b>Toestemming</b> (odrl:Permission)" as odrl_Permission [[#odrl%3APermission]]
+class "<b>Regel</b> (odrl:Rule)" as odrl_Rule [[#odrl%3ARule]]
+class "<b>Verbod</b> (odrl:Prohibition)" as odrl_Prohibition [[#odrl%3AProhibition]]
+class "<b>Regel</b> (odrl:Rule)" as odrl_Rule [[#odrl%3ARule]]
+class "<b>publiek domein</b> (copyrightStatus:pub)" as copyrightStatus_pub [[#copyrightStatus%3Apub]]
+class "<b>Rechtenstatus</b> (premis:RightsStatus)" as premis_RightsStatus [[#premis%3ARightsStatus]]
+
+
+
+
+
+
+
+
+
+
+
+
+odrl_Policy --> haObj_DigitalRepresentation :Doel [1..*]  > 
+odrl_Policy --> odrl_Permission :access permission [0..*]  > 
+odrl_Policy --> odrl_Prohibition :ontsluitingsbeperking [0..*]  > 
+
+
+odrl_Constraint : beperkingsnaam : <i>IRI</i> [1..1]
+odrl_Constraint : operator : <i>IRI</i> [1..1]
+odrl_Constraint --> <https_//data.hetarchief.be/ContentRange> :beperkingswaarde [1..1]  > 
+odrl_Constraint --> <https_//data.hetarchief.be/MetadataRange> :beperkingswaarde [1..1]  > 
+odrl_Constraint --> <https_//data.hetarchief.be/UserGroup> :beperkingswaarde [1..1]  > 
+
+
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation --> odrl_Policy :Doelbeleid [0..1]  > 
+haObj_DigitalRepresentation --> premis_License :hergebruikvoorwaarde [0..1]  > 
+haObj_DigitalRepresentation --> premis_RightsStatus :rechtenstatus [1..3]  > 
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+premis_IntellectualEntity --> copyrightStatus_pub :rechtenstatus [1..3]  > 
+premis_IntellectualEntity --> dct_RightsStatement :rechtenverklaring [1..1]  > 
+premis_IntellectualEntity --> premis_License :hergebruikvoorwaarde [0..1]  > 
+premis_IntellectualEntity --> premis_RightsStatus :rechtenstatus [1..3]  > 
+
+premis_License --|> premis_RightsBasis #blue;line.dotted;text:blue
+
+
+
+premis_RightsStatus : einddatum : <i>xsd:dateTime</i> [0..1]
+premis_RightsStatus : notitie : <i>xsd:string</i> [0..1]
+premis_RightsStatus : startdatum : <i>xsd:dateTime</i> [0..1]
+
+
+
+
+
+odrl_Permission --|> odrl_Rule #blue;line.dotted;text:blue
+
+odrl_Permission : einddatum : <i>xsd:dateTime</i> [0..1]
+odrl_Permission : notitie : <i>xsd:string</i> [0..1]
+odrl_Permission : startdatum : <i>xsd:dateTime</i> [0..1]
+odrl_Permission --> odrl_Action :access action [1..*]  \laction d'accès [1..*]  \lontsluitingsactie [1..*]  > 
+odrl_Permission --> odrl_Constraint :beperking [0..5]  > 
+
+
+
+odrl_Prohibition --|> odrl_Rule #blue;line.dotted;text:blue
+
+odrl_Prohibition : einddatum : <i>xsd:dateTime</i> [0..1]
+odrl_Prohibition : notitie : <i>xsd:string</i> [0..1]
+odrl_Prohibition : startdatum : <i>xsd:dateTime</i> [0..1]
+odrl_Prohibition --> <https_//data.hetarchief.be/Motivation> :wordt gemotiveerd door [1..*]  > 
+odrl_Prohibition --> odrl_Action :access action [1..*]  \laction d'accès [1..*]  \lontsluitingsactie [1..*]  > 
+odrl_Prohibition --> odrl_Constraint :beperking [0..5]  > 
+
+
+
+copyrightStatus_pub --|> premis_RightsStatus #blue;line.dotted;text:blue
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
