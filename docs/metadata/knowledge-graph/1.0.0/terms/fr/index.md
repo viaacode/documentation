@@ -26,8 +26,8 @@ Modèle de données Listes de termes
 
 **Auteurs:**
 [Milan Valadou](mailto:milan.valadou@meemoo.be)
-, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 
 
 Modèle de données pour décrire des listes structurées de termes tels que le thésaure.
@@ -113,6 +113,8 @@ _Propriétés de [Collection](#skos%3ACollection):_  [définition](#skos%3Adefin
 
 **Sous-classes:** 
 [Identifiant local](#%3Chttps%3A//data.hetarchief.be/ns/object/LocalIdentifier%3E)
+, [Motivation](#%3Chttps%3A//data.hetarchief.be/ns/rights/Motivation%3E)
+, [Nom de rôle](#%3Chttps%3A//data.hetarchief.be/ns/description/RoleName%3E)
 , [Rôle](#%3Chttp%3A//www.w3.org/ns/org%23Role%3E)
 , [Type de organisation](#%3Chttps%3A//data.hetarchief.be/ns/organization/OrganizationType%3E)
 
@@ -156,7 +158,7 @@ La classe des listes RDF.
 
 | Propriété | Description | Cardinalité | Type de données |
 | :------ | :---------- | :---------- | :------- |
-| <a id='_%3An3e79435d169348a1b7b9a5bd16126c49b14'></a>None <br> <small>[(_:n3e79435d169348a1b7b9a5bd16126c49b14)](n3e79435d169348a1b7b9a5bd16126c49b14)</small> |  | `0..*` | [Concept](#skos%3AConcept) _ou_ [Collection](#skos%3ACollection)  |
+| <a id='_%3Anb8f9101a227045239b573ba49eca1253b14'></a>None <br> <small>[(_:nb8f9101a227045239b573ba49eca1253b14)](nb8f9101a227045239b573ba49eca1253b14)</small> |  | `0..*` | [Concept](#skos%3AConcept) _ou_ [Collection](#skos%3ACollection)  |
 
 ## <a id="skos%3AConceptScheme"></a>Schéma de concepts <small>[(skos:ConceptScheme)](http://www.w3.org/2004/02/skos/core#ConceptScheme)</small>
 
