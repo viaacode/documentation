@@ -25,9 +25,9 @@ Modèle de données Objets
 , [nl](../nl)
 
 **Auteurs:**
-[Milan Valadou](mailto:milan.valadou@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Modèle de données pour décrire des objets.
@@ -223,6 +223,7 @@ Unité discrète d'information soumise à la préservation numérique. Les sous-
 **Sous-classes:** 
 [Bobine audio](#%3Chttps%3A//data.hetarchief.be/ns/description/AudioReel%3E)
 , [Bobine d'image](#%3Chttps%3A//data.hetarchief.be/ns/description/ImageReel%3E)
+, [Porteur audiovisuel](#%3Chttps%3A//data.hetarchief.be/ns/description/AudiovisualCarrier%3E)
 
 Un porteur physique dans lequel les données, le son, les images, etc., sont stockées.Pour certaines catégories de matériaux, le support physique se compose d'un support de stockage (par exemple, du ruban adhésif, du film) parfois enfermé dans un boîtier en plastique, en métal, etc., (par exemple, cassette, cartouche) qui fait partie intégrante de l'article.
 
@@ -256,6 +257,11 @@ _Propriétés de [Objet](#premis%3AObject):_  [relation](#premis%3Arelationship)
 
 **Sous-classe de:** 
 [Représentation](#premis%3ARepresentation)
+
+**Sous-classes:** 
+[Représentation de porteur audiovisuel](#%3Chttps%3A//data.hetarchief.be/ns/description/AudiovisualCarrierRepresentation%3E)
+, [Représentation de porteur d'un travail écrit'](#%3Chttps%3A//data.hetarchief.be/ns/description/WrittenWorkCarrierRepresentation%3E)
+, [Représentation de porteur de films](#%3Chttps%3A//data.hetarchief.be/ns/description/FilmCarrierRepresentation%3E)
 
 Une représentation physique ou numérique d'une entité intellectuelle (Intellectual Entity) archivée qui est stockée sur un porteur physique tel qu'une bande vidéo, une bobine de film, du papier ou une toile.
 

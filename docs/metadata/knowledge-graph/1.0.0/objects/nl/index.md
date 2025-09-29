@@ -25,9 +25,9 @@ Datamodel Objecten
 , [fr](../fr)
 
 **Auteurs:**
-[Milan Valadou](mailto:milan.valadou@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Datamodel voor het beschrijven van objecten.
@@ -129,6 +129,11 @@ _Eigenschappen van [Representatie](#premis%3ARepresentation):_  [representeert](
 **Subklasse van:** 
 [Representatie](#premis%3ARepresentation)
 
+**Subklassen:** 
+[Audiovisuele drager representatie](#%3Chttps%3A//data.hetarchief.be/ns/description/AudiovisualCarrierRepresentation%3E)
+, [Filmdrager representatie](#%3Chttps%3A//data.hetarchief.be/ns/description/FilmCarrierRepresentation%3E)
+, [Geschreven werk drager representatie](#%3Chttps%3A//data.hetarchief.be/ns/description/WrittenWorkCarrierRepresentation%3E)
+
 Een fysieke of digitale weergave van een gearchiveerde intellectuele entiteit (Intellectual Entity) die is opgeslagen op een fysieke drager zoals een videoband, filmrol, papier of canvas.
 
 | Eigenschap | Beschrijving | Kardinaliteit | Datatype |
@@ -173,7 +178,8 @@ _Eigenschappen van [Digitale representatie](#haObj%3ADigitalRepresentation):_  [
 [Opslagplaats](#premis%3AStorageLocation)
 
 **Subklassen:** 
-[Beeldspoel](#%3Chttps%3A//data.hetarchief.be/ns/description/ImageReel%3E)
+[Audiovisuele drager](#%3Chttps%3A//data.hetarchief.be/ns/description/AudiovisualCarrier%3E)
+, [Beeldspoel](#%3Chttps%3A//data.hetarchief.be/ns/description/ImageReel%3E)
 , [Geluidsspoel](#%3Chttps%3A//data.hetarchief.be/ns/description/AudioReel%3E)
 
 Een fysieke drager waarop data, geluid, beeld etc. zijn opgeslagen. Voor bepaalde materiaalcategorieën bestaat de fysieke drager uit een opslagmedium (bijv. tape, film), soms verpakt in een plastic, metalen, enz. behuizing (bijv. cassette, cartridge) die een integraal onderdeel vormt van het item.

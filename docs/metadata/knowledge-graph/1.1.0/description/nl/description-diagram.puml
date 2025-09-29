@@ -15,11 +15,21 @@ top to bottom direction
 
 class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
 class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/nl#schema%3ABrand]]
+class "<b>Afbeelding</b> (haDes:Image)" as haDes_Image [[#haDes%3AImage]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Audio</b> (haDes:Audio)" as haDes_Audio [[#haDes%3AAudio]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Audiovisuele drager</b> (haDes:AudiovisualCarrier)" as haDes_AudiovisualCarrier [[#haDes%3AAudiovisualCarrier]]
+class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Audiovisuele drager representatie</b> (haDes:AudiovisualCarrierRepresentation)" as haDes_AudiovisualCarrierRepresentation [[#haDes%3AAudiovisualCarrierRepresentation]]
+class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Beeldspoel</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageReel]]
+class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
@@ -36,14 +46,36 @@ class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
 class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Dvd</b> (haDes:DVD)" as haDes_DVD [[#haDes%3ADVD]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Dvd-hoofdstuk</b> (haDes:DVDChapter)" as haDes_DVDChapter [[#haDes%3ADVDChapter]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Filmdrager representatie</b> (haDes:FilmCarrierRepresentation)" as haDes_FilmCarrierRepresentation [[#haDes%3AFilmCarrierRepresentation]]
+class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
 class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Geluidsfilm</b> (haDes:SoundFilm)" as haDes_SoundFilm [[#haDes%3ASoundFilm]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Geluidsspoel</b> (haDes:AudioReel)" as haDes_AudioReel [[#haDes%3AAudioReel]]
+class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Geschreven werk drager representatie</b> (haDes:WrittenWorkCarrierRepresentation)" as haDes_WrittenWorkCarrierRepresentation [[#haDes%3AWrittenWorkCarrierRepresentation]]
+class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
 class "<b>Gesloten ondertitels</b> (ebucore:ClosedCaptions)" as ebucore_ClosedCaptions [[#ebucore%3AClosedCaptions]]
 class "<b>Ondertitels</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
 class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Krant</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
+class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Kranteneditie</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Kranteneditiepagina</b> (haDes:NewspaperIssuePage)" as haDes_NewspaperIssuePage [[#haDes%3ANewspaperIssuePage]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Open ondertitels</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
+class "<b>Ondertitels</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[../../organizations/nl#org%3AOrganization]]
 class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organizations/nl#schema%3APerson]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
@@ -57,12 +89,16 @@ class "<b>Rolnaam</b> (haDes:RoleName)" as haDes_RoleName [[#haDes%3ARoleName]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Stomme film</b> (haDes:SilentFilm)" as haDes_SilentFilm [[#haDes%3ASilentFilm]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
 class "<b>Tekstannotatie</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
 class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>Uitvoeringsrol</b> (schema:PerformanceRole)" as schema_PerformanceRole [[#schema%3APerformanceRole]]
 class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Uitzendingsevenement</b> (schema:BroadcastEvent)" as schema_BroadcastEvent [[#schema%3ABroadcastEvent]]
 class "<b>Gebeurtenis</b> (schema:Event)" as schema_Event [[#schema%3AEvent]]
+class "<b>Video</b> (haDes:Video)" as haDes_Video [[#haDes%3AVideo]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 
 
 ebucore_MediaFragment : breedte : <i>xsd:integer</i> [0..1]
@@ -75,6 +111,9 @@ ebucore_MediaFragment --> premis_File :is media fragment van [0..*]  >
 
 
 
+
+
+haDes_Image --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
 
 schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -101,6 +140,30 @@ schema_ArchiveComponent : omschrijving : <i>rdf:langString</i> [0..*]
 schema_ArchiveComponent --> premis_IntellectualEntity :heeft deel [0..*]  > 
 
 schema_ArchiveComponent --> schema_ArchiveComponent :heeft deel [0..*]  \lis deel van [0..*]  > 
+
+haDes_Audio --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_Audio : omroeporganisatie : <i>org:Organization</i> [0..1]
+haDes_Audio --> haDes_AudiovisualCarrierRepresentation :heeft dragerkopie [0..1]  > 
+
+
+haDes_AudiovisualCarrier --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
+
+haDes_AudiovisualCarrier : audio ruisonderdrukking : <i>xsd:string</i> [0..1]
+haDes_AudiovisualCarrier --> skos_Concept :audio-opnamesnelheid [0..1]  \liec-60094 type [0..1]  \liec-60094 type [0..1]  \liec-60094 type [0..1]  > 
+
+
+haDes_AudiovisualCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
+
+haDes_AudiovisualCarrierRepresentation : aantal audiokanalen : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_AudiovisualCarrierRepresentation : aantal audiotracks : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_AudiovisualCarrierRepresentation --> haDes_AudiovisualCarrier :opgeslagen op [1..*]  > 
+
+
+haDes_ImageReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
+
+haDes_ImageReel --> ebucore_OpenCaptions :heeft (ingebedde) ondertiteling [0..*]  > 
+haDes_ImageReel --> skos_Concept :type kleuring [0..*]  > 
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
@@ -175,6 +238,37 @@ schema_Thing : omschrijving : <i>rdf:langString</i> [0..*]
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 
+haDes_DVD --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_DVD : omroeporganisatie : <i>org:Organization</i> [0..1]
+haDes_DVD --> haDes_AudiovisualCarrierRepresentation :heeft dragerkopie [0..1]  > 
+haDes_DVD --> haDes_DVDChapter :heeft een onderdeel [0..*]  > 
+
+
+haDes_DVDChapter --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_DVDChapter : hoofdstuknummer : <i>xsd:nonNegativeInteger</i> [1..1]
+haDes_DVDChapter --> haDes_DVD :is onderdeel van [1..1]  > 
+
+
+haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_Film : omroeporganisatie : <i>org:Organization</i> [0..1]
+haDes_Film --> haDes_FilmCarrierRepresentation :heeft dragerkopie [1..1]  > 
+
+
+haDes_FilmCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
+
+haDes_FilmCarrierRepresentation : aantal (film)rollen/-spoelen : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_FilmCarrierRepresentation : aantal verloren audiorollen/-spoelen : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_FilmCarrierRepresentation : aantal verloren beeldrollen/-spoelen : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_FilmCarrierRepresentation : verloren audiorollen/-spoelen : <i>xsd:boolean</i> [0..1]
+haDes_FilmCarrierRepresentation : verloren beeldrollen/-spoelen : <i>xsd:boolean</i> [0..1]
+haDes_FilmCarrierRepresentation --> haDes_AudioReel :opgeslagen op [1..*]  > 
+haDes_FilmCarrierRepresentation --> haDes_ImageReel :opgeslagen op [1..*]  > 
+
+
+
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
 
 haObj_PhysicalCarrier : identificator : <i>xsd:string</i> [1..1]
@@ -187,6 +281,16 @@ haObj_PhysicalCarrier --> schema_Brand :merk [0..1]  >
 haObj_PhysicalCarrier --> schema_QuantitativeValue :breedte [0..1]  \ldiepte [0..1]  \lhoogte [0..1]  > 
 haObj_PhysicalCarrier --> skos_Concept :preservatieprobleem [0..*]  > 
 
+
+haDes_SoundFilm --|> haDes_Film #blue;line.dotted;text:blue
+
+
+haDes_AudioReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
+
+
+haDes_WrittenWorkCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
+
+haDes_WrittenWorkCarrierRepresentation --> skos_Concept :productie methode [0..1]  > 
 
 ebucore_ClosedCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
 
@@ -238,12 +342,47 @@ premis_IntellectualEntity --> skos_Concept :licentie [0..*]  >
 
 
 
+schema_Newspaper --|> schema_CreativeWorkSeries #blue;line.dotted;text:blue
+
+schema_Newspaper : abraham identifier : <i>xsd:string</i> [1..1]
+schema_Newspaper : alternatieve naam : <i>rdf:langString</i> [0..*]
+schema_Newspaper : begindatum : <i>xsd:dateTime</i> [0..1]
+schema_Newspaper : einddatum : <i>xsd:dateTime</i> [0..1]
+schema_Newspaper : naam : <i>rdf:langString</i> [1..*]
+
+schema_Newspaper --> schema_Newspaper :opgevolgd door [0..1]  \lsupplement [0..1]  \lsupplement aan [0..1]  \lvoorafgegaan door [0..1]  > 
+schema_Newspaper --> schema_Place :plaats van creatie [0..1]  > 
+schema_Newspaper --> schema_Role :uitgever [0..1]  > 
+
+
+
+haDes_NewspaperIssue --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_NewspaperIssue : aantal pagina's : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssue : editienummer : <i>xsd:string</i> [0..1]
+haDes_NewspaperIssue --> haDes_WrittenWorkCarrierRepresentation :heeft dragerkopie [0..1]  > 
+haDes_NewspaperIssue --> schema_Newspaper :maakt deel uit van [0..1]  > 
+haDes_NewspaperIssue --> skos_Concept :uitgavefrequentie [0..1]  \luitgavetype [0..1]  > 
+
+
+
+haDes_NewspaperIssuePage --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_NewspaperIssuePage : paginanummer : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssuePage --> haDes_NewspaperIssue :maakt deel uit van [1..1]  > 
+
+
 schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_QuantitativeValue : eenheidcode : <i>xsd:string</i> [1..1]
 schema_QuantitativeValue : eenheidstekst : <i>xsd:string</i> [0..1]
 schema_QuantitativeValue : waarde : <i>xsd:float</i> [1..1]
 
+
+
+ebucore_OpenCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
+
+ebucore_OpenCaptions : in taal : <i>xsd:string</i> [0..*]
 
 
 
@@ -291,6 +430,9 @@ schema_CreativeWorkSeries --> schema_CreativeWorkSeries :is een deel van [0..*] 
 
 
 
+haDes_SilentFilm --|> haDes_Film #blue;line.dotted;text:blue
+
+
 ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
 
 
@@ -300,6 +442,12 @@ schema_PerformanceRole : karaternaam : <i>xsd:string</i> [0..1]
 
 
 schema_BroadcastEvent --|> schema_Event #blue;line.dotted;text:blue
+
+
+haDes_Video --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_Video : omroeporganisatie : <i>org:Organization</i> [0..1]
+haDes_Video --> haDes_AudiovisualCarrierRepresentation :heeft dragerkopie [0..1]  > 
 
 
 

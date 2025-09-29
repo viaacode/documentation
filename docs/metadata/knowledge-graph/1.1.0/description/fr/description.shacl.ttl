@@ -1,33 +1,38 @@
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix haCt: <https://data.hetarchief.be/id/color-type/> .
 @prefix haDes: <https://data.hetarchief.be/ns/description/> .
+@prefix haEdTId: <https://data.hetarchief.be/id/edition-type/> .
 @prefix haObj: <https://data.hetarchief.be/ns/object/> .
 @prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
+@prefix haPrmId: <https://data.hetarchief.be/id/production-method/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
 @prefix schema: <https://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n4fe5f92e3f30474d9750707b605669d1b1 a rdfs:Class,
+_:n1e3f0810e5d849fabf4d60baa9aa481db1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:n1e3f0810e5d849fabf4d60baa9aa481db17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:n34654bf2f9e0462a883f0a1ebaaf522db1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
-
-_:n9978407e2e92426a9942de21481d735db1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n9978407e2e92426a9942de21481d735db17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 <http://id.loc.gov/vocabulary/preservation/copyrightStatus/pub> a rdfs:Class,
         owl:Class ;
@@ -593,6 +598,26 @@ haDes:AudioReel a rdfs:Class ;
         "Une bobine d'un porte-film analogique qui contient de l'audio."@fr,
         "Een band van een analoge film drager die audio bevat."@nl .
 
+haDes:AudiovisualCarrier a rdfs:Class ;
+    rdfs:label "Audiovisual carrier"@en,
+        "Porteur audiovisuel"@fr,
+        "Audiovisuele drager"@nl ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf haObj:PhysicalCarrier ;
+    skos:definition "A physical carrier that stores audio or audiovisual content."@en,
+        "Un porteur physique qui stocke du contenu audio ou audiovisuel."@fr,
+        "Een fysieke drager waarop audio of audiovisueel materiaal is opgeslagen."@nl .
+
+haDes:AudiovisualCarrierRepresentation a rdfs:Class ;
+    rdfs:label "Audiovisual carrier representation"@en,
+        "Représentation de porteur audiovisuel"@fr,
+        "Audiovisuele drager representatie"@nl ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf haObj:CarrierRepresentation ;
+    skos:definition "A physical or digital representation of an archived audio or video entity that is stored on an audiovisual physical carrier such as a video tape."@en,
+        "Une représentation physique ou numérique d'une entité audio ou audiovisuel archivée qui est stockée sur un porteur physique tel qu'une bande vidéo."@fr,
+        "Een fysieke of digitale weergave van een gearchiveerde audio of video entiteit die is opgeslagen op een fysieke audiovisuele drager zoals een videoband."@nl .
+
 haDes:DVD a rdfs:Class ;
     rdfs:label "DVD"@en,
         "DVD"@fr,
@@ -622,6 +647,16 @@ haDes:Film a rdfs:Class ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."@nl .
+
+haDes:FilmCarrierRepresentation a rdfs:Class ;
+    rdfs:label "Film carrier representation"@en,
+        "Représentation de porteur de films"@fr,
+        "Filmdrager representatie"@nl ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf haObj:CarrierRepresentation ;
+    skos:definition "A representation of an archived film that is stored on a analog film carrier such as a film stock."@en,
+        "Une représentation d'un film archivé qui est stocké sur un porte-film analogique tel que bouton de cinéma."@fr,
+        "Een weergave van een gearchiveerde film die is opgeslagen op een analoge filmdrager zoals pelicule."@nl .
 
 haDes:Image a rdfs:Class ;
     rdfs:label "Image"@en,
@@ -654,7 +689,7 @@ haDes:MaterialArtwork a rdfs:Class ;
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van elke vorm van visuele kunst dat volledig in de fysieke realiteit bestaat, in ruimte en tijd."@nl .
 
 haDes:NewspaperIssue a rdfs:Class ;
-    rdfs:label "Newspaper edition"@en,
+    rdfs:label "Newspaper issue"@en,
         "Edition de journal"@fr,
         "Kranteneditie"@nl ;
     rdfs:isDefinedBy haDes: ;
@@ -712,6 +747,16 @@ haDes:Video a rdfs:Class ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de la vidéo née numérique ou à l'origine d'un support analogue du type vidéo."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van digitaal geboren video of dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
+
+haDes:WrittenWorkCarrierRepresentation a rdfs:Class ;
+    rdfs:label "Written work carrier representation"@en,
+        "Représentation de porteur d'un travail écrit'"@fr,
+        "Geschreven werk drager representatie"@nl ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf haObj:CarrierRepresentation ;
+    skos:definition "A physical or digital representation of an archived written work that is stored on a physical carrier such as a printed newspaper or book."@en,
+        "Une représentation physique ou numérique d'une œuvre écrite archivée qui est stockée sur un transporteur physique tel qu'un journal ou un livre."@fr,
+        "Een fysieke of digitale weergave van een gearchiveerd geschreven werk dat is opgeslagen op een fysieke drager zoals een gedrukte krant of boek."@nl .
 
 <https://data.hetarchief.be/ns/mediahaven/Fragment> a rdfs:Class ;
     rdfs:label "Mediahaven fragment"@en,
@@ -1119,7 +1164,7 @@ schema:Thing a rdfs:Class ;
         "L'objet dans la relation à l'événement (Event) décrit et qui existait avant cet événement (Event) et qui a été utilisé par celui-ci."@fr,
         "Het object in relatie tot de beschreven gebeurtenis (Event) dat bestond voor die gebeurtenis (Event) en die erdoor gebruikt werd."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/doc> a owl:ObjectProperty ;
+rel:doc a owl:ObjectProperty ;
     rdfs:label "documents"@en,
         "généralise"@fr,
         "documenteert"@nl ;
@@ -1129,7 +1174,7 @@ schema:Thing a rdfs:Class ;
         "Une relation entre les informations sur un objet d'environnement et l'objet d'environnement lui-même. Par exemple, un manuel d'utilisation a une relation 'documents' avec l'application logicielle Open Office. A une relation réciproque avec isDocumentedIn."@fr,
         "Een relatie tussen informatie over een omgevingsobject en het omgevingsobject zelf. Bijvoorbeeld, een gebruikershandleiding heeft een 'documents'-relatie met de Open Office-softwareapplicatie. Heeft een wederkerige relatie met isDocumentedIn."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen> a owl:ObjectProperty ;
+rel:gen a owl:ObjectProperty ;
     rdfs:label "generalizes"@en,
         "généralise"@fr,
         "veralgemeent"@nl ;
@@ -1139,17 +1184,7 @@ schema:Thing a rdfs:Class ;
         "Une Relation entre un objet d'environnement et un autre objet où l'objet décrit a une description plus générale que l'environnement lié plus spécifique. A une relation réciproque avec specializes."@fr,
         "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object een algemenere beschrijving is dan de meer specifieke verwante omgeving. Heeft een wederkerige relatie met specializes."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp> a owl:ObjectProperty ;
-    rdfs:label "has Part"@en,
-        "a partie"@fr,
-        "heeft onderdeel"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf premis:relationship ;
-    skos:definition "The object contains the related object when these are the same object category. For instance, a larger Intellectual Entity has another Intellectual Entity as a part, or a compound file (e.g. archive.tar) contains another file (e.g. text.xml). Has the reciprocal relationship of isPartOf."@en,
-        "L'objet contient l'objet lié lorsqu'il s'agit de la même catégorie d'objet. Par exemple, une entité intellectuelle plus grande a une autre entité intellectuelle comme partie, ou un fichier composé (par exemple archive.tar) contient un autre fichier (par exemple text.xml). A une relation réciproque avec isPartOf."@fr,
-        "Het object bevat het gerelateerde object wanneer ze tot dezelfde objectcategorie behoren. Bv. een grotere intellectuele entiteit bevat een andere intellectuele entiteit, of een samengesteld bestand (bv. archive.tar) bevat een ander bestand (bv. text.xml). Heeft een wederkerige relatie met isPartOf."@nl .
-
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsr> a owl:ObjectProperty ;
+rel:hsr a owl:ObjectProperty ;
     rdfs:label "has Root"@en,
         "est à la base de"@fr,
         "ligt aan de basis van"@nl ;
@@ -1159,7 +1194,7 @@ schema:Thing a rdfs:Class ;
         "Uniquement pour une représentation (representation), l'objet lié est le fichier (file) qui doit être traité en premier afin de rendre la représentation comme il faut. Cela implique qu'un objet composé (c'est-à-dire composé de plusieurs fichiers (files)) nécessite qu'un fichier (file) soit pris en premier comme racine/base pour le rendre."@fr,
         "Alleen voor een representatie (representation) is het gerelateerde object het bestand (file) dat als eerste moet worden verwerkt om de representatie (representation) te kunnen renderen. Dit impliceert dat een samengesteld object (d.w.z. een object dat uit meerdere bestanden (file) bestaat) vereist dat één bestand (file) als eerste als root/basis wordt verwerkt om het te renderen."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hss> a owl:ObjectProperty ;
+rel:hss a owl:ObjectProperty ;
     rdfs:label "has Source"@en,
         "a une source"@fr,
         "heeft een bron"@nl ;
@@ -1169,7 +1204,7 @@ schema:Thing a rdfs:Class ;
         "Une relation dans laquelle l'objet est dérivé de l'objet lié à la suite d'une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar a ce fichier Wordstar comme source. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec isSourceOf."@fr,
         "Een relatie waarbij het object is afgeleid van het verwante object als resultaat van een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat gecodeerd is in het WordStar-formaat, heeft dat Wordstar-bestand als zijn bron. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met isSourceOf."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/idc> a owl:ObjectProperty ;
+rel:idc a owl:ObjectProperty ;
     rdfs:label "is Documented In"@en,
         "est documenté dans"@fr,
         "is gedocumenteerd in"@nl ;
@@ -1179,7 +1214,7 @@ schema:Thing a rdfs:Class ;
         "Une relation entre un objet d'environnement et les informations qui le documentent. A une relation réciproque avec documents."@fr,
         "Een relatie tussen een omgevingsobject en de informatie die het documenteert. Heeft een wederkerige relatie met documents."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc> a owl:ObjectProperty ;
+rel:inc a owl:ObjectProperty ;
     rdfs:label "includes"@en,
         "inclut"@fr,
         "bevat"@nl ;
@@ -1189,7 +1224,7 @@ schema:Thing a rdfs:Class ;
         "Une relation dans laquelle l'objet décrit inclut l'objet référencé, lorsque les objets ont des catégories d'objets différentes. Par exemple, une représentation (representation) inclut des fichiers (files). A une relation réciproque avec isIncludedIn."@fr,
         "Een relatie waarbij het beschreven object het object bevat waarnaar wordt verwezen, wanneer objecten verschillende objectcategorieën hebben. Bijvoorbeeld, een representatie (representation) bevat bestanden (files). Heeft een wederkerige relatie met isIncludedIn."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/irq> a owl:ObjectProperty ;
+rel:irq a owl:ObjectProperty ;
     rdfs:label "is Required by"@en,
         "est requis par"@fr,
         "wordt vereist door"@nl ;
@@ -1199,17 +1234,7 @@ schema:Thing a rdfs:Class ;
         "La relation entre un objet d'environnement et un fichier (file) ou une représentation (representation), lorsque l'environnement est requis par les autres objets pour le rendu ou l'exécution. A une relation réciproque avec requires."@fr,
         "De relatie van een omgevingsobject tot een bestand (file) of representatie (representation), waarbij de omgeving door de andere objecten vereist wordt om te renderen of uit te voeren. Heeft een wederkerige relatie met requires."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi> a owl:ObjectProperty ;
-    rdfs:label "is Included in"@en,
-        "est inclus dans"@fr,
-        "is inbegrepen in"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf premis:relationship ;
-    skos:definition "A relationship in which the described object is included in the referenced object, when the objects have different object categories, for instance, a bitstream to a file, a file to a representation. Has a reciprocal relationship of includes."@en,
-        "Une relation dans laquelle l'objet décrit est inclus dans l'objet référencé, lorsque les objets ont des catégories d'objets différentes, par exemple, un flux binaire (bitstream) dans un fichier (file), un fichier (file) dans une représentation (representation). A une relation réciproque avec includes."@fr,
-        "Een relatie waarbij het beschreven object is inbegrepen in het object waarnaar wordt verwezen, wanneer de objecten verschillende objectcategorieën hebben, bijvoorbeeld een bitstream in een bestand (file), een bestand (file) in een representatie (representation). Heeft een wederkerige relatie met includes."@nl .
-
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/iso> a owl:ObjectProperty ;
+rel:iso a owl:ObjectProperty ;
     rdfs:label "is Source of"@en,
         "est à la source de"@fr,
         "ligt aan de bron van"@nl ;
@@ -1219,17 +1244,7 @@ schema:Thing a rdfs:Class ;
         "L'objet lié est une version de l'objet source créée par une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar, le fichier Wordstar a une relation 'isSourceOf' avec le fichier HTML. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec hasSource."@fr,
         "Het gerelateerde object is een versie van het bronobject gemaakt door een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat is gecodeerd in het WordStar-formaat, het Wordstar-bestand heeft een 'isSourceOf'-relatie met het HTML-bestand. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met hasSource."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp> a owl:ObjectProperty ;
-    rdfs:label "is Part Of"@en,
-        "fait partie de"@fr,
-        "maakt onderdeel uit van"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf premis:relationship ;
-    skos:definition "A relationship in which the object is contained in the related object when these are the same object category. For instance a Web page intellectual entity is part of a larger Web site intellectual entity. Has a reciprocal relationship of hasPart."@en,
-        "Une relation dans laquelle l'objet est contenu dans l'objet lié lorsque ceux-ci sont de la même catégorie d'objet. Par exemple, une entité intellectuelle de site Web fait partie d'une entité intellectuelle de site Web plus grande. A une relation réciproque avec hasPart."@fr,
-        "Een relatie waarbij het object deel uitmaakt van het gerelateerde object wanneer ze behoren tot dezelfde objectcategorie. Bv. een webpagina intellectuele entiteit maakt onderdeel uit van een grotere webpagina intellectuele entiteit. Heeft een wederkerige relatie met hasPart."@nl .
-
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/iss> a owl:ObjectProperty ;
+rel:iss a owl:ObjectProperty ;
     rdfs:label "is Superseded by"@en,
         "a été remplacé par"@fr,
         "werd vervangen door"@nl ;
@@ -1239,7 +1254,7 @@ schema:Thing a rdfs:Class ;
         "Une relation entre un objet d'environnement et un autre objet où l'objet décrit a été remplacé par un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec supersedes."@fr,
         "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object is vervangen door een ander. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met supersedes."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/req> a owl:ObjectProperty ;
+rel:req a owl:ObjectProperty ;
     rdfs:label "requires"@en,
         "nécessite"@fr,
         "vereist"@nl ;
@@ -1249,7 +1264,7 @@ schema:Thing a rdfs:Class ;
         "La relation d'un objet avec un autre objet, lorsqu'il nécessite un environnement particulier ou un objet non lié à l'environnement pour être rendu ou exécuté comme il faut. Par exemple, un fichier au format Word 97 nécessite MS Word 1997 pour être rendu. A une relation réciproque avec isRequiredBy."@fr,
         "De relatie van een object tot een ander object, waarbij het een bepaald omgevings- of niet-omgevingsobject nodig heeft om te worden weergegeven of om te worden uitgevoerd. Bijvoorbeeld, een bestand met de opmaak Word 97 vereist MS Word 1997 om het weer te geven. Heeft een wederkerige relatie met isRequiredBy."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe> a owl:ObjectProperty ;
+rel:spe a owl:ObjectProperty ;
     rdfs:label "specializes"@en,
         "spécialise"@fr,
         "specialiseert"@nl ;
@@ -1259,7 +1274,7 @@ schema:Thing a rdfs:Class ;
         "Une relation entre un objet d'environnement et un autre objet où l'objet décrit fournit des caractéristiques spécifiques, tandis que l'environnement lié est plus générique. A une relation réciproque avec generalizes."@fr,
         "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object specifieke kenmerken vertoont, terwijl de verwante omgeving meer generiek is. Heeft een wederkerige relatie met generalizes."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/sup> a owl:ObjectProperty ;
+rel:sup a owl:ObjectProperty ;
     rdfs:label "supersedes"@en,
         "remplace"@fr,
         "vervangt"@nl ;
@@ -1320,7 +1335,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n9978407e2e92426a9942de21481d735db1 ;
+    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1390,18 +1405,9 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n9978407e2e92426a9942de21481d735db17 ;
+    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
-
-premis:storedAt a owl:ObjectProperty ;
-    rdfs:label "stored at"@en,
-        "stocké à"@fr,
-        "opgeslagen te"@nl ;
-    rdfs:domain [ a owl:Class ;
-            owl:unionOf ( premis:Bitstream premis:File premis:Representation ) ] ;
-    rdfs:isDefinedBy premis: ;
-    rdfs:range premis:StorageLocation .
 
 <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> a owl:ObjectProperty ;
     rdfs:label "directly follows"@en,
@@ -1505,7 +1511,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n4fe5f92e3f30474d9750707b605669d1b1 ;
+    rdfs:range _:n34654bf2f9e0462a883f0a1ebaaf522db1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1616,6 +1622,20 @@ skos:scopeNote a rdf:Property,
     skos:definition "The absolute temporal positions in a media stream the target Asset has to fit."@en,
         "Les positions temporelles absolues dans un flux multimédia où la ressource cible doit s’insérer."@fr,
         "De absolute temporele posities in een mediastream waarin het doelmiddel moet passen."@nl .
+
+<http://www.w3.org/ns/odrl/2/action> a rdf:Property,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "Has Action"@en,
+        "A une action"@fr,
+        "Heeft actie"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( <http://www.w3.org/ns/odrl/2/Rule> <http://www.w3.org/ns/odrl/2/Policy> ) ] ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range <http://www.w3.org/ns/odrl/2/Action> ;
+    skos:definition "De bewerking met betrekking tot het actief waarvoor de regel wordt onderworpen."@en,
+        "The operation relating to the Asset for which the Rule is being subjected."@en,
+        "L'opération relative à l'actif pour lequel la règle est soumise."@fr .
 
 <http://www.w3.org/ns/odrl/2/constraint> a rdf:Property,
         owl:ObjectProperty,
@@ -1947,13 +1967,92 @@ foaf:homepage a rdf:Property ;
     dct:description "Data model to describe the content of objects."@en,
         "Modèle de données pour décrire le contenu des objets."@fr,
         "Datamodel voor de beschrijving van de inhoud van objecten."@nl ;
-    dct:modified "2025-02-13" ;
+    dct:modified "2025-09-22" ;
     dct:title "Data model Description"@en,
         "Modèle de données Description"@fr,
         "Datamodel Descriptie"@nl ;
     pav:version "1.1.0" ;
     vann:preferredNamespacePrefix "haDes" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" .
+
+<https://data.hetarchief.be/ns/description#AVCarrierRepresentatioNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:maxCount 1 ;
+            sh:message "haDes:numberOfAudioTracks occurs more than once, or its object is not a xsd:nonNegativeInteger. " ;
+            sh:minCount 0 ;
+            sh:name "number of audio tracks"@en,
+                "nombre de pistes audio"@fr,
+                "aantal audiotracks"@nl ;
+            sh:path haDes:numberOfAudioTracks ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:maxCount 1 ;
+            sh:message "haDes:numberOfAudioChannels occurs more than once, or its object is not of type xsd:nonNegativeInteger." ;
+            sh:minCount 0 ;
+            sh:name "number of audio channels"@en,
+                "nombre de canaux audio"@fr,
+                "aantal audiokanalen"@nl ;
+            sh:path haDes:numberOfAudioChannels ],
+        [ a sh:PropertyShape ;
+            sh:class haDes:AudiovisualCarrier ;
+            sh:description "The reel where the representation is stored."@en,
+                "Le porteur physique où la représentation est stocké."@fr,
+                "De spoel waarop de representatie is opgeslagen."@nl ;
+            sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en,
+                "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr,
+                "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
+            sh:minCount 1 ;
+            sh:name "stored at"@en,
+                "stocké à"@fr,
+                "opgeslagen op"@nl ;
+            sh:path premis:storedAt ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haDes:AudiovisualCarrierRepresentation .
+
+<https://data.hetarchief.be/ns/description#AVPhysicalCarrierNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:class skos:Concept ;
+            sh:description "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl,
+                "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@nl,
+                "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@nl ;
+            sh:in ( <https://data.hetarchief.be/id/iec60094-type/I> <https://data.hetarchief.be/id/iec60094-type/II> <https://data.hetarchief.be/id/iec60094-type/III> <https://data.hetarchief.be/id/iec60094-type/IV> ) ;
+            sh:maxCount 1 ;
+            sh:message "haDes:iec60094Type is not \"I\", \"II\", \"III\", or \"IV\"."@en ;
+            sh:minCount 0 ;
+            sh:name "iec-60094 type"@en,
+                "iec-60094 type"@fr,
+                "iec-60094 type"@nl ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path haDes:iec60094Type ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class skos:Concept ;
+            sh:description "The speed with which open reel audio or a gramophone record is recorded."@en,
+                "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement gramophone est enregistré."@fr,
+                "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl ;
+            sh:maxCount 1 ;
+            sh:message "haDes:audioRecordingSpeed is not a skos:Concept, or occurs more than once."@en ;
+            sh:minCount 0 ;
+            sh:name "audio recording speed"@en,
+                "vitesse d'enregistrement audio"@fr,
+                "audio-opnamesnelheid"@nl ;
+            sh:path haDes:audioRecordingSpeed ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            skos:definition "The technology used for noise reduction in audio."@en,
+                "La technologie utilisée pour la réduction du bruit de l'audio."@fr,
+                "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl ;
+            sh:datatype xsd:string ;
+            sh:in ( "DBX" "Dolby A" "Dolby B" "Dolby C" "Dolby D" ) ;
+            sh:maxCount 1 ;
+            sh:message "haDes:audioNoiseReduction is not DBX, Dolby A, Dolby B, Dolby C, Dolby D; or occurs more than once."@en ;
+            sh:minCount 0 ;
+            sh:name "audio noise reduction"@en,
+                "réduction du bruit audio"@fr,
+                "audio ruisonderdrukking"@nl ;
+            sh:path haDes:audioNoiseReduction ] ;
+    sh:targetClass haDes:AudiovisualCarrier .
 
 <https://data.hetarchief.be/ns/description#AnnotationShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
@@ -2061,6 +2160,14 @@ foaf:homepage a rdf:Property ;
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:ArchiveComponent .
+
+<https://data.hetarchief.be/ns/description#AudioNodeShape> a sh:NodeShape ;
+    sh:property <https://data.hetarchief.be/ns/description#AVhasCarrierCopyShape>,
+        <https://data.hetarchief.be/ns/description#BroadcasterShape> ;
+    sh:targetClass haDes:Audio .
+
+<https://data.hetarchief.be/ns/description#AudioReelNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:AudioReel .
 
 <https://data.hetarchief.be/ns/description#CarrierRepresentationNodeShape> a sh:NodeShape ;
     sh:targetClass haObj:CarrierRepresentation .
@@ -2206,6 +2313,51 @@ foaf:homepage a rdf:Property ;
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:CreativeWorkSeries .
+
+<https://data.hetarchief.be/ns/description#DVDChapterNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:class haDes:DVD ;
+            sh:description "Indicates the DVD that the chapter is part of."@en,
+                "Indique le DVD dont le chapitre fait partie."@fr,
+                "Aanduiding van de dvd waarvan het hoofdstuk deel uitmaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of schema:isPartOf is no DVD, is absent or occurs more than once"@en ;
+            sh:minCount 1 ;
+            sh:name "is part of"@en,
+                "fait partie de"@fr,
+                "is onderdeel van"@nl ;
+            sh:path rel:isi ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:description "Indicates the sequence number of the DVD chapter."@en,
+                "Indique le numéro de séquence du chapitre DVD."@fr,
+                "Aanduiding van het volgnummer van het dvd-hoofdstuk."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:chapterNumber is not an integer, is absent or occurs more than once"@en ;
+            sh:minCount 1 ;
+            sh:name "chapter number"@en,
+                "Numéro de chapitre"@fr,
+                "hoofdstuknummer"@nl ;
+            sh:path haDes:chapterNumber ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haDes:DVDChapter .
+
+<https://data.hetarchief.be/ns/description#DVDNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:class haDes:DVDChapter ;
+            sh:description "Indicates the DVD chapters that make up the DVD as a whole."@en,
+                "Indique les chapitres du DVD qui composent le DVD dans son ensemble."@fr,
+                "Aanduiding van de dvd-hoofdstukken die deel uitmaken van de dvd als geheel."@nl ;
+            sh:message "the object of schema:hasPart is no DVDChapter"@en ;
+            sh:minCount 0 ;
+            sh:name "has part"@en,
+                "a une partie"@fr,
+                "heeft een onderdeel"@nl ;
+            sh:path rel:hsp ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#AVhasCarrierCopyShape>,
+        <https://data.hetarchief.be/ns/description#BroadcasterShape> ;
+    sh:targetClass haDes:DVD .
 
 <https://data.hetarchief.be/ns/description#DigitalRepresentationNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
@@ -2359,6 +2511,150 @@ foaf:homepage a rdf:Property ;
         <https://data.hetarchief.be/ns/description#DurationShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass premis:File .
+
+<https://data.hetarchief.be/ns/description#FilmCarrierRepresentationNodeShape> a sh:Nodeshape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:description "Indicates if and how many audio reels were lost (prior to any digitization processes)."@en,
+                "Indique si et combien de bobines audio ont été perdues (avant tout processus de numérisation)."@fr,
+                "Geeft aan of en hoeveel geluidsrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:numberOfMissingAudioReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en,
+                "l'objet de haDes:numberOfMissingAudioReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr,
+                "het object van haDes:numberOfMissingAudioReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+            sh:minCount 0 ;
+            sh:name "number of lost audio reels"@en,
+                "nombre de bobines audio perdues"@fr,
+                "aantal verloren audiorollen/-spoelen"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path haDes:numberOfMissingAudioReels ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:description "Indicates if and how many image reels were lost (prior to any digitization processes)."@en,
+                "Indique si et combien de bobines d'image ont été perdues (avant tout processus de numérisation)."@fr,
+                "Geeft aan of en hoeveel beeldrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:numberOfMissingImageReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en,
+                "l'objet de haDes:numberOfMissingImageReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr,
+                "het object van haDes:numberOfMissingImageReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+            sh:minCount 0 ;
+            sh:name "number of lost image reels"@en,
+                "nombre de bobines d'image perdues"@fr,
+                "aantal verloren beeldrollen/-spoelen"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path haDes:numberOfMissingImageReels ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:boolean ;
+            sh:description "Indicates if audio reels were lost (prior to any digitization processes)."@en,
+                "Indique si des bobines audio ont été perdues (avant tout processus de numérisation)."@fr,
+                "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:hasMissingAudioReels is not of type xsd:boolean, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "lost audio reels"@en,
+                "bobines audio perdues"@fr,
+                "verloren audiorollen/-spoelen"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path haDes:hasMissingAudioReels ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:boolean ;
+            sh:description "Indicates if image reels were lost (prior to any digitization processes)."@en,
+                "Indique si des bobines d'image ont été perdues (avant tout processus de numérisation)."@fr,
+                "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:hasMissingImageReels is not of type xsd:boolean, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "lost image reels"@en,
+                "bobines d'image perdues"@fr,
+                "verloren beeldrollen/-spoelen"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path haDes:hasMissingImageReels ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:description "Indicates the number of reels (regardless of type) that the film consists of."@en,
+                "Indique le nombre de bobines (quel que soit le type) qui composent le film."@fr,
+                "Geeft aan uit hoeveel rollen/spoelen (ongeacht het type) waaruit de film bestaat."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:numberOfReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en,
+                "l'objet de haDes:numberOfReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr,
+                "het object van haDes:numberOfReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+            sh:minCount 0 ;
+            sh:name "number of reels"@en,
+                "nombre de bobines"@fr,
+                "aantal (film)rollen/-spoelen"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path haDes:numberOfReels ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:description "The reel where the representation is stored."@en,
+                "Le porteur physique où la représentation est stocké."@fr,
+                "De spoel waarop de representatie is opgeslagen."@nl ;
+            sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en,
+                "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr,
+                "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
+            sh:minCount 1 ;
+            sh:name "stored at"@en,
+                "stocké à"@fr,
+                "opgeslagen op"@nl ;
+            sh:or ( [ sh:class haDes:ImageReel ] [ sh:class haDes:AudioReel ] ) ;
+            sh:path premis:storedAt ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haDes:FilmCarrierRepresentation .
+
+<https://data.hetarchief.be/ns/description#FilmNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:class haDes:FilmCarrierRepresentation ;
+            sh:description "The representation stored on a physical carrier."@en,
+                "La représentation stockée sur un porteur physique."@fr,
+                "De representatie opgeslagen op een fysieke drager."@nl ;
+            sh:maxCount 1 ;
+            sh:message "haObj:hasCarrierCopy is missing, has more than one value or is not a haDes:FilmCarrierRepresentation"@en ;
+            sh:minCount 1 ;
+            sh:name "has carrier copy"@en,
+                "est porteur du copie"@fr,
+                "heeft dragerkopie"@nl ;
+            sh:path haObj:hasCarrierCopy ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#BroadcasterShape> ;
+    sh:targetClass haDes:Film .
+
+<https://data.hetarchief.be/ns/description#ImageNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:Image .
+
+<https://data.hetarchief.be/ns/description#ImageReelNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:class skos:Concept ;
+            sh:description "Indication of the coloring of the image reel."@en,
+                "Indication de la coloration de la bobine d'image."@fr,
+                "Indicatie van de kleuring van de beeldrol/-spoel."@nl ;
+            sh:in ( haCt:BandW haCt:Color haCt:Colorized haCt:Composite haCt:Tinted haCt:Toned haCt:UnknownColorType ) ;
+            sh:message "the object of haDes:coloringType is not of type skos:Concept"@en,
+                "l'objet de haDes:coloringType n'est pas du type skos:Concept"@fr,
+                "het object van haDes:coloringType is niet van het type skos:Concept"@nl ;
+            sh:name "coloring type"@en,
+                "type de coloration"@fr,
+                "type kleuring"@nl ;
+            sh:path haDes:coloringType ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class ebucore:OpenCaptions ;
+            sh:description "Indicates the (embedded) captioning of an image reel ."@en,
+                "Indique les sous-titres (intégrés) d'une bobine d'image."@fr,
+                "Geeft de (ingebedde) ondertiteling aan van een beeldrol/-spoel."@nl ;
+            sh:message "the object of ebucore:hasCaptioning is not of type ebucore:OpenCaptions"@en,
+                "l'objet de ebucore:hasCaptioning n'est pas du type ebucore:OpenCaptions"@fr,
+                "het object van ebucore:hasCaptioning is niet van het type ebucore:OpenCaptions"@nl ;
+            sh:minCount 0 ;
+            sh:name "has (embedded) captioning"@en,
+                "a des sous-titres (intégrés)"@fr,
+                "heeft (ingebedde) ondertiteling"@nl ;
+            sh:path ebucore:hasCaptioning ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haDes:ImageReel .
 
 <https://data.hetarchief.be/ns/description#IntellectualEntityNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
@@ -2867,6 +3163,285 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ] ;
     sh:targetClass ebucore:MediaFragment .
 
+<https://data.hetarchief.be/ns/description#NewspaperIssueNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:description "Indicates how many pages a certain bibliographic object contains."@en,
+                "Indique le nombre de pages qu'un certain objet bibliographique contient."@fr,
+                "Geeft aan uit hoeveel pagina's een bepaald bibliografisch object bestaat."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:numberOfPages is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "number of pages"@en,
+                "nombre de pages"@fr,
+                "aantal pagina's"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path haDes:numberOfPages ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:Newspaper ;
+            sh:description "Indicates the newspaper series that a specific newspaper edition is part of."@en,
+                "Indique la série de journaux dont fait partie une édition spécifique."@fr,
+                "Geeft de krantenserie aan waar een specifieke kranteneditie deel van uitmaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of schema:isPartOf is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "is part of"@en,
+                "fait partie de"@fr,
+                "maakt deel uit van"@nl ;
+            sh:path schema:isPartOf ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "Indicates the serial number of a newspaper edition within the greater newspaper series it is part of."@en,
+                "Indique le numéro de série d'une édition de journal dans la série de journaux plus grande dont elle fait partie."@fr,
+                "Geeft het volgnummer aan van een kranteneditie binnen de grotere krantenserie waarvan het deel uitmaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of schema:issueNumber is not of type xsd:string, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "issue number"@en,
+                "numéro de l'édition"@fr,
+                "editienummer"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:issueNumber ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class skos:Concept ;
+            sh:description "Indicates how frequent a newspaper is issued, e.g. twice a day, daily, weekly etc."@en,
+                "Indique la fréquence de parution d'un journal, par ex. deux fois par jour, quotidiennement, hebdomadairement, etc."@fr,
+                "Geeft aan hoe vaak een krant verschijnt, b.v. tweemaal per dag, dagelijks, wekelijks etc."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:issuance is not of type skos:Concept, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "frequency of issuance"@en,
+                "fréquence d'émission"@fr,
+                "uitgavefrequentie"@nl ;
+            sh:path bf:issuance ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class skos:Concept ;
+            sh:description "Indicates the specific publication type of a newspaper edition (e.g. morning, evening, weekend newspaper edition, etc.)."@en,
+                "Indique le type de publication spécifique d'une édition de journal (par exemple, édition du journal du matin, du soir, du week-end, etc.)."@fr,
+                "Geeft het specifieke uitgavetype aan van een kranteneditie (bv. ochtend-, avond-, weekendkranteneditie etc.)."@nl ;
+            sh:in ( haEdTId:morning-edition haEdTId:afternoon-edition haEdTId:evening-edition haEdTId:weekend-edition ) ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:edition is not of type skos:Concept, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "publication type"@en,
+                "type de publication"@fr,
+                "uitgavetype"@nl ;
+            sh:path bf:edition ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class haDes:WrittenWorkCarrierRepresentation ;
+            sh:description "The representation stored on a physical carrier."@en,
+                "La représentation stockée sur un porteur physique."@fr,
+                "De representatie opgeslagen op een fysieke drager."@nl ;
+            sh:maxCount 1 ;
+            sh:message "haObj:hasCarrierCopy has more than 1 value or is not a haDes:WrittenWorkCarrierRepresentation"@en ;
+            sh:name "has carrier copy"@en,
+                "est copie sur porteur"@fr,
+                "heeft dragerkopie"@nl ;
+            sh:path haObj:hasCarrierCopy ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haDes:NewspaperIssue .
+
+<https://data.hetarchief.be/ns/description#NewspaperIssuePageNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:nonNegativeInteger ;
+            sh:description "Indicates the serial number of a page within the greater object it is part of."@en,
+                "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr,
+                "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "page number"@en,
+                "numéro de page"@fr,
+                "paginanummer"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path haDes:pageNumber ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class haDes:NewspaperIssue ;
+            sh:description "Indicates the newspaper issue that a specific page is part of."@en,
+                "Indique l'édition de journal dont fait partie une page spécifique."@fr,
+                "Geeft de kranteneditie aan waar een specifieke pagina deel van uitmaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of rel:isp is not of type haDes:NewspaperIssue, is missing or occurs more than once"@en ;
+            sh:minCount 1 ;
+            sh:name "is part of"@en,
+                "fait partie de"@fr,
+                "maakt deel uit van"@nl ;
+            sh:path rel:isp ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haDes:NewspaperIssuePage .
+
+<https://data.hetarchief.be/ns/description#NewspaperNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "schema:identifier is missing or not of type string "@en,
+                "schema:identifier est manquant ou n'est pas de type string"@fr,
+                "schema:identifier ontbreekt of is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "abraham identifier"@en,
+                "abraham identifier"@fr,
+                "abraham identifier"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:message "schema:name is missing or not of type string "@en,
+                "schema:name est manquant ou n'est pas de type string"@fr,
+                "schema:name ontbreekt of is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "name"@en,
+                "nom"@fr,
+                "naam"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:name ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:message "schema:alternateName is not of type string"@en,
+                "schema:alternateName n'est pas de type string"@fr,
+                "schema:alternateName is niet van het type string"@nl ;
+            sh:name "alternate name"@en,
+                "nom alternatif"@fr,
+                "alternatieve naam"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:alternateName ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:message "schema:startDate is not of type xsd:dateTime."@en,
+                "schema:startDate n'est pas de type xsd:dateTime."@fr,
+                "schema:startDate is niet van het type xsd:dateTime."@nl ;
+            sh:minCount 0 ;
+            sh:name "start date"@en,
+                "date de début"@fr,
+                "begindatum"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:startDate ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:message "schema:endDate is not of type xsd:dateTime."@en,
+                "schema:endDate n'est pas de type xsd:dateTime."@fr,
+                "schema:endDate is niet van het type xsd:dateTime."@nl ;
+            sh:minCount 0 ;
+            sh:name "end date"@en,
+                "date de fin"@fr,
+                "einddatum"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:endDate ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:Place ;
+            sh:description "The location where the Newspaper was created."@en,
+                "L'emplacement où le journal a été créé."@fr,
+                "De locatie waar de krant is gemaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of schema:locationCreated is not of type schema:locationCreated,or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "location created"@en,
+                "lieu de création"@fr,
+                "plaats van creatie"@nl ;
+            sh:path schema:locationCreated ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:Newspaper ;
+            sh:description "Newspaper that updates or otherwise complements the predominant newspaper."@en,
+                "Journal qui met à jour ou complète autrement le journal prédominant."@fr,
+                "Krant die de overheersende krant bijwerkt of anderszins aanvult."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:supplement is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "supplement"@en,
+                "supplément"@fr,
+                "supplement"@nl ;
+            sh:nodeKind sh:IRI ;
+            sh:path bf:supplement ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:Newspaper ;
+            sh:description "Newspaper that is updated or otherwise complemented by the augmenting newspaper."@en,
+                "Journal qui est mis à jour ou autrement complété par le journal augmentant."@fr,
+                "Krant die wordt bijgewerkt of anderszins wordt aangevuld met de aanvullende krant."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:supplementTo is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "supplement to"@en,
+                "compléter"@fr,
+                "supplement aan"@nl ;
+            sh:nodeKind sh:IRI ;
+            sh:path bf:supplementTo ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            skos:definition "Newspaper that succeeds the newspaper being described, e.g., later in time or after in a narrative."@en,
+                "Journal qui succède à la journal décrite, par exemple, plus tard dans le temps ou après dans un récit."@fr,
+                "Krant die de krant die wordt beschreven opvolgt, bijvoorbeeld later in de tijd of daarna in een verhaal."@nl ;
+            sh:class schema:Newspaper ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:succeededBy is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "succeeded by"@en,
+                "succédé par"@fr,
+                "opgevolgd door"@nl ;
+            sh:nodeKind sh:IRI ;
+            sh:path bf:succeededBy ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:Newspaper ;
+            sh:description "Newspaper that precedes the newspaper being described, e.g., is earlier in time or before in narrative."@en,
+                "Le journal qui précède le journal décrit, par exemple, est plus tôt dans le temps ou avant dans le récit."@fr,
+                "Krant die voorafgaat aan de beschreven krant, bijvoorbeeld, is eerder in de tijd of eerder in het verhaal."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:precededBy is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "preceded by"@en,
+                "précédé par"@fr,
+                "voorafgegaan door"@nl ;
+            sh:nodeKind sh:IRI ;
+            sh:path bf:precededBy ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:Role ;
+            sh:description "Publisher of the newspaper."@en,
+                "Uitgever van de krant."@fr,
+                "Éditeur du journal."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:publisher is not of class schema:Role, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "publisher"@en,
+                "éditeur"@fr,
+                "uitgever"@nl ;
+            sh:path schema:publisher ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass schema:Newspaper .
+
+<https://data.hetarchief.be/ns/description#OpenCaptionsNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "Indicates the language of the embedded captioning."@en,
+                "Indique la langue des sous-titres intégrés."@fr,
+                "Duidt de taal aan van de ingebedde ondertiteling."@nl ;
+            sh:message "the object of schema:inLanguage is not of type xsd:string"@en,
+                "l'objet de schema:inLanguage n'est pas du type xsd:string"@fr,
+                "het object van schema:inLanguage is niet van het type xsd:string"@nl ;
+            sh:minCount 0 ;
+            sh:name "in language"@en,
+                "en langue"@fr,
+                "in taal"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:inLanguage ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass ebucore:OpenCaptions .
+
 <https://data.hetarchief.be/ns/description#PerformanceRoleShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
@@ -3132,6 +3707,12 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ] ;
     sh:targetClass schema:Role .
 
+<https://data.hetarchief.be/ns/description#SilentFilmNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:SilentFilm .
+
+<https://data.hetarchief.be/ns/description#SoundFilmNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:SoundFilm .
+
 <https://data.hetarchief.be/ns/description#TextAnnotationShape> a sh:NodeShape ;
     sh:targetClass ebucore:TextAnnotation .
 
@@ -3140,174 +3721,27 @@ foaf:homepage a rdf:Property ;
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:Thing .
 
-haDes:audioNoiseReduction a rdf:Property ;
-    rdfs:label "audio noise reduction"@en,
-        "réduction du bruit audio"@fr,
-        "audio ruisonderdrukking"@nl ;
-    rdfs:domain haObj:PhysicalCarrier ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdf:Literal ;
-    skos:definition "The technology used for noise reduction in audio."@en,
-        "La technologie utilisée pour la réduction du bruit de l'audio."@fr,
-        "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl .
+<https://data.hetarchief.be/ns/description#VideoNodeShape> a sh:NodeShape ;
+    sh:property <https://data.hetarchief.be/ns/description#AVhasCarrierCopyShape>,
+        <https://data.hetarchief.be/ns/description#BroadcasterShape> ;
+    sh:targetClass haDes:Video .
 
-haDes:audioRecordingSpeed a rdf:Property ;
-    rdfs:label "audio recording speed"@en,
-        "vitesse d'enregistrement audio"@fr,
-        "audio-opnamesnelheid"@nl ;
-    rdfs:domain haObj:PhysicalCarrier ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range skos:Concept ;
-    skos:definition "The speed with which open reel audio or a gramophone record is recorded."@en,
-        "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement de gramophone est enregistré."@fr,
-        "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl .
-
-haDes:broadcastingOrganization a rdf:Property ;
-    rdfs:label "broadcasting organization"@en,
-        "organisation de diffusion"@fr,
-        "omroeporganisatie"@nl ;
-    rdfs:domain [ owl:unionOf ( haDes:Video haDes:Film haDes:Audio haDes:DVD ) ] ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range org:Organization ;
-    skos:definition "The entity primarily responsible for distributing and making accessible an audiovisual item to third parties through broadcasting, sale, rental, etc."@en,
-        "L'entité principalement responsable de la distribution et de la réalisation d'un élément audiovisuel à des tiers par le biais de la diffusion, de la vente, de la location, etc."@fr,
-        "De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een audiovisueel item voor derden door omroep, verkoop, verhuur, etc."@nl .
-
-haDes:chapterNumber a rdf:Property ;
-    rdfs:label "DVD chapter number"@en,
-        "Numéro de chapitre DVD"@fr,
-        "Dvd-hoofdstuknummer"@nl ;
-    rdfs:domain haDes:DVDChapter ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range xsd:integer ;
-    rdfs:subPropertyOf schema:position ;
-    skos:definition "The sequence number of the DVD chapter in relation to the other chapters that are part of the same DVD."@en,
-        "Le numéro de série du chapitre du DVD par rapport aux autres chapitres qui font partie du même DVD."@fr,
-        "Het volgnummer van het dvd-hoofdstuk ten opzichte van de andere hoofstukken die deel uitmaken van dezelfde dvd."@nl .
-
-haDes:coloringType a rdf:Property ;
-    rdfs:label "type of coloring image reel"@en,
-        "type de coloration bobine d'image"@fr,
-        "type kleuring filmspoel"@nl ;
-    rdfs:domain haDes:ImageReel ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range skos:Concept ;
-    rdfs:subPropertyOf <http://dbpedia.org/ontology/filmColourType> ;
-    skos:definition "The type of coloring of the image reel."@en,
-        "Le type de coloration de la bobine d’image."@fr,
-        "Het soort kleuring van de beeldrol/-spoel."@nl .
-
-haDes:hasMissingAudioReels a rdf:Property ;
-    rdfs:label "missing audio reels"@en,
-        "bobines audio manquantes"@fr,
-        "ontbrekende audiospoelen"@nl ;
-    rdfs:domain haObj:CarrierRepresentation ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "Indicates for a film if audio reels are missing, preceding any digitization process."@en,
-        "Indique pour un film si des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
-        "Duidt aan voor een film of er audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
-
-haDes:hasMissingImageReels a rdf:Property ;
-    rdfs:label "missing image reels"@en,
-        "bobines d'image manquantes"@fr,
-        "ontbrekende beeldspoelen"@nl ;
-    rdfs:domain haObj:CarrierRepresentation ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "Indicates for a film if image reels are missing, preceding any digitization process."@en,
-        "Indique pour un film si des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
-        "Duidt aan voor een film of er beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
-
-haDes:iec60094Type a rdf:Property ;
-    rdfs:label "iec-60094 type"@en,
-        "iec-60094 type"@fr,
-        "iec-60094 type"@nl ;
-    rdfs:domain haObj:PhysicalCarrier ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range skos:Concept ;
-    skos:definition "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@en,
-        "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@fr,
-        "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl .
-
-haDes:numberOfAudioChannels a rdf:Property ;
-    rdfs:label "number of audio channels"@en,
-        "nombre de canaux audio"@fr,
-        "aantal audiokanalen"@nl ;
-    rdfs:domain haObj:CarrierRepresentation ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "The number of parallel audio channels that the audio track contains."@en,
-        "Le nombre de canaux audio parallèles que contient la piste audio."@fr,
-        "Het aantal audiokanalen die een audiospoor bevat."@nl .
-
-haDes:numberOfAudioTracks a rdf:Property ;
-    rdfs:label "number of audio tracks"@en,
-        "nombre de pistes audio"@fr,
-        "aantal audiosporen"@nl ;
-    rdfs:domain haObj:CarrierRepresentation ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "The number of audio tracks that the representation contains."@en,
-        "Le nombre de pistes audio que la représentation contient."@fr,
-        "Het aantal audio sporen die de representatie bevat."@nl .
-
-haDes:numberOfMissingAudioReels a rdf:Property ;
-    rdfs:label "number of missing audio reels"@en,
-        "nombre de bobines audio manquantes"@fr,
-        "aantal ontbrekende audiospoelen"@nl ;
-    rdfs:domain haObj:CarrierRepresentation ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "Indicates for a film how many audio reels are missing, preceding any digitization process."@en,
-        "Indique pour un film combien des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
-        "Duidt aan voor een film hoeveel audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
-
-haDes:numberOfMissingImageReels a rdf:Property ;
-    rdfs:label "number of missing image reels"@en,
-        "nombre de bobines d'image manquantes"@fr,
-        "aantal ontbrekende beeldspoelen"@nl ;
-    rdfs:domain haObj:CarrierRepresentation ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "Indicates for a film how many image reels are missing, preceding any digitization process."@en,
-        "Indique pour un film combien des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
-        "Duidt aan voor een film hoeveel beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
-
-haDes:numberOfPages a rdf:Property ;
-    rdfs:label "number of pages"@en,
-        "nombre de pages"@fr,
-        "aantal pagina's"@nl ;
-    rdfs:domain haDes:NewspaperIssue ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "The number of pages that a particular work consists of."@en,
-        "Le nombre de pages qui composent une œuvre particulière."@fr,
-        "Het aantal pagina's waaruit een bepaald werk bestaat."@nl ;
-    skos:related schema:numberOfPages .
-
-haDes:numberOfReels a rdf:Property ;
-    rdfs:label "number of film reels"@en,
-        "nombre de bobines de film"@fr,
-        "aantal filmrollen/-spoelen"@nl ;
-    rdfs:domain haObj:CarrierRepresentation ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "The number of film reels (regardless of type) that make up a digitized film."@en,
-        "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr,
-        "Het aantal filmrollen/-spoelen (ongeacht het type) waaruit een gedigitaliseerde film bestaat."@nl .
-
-haDes:pageNumber a rdf:Property ;
-    rdfs:label "page number"@en,
-        "numéro de page"@fr,
-        "paginanummer"@nl ;
-    rdfs:domain haDes:NewspaperIssuePage ;
-    rdfs:isDefinedBy haDes: ;
-    rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf schema:position ;
-    skos:definition "The sequence number of a page within its larger whole (e.g. a newspaper edition, a book, etc.)."@en,
-        "Le numéro de séquence d'une page dans son ensemble plus grand (par exemple, une édition de journal, un livre, etc.)."@fr,
-        "Het volgnummer van een pagina binnen zijn groter geheel (bv. een kranteneditie, een boek, etc.)."@nl .
+<https://data.hetarchief.be/ns/description#WrittenWorkCarrierRepresentationNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:class skos:Concept ;
+            sh:description "The process used to produce the carrier representation of the written work (e.g. handwritten, typed, printed)."@en,
+                "Le processus utilisé pour produire la eprésentation de porteur de l'œuvre écrite (par exemple manuscrit, dactylographié, imprimé)."@fr,
+                "Het proces dat werd gebruikt om de dragerrepresentatie van het geschreven werk te produceren (bijv. handgeschreven, getypt, gedrukt)."@nl ;
+            sh:in ( haPrmId:handwritten haPrmId:typed haPrmId:printed ) ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:productionMethod is not of type skos:Concept, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "production method"@en,
+                "méthode de production"@fr,
+                "productie methode"@nl ;
+            sh:path bf:productionMethod ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haDes:WrittenWorkCarrierRepresentation .
 
 <https://data.hetarchief.be/ns/mediahaven/record> a rdf:Property ;
     rdfs:label "record"@en,
@@ -3548,23 +3982,6 @@ schema:email a rdf:Property ;
         "Adresse e-mail."@fr,
         "E-mailadres."@nl .
 
-schema:endDate a rdf:Property ;
-    rdfs:label "end date"@en,
-        "date de fin"@fr,
-        "einddatum"@nl ;
-    rdfs:isDefinedBy schema: ;
-    skos:definition "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
-        "La date de fin et l'heure de l'article (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@fr,
-        "De einddatum en tijd van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@nl ;
-    schema:domainIncludes schema:CreativeWorkSeason,
-        schema:CreativeWorkSeries,
-        schema:DatedMoneySpecification,
-        schema:Event,
-        schema:MerchantReturnPolicySeasonalOverride,
-        schema:Role ;
-    schema:rangeIncludes schema:Date,
-        schema:DateTime .
-
 schema:episodeNumber a rdf:Property ;
     rdfs:label "episode number"@en,
         "numéro d'épisode"@fr,
@@ -3649,23 +4066,6 @@ schema:serialNumber a rdf:Property ;
         "Le numéro de série ou tout identifiant alphanumérique d'un produit particulier. Lorsqu'il est attaché à une offre, il s'agit d'un raccourci pour le numéro de série du produit inclus dans l'offre."@fr,
         "Het serienummer of een alfanumerieke identificatie van een bepaald product. Wanneer het wordt bevestigd aan een aanbieding, is het een snelkoppeling voor het serienummer van het product dat in het aanbod is opgenomen."@nl .
 
-schema:startDate a rdf:Property ;
-    rdfs:label "start date"@en,
-        "date de début"@fr,
-        "begindatum"@nl ;
-    rdfs:isDefinedBy schema: ;
-    skos:definition "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
-        "La date et l'heure de la date de la statistique par l'item (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@fr,
-        "De startdatum en tijd van de status van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@nl ;
-    schema:domainIncludes schema:CreativeWorkSeason,
-        schema:CreativeWorkSeries,
-        schema:DatedMoneySpecification,
-        schema:Event,
-        schema:MerchantReturnPolicySeasonalOverride,
-        schema:Role ;
-    schema:rangeIncludes schema:Date,
-        schema:DateTime .
-
 schema:streetAddress a rdf:Property ;
     rdfs:label "streetAddress"@en,
         "adresseDeRue"@fr,
@@ -3699,6 +4099,36 @@ schema:version a rdf:Property ;
     skos:definition "The version of the CreativeWork embodied by a specified resource."@en,
         "La version du Creativework incarné par une ressource spécifiée."@fr,
         "De versie van het Creative Work dat is belichaamd door een opgegeven item."@nl .
+
+rel:hsp a owl:ObjectProperty ;
+    rdfs:label "has Part"@en,
+        "a partie"@fr,
+        "heeft onderdeel"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship ;
+    skos:definition "The object contains the related object when these are the same object category. For instance, a larger Intellectual Entity has another Intellectual Entity as a part, or a compound file (e.g. archive.tar) contains another file (e.g. text.xml). Has the reciprocal relationship of isPartOf."@en,
+        "L'objet contient l'objet lié lorsqu'il s'agit de la même catégorie d'objet. Par exemple, une entité intellectuelle plus grande a une autre entité intellectuelle comme partie, ou un fichier composé (par exemple archive.tar) contient un autre fichier (par exemple text.xml). A une relation réciproque avec isPartOf."@fr,
+        "Het object bevat het gerelateerde object wanneer ze tot dezelfde objectcategorie behoren. Bv. een grotere intellectuele entiteit bevat een andere intellectuele entiteit, of een samengesteld bestand (bv. archive.tar) bevat een ander bestand (bv. text.xml). Heeft een wederkerige relatie met isPartOf."@nl .
+
+rel:isi a owl:ObjectProperty ;
+    rdfs:label "is Included in"@en,
+        "est inclus dans"@fr,
+        "is inbegrepen in"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship ;
+    skos:definition "A relationship in which the described object is included in the referenced object, when the objects have different object categories, for instance, a bitstream to a file, a file to a representation. Has a reciprocal relationship of includes."@en,
+        "Une relation dans laquelle l'objet décrit est inclus dans l'objet référencé, lorsque les objets ont des catégories d'objets différentes, par exemple, un flux binaire (bitstream) dans un fichier (file), un fichier (file) dans une représentation (representation). A une relation réciproque avec includes."@fr,
+        "Een relatie waarbij het beschreven object is inbegrepen in het object waarnaar wordt verwezen, wanneer de objecten verschillende objectcategorieën hebben, bijvoorbeeld een bitstream in een bestand (file), een bestand (file) in een representatie (representation). Heeft een wederkerige relatie met includes."@nl .
+
+rel:isp a owl:ObjectProperty ;
+    rdfs:label "is Part Of"@en,
+        "fait partie de"@fr,
+        "maakt onderdeel uit van"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship ;
+    skos:definition "A relationship in which the object is contained in the related object when these are the same object category. For instance a Web page intellectual entity is part of a larger Web site intellectual entity. Has a reciprocal relationship of hasPart."@en,
+        "Une relation dans laquelle l'objet est contenu dans l'objet lié lorsque ceux-ci sont de la même catégorie d'objet. Par exemple, une entité intellectuelle de site Web fait partie d'une entité intellectuelle de site Web plus grande. A une relation réciproque avec hasPart."@fr,
+        "Een relatie waarbij het object deel uitmaakt van het gerelateerde object wanneer ze behoren tot dezelfde objectcategorie. Bv. een webpagina intellectuele entiteit maakt onderdeel uit van een grotere webpagina intellectuele entiteit. Heeft een wederkerige relatie met hasPart."@nl .
 
 dct:available a rdf:Property ;
     rdfs:label "date available"@en,
@@ -3790,17 +4220,6 @@ ebucore:hasAnnotationTarget a rdf:Property ;
     skos:definition "To define the target object to which the Annotation applies."@en,
         "Pour définir l'objet cible auquel s'applique l'annotation."@fr,
         "Om het doelobject te definiëren waarop de annotatie van toepassing is."@nl .
-
-ebucore:hasCaptioning a rdf:Property ;
-    rdfs:label "captioning"@en,
-        "sous-titrage"@fr,
-        "ondertiteling"@nl ;
-    rdfs:domain ebucore:Asset ;
-    rdfs:isDefinedBy ebucore: ;
-    rdfs:range ebucore:Captioning ;
-    skos:definition "To signal the presence of Captioning."@en,
-        "Pour signaler la présence du sous-titrage."@fr,
-        "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
 
 ebucore:hasCastMember a rdf:Property ;
     rdfs:label "cast member"@en,
@@ -4228,6 +4647,96 @@ org:postIn a rdf:Property,
     rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInfluencedBy> ;
     owl:propertyChainAxiom ( <http://www.w3.org/ns/prov#qualifiedGeneration> <http://www.w3.org/ns/prov#activity> ) .
 
+haDes:audioNoiseReduction a rdf:Property ;
+    rdfs:label "audio noise reduction"@en,
+        "réduction du bruit audio"@fr,
+        "audio ruisonderdrukking"@nl ;
+    rdfs:domain haObj:PhysicalCarrier ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdf:Literal ;
+    skos:definition "The technology used for noise reduction in audio."@en,
+        "La technologie utilisée pour la réduction du bruit de l'audio."@fr,
+        "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl .
+
+haDes:audioRecordingSpeed a rdf:Property ;
+    rdfs:label "audio recording speed"@en,
+        "vitesse d'enregistrement audio"@fr,
+        "audio-opnamesnelheid"@nl ;
+    rdfs:domain haObj:PhysicalCarrier ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range skos:Concept ;
+    skos:definition "The speed with which open reel audio or a gramophone record is recorded."@en,
+        "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement de gramophone est enregistré."@fr,
+        "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl .
+
+haDes:broadcastingOrganization a rdf:Property ;
+    rdfs:label "broadcasting organization"@en,
+        "organisation de diffusion"@fr,
+        "omroeporganisatie"@nl ;
+    rdfs:domain [ owl:unionOf ( haDes:Video haDes:Film haDes:Audio haDes:DVD ) ] ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range org:Organization ;
+    skos:definition "The entity primarily responsible for distributing and making accessible an audiovisual item to third parties through broadcasting, sale, rental, etc."@en,
+        "L'entité principalement responsable de la distribution et de la réalisation d'un élément audiovisuel à des tiers par le biais de la diffusion, de la vente, de la location, etc."@fr,
+        "De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een audiovisueel item voor derden door omroep, verkoop, verhuur, etc."@nl .
+
+haDes:chapterNumber a rdf:Property ;
+    rdfs:label "DVD chapter number"@en,
+        "Numéro de chapitre DVD"@fr,
+        "Dvd-hoofdstuknummer"@nl ;
+    rdfs:domain haDes:DVDChapter ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf schema:position ;
+    skos:definition "The sequence number of the DVD chapter in relation to the other chapters that are part of the same DVD."@en,
+        "Le numéro de série du chapitre du DVD par rapport aux autres chapitres qui font partie du même DVD."@fr,
+        "Het volgnummer van het dvd-hoofdstuk ten opzichte van de andere hoofstukken die deel uitmaken van dezelfde dvd."@nl .
+
+haDes:coloringType a rdf:Property ;
+    rdfs:label "type of coloring image reel"@en,
+        "type de coloration bobine d'image"@fr,
+        "type kleuring filmspoel"@nl ;
+    rdfs:domain haDes:ImageReel ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf <http://dbpedia.org/ontology/filmColourType> ;
+    skos:definition "The type of coloring of the image reel."@en,
+        "Le type de coloration de la bobine d’image."@fr,
+        "Het soort kleuring van de beeldrol/-spoel."@nl .
+
+haDes:hasMissingAudioReels a rdf:Property ;
+    rdfs:label "missing audio reels"@en,
+        "bobines audio manquantes"@fr,
+        "ontbrekende audiospoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film if audio reels are missing, preceding any digitization process."@en,
+        "Indique pour un film si des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film of er audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+haDes:hasMissingImageReels a rdf:Property ;
+    rdfs:label "missing image reels"@en,
+        "bobines d'image manquantes"@fr,
+        "ontbrekende beeldspoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film if image reels are missing, preceding any digitization process."@en,
+        "Indique pour un film si des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film of er beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+haDes:iec60094Type a rdf:Property ;
+    rdfs:label "iec-60094 type"@en,
+        "iec-60094 type"@fr,
+        "iec-60094 type"@nl ;
+    rdfs:domain haObj:PhysicalCarrier ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range skos:Concept ;
+    skos:definition "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@en,
+        "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@fr,
+        "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl .
+
 haDes:licenseDistributor a rdf:Property ;
     rdfs:label "license distributor"@en,
         "distributeur de licence"@fr,
@@ -4239,28 +4748,99 @@ haDes:licenseDistributor a rdf:Property ;
         "Le distributeur de licences de l'entité intellectuelle."@fr,
         "De licentiedistributeur van de intellectuele entiteit."@nl .
 
+haDes:numberOfAudioChannels a rdf:Property ;
+    rdfs:label "number of audio channels"@en,
+        "nombre de canaux audio"@fr,
+        "aantal audiokanalen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of parallel audio channels that the audio track contains."@en,
+        "Le nombre de canaux audio parallèles que contient la piste audio."@fr,
+        "Het aantal audiokanalen die een audiospoor bevat."@nl .
+
+haDes:numberOfAudioTracks a rdf:Property ;
+    rdfs:label "number of audio tracks"@en,
+        "nombre de pistes audio"@fr,
+        "aantal audiosporen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of audio tracks that the representation contains."@en,
+        "Le nombre de pistes audio que la représentation contient."@fr,
+        "Het aantal audio sporen die de representatie bevat."@nl .
+
+haDes:numberOfMissingAudioReels a rdf:Property ;
+    rdfs:label "number of missing audio reels"@en,
+        "nombre de bobines audio manquantes"@fr,
+        "aantal ontbrekende audiospoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film how many audio reels are missing, preceding any digitization process."@en,
+        "Indique pour un film combien des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film hoeveel audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+haDes:numberOfMissingImageReels a rdf:Property ;
+    rdfs:label "number of missing image reels"@en,
+        "nombre de bobines d'image manquantes"@fr,
+        "aantal ontbrekende beeldspoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film how many image reels are missing, preceding any digitization process."@en,
+        "Indique pour un film combien des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film hoeveel beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+haDes:numberOfPages a rdf:Property ;
+    rdfs:label "number of pages"@en,
+        "nombre de pages"@fr,
+        "aantal pagina's"@nl ;
+    rdfs:domain haDes:NewspaperIssue ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of pages that a particular work consists of."@en,
+        "Le nombre de pages qui composent une œuvre particulière."@fr,
+        "Het aantal pagina's waaruit een bepaald werk bestaat."@nl ;
+    skos:related schema:numberOfPages .
+
+haDes:numberOfReels a rdf:Property ;
+    rdfs:label "number of film reels"@en,
+        "nombre de bobines de film"@fr,
+        "aantal filmrollen/-spoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of film reels (regardless of type) that make up a digitized film."@en,
+        "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr,
+        "Het aantal filmrollen/-spoelen (ongeacht het type) waaruit een gedigitaliseerde film bestaat."@nl .
+
+haDes:pageNumber a rdf:Property ;
+    rdfs:label "page number"@en,
+        "numéro de page"@fr,
+        "paginanummer"@nl ;
+    rdfs:domain haDes:NewspaperIssuePage ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf schema:position ;
+    skos:definition "The sequence number of a page within its larger whole (e.g. a newspaper edition, a book, etc.)."@en,
+        "Le numéro de séquence d'une page dans son ensemble plus grand (par exemple, une édition de journal, un livre, etc.)."@fr,
+        "Het volgnummer van een pagina binnen zijn groter geheel (bv. een kranteneditie, een boek, etc.)."@nl .
+
 haObj:hasAccessCopy a rdf:Property ;
     rdfs:label "has access copy"@en,
         "a copie d'accès"@fr,
         "heeft toegangskopie"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    rdfs:subPropertyOf rel:isr ;
     owl:inverseOf haObj:isAccessCopyOf .
-
-haObj:hasCarrierCopy a rdf:Property ;
-    rdfs:label "has carrier copy"@en,
-        "a copie sur porteur"@fr,
-        "heeft dragerkopie"@nl ;
-    rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
-    owl:inverseOf haObj:isCarrierCopyOf .
 
 haObj:hasFragmentRepresentation a rdf:Property ;
     rdfs:label "has fragment "@en,
         "a un fragment"@fr,
         "heeft fragment"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    rdfs:subPropertyOf rel:isr ;
     owl:inverseOf haObj:isFragmentRepresentationOf .
 
 haObj:hasIIIFCopy a rdf:Property ;
@@ -4268,7 +4848,7 @@ haObj:hasIIIFCopy a rdf:Property ;
         "a copie IIIF"@fr,
         "heeft IIIF-kopie"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    rdfs:subPropertyOf rel:isr ;
     owl:inverseOf haObj:isIIIFCopyOf .
 
 haObj:hasMasterCopy a rdf:Property ;
@@ -4276,7 +4856,7 @@ haObj:hasMasterCopy a rdf:Property ;
         "a copie principale"@fr,
         "heeft archiefmaster"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    rdfs:subPropertyOf rel:isr ;
     owl:inverseOf haObj:isMasterCopyOf .
 
 haObj:hasMezzanineCopy a rdf:Property ;
@@ -4284,7 +4864,7 @@ haObj:hasMezzanineCopy a rdf:Property ;
         "a format mezzanine"@fr,
         "heeft mezzanineformaat"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    rdfs:subPropertyOf rel:isr ;
     owl:inverseOf haObj:isMezzanineCopyOf .
 
 haObj:hasTranscriptionCopy a rdf:Property ;
@@ -4292,7 +4872,7 @@ haObj:hasTranscriptionCopy a rdf:Property ;
         "a copie de transcription"@fr,
         "heeft transcriptiekopie"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    rdfs:subPropertyOf rel:isr ;
     owl:inverseOf haObj:isTranscriptionCopyOf .
 
 haObj:isAccessCopyOf a rdf:Property ;
@@ -4300,7 +4880,7 @@ haObj:isAccessCopyOf a rdf:Property ;
         "est copie d'accès de"@fr,
         "is toegangskopie van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasAccessCopy .
 
 haObj:isCarrierCopyOf a rdf:Property ;
@@ -4308,7 +4888,7 @@ haObj:isCarrierCopyOf a rdf:Property ;
         "est copie sur porteur de"@fr,
         "is dragerkopie van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasCarrierCopy .
 
 haObj:isFragmentRepresentationOf a rdf:Property ;
@@ -4316,7 +4896,7 @@ haObj:isFragmentRepresentationOf a rdf:Property ;
         "est fragment de"@fr,
         "is fragment van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasFragmentRepresentation .
 
 haObj:isIIIFCopyOf a rdf:Property ;
@@ -4324,7 +4904,7 @@ haObj:isIIIFCopyOf a rdf:Property ;
         "est copie IIIF de"@fr,
         "is IIIF-kopie van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasIIIFCopy .
 
 haObj:isMasterCopyOf a rdf:Property ;
@@ -4332,7 +4912,7 @@ haObj:isMasterCopyOf a rdf:Property ;
         "est la copie principale de"@fr,
         "is archiefmaster van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasMasterCopy .
 
 haObj:isMezzanineCopyOf a rdf:Property ;
@@ -4340,7 +4920,7 @@ haObj:isMezzanineCopyOf a rdf:Property ;
         "est format mezzanine de"@fr,
         "is mezzanineformaat van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasMezzanineCopy .
 
 haObj:isTranscriptionCopyOf a rdf:Property ;
@@ -4348,7 +4928,7 @@ haObj:isTranscriptionCopyOf a rdf:Property ;
         "est copie transcription de"@fr,
         "is transcriptiekopie van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasTranscriptionCopy .
 
 haObj:preservationProblem a rdf:Property ;
@@ -4435,18 +5015,6 @@ schema:abstract a rdf:Property ;
     skos:definition "An abstract is a short description that summarizes a CreativeWork."@en,
         "Un résumé est une description courte qui résume un CreativeWork."@fr,
         "Een abstract is een korte beschrijving die een CreativeWork samenvat."@nl .
-
-schema:alternateName a rdf:Property ;
-    rdfs:label "alternate name"@en,
-        "nom alternatif"@fr,
-        "alternatieve naam"@nl ;
-    rdfs:domain schema:Thing ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range xsd:string ;
-    owl:equivalentProperty dct:alternative ;
-    skos:definition "An alias for the item"@en,
-        "Un alias pour l'élément"@fr,
-        "Een alias voor het item"@nl .
 
 schema:artMedium a rdf:Property ;
     rdfs:label "art medium"@en,
@@ -4582,6 +5150,23 @@ schema:duration a rdf:Property ;
         "La durée de l'objet (film, enregistrement audio, événement, etc.) au format de date ISO 8601."@fr,
         "De duur van het item (film, opname audio, evenement, enz.) in ISO 8601 datumformaat."@nl .
 
+schema:endDate a rdf:Property ;
+    rdfs:label "end date"@en,
+        "date de fin"@fr,
+        "einddatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date de fin et l'heure de l'article (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@fr,
+        "De einddatum en tijd van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
+
 schema:endTime a rdf:Property ;
     rdfs:label "endTime"@en,
         "heure de fin"@fr,
@@ -4646,18 +5231,6 @@ schema:mentions a rdf:Property ;
         "Indique que le Creative Work contient une référence à, mais ne concerne pas nécessairement un concept."@fr,
         "Geeft aan dat het Creative Work een verwijzing bevat naar, maar niet noodzakelijkerwijs over een concept."@nl .
 
-schema:name a rdf:Property ;
-    rdfs:label "name"@en,
-        "nom"@fr,
-        "naam"@nl ;
-    rdfs:domain schema:Thing ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range xsd:string ;
-    owl:equivalentProperty dct:title ;
-    skos:definition "The name of the item."@en,
-        "Le nom de l'article."@fr,
-        "De naam van het item."@nl .
-
 schema:roleName a rdf:Property ;
     rdfs:label "role name"@en,
         "nom du rôle"@fr,
@@ -4690,6 +5263,23 @@ schema:spatial a rdf:Property ;
     skos:definition "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content."@en,
         "La couverture spatiale d'un travail créatif (CreativeWork) indique où se situe le contenu."@fr,
         "De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt."@nl .
+
+schema:startDate a rdf:Property ;
+    rdfs:label "start date"@en,
+        "date de début"@fr,
+        "begindatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date et l'heure de la date de la statistique par l'item (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@fr,
+        "De startdatum en tijd van de status van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
 
 schema:startTime a rdf:Property ;
     rdfs:label "startTime"@en,
@@ -4774,6 +5364,17 @@ dct:description a rdfs:Property ;
         "Un compte rendu de la ressource."@fr,
         "Een verslag van de resource"@nl .
 
+ebucore:hasCaptioning a rdf:Property ;
+    rdfs:label "captioning"@en,
+        "sous-titrage"@fr,
+        "ondertiteling"@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:Captioning ;
+    skos:definition "To signal the presence of Captioning."@en,
+        "Pour signaler la présence du sous-titrage."@fr,
+        "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
+
 ebucore:isMediaFragmentOf a rdf:Property ;
     rdfs:label "media fragment source"@en,
         "source du fragment de média (MediaFragment)"@fr,
@@ -4784,6 +5385,15 @@ ebucore:isMediaFragmentOf a rdf:Property ;
     skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en,
         "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
         "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl .
+
+premis:storedAt a owl:ObjectProperty ;
+    rdfs:label "stored at"@en,
+        "stocké à"@fr,
+        "opgeslagen te"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( premis:Bitstream premis:File premis:Representation ) ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:StorageLocation .
 
 <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> a owl:ObjectProperty,
         owl:TransitiveProperty ;
@@ -5046,6 +5656,18 @@ schema:actor a rdf:Property ;
         "Un acteur, par exemple à la télévision, à la radio, au cinéma, dans les jeux vidéo, etc. ou dans un événement. Les acteurs peuvent être associés à des éléments individuels ou à une série, un épisode, un clip."@fr,
         "Een acteur, bv. in tv, radio, film, videogames etc. of in een evenement. Acteurs kunnen geassocieerd worden met met individuele items of met een serie, aflevering, clip."@nl .
 
+schema:alternateName a rdf:Property ;
+    rdfs:label "alternate name"@en,
+        "nom alternatif"@fr,
+        "alternatieve naam"@nl ;
+    rdfs:domain schema:Thing ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty dct:alternative ;
+    skos:definition "An alias for the item"@en,
+        "Un alias pour l'élément"@fr,
+        "Een alias voor het item"@nl .
+
 schema:contributor a rdf:Property ;
     rdfs:label "contributor"@en,
         "contributeur"@fr,
@@ -5091,28 +5713,17 @@ schema:height a rdf:Property ;
         "La hauteur de l'objet."@fr,
         "De hoogte van het item."@nl .
 
-schema:inLanguage a rdf:Property ;
-    rdfs:label "in language"@en,
-        "en langue"@fr,
-        "in taal"@nl ;
-    rdfs:domain schema:CreativeWork ;
+schema:name a rdf:Property ;
+    rdfs:label "name"@en,
+        "nom"@fr,
+        "naam"@nl ;
+    rdfs:domain schema:Thing ;
     rdfs:isDefinedBy schema: ;
     rdfs:range xsd:string ;
-    skos:definition "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en,
-        "La langue du contenu ou de la performance ou utilisée dans une action. Veuillez utiliser l'un des codes de langue de la norme IETF BCP 47."@fr,
-        "De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard."@nl .
-
-schema:publisher a rdf:Property ;
-    rdfs:label "publisher"@en,
-        "éditeur"@fr,
-        "uitgever"@nl ;
-    rdfs:domain [ owl:unionOf ( schema:CreativeWork schema:Role ) ] ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range [ owl:unionOf ( schema:Person org:Organization schema:Role ) ] ;
-    owl:equivalentProperty dct:publisher ;
-    skos:definition "The publisher of the creative work."@en,
-        "L'éditeur du travail créatif."@fr,
-        "De uitgever van het creatief werk."@nl .
+    owl:equivalentProperty dct:title ;
+    skos:definition "The name of the item."@en,
+        "Le nom de l'article."@fr,
+        "De naam van het item."@nl .
 
 schema:width a rdf:Property ;
     rdfs:label "width"@en,
@@ -5154,6 +5765,19 @@ skos:related a rdf:Property,
         "Relie un concept à un concept avec lequel il existe une relation sémantique associative."@fr,
         "Verbindt een concept met een concept waarmee er een associatieve semantische relatie is."@nl .
 
+<https://data.hetarchief.be/ns/description#AVhasCarrierCopyShape> a sh:PropertyShape ;
+    sh:class haDes:AudiovisualCarrierRepresentation ;
+    sh:description "The representation stored on a physical carrier."@en,
+        "La représentation stockée sur un porteur physique."@fr,
+        "De representatie opgeslagen op een fysieke drager."@nl ;
+    sh:maxCount 1 ;
+    sh:message "haObj:hasCarrierCopy has more than 1 value or is not a haDes:AudiovisualCarrierRepresentation"@en ;
+    sh:name "has carrier copy"@en,
+        "est copie sur porteur"@fr,
+        "heeft dragerkopie"@nl ;
+    sh:path haObj:hasCarrierCopy ;
+    sh:severity sh:Violation .
+
 schema:creator a rdf:Property ;
     rdfs:label "creator"@en,
         "créateur"@fr,
@@ -5177,6 +5801,17 @@ schema:dateCreated a rdf:Property ;
         "La date à laquelle le CreativeWork a été créé."@fr,
         "De datum waarin het CreativeWork werd gemaakt."@nl .
 
+schema:inLanguage a rdf:Property ;
+    rdfs:label "in language"@en,
+        "en langue"@fr,
+        "in taal"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    skos:definition "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en,
+        "La langue du contenu ou de la performance ou utilisée dans une action. Veuillez utiliser l'un des codes de langue de la norme IETF BCP 47."@fr,
+        "De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard."@nl .
+
 schema:position a rdf:Property ;
     rdfs:label "position"@en,
         "position"@fr,
@@ -5187,6 +5822,18 @@ schema:position a rdf:Property ;
     skos:definition "The position of an item in a series or sequence of items."@en,
         "La position d'un élément dans une série ou une séquence d'éléments."@fr,
         "De positie van een item in een reeks of opeenvolging van items."@nl .
+
+schema:publisher a rdf:Property ;
+    rdfs:label "publisher"@en,
+        "éditeur"@fr,
+        "uitgever"@nl ;
+    rdfs:domain [ owl:unionOf ( schema:CreativeWork schema:Role ) ] ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range [ owl:unionOf ( schema:Person org:Organization schema:Role ) ] ;
+    owl:equivalentProperty dct:publisher ;
+    skos:definition "The publisher of the creative work."@en,
+        "L'éditeur du travail créatif."@fr,
+        "De uitgever van het creatief werk."@nl .
 
 skos:mappingRelation a rdf:Property,
         owl:ObjectProperty ;
@@ -5216,6 +5863,24 @@ skos:semanticRelation a rdf:Property,
     skos:scopeNote "This property should not be used directly, but as a super-property for all properties denoting a relationship of meaning between concepts."@en,
         "Cette propriété ne doit pas être utilisée directement, mais comme super-propriété pour toutes les propriétés désignant une relation de sens entre concepts."@fr,
         "Deze eigenschap moet niet direct gebruikt worden, maar als super-eigenschap voor alle eigenschappen die een betekenisrelatie tussen concepten aanduiden."@nl .
+
+<https://data.hetarchief.be/ns/description#BroadcasterShape> a sh:PropertyShape ;
+    sh:datatype org:Organization ;
+    sh:maxCount 1 ;
+    sh:message "haDes:broadcastingOrganization occurs more than once, or its object is not an  org:Organization."@en ;
+    sh:minCount 0 ;
+    sh:name "broadcasting organization"@en,
+        "organisation de diffusion"@fr,
+        "omroeporganisatie"@nl ;
+    sh:path haDes:broadcastingOrganization .
+
+haObj:hasCarrierCopy a rdf:Property ;
+    rdfs:label "has carrier copy"@en,
+        "a copie sur porteur"@fr,
+        "heeft dragerkopie"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:isr ;
+    owl:inverseOf haObj:isCarrierCopyOf .
 
 schema:isPartOf a rdf:Property ;
     rdfs:label "is part of"@en,
@@ -5249,7 +5914,7 @@ skos:note a rdf:Property,
     rdfs:seeAlso <http://www.w3.org/2008/05/skos> ;
     owl:imports <http://www.w3.org/2004/02/skos/core> .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> a owl:ObjectProperty ;
+rel:isr a owl:ObjectProperty ;
     rdfs:label "is Represented by"@en,
         "est représenté par"@fr,
         "wordt gerepresenteerd door"@nl ;
@@ -5259,7 +5924,7 @@ skos:note a rdf:Property,
         "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
         "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl .
 
-<http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> a owl:ObjectProperty ;
+rel:rep a owl:ObjectProperty ;
     rdfs:label "represents"@en,
         "représente"@fr,
         "representeert"@nl ;
