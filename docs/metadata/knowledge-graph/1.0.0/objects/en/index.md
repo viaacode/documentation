@@ -25,9 +25,9 @@ Data model Objects
 , [fr](../fr)
 
 **Authors:**
-[Milan Valadou](mailto:milan.valadou@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Data model to describe objects.
@@ -70,6 +70,11 @@ Data model to describe objects.
 
 **Subclass of:** 
 [Representation](#premis%3ARepresentation)
+
+**Subclasses:** 
+[Audiovisual carrier representation](#%3Chttps%3A//data.hetarchief.be/ns/description/AudiovisualCarrierRepresentation%3E)
+, [Film carrier representation](#%3Chttps%3A//data.hetarchief.be/ns/description/FilmCarrierRepresentation%3E)
+, [Written work carrier representation](#%3Chttps%3A//data.hetarchief.be/ns/description/WrittenWorkCarrierRepresentation%3E)
 
 A physical or digital representation of an archived intellectual entity that is stored on a physical carrier such as a video tape, film reel, paper or canvas.
 
@@ -179,7 +184,7 @@ _Properties from [Digital representation](#haObj%3ADigitalRepresentation):_  [ha
 , [Film](#%3Chttps%3A//data.hetarchief.be/ns/description/Film%3E)
 , [Image](#%3Chttps%3A//data.hetarchief.be/ns/description/Image%3E)
 , [Material artwork](#%3Chttps%3A//data.hetarchief.be/ns/description/MaterialArtwork%3E)
-, [Newspaper edition](#%3Chttps%3A//data.hetarchief.be/ns/description/NewspaperIssue%3E)
+, [Newspaper issue](#%3Chttps%3A//data.hetarchief.be/ns/description/NewspaperIssue%3E)
 , [Newspaper issue page](#%3Chttps%3A//data.hetarchief.be/ns/description/NewspaperIssuePage%3E)
 , [Video](#%3Chttps%3A//data.hetarchief.be/ns/description/Video%3E)
 
@@ -267,6 +272,7 @@ Discrete unit of information subject to digital preservation. Subclasses of Obje
 
 **Subclasses:** 
 [Audio reel](#%3Chttps%3A//data.hetarchief.be/ns/description/AudioReel%3E)
+, [Audiovisual carrier](#%3Chttps%3A//data.hetarchief.be/ns/description/AudiovisualCarrier%3E)
 , [Image reel](#%3Chttps%3A//data.hetarchief.be/ns/description/ImageReel%3E)
 
 A physical carrier in which data, sound, images, etc., are stored.  For certain categories of material, the physical carrier consists of a storage medium (e.g., tape, film) sometimes encased in a plastic, metal, etc., housing (e.g., cassette, cartridge) that is an integral part of the item.
