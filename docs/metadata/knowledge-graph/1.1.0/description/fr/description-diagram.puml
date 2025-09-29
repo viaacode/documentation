@@ -18,16 +18,38 @@ class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/fr#schema%3AB
 class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>Annotation texte</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
 class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Audio</b> (haDes:Audio)" as haDes_Audio [[#haDes%3AAudio]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Bobine audio</b> (haDes:AudioReel)" as haDes_AudioReel [[#haDes%3AAudioReel]]
+class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Bobine d'image</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageReel]]
+class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Chapitre DVD</b> (haDes:DVDChapter)" as haDes_DVDChapter [[#haDes%3ADVDChapter]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Composant d'archive</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../rights/fr#skos%3AConcept]]
+class "<b>DVD</b> (haDes:DVD)" as haDes_DVD [[#haDes%3ADVD]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Edition de journal</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Fichier</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Film muet</b> (haDes:SilentFilm)" as haDes_SilentFilm [[#haDes%3ASilentFilm]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Film sonore</b> (haDes:SoundFilm)" as haDes_SoundFilm [[#haDes%3ASoundFilm]]
+class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
+class "<b>Image</b> (haDes:Image)" as haDes_Image [[#haDes%3AImage]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Journal</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
+class "<b>Série du travail créatif</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Lieu</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Légende fermée</b> (ebucore:ClosedCaptions)" as ebucore_ClosedCaptions [[#ebucore%3AClosedCaptions]]
@@ -35,16 +57,26 @@ class "<b>Sous-titrage</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucor
 class "<b>Nom de rôle</b> (haDes:RoleName)" as haDes_RoleName [[#haDes%3ARoleName]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Organisation</b> (org:Organization)" as org_Organization [[../../organizations/fr#org%3AOrganization]]
+class "<b>Page d'édition de journal</b> (haDes:NewspaperIssuePage)" as haDes_NewspaperIssuePage [[#haDes%3ANewspaperIssuePage]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/fr#haOrg%3AContentPartner]]
 class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Personne</b> (schema:Person)" as schema_Person [[../../organizations/fr#schema%3APerson]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Porteur audiovisuel</b> (haDes:AudiovisualCarrier)" as haDes_AudiovisualCarrier [[#haDes%3AAudiovisualCarrier]]
+class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
 class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
 class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Représentation de porteur audiovisuel</b> (haDes:AudiovisualCarrierRepresentation)" as haDes_AudiovisualCarrierRepresentation [[#haDes%3AAudiovisualCarrierRepresentation]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Représentation de porteur d'un travail écrit'</b> (haDes:WrittenWorkCarrierRepresentation)" as haDes_WrittenWorkCarrierRepresentation [[#haDes%3AWrittenWorkCarrierRepresentation]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Représentation de porteur de films</b> (haDes:FilmCarrierRepresentation)" as haDes_FilmCarrierRepresentation [[#haDes%3AFilmCarrierRepresentation]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
 class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
 class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Rôle</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
@@ -53,12 +85,16 @@ class "<b>Rôle de performance</b> (schema:PerformanceRole)" as schema_Performan
 class "<b>Rôle</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Saison du travail créatif</b> (schema:CreativeWorkSeason)" as schema_CreativeWorkSeason [[#schema%3ACreativeWorkSeason]]
 class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Sous-titres ouverts</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
+class "<b>Sous-titrage</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
 class "<b>Série du travail créatif</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Valeur quantitative</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Vidéo</b> (haDes:Video)" as haDes_Video [[#haDes%3AVideo]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Épisode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Événement de radiodiffusion</b> (schema:BroadcastEvent)" as schema_BroadcastEvent [[#schema%3ABroadcastEvent]]
@@ -90,6 +126,26 @@ ebucore_Annotation --> skos_Concept :type d'annotation [0..1]  >
 ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
 
 
+haDes_Audio --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_Audio : organisation de diffusion : <i>org:Organization</i> [0..1]
+haDes_Audio --> haDes_AudiovisualCarrierRepresentation :est copie sur porteur [0..1]  > 
+
+
+haDes_AudioReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
+
+
+haDes_ImageReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
+
+haDes_ImageReel --> ebucore_OpenCaptions :a des sous-titres (intégrés) [0..*]  > 
+haDes_ImageReel --> skos_Concept :type de coloration [0..*]  > 
+
+haDes_DVDChapter --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_DVDChapter : Numéro de chapitre : <i>xsd:nonNegativeInteger</i> [1..1]
+haDes_DVDChapter --> haDes_DVD :fait partie de [1..1]  > 
+
+
 
 schema_Thing : description : <i>rdf:langString</i> [0..*]
 schema_Thing : nom : <i>rdf:langString</i> [1..*]
@@ -114,6 +170,23 @@ schema_ArchiveComponent : nom : <i>rdf:langString</i> [1..*]
 schema_ArchiveComponent --> premis_IntellectualEntity :a partie [0..*]  > 
 
 schema_ArchiveComponent --> schema_ArchiveComponent :a partie [0..*]  \lest partie de [0..*]  > 
+
+
+
+haDes_DVD --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_DVD : organisation de diffusion : <i>org:Organization</i> [0..1]
+haDes_DVD --> haDes_AudiovisualCarrierRepresentation :est copie sur porteur [0..1]  > 
+haDes_DVD --> haDes_DVDChapter :a une partie [0..*]  > 
+
+
+haDes_NewspaperIssue --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_NewspaperIssue : nombre de pages : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssue : numéro de l'édition : <i>xsd:string</i> [0..1]
+haDes_NewspaperIssue --> haDes_WrittenWorkCarrierRepresentation :est copie sur porteur [0..1]  > 
+haDes_NewspaperIssue --> schema_Newspaper :fait partie de [0..1]  > 
+haDes_NewspaperIssue --> skos_Concept :fréquence d'émission [0..1]  \ltype de publication [0..1]  > 
 
 
 
@@ -183,6 +256,35 @@ premis_File --> premis_File :sous-titrage [0..*]  >
 
 
 
+haDes_Film --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_Film : organisation de diffusion : <i>org:Organization</i> [0..1]
+haDes_Film --> haDes_FilmCarrierRepresentation :est porteur du copie [1..1]  > 
+
+
+haDes_SilentFilm --|> haDes_Film #blue;line.dotted;text:blue
+
+
+haDes_SoundFilm --|> haDes_Film #blue;line.dotted;text:blue
+
+
+haDes_Image --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
+schema_Newspaper --|> schema_CreativeWorkSeries #blue;line.dotted;text:blue
+
+schema_Newspaper : abraham identifier : <i>xsd:string</i> [1..1]
+schema_Newspaper : date de début : <i>xsd:dateTime</i> [0..1]
+schema_Newspaper : date de fin : <i>xsd:dateTime</i> [0..1]
+schema_Newspaper : nom : <i>rdf:langString</i> [1..*]
+schema_Newspaper : nom alternatif : <i>rdf:langString</i> [0..*]
+
+schema_Newspaper --> schema_Newspaper :compléter [0..1]  \lprécédé par [0..1]  \lsuccédé par [0..1]  \lsupplément [0..1]  > 
+schema_Newspaper --> schema_Place :lieu de création [0..1]  > 
+schema_Newspaper --> schema_Role :éditeur [0..1]  > 
+
+
+
 schema_Place --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_Place : description : <i>rdf:langString</i> [0..*]
@@ -198,10 +300,22 @@ haDes_RoleName --|> skos_Concept #blue;line.dotted;text:blue
 
 
 
+haDes_NewspaperIssuePage --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_NewspaperIssuePage : numéro de page : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_NewspaperIssuePage --> haDes_NewspaperIssue :fait partie de [1..1]  > 
+
+
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 
 schema_Person --|> schema_Thing #blue;line.dotted;text:blue
+
+
+haDes_AudiovisualCarrier --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
+
+haDes_AudiovisualCarrier : réduction du bruit audio : <i>xsd:string</i> [0..1]
+haDes_AudiovisualCarrier --> skos_Concept :iec-60094 type [0..1]  \lvitesse d'enregistrement audio [0..1]  > 
 
 
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
@@ -226,6 +340,29 @@ premis_Representation : nom : <i>rdf:langString</i> [1..*]
 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+
+haDes_AudiovisualCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
+
+haDes_AudiovisualCarrierRepresentation : nombre de canaux audio : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_AudiovisualCarrierRepresentation : nombre de pistes audio : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_AudiovisualCarrierRepresentation --> haDes_AudiovisualCarrier :stocké à [1..*]  > 
+
+
+haDes_WrittenWorkCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
+
+haDes_WrittenWorkCarrierRepresentation --> skos_Concept :méthode de production [0..1]  > 
+
+haDes_FilmCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
+
+haDes_FilmCarrierRepresentation : bobines audio perdues : <i>xsd:boolean</i> [0..1]
+haDes_FilmCarrierRepresentation : bobines d'image perdues : <i>xsd:boolean</i> [0..1]
+haDes_FilmCarrierRepresentation : nombre de bobines : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_FilmCarrierRepresentation : nombre de bobines audio perdues : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_FilmCarrierRepresentation : nombre de bobines d'image perdues : <i>xsd:nonNegativeInteger</i> [0..1]
+haDes_FilmCarrierRepresentation --> haDes_AudioReel :stocké à [1..*]  > 
+haDes_FilmCarrierRepresentation --> haDes_ImageReel :stocké à [1..*]  > 
+
 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
@@ -268,6 +405,11 @@ schema_CreativeWorkSeason --> schema_CreativeWorkSeries :est partie de [0..*]  >
 
 
 
+ebucore_OpenCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
+
+ebucore_OpenCaptions : en langue : <i>xsd:string</i> [0..*]
+
+
 schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_CreativeWorkSeries : description : <i>rdf:langString</i> [0..*]
@@ -290,6 +432,12 @@ schema_QuantitativeValue : code d'unité : <i>xsd:string</i> [1..1]
 schema_QuantitativeValue : texte d'unité : <i>xsd:string</i> [0..1]
 schema_QuantitativeValue : valeur : <i>xsd:float</i> [1..1]
 
+
+
+haDes_Video --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haDes_Video : organisation de diffusion : <i>org:Organization</i> [0..1]
+haDes_Video --> haDes_AudiovisualCarrierRepresentation :est copie sur porteur [0..1]  > 
 
 
 schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
