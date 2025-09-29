@@ -47,7 +47,7 @@ odrl_Permission --|> odrl_Rule #blue;line.dotted;text:blue
 odrl_Permission : date de début : <i>xsd:dateTime</i> [0..1]
 odrl_Permission : fin : <i>xsd:dateTime</i> [0..1]
 odrl_Permission : note : <i>xsd:string</i> [0..1]
-odrl_Permission --> odrl_Action :None [1..*]  > 
+odrl_Permission --> odrl_Action :action d'accès [1..*]  > 
 odrl_Permission --> odrl_Constraint :contrainte [0..5]  > 
 
 
@@ -83,7 +83,7 @@ odrl_Prohibition : date de début : <i>xsd:dateTime</i> [0..1]
 odrl_Prohibition : fin : <i>xsd:dateTime</i> [0..1]
 odrl_Prohibition : note : <i>xsd:string</i> [0..1]
 odrl_Prohibition --> haRig_Motivation :est motivé par [1..*]  > 
-odrl_Prohibition --> odrl_Action :None [1..*]  > 
+odrl_Prohibition --> odrl_Action :action d'accès [1..*]  > 
 odrl_Prohibition --> odrl_Constraint :contrainte [0..5]  > 
 
 
@@ -98,7 +98,7 @@ haRig_ContentRange --|> odrl_RightOperand #blue;line.dotted;text:blue
 
 
 
-odrl_Policy --> haObj_DigitalRepresentation :Cible [1..*]  > 
+odrl_Policy --> haObj_DigitalRepresentation :représentation cible [1..*]  > 
 odrl_Policy --> odrl_Permission :autorisation d'accès [0..*]  > 
 odrl_Policy --> odrl_Prohibition :limitation de l'accès [0..*]  > 
 
