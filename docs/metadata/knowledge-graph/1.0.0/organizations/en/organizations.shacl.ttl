@@ -14,17 +14,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n4fe5f92e3f30474d9750707b605669d1b1 a rdfs:Class,
+_:n1e3f0810e5d849fabf4d60baa9aa481db1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
+
+_:n1e3f0810e5d849fabf4d60baa9aa481db17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
+
+_:n34654bf2f9e0462a883f0a1ebaaf522db1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
-
-_:n9978407e2e92426a9942de21481d735db1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
-
-_:n9978407e2e92426a9942de21481d735db17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
 <http://id.loc.gov/vocabulary/preservation/copyrightStatus/pub> a rdfs:Class,
         owl:Class ;
@@ -590,6 +590,26 @@ org:Site a rdfs:Class,
         "Une bobine d'un porte-film analogique qui contient de l'audio."@fr,
         "Een band van een analoge film drager die audio bevat."@nl .
 
+<https://data.hetarchief.be/ns/description/AudiovisualCarrier> a rdfs:Class ;
+    rdfs:label "Audiovisual carrier"@en,
+        "Porteur audiovisuel"@fr,
+        "Audiovisuele drager"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
+    skos:definition "A physical carrier that stores audio or audiovisual content."@en,
+        "Un porteur physique qui stocke du contenu audio ou audiovisuel."@fr,
+        "Een fysieke drager waarop audio of audiovisueel materiaal is opgeslagen."@nl .
+
+<https://data.hetarchief.be/ns/description/AudiovisualCarrierRepresentation> a rdfs:Class ;
+    rdfs:label "Audiovisual carrier representation"@en,
+        "Représentation de porteur audiovisuel"@fr,
+        "Audiovisuele drager representatie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
+    skos:definition "A physical or digital representation of an archived audio or video entity that is stored on an audiovisual physical carrier such as a video tape."@en,
+        "Une représentation physique ou numérique d'une entité audio ou audiovisuel archivée qui est stockée sur un porteur physique tel qu'une bande vidéo."@fr,
+        "Een fysieke of digitale weergave van een gearchiveerde audio of video entiteit die is opgeslagen op een fysieke audiovisuele drager zoals een videoband."@nl .
+
 <https://data.hetarchief.be/ns/description/DVD> a rdfs:Class ;
     rdfs:label "DVD"@en,
         "DVD"@fr,
@@ -619,6 +639,16 @@ org:Site a rdfs:Class,
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."@nl .
+
+<https://data.hetarchief.be/ns/description/FilmCarrierRepresentation> a rdfs:Class ;
+    rdfs:label "Film carrier representation"@en,
+        "Représentation de porteur de films"@fr,
+        "Filmdrager representatie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
+    skos:definition "A representation of an archived film that is stored on a analog film carrier such as a film stock."@en,
+        "Une représentation d'un film archivé qui est stocké sur un porte-film analogique tel que bouton de cinéma."@fr,
+        "Een weergave van een gearchiveerde film die is opgeslagen op een analoge filmdrager zoals pelicule."@nl .
 
 <https://data.hetarchief.be/ns/description/Image> a rdfs:Class ;
     rdfs:label "Image"@en,
@@ -651,7 +681,7 @@ org:Site a rdfs:Class,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van elke vorm van visuele kunst dat volledig in de fysieke realiteit bestaat, in ruimte en tijd."@nl .
 
 <https://data.hetarchief.be/ns/description/NewspaperIssue> a rdfs:Class ;
-    rdfs:label "Newspaper edition"@en,
+    rdfs:label "Newspaper issue"@en,
         "Edition de journal"@fr,
         "Kranteneditie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
@@ -709,6 +739,16 @@ org:Site a rdfs:Class,
     skos:definition "This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de la vidéo née numérique ou à l'origine d'un support analogue du type vidéo."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van digitaal geboren video of dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
+
+<https://data.hetarchief.be/ns/description/WrittenWorkCarrierRepresentation> a rdfs:Class ;
+    rdfs:label "Written work carrier representation"@en,
+        "Représentation de porteur d'un travail écrit'"@fr,
+        "Geschreven werk drager representatie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:subClassOf <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
+    skos:definition "A physical or digital representation of an archived written work that is stored on a physical carrier such as a printed newspaper or book."@en,
+        "Une représentation physique ou numérique d'une œuvre écrite archivée qui est stockée sur un transporteur physique tel qu'un journal ou un livre."@fr,
+        "Een fysieke of digitale weergave van een gearchiveerd geschreven werk dat is opgeslagen op een fysieke drager zoals een gedrukte krant of boek."@nl .
 
 mh:Fragment a rdfs:Class ;
     rdfs:label "Mediahaven fragment"@en,
@@ -1515,7 +1555,7 @@ dct:license a rdf:Property ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n9978407e2e92426a9942de21481d735db1 ;
+    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db1 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1585,7 +1625,7 @@ dct:license a rdf:Property ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n9978407e2e92426a9942de21481d735db17 ;
+    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db17 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1700,7 +1740,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n4fe5f92e3f30474d9750707b605669d1b1 ;
+    rdfs:range _:n34654bf2f9e0462a883f0a1ebaaf522db1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1811,6 +1851,20 @@ skos:scopeNote a rdf:Property,
     skos:definition "The absolute temporal positions in a media stream the target Asset has to fit."@en,
         "Les positions temporelles absolues dans un flux multimédia où la ressource cible doit s’insérer."@fr,
         "De absolute temporele posities in een mediastream waarin het doelmiddel moet passen."@nl .
+
+<http://www.w3.org/ns/odrl/2/action> a rdf:Property,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "Has Action"@en,
+        "A une action"@fr,
+        "Heeft actie"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( <http://www.w3.org/ns/odrl/2/Rule> <http://www.w3.org/ns/odrl/2/Policy> ) ] ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range <http://www.w3.org/ns/odrl/2/Action> ;
+    skos:definition "De bewerking met betrekking tot het actief waarvoor de regel wordt onderworpen."@en,
+        "The operation relating to the Asset for which the Rule is being subjected."@en,
+        "L'opération relative à l'actif pour lequel la règle est soumise."@fr .
 
 <http://www.w3.org/ns/odrl/2/constraint> a rdf:Property,
         owl:ObjectProperty,
