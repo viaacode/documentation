@@ -43,7 +43,7 @@ class "<b>Rechtenstatus</b> (premis:RightsStatus)" as premis_RightsStatus [[#pre
 
 
 
-odrl_Policy --> haObj_DigitalRepresentation :Doel [1..*]  > 
+odrl_Policy --> haObj_DigitalRepresentation :doelrepresentatie [1..*]  > 
 odrl_Policy --> odrl_Permission :access permission [0..*]  > 
 odrl_Policy --> odrl_Prohibition :ontsluitingsbeperking [0..*]  > 
 
@@ -99,7 +99,7 @@ odrl_Permission --|> odrl_Rule #blue;line.dotted;text:blue
 odrl_Permission : einddatum : <i>xsd:dateTime</i> [0..1]
 odrl_Permission : notitie : <i>xsd:string</i> [0..1]
 odrl_Permission : startdatum : <i>xsd:dateTime</i> [0..1]
-odrl_Permission --> odrl_Action :access action [1..*]  \laction d'accès [1..*]  \lontsluitingsactie [1..*]  > 
+odrl_Permission --> odrl_Action :ontsluitingsactie [1..*]  > 
 odrl_Permission --> odrl_Constraint :beperking [0..5]  > 
 
 
@@ -110,7 +110,7 @@ odrl_Prohibition : einddatum : <i>xsd:dateTime</i> [0..1]
 odrl_Prohibition : notitie : <i>xsd:string</i> [0..1]
 odrl_Prohibition : startdatum : <i>xsd:dateTime</i> [0..1]
 odrl_Prohibition --> haRig_Motivation :wordt gemotiveerd door [1..*]  > 
-odrl_Prohibition --> odrl_Action :access action [1..*]  \laction d'accès [1..*]  \lontsluitingsactie [1..*]  > 
+odrl_Prohibition --> odrl_Action :ontsluitingsactie [1..*]  > 
 odrl_Prohibition --> odrl_Constraint :beperking [0..5]  > 
 
 
