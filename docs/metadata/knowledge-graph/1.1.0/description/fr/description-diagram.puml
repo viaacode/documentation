@@ -99,6 +99,12 @@ class "<b>Épisode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Événement de radiodiffusion</b> (schema:BroadcastEvent)" as schema_BroadcastEvent [[#schema%3ABroadcastEvent]]
 class "<b>Événement</b> (schema:Event)" as schema_Event [[#schema%3AEvent]]
+class "<b>Œuvres d'art bidimensionnel</b> (haDes:2DArtwork)" as haDes_2DArtwork [[#haDes%3A2DArtwork]]
+class "<b>Œuvres d'art matérielles</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
+class "<b>Œuvres d'art matérielles</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Œuvres d'art tridimensionnelles</b> (haDes:3DArtwork)" as haDes_3DArtwork [[#haDes%3A3DArtwork]]
+class "<b>Œuvres d'art matérielles</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
 
 
 ebucore_MediaFragment : délimiteur de région (axe des x) : <i>xsd:integer</i> [0..1]
@@ -134,11 +140,15 @@ haDes_Audio --> haDes_AudiovisualCarrierRepresentation :est copie sur porteur [0
 
 haDes_AudioReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
+haDes_AudioReel : rapport hauteur/largeur : <i>xsd:string</i> [0..1]
+
 
 haDes_ImageReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
+haDes_ImageReel : rapport hauteur/largeur : <i>xsd:string</i> [0..1]
 haDes_ImageReel --> ebucore_OpenCaptions :a des sous-titres (intégrés) [0..*]  > 
 haDes_ImageReel --> skos_Concept :type de coloration [0..*]  > 
+
 
 haDes_DVDChapter --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
@@ -315,7 +325,8 @@ schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 haDes_AudiovisualCarrier --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
 haDes_AudiovisualCarrier : réduction du bruit audio : <i>xsd:string</i> [0..1]
-haDes_AudiovisualCarrier --> skos_Concept :iec-60094 type [0..1]  \lvitesse d'enregistrement audio [0..1]  > 
+haDes_AudiovisualCarrier --> schema_QuantitativeValue :vitesse d'enregistrement audio [0..1]  > 
+haDes_AudiovisualCarrier --> skos_Concept :iec-60094 type [0..1]  > 
 
 
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
@@ -448,6 +459,15 @@ schema_Episode --> premis_IntellectualEntity :a partie [0..*]  >
 
 
 schema_BroadcastEvent --|> schema_Event #blue;line.dotted;text:blue
+
+
+haDes_2DArtwork --|> haDes_MaterialArtwork #blue;line.dotted;text:blue
+
+
+haDes_MaterialArtwork --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
+haDes_3DArtwork --|> haDes_MaterialArtwork #blue;line.dotted;text:blue
 
 
 
