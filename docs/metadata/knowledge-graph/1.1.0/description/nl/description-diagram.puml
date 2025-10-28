@@ -46,6 +46,8 @@ class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
 class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Driedimensionaal kunstwerk</b> (haDes:3DArtwork)" as haDes_3DArtwork [[#haDes%3A3DArtwork]]
+class "<b>Materieel kunstwerk</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
 class "<b>Dvd</b> (haDes:DVD)" as haDes_DVD [[#haDes%3ADVD]]
 class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Dvd-hoofdstuk</b> (haDes:DVDChapter)" as haDes_DVDChapter [[#haDes%3ADVDChapter]]
@@ -74,6 +76,8 @@ class "<b>Kranteneditiepagina</b> (haDes:NewspaperIssuePage)" as haDes_Newspaper
 class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Materieel kunstwerk</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Open ondertitels</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
 class "<b>Ondertitels</b> (ebucore:Captioning)" as ebucore_Captioning [[#ebucore%3ACaptioning]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[../../organizations/nl#org%3AOrganization]]
@@ -93,6 +97,8 @@ class "<b>Stomme film</b> (haDes:SilentFilm)" as haDes_SilentFilm [[#haDes%3ASil
 class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
 class "<b>Tekstannotatie</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
 class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Tweedimensionaal kunstwerk</b> (haDes:2DArtwork)" as haDes_2DArtwork [[#haDes%3A2DArtwork]]
+class "<b>Materieel kunstwerk</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
 class "<b>Uitvoeringsrol</b> (schema:PerformanceRole)" as schema_PerformanceRole [[#schema%3APerformanceRole]]
 class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Uitzendingsevenement</b> (schema:BroadcastEvent)" as schema_BroadcastEvent [[#schema%3ABroadcastEvent]]
@@ -150,7 +156,8 @@ haDes_Audio --> haDes_AudiovisualCarrierRepresentation :heeft dragerkopie [0..1]
 haDes_AudiovisualCarrier --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
 haDes_AudiovisualCarrier : audio ruisonderdrukking : <i>xsd:string</i> [0..1]
-haDes_AudiovisualCarrier --> skos_Concept :audio-opnamesnelheid [0..1]  \liec-60094 type [0..1]  \liec-60094 type [0..1]  \liec-60094 type [0..1]  > 
+haDes_AudiovisualCarrier --> schema_QuantitativeValue :audio-opnamesnelheid [0..1]  > 
+haDes_AudiovisualCarrier --> skos_Concept :iec-60094 type [0..1]  \liec-60094 type [0..1]  \liec-60094 type [0..1]  > 
 
 
 haDes_AudiovisualCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
@@ -162,8 +169,10 @@ haDes_AudiovisualCarrierRepresentation --> haDes_AudiovisualCarrier :opgeslagen 
 
 haDes_ImageReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
+haDes_ImageReel : beelverhouding : <i>xsd:string</i> [0..1]
 haDes_ImageReel --> ebucore_OpenCaptions :heeft (ingebedde) ondertiteling [0..*]  > 
 haDes_ImageReel --> skos_Concept :type kleuring [0..*]  > 
+
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
@@ -238,6 +247,9 @@ schema_Thing : omschrijving : <i>rdf:langString</i> [0..*]
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 
+haDes_3DArtwork --|> haDes_MaterialArtwork #blue;line.dotted;text:blue
+
+
 haDes_DVD --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
 haDes_DVD : omroeporganisatie : <i>org:Organization</i> [0..1]
@@ -286,6 +298,8 @@ haDes_SoundFilm --|> haDes_Film #blue;line.dotted;text:blue
 
 
 haDes_AudioReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
+
+haDes_AudioReel : beelverhouding : <i>xsd:string</i> [0..1]
 
 
 haDes_WrittenWorkCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
@@ -380,6 +394,9 @@ schema_QuantitativeValue : waarde : <i>xsd:float</i> [1..1]
 
 
 
+haDes_MaterialArtwork --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+
 ebucore_OpenCaptions --|> ebucore_Captioning #blue;line.dotted;text:blue
 
 ebucore_OpenCaptions : in taal : <i>xsd:string</i> [0..*]
@@ -434,6 +451,9 @@ haDes_SilentFilm --|> haDes_Film #blue;line.dotted;text:blue
 
 
 ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
+
+
+haDes_2DArtwork --|> haDes_MaterialArtwork #blue;line.dotted;text:blue
 
 
 schema_PerformanceRole --|> schema_Role #blue;line.dotted;text:blue
