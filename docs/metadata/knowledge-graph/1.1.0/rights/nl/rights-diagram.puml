@@ -59,7 +59,7 @@ odrl_Constraint --> haRig_UserGroup :beperkingswaarde [1..1]  >
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation --> odrl_Policy :Doelbeleid [0..1]  > 
+haObj_DigitalRepresentation --> odrl_Policy :ontsluitingspolicy [0..1]  > 
 haObj_DigitalRepresentation --> premis_License :hergebruikvoorwaarde [0..1]  > 
 haObj_DigitalRepresentation --> premis_RightsStatus :rechtenstatus [1..3]  > 
 
@@ -89,6 +89,8 @@ haRig_Motivation --|> skos_Concept #blue;line.dotted;text:blue
 premis_RightsStatus : einddatum : <i>xsd:dateTime</i> [0..1]
 premis_RightsStatus : notitie : <i>xsd:string</i> [0..1]
 premis_RightsStatus : startdatum : <i>xsd:dateTime</i> [0..1]
+premis_RightsStatus --> dct_RightsStatement :heeft basis [1..1]  > 
+premis_RightsStatus --> premis_License :heeft basis [1..1]  > 
 
 
 
