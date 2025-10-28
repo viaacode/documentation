@@ -63,6 +63,8 @@ class "<b>Image reel</b> (haDes:ImageReel)" as haDes_ImageReel [[#haDes%3AImageR
 class "<b>Physical carrier</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Material artwork</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Newspaper</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
 class "<b>Creative work series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Newspaper issue</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
@@ -97,6 +99,10 @@ class "<b>Film</b> (haDes:Film)" as haDes_Film [[#haDes%3AFilm]]
 class "<b>Text Annotation</b> (ebucore:TextAnnotation)" as ebucore_TextAnnotation [[#ebucore%3ATextAnnotation]]
 class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Three-dimensional artwork</b> (haDes:3DArtwork)" as haDes_3DArtwork [[#haDes%3A3DArtwork]]
+class "<b>Material artwork</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
+class "<b>Two-dimensional artwork</b> (haDes:2DArtwork)" as haDes_2DArtwork [[#haDes%3A2DArtwork]]
+class "<b>Material artwork</b> (haDes:MaterialArtwork)" as haDes_MaterialArtwork [[#haDes%3AMaterialArtwork]]
 class "<b>Video</b> (haDes:Video)" as haDes_Video [[#haDes%3AVideo]]
 class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Written work carrier representation</b> (haDes:WrittenWorkCarrierRepresentation)" as haDes_WrittenWorkCarrierRepresentation [[#haDes%3AWrittenWorkCarrierRepresentation]]
@@ -141,11 +147,14 @@ haDes_Audio --> haDes_AudiovisualCarrierRepresentation :has carrier copy [0..1] 
 
 haDes_AudioReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
+haDes_AudioReel : aspect ratio : <i>xsd:string</i> [0..1]
+
 
 haDes_AudiovisualCarrier --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
 haDes_AudiovisualCarrier : audio noise reduction : <i>xsd:string</i> [0..1]
-haDes_AudiovisualCarrier --> skos_Concept :audio recording speed [0..1]  \liec-60094 type [0..1]  > 
+haDes_AudiovisualCarrier --> schema_QuantitativeValue :audio recording speed [0..1]  > 
+haDes_AudiovisualCarrier --> skos_Concept :iec-60094 type [0..1]  > 
 
 
 haDes_AudiovisualCarrierRepresentation --|> haObj_CarrierRepresentation #blue;line.dotted;text:blue
@@ -285,8 +294,10 @@ haDes_Image --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
 haDes_ImageReel --|> haObj_PhysicalCarrier #blue;line.dotted;text:blue
 
+haDes_ImageReel : aspect ratio : <i>xsd:string</i> [0..1]
 haDes_ImageReel --> ebucore_OpenCaptions :has (embedded) captioning [0..*]  > 
 haDes_ImageReel --> skos_Concept :coloring type [0..*]  > 
+
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
@@ -333,6 +344,9 @@ premis_IntellectualEntity --> skos_Concept :license [0..*]  >
 
 
 
+
+
+haDes_MaterialArtwork --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
 
 schema_Newspaper --|> schema_CreativeWorkSeries #blue;line.dotted;text:blue
@@ -445,6 +459,12 @@ ebucore_TextAnnotation --|> ebucore_Annotation #blue;line.dotted;text:blue
 
 schema_Thing : description : <i>rdf:langString</i> [0..*]
 schema_Thing : name : <i>rdf:langString</i> [1..*]
+
+
+haDes_3DArtwork --|> haDes_MaterialArtwork #blue;line.dotted;text:blue
+
+
+haDes_2DArtwork --|> haDes_MaterialArtwork #blue;line.dotted;text:blue
 
 
 haDes_Video --|> premis_IntellectualEntity #blue;line.dotted;text:blue

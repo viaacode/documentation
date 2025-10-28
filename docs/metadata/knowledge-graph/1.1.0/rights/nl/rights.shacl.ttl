@@ -17,17 +17,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n1e3f0810e5d849fabf4d60baa9aa481db1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n1e3f0810e5d849fabf4d60baa9aa481db17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n34654bf2f9e0462a883f0a1ebaaf522db1 a rdfs:Class,
+_:nab13a3c236d44080933b3e69e0ed8429b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
+
+_:ne80ff00b7934450c9ee824dd56a95c47b1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:ne80ff00b7934450c9ee824dd56a95c47b17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 copyrightStatus:pub a rdfs:Class,
         owl:Class ;
@@ -1694,7 +1694,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n34654bf2f9e0462a883f0a1ebaaf522db1 ;
+    rdfs:range _:nab13a3c236d44080933b3e69e0ed8429b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1970,6 +1970,17 @@ foaf:homepage a rdf:Property ;
         haRig:public,
         haRig:research-public ;
     skos:prefLabel "Gebruikersgroepen"@nl .
+
+<https://data.hetarchief.be/ns/description/aspectRatio> a rdf:Property ;
+    rdfs:label "aspect ratio"@en,
+        "rapport hauteur/largeur"@fr,
+        "beelverhouding"@nl ;
+    rdfs:domain [ owl:unionOf ( <https://data.hetarchief.be/ns/description/ImageReel> <https://data.hetarchief.be/ns/description/AudioReel> ) ] ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Proportional relationship between an image's width and its height."@en,
+        "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr,
+        "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl .
 
 <https://data.hetarchief.be/ns/description/audioNoiseReduction> a rdf:Property ;
     rdfs:label "audio noise reduction"@en,
@@ -2287,17 +2298,20 @@ haOrg:sector a rdf:Property ;
     sh:targetClass odrl:Constraint .
 
 <https://data.hetarchief.be/ns/rights#DigitalRepresentationNodeShape> a sh:NodeShape ;
-    sh:property [ rdfs:label "access policy"@en,
-                "politique d'accès"@fr,
-                "ontsluitingspolicy"@nl ;
-            sh:class odrl:Policy ;
+    sh:property [ sh:class odrl:Policy ;
             sh:description "The access policy of this digital representation that consists of permissions and restrictions."@en,
                 "La politique d'accès de cette représentation numérique qui se compose d'autorisations et de restrictions."@fr,
                 "Het ontsluitingsbeleid van deze digitale representatie die bestaat uit permissies en restricties."@nl ;
             sh:maxCount 1 ;
+            sh:name "access policy"@en,
+                "politique d'accès"@fr,
+                "ontsluitingspolicy"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path odrl:hasPolicy ],
         [ sh:class premis:License ;
+            sh:description "The condition(s) for reusing this digital representation."@en,
+                "La(les) condition(s) de réutilisation de cette représentation numérique."@fr,
+                "De voorwaarde(n) om deze digitale representatie te hergebruiken."@nl ;
             sh:maxCount 1 ;
             sh:name "condition for reuse"@en,
                 "condition de réutilisation"@fr,
@@ -2305,6 +2319,9 @@ haOrg:sector a rdf:Property ;
             sh:nodeKind sh:IRI ;
             sh:path dct:license ],
         [ sh:class premis:RightsStatus ;
+            sh:description "The rights status of this digital representation."@en,
+                "Le statut des droits de cette représentation numérique."@fr,
+                "De rechtenstatus van deze digitale representatie."@nl ;
             sh:maxCount 3 ;
             sh:minCount 1 ;
             sh:name "rights status"@en,
@@ -2316,6 +2333,9 @@ haOrg:sector a rdf:Property ;
 
 <https://data.hetarchief.be/ns/rights#IntellectualEntityNodeShape> a sh:NodeShape ;
     sh:property [ sh:class premis:License ;
+            sh:description "The condition(s) for reusing this intellectual entity."@en,
+                "La(les) condition(s) de réutilisation de cette entité intellectuelle."@fr,
+                "De voorwaarde(n) om deze intellectuele entiteit te hergebruiken."@nl ;
             sh:maxCount 1 ;
             sh:name "condition for reuse"@en,
                 "condition de réutilisation"@fr,
@@ -2323,6 +2343,9 @@ haOrg:sector a rdf:Property ;
             sh:nodeKind sh:IRI ;
             sh:path dct:license ],
         [ sh:class dct:RightsStatement ;
+            sh:description "The statement indicating the copyright and reuse status of this intellectual entity."@en,
+                "La déclaration indiquant le statut de droit d'auteur et de réutilisation de cette entité intellectuelle."@fr,
+                "De verklaring die de auteursrechtelijke en hergebruikstatus van deze intellectuele entiteit duidt."@nl ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "rights statement"@en,
@@ -2330,7 +2353,10 @@ haOrg:sector a rdf:Property ;
                 "rechtenverklaring"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path dct:rights ],
-        [ sh:maxCount 3 ;
+        [ sh:description "The rights status of this intellectual entity."@en,
+                "Le statut des droits de cette entité intellectuelle."@fr,
+                "De rechtenstatus van deze intellectuele entiteit."@nl ;
+            sh:maxCount 3 ;
             sh:minCount 1 ;
             sh:name "rights status"@en,
                 "statut de droit"@fr,
@@ -2402,14 +2428,17 @@ haOrg:sector a rdf:Property ;
         skos:Concept .
 
 <https://data.hetarchief.be/ns/rights#RightsStatusShape> a sh:NodeShape ;
-    sh:name "has basis"@en,
-        "a une base"@fr,
-        "heeft basis"@nl ;
-    sh:path premis:basis ;
-    sh:property [ sh:maxCount 1 ;
+    sh:property [ sh:description "The rights statement or reuse condition on which this rights status is based."@en,
+                "La déclaration de droits ou la condition de réutilisation sur laquelle se base ce statut de droits."@fr,
+                "De rechtenverklaring of hergebruikvoorwaarde waarop deze rechtenstatus gebaseerd is."@nl ;
+            sh:maxCount 1 ;
             sh:minCount 1 ;
+            sh:name "has basis"@en,
+                "a une base"@fr,
+                "heeft basis"@nl ;
             sh:nodeKind sh:IRI ;
-            sh:or ( [ sh:class dct:RightsStatement ] [ sh:class premis:License ] ) ],
+            sh:or ( [ sh:class dct:RightsStatement ] [ sh:class premis:License ] ) ;
+            sh:path premis:basis ],
         <https://data.hetarchief.be/ns/rights#EndDateShape>,
         <https://data.hetarchief.be/ns/rights#NoteShape>,
         <https://data.hetarchief.be/ns/rights#StartDateShape> ;
@@ -3207,7 +3236,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db1 ;
+    rdfs:domain _:ne80ff00b7934450c9ee824dd56a95c47b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -3222,7 +3251,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db17 ;
+    rdfs:domain _:ne80ff00b7934450c9ee824dd56a95c47b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -4049,6 +4078,9 @@ skos:narrowerTransitive a rdf:Property,
 
 <https://data.hetarchief.be/ns/rights#ConstraintShape> a sh:PropertyShape ;
     sh:class odrl:Constraint ;
+    sh:description "A precondition for this permission or restriction."@en,
+        "Une condition préalable à cette autorisation ou restriction."@fr,
+        "Een randvoorwaarde voor deze permissie of restrictie."@nl ;
     sh:maxCount 5 ;
     sh:name "constraint"@en,
         "contrainte"@fr,
@@ -4098,6 +4130,9 @@ skos:related a rdf:Property,
 
 <https://data.hetarchief.be/ns/rights#EndDateShape> a sh:PropertyShape ;
     sh:datatype xsd:dateTime ;
+    sh:description "The date on which this status or rule expires."@en,
+        "La date à laquelle ce statut ou cette règle expire."@fr,
+        "De datum waarop deze status of regel vervalt."@nl ;
     sh:maxCount 1 ;
     sh:name "end date"@en,
         "fin"@fr,
@@ -4107,6 +4142,9 @@ skos:related a rdf:Property,
 
 <https://data.hetarchief.be/ns/rights#NoteShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
+    sh:description "A note or comment."@en,
+        "Une note ou un commentaire."@fr,
+        "Een notitie of opmerking."@nl ;
     sh:maxCount 1 ;
     sh:name "note"@en,
         "note"@fr,
@@ -4116,6 +4154,9 @@ skos:related a rdf:Property,
 
 <https://data.hetarchief.be/ns/rights#StartDateShape> a sh:PropertyShape ;
     sh:datatype xsd:dateTime ;
+    sh:description "The date on which this status or rule becomes active."@en,
+        "Date à laquelle ce statut ou cette règle devient actif."@fr,
+        "De datum waarop deze status of regel actief wordt."@nl ;
     sh:maxCount 1 ;
     sh:name "start date"@en,
         "date de début"@fr,

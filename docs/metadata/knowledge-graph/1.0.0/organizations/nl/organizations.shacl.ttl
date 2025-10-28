@@ -14,17 +14,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n1e3f0810e5d849fabf4d60baa9aa481db1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
-
-_:n1e3f0810e5d849fabf4d60baa9aa481db17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
-
-_:n34654bf2f9e0462a883f0a1ebaaf522db1 a rdfs:Class,
+_:nab13a3c236d44080933b3e69e0ed8429b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
+
+_:ne80ff00b7934450c9ee824dd56a95c47b1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
+
+_:ne80ff00b7934450c9ee824dd56a95c47b17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
 <http://id.loc.gov/vocabulary/preservation/copyrightStatus/pub> a rdfs:Class,
         owl:Class ;
@@ -1555,7 +1555,7 @@ dct:license a rdf:Property ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db1 ;
+    rdfs:domain _:ne80ff00b7934450c9ee824dd56a95c47b1 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1625,7 +1625,7 @@ dct:license a rdf:Property ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db17 ;
+    rdfs:domain _:ne80ff00b7934450c9ee824dd56a95c47b17 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1740,7 +1740,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n34654bf2f9e0462a883f0a1ebaaf522db1 ;
+    rdfs:range _:nab13a3c236d44080933b3e69e0ed8429b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -2087,6 +2087,17 @@ skos:scopeNote a rdf:Property,
         <https://data.hetarchief.be/ns/rights/public>,
         <https://data.hetarchief.be/ns/rights/research-public> ;
     skos:prefLabel "Gebruikersgroepen"@nl .
+
+<https://data.hetarchief.be/ns/description/aspectRatio> a rdf:Property ;
+    rdfs:label "aspect ratio"@en,
+        "rapport hauteur/largeur"@fr,
+        "beelverhouding"@nl ;
+    rdfs:domain [ owl:unionOf ( <https://data.hetarchief.be/ns/description/ImageReel> <https://data.hetarchief.be/ns/description/AudioReel> ) ] ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Proportional relationship between an image's width and its height."@en,
+        "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr,
+        "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl .
 
 <https://data.hetarchief.be/ns/description/audioNoiseReduction> a rdf:Property ;
     rdfs:label "audio noise reduction"@en,

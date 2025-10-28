@@ -9,6 +9,7 @@
 @prefix haObj: <https://data.hetarchief.be/ns/object/> .
 @prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
 @prefix haPrmId: <https://data.hetarchief.be/id/production-method/> .
+@prefix haRot: <https://data.hetarchief.be/id/rotational-speed/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
@@ -22,17 +23,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n1e3f0810e5d849fabf4d60baa9aa481db1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n1e3f0810e5d849fabf4d60baa9aa481db17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n34654bf2f9e0462a883f0a1ebaaf522db1 a rdfs:Class,
+_:nab13a3c236d44080933b3e69e0ed8429b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
+
+_:ne80ff00b7934450c9ee824dd56a95c47b1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:ne80ff00b7934450c9ee824dd56a95c47b17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 <http://id.loc.gov/vocabulary/preservation/copyrightStatus/pub> a rdfs:Class,
         owl:Class ;
@@ -1335,7 +1336,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db1 ;
+    rdfs:domain _:ne80ff00b7934450c9ee824dd56a95c47b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1405,7 +1406,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n1e3f0810e5d849fabf4d60baa9aa481db17 ;
+    rdfs:domain _:ne80ff00b7934450c9ee824dd56a95c47b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1511,7 +1512,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n34654bf2f9e0462a883f0a1ebaaf522db1 ;
+    rdfs:range _:nab13a3c236d44080933b3e69e0ed8429b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1975,6 +1976,12 @@ foaf:homepage a rdf:Property ;
     vann:preferredNamespacePrefix "haDes" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" .
 
+<https://data.hetarchief.be/ns/description#2DArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:2DArtwork .
+
+<https://data.hetarchief.be/ns/description#3DArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:3DArtwork .
+
 <https://data.hetarchief.be/ns/description#AVCarrierRepresentatioNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:datatype xsd:nonNegativeInteger ;
@@ -2027,10 +2034,11 @@ foaf:homepage a rdf:Property ;
             sh:path haDes:iec60094Type ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:class skos:Concept ;
+            sh:class schema:QuantitativeValue ;
             sh:description "The speed with which open reel audio or a gramophone record is recorded."@en,
                 "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement gramophone est enregistré."@fr,
                 "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl ;
+            sh:in ( haRot:variable haRot:16-rpm haRot:19-cm-s haRot:2.375-cm-s haRot:33-1-3-rpm haRot:38-cm-s haRot:4.75-cm-s haRot:72-cm-s haRot:78-rpm haRot:90-rpm haRot:9.5-cm-s ) ;
             sh:maxCount 1 ;
             sh:message "haDes:audioRecordingSpeed is not a skos:Concept, or occurs more than once."@en ;
             sh:minCount 0 ;
@@ -2167,6 +2175,19 @@ foaf:homepage a rdf:Property ;
     sh:targetClass haDes:Audio .
 
 <https://data.hetarchief.be/ns/description#AudioReelNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "Proportional relationship between an image's width and its height."@en,
+                "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr,
+                "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl ;
+            sh:maxCount 1 ;
+            sh:message "The value for haDes:aspectRatio occurs more than once or is not a string"@en ;
+            sh:minCount 0 ;
+            sh:name "aspect ratio"@en,
+                "rapport hauteur/largeur"@fr,
+                "beelverhouding"@nl ;
+            sh:path haDes:aspectRatio ;
+            sh:severity sh:Violation ] ;
     sh:targetClass haDes:AudioReel .
 
 <https://data.hetarchief.be/ns/description#CarrierRepresentationNodeShape> a sh:NodeShape ;
@@ -2653,6 +2674,19 @@ foaf:homepage a rdf:Property ;
                 "a des sous-titres (intégrés)"@fr,
                 "heeft (ingebedde) ondertiteling"@nl ;
             sh:path ebucore:hasCaptioning ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "Proportional relationship between an image's width and its height."@en,
+                "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr,
+                "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl ;
+            sh:maxCount 1 ;
+            sh:message "The value for haDes:aspectRatio occurs more than once or is not a string"@en ;
+            sh:minCount 0 ;
+            sh:name "aspect ratio"@en,
+                "rapport hauteur/largeur"@fr,
+                "beelverhouding"@nl ;
+            sh:path haDes:aspectRatio ;
             sh:severity sh:Violation ] ;
     sh:targetClass haDes:ImageReel .
 
@@ -3056,6 +3090,9 @@ foaf:homepage a rdf:Property ;
         <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass premis:IntellectualEntity .
+
+<https://data.hetarchief.be/ns/description#MaterialArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:MaterialArtwork .
 
 <https://data.hetarchief.be/ns/description#MediaFragmentShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
@@ -5501,6 +5538,17 @@ skos:narrowerTransitive a rdf:Property,
     sh:nodeKind sh:Literal ;
     sh:path schema:identifier ;
     sh:severity sh:Violation .
+
+haDes:aspectRatio a rdf:Property ;
+    rdfs:label "aspect ratio"@en,
+        "rapport hauteur/largeur"@fr,
+        "beelverhouding"@nl ;
+    rdfs:domain [ owl:unionOf ( haDes:ImageReel haDes:AudioReel ) ] ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Proportional relationship between an image's width and its height."@en,
+        "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr,
+        "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl .
 
 haDes:executor a rdf:Property ;
     rdfs:label "executor"@en,
