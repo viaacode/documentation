@@ -57,7 +57,7 @@ haRig_ContentRange --|> odrl_RightOperand #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation --> odrl_Policy :Target Policy [0..1]  > 
+haObj_DigitalRepresentation --> odrl_Policy :access policy [0..1]  > 
 haObj_DigitalRepresentation --> premis_License :condition for reuse [0..1]  > 
 haObj_DigitalRepresentation --> premis_RightsStatus :rights status [1..3]  > 
 
@@ -109,6 +109,8 @@ odrl_Prohibition --> odrl_Constraint :constraint [0..5]  >
 premis_RightsStatus : end date : <i>xsd:dateTime</i> [0..1]
 premis_RightsStatus : note : <i>xsd:string</i> [0..1]
 premis_RightsStatus : start date : <i>xsd:dateTime</i> [0..1]
+premis_RightsStatus --> dct_RightsStatement :has basis [1..1]  > 
+premis_RightsStatus --> premis_License :has basis [1..1]  > 
 
 
 
