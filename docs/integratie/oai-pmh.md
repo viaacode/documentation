@@ -34,7 +34,7 @@ In dit document worden de voor meemoo specifieke implementatiedetails besproken 
 
 De meemoo-implementatie van OAI-PMH is niet publiek beschikbaar: enkel gebruikers die het recht hebben om bepaalde items of collecties te zien, zullen die ook kunnen raadplegen via OAI-PMH. De rechten van de gebruiker bepalen de zichtbaarheid via OAI-PMH.
 
-De authenticatiegegevens moeten als 'Basic' HTTP Authenticatie meegegeven worden.
+Net zoals bij de REST API v2 verloopt de authenticatie tegenwoordig enkel via OAuth 2.0. Je zal dus eerst de applicatie moeten registeren. Hoe je dit doet vind je [hier](https://developer.meemoo.be/docs/integratie/) terug.
 
 ### Gebruikers
 
