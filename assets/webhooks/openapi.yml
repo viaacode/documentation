@@ -1,0 +1,106 @@
+openapi: 3.1.1
+info:
+  title: Meemoo status update webhook
+  version: 1.0.0-rc.1
+  description: >
+    The webhook spec was inspired by Standard Webhooks 1.0.0 guidelines.  The version number follows the Semantic Versioning 2.0.0 scheme.
+webhooks:
+  updateStatus:
+    post:
+      summary: Webhook for receiving status update of submitted SIP.
+      description: A status event will be sent when a SIP is successfully ingested or if it fails somewhere in the process.
+      security:
+        - webhookHMAC: []
+      parameters:
+        - name: webhook-id
+          description: The unique webhook identifier used in the HMAC signature.
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: webhook-timestamp
+          description: Integer unix timestamp of the webhook attempt (seconds since epoch).
+          in: header
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatusUpdate'
+      responses:
+        '204': 
+          description: Successfully received; no response body.
+        '400':
+          description: Bad request (e.g., malformed event).
+        '401':
+          description: Unauthorized (missing or invalid token).
+        '429':
+          description: Too many requests.
+        '500':
+          description: Internal server error.
+components:
+  securitySchemes:
+    webhookHMAC:
+      type: apiKey
+      in: header
+      name: webhook-signature
+      description: >
+        HMAC-SHA256 using a shared secret.  Multiple signatures can be provided
+        as a (space-separated) list.  At least one signature should be valid.
+        Signature: `v1,{base64encode(HMAC_SHA256(secret, id + '.' + epoch + '.' + raw_body))}`.
+  schemas:
+    StatusUpdate:
+      title: SIP status update event
+      description: An event detailing the status-update of the submission of a meemoo SIP.
+      type: object
+      properties:
+        type:
+          description: A full-stop delimited type associated with the event.
+          type: string
+        timestamp:
+          description: The time the event occurred, ISO 8601 formatted.
+          type: string
+          format: date-time
+        data:
+          type: object
+          description: The actual status update event.
+          properties:
+            correlation_id:
+              description: The correlation ID of the submission of the meemoo SIP.
+              type: string
+            outcome:
+              description: The outcome of the event.
+              type: string
+              enum:
+                - success
+                - failure
+            message:
+              description: >
+                The message containing some information of the event. This is typically when the outcome is failure.
+              type: string
+            pid:
+              description: The PID of the ingested SIP package, if applicable.
+              type: string
+          required:
+            - correlation_id
+            - outcome
+      required:
+        - type
+        - timestamp
+        - data
+      examples:
+        - type: "meemoo.sip.archived"
+          timestamp: "2025-07-15T14:30:00Z"
+          data:
+            correlation_id: "aabbccddeeff001122334455667788aa"
+            outcome: "success"
+            pid: "00000wgkj5"
+        - type: "meemoo.sip.archived"
+          timestamp: "2025-07-15T14:30:00Z"
+          data:
+            correlation_id: "aabbccddeeff001122334455667788aa"
+            outcome: "failure"
+            message: "Could not unzip file"
