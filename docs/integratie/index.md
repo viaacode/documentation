@@ -70,7 +70,7 @@ volledige URL waarop de API kan worden aangesproken.
 | [MH REST API v2](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/)                     | /mediahaven-rest-api/v2/                                 |
 | [IIIF 3.0 Image API]({{ site.baseurl }}{% link docs/integratie/iiif.md %})                     |                                                          |
 | [Organizations API v2]({{ site.baseurl }}{% link docs/integratie/org-api/index.md %})          |                                                          |
-| [Webhook status events]({{ site.baseurl }}{% link docs/integratie/webhook-status-events.md %}) |                                                          |
+| [Webhook Status Events]({{ site.baseurl }}{% link docs/integratie/webhook-status-events.md %}) |                                                          |
 
 # Mediahaven API's
 
