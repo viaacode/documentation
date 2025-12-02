@@ -33,7 +33,7 @@ Er worden geen tussentijdse _in progress_ events uitgestuurd. Enkel als de statu
 
 Op [de SIP-aanlevering pagina]({{ site.baseurl }}{% link docs/diginstroom/aanlevering-van-sips.md %}) staat de procedure om een S3-token aan te vragen, zodat het pakket opgeladen kan worden. Na een succesvolle transfer, vind je in de headers van het response object van de S3-transfer een correlation ID terug in de custom key `X-correlation-ID`. Zie voorbeeld via `aws s3 cp` commando:
 
-```JSON
+``` json
 {
     "Server": "nginx/1.26.2",
     "Date": "Fri,11 Jul 2025 15:56:30 GMT",
@@ -49,7 +49,7 @@ Op [de SIP-aanlevering pagina]({{ site.baseurl }}{% link docs/diginstroom/aanlev
 
 Indien je bv. de Python bibliotheek `boto3` gebruikt, is het response object in de vorm van een Python dictionary, met de volgende structuur:
 
-```JSON
+``` json
 {
     <SNIP>
     "ResponseMetadata": {
@@ -104,7 +104,7 @@ De structuur van de payload:
 
 
 Voorbeeld:
-```JSON
+``` json
 {
   "type": "meemoo.sip.archived",
   "timestamp": "2025-09-03T20:26:10.344522Z",
@@ -150,7 +150,7 @@ webhook-timestamp: 1758548009
 ```
 
 Met als payload (de exacte body van het HTTP-verzoek):
-```JSON
+``` json
 {"type": "meemoo.sip.archived", "timestamp": "2025-09-03T20:26:10.344522Z", "data": {"correlation_id": "843e9ba457593d0edf69a24baa0babf3", "outcome": "success", "pid": "kdleipkyuj"}}
 ```
 
