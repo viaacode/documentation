@@ -31,7 +31,7 @@ Er worden geen tussentijdse _in progress_ events uitgestuurd. Enkel als de statu
 
 ## Aanlevering van de SIP op S3
 
-Op [de SIP-aanlevering pagina]({{ site.baseurl }}{% link docs/diginstroom/aanlevering-van-sips.md %}) staat de procedure om een S3-token aan te vragen, zodat het pakket opgeladen kan worden. Na een succesvolle transfer, vind je in de headers van het response object van de S3-transfer een correlation ID terug in de custom key `X-correlation-ID`. Zie voorbeeld via `aws s3 cp` commando:
+Op [de SIP-aanlevering pagina]({{ site.baseurl }}{% link docs/diginstroom/aanlevering-van-sips.md %}) staat de procedure om een S3-token aan te vragen, zodat het pakket opgeladen kan worden. Na een succesvolle transfer, vind je in de headers van het response object van de S3-transfer een correlation ID terug in de custom key `X-Correlation-ID`. Zie voorbeeld via `aws s3 cp` commando:
 
 ``` json
 {
