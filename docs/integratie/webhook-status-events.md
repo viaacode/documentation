@@ -83,7 +83,7 @@ Hieronder staan we even stil bij enkele elementen van de specificatie, maar ook 
 
 ## Registratie
 
-Indien je geïnteresseerd bent om statusupdates te krijgen via webhooks moet je contact opnemen met [meemoo support] (support@meemoo.be). Het is momenteel niet mogelijk om op een automatische manier, zoals bv. web-interface of REST API, webhooks te registreren en/of te beheren.
+Indien je geïnteresseerd bent om statusupdates te krijgen via webhooks moet je contact opnemen met [meemoo support](mailto:support@meemoo.be). Het is momenteel niet mogelijk om op een automatische manier, zoals bv. web-interface of REST API, webhooks te registreren en/of te beheren.
 
 Er zijn wel enkele administratieve zaken die moeten gedeeld worden, met name de `endpoint` en de `shared secret` (Zie: [Headers](#headers)). Dit gebeurt in samenspraak met meemoo. 
 
@@ -195,7 +195,7 @@ Het uitsturen van webhooks kan op meerdere manieren falen, van problemen in de c
 | 10 uren         | 17:35:05          |
 | 10 uren         | 27:35:05          |
 
-Indien er na een periode van 72 uur geen succesvolle webhooks kunnen uitgestuurd worden, zal het systeem stoppen met het uitsturen van events naar de afgesproken endpoint. Er moet dan contact opgenomen worden met meemoo support.
+Indien er na een periode van 72 uur geen succesvolle webhooks kunnen uitgestuurd worden, zal het systeem stoppen met het uitsturen van events naar de afgesproken endpoint. Er moet dan contact opgenomen worden met [meemoo support](mailto:support@meemoo.be).
 
 Merk op dat we een time-out implementeren van 15 seconden. Indien er na 15 seconden geen antwoord is, wordt de webhook als gefaald geïnterpreteerd. De webhook zal opnieuw uitgestuurd worden volgens het hierboven beschreven principe.
 
