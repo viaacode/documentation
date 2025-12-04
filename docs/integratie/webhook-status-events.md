@@ -87,7 +87,7 @@ Indien je geïnteresseerd bent om statusupdates te krijgen via webhooks moet je 
 
 Er zijn wel enkele administratieve zaken die moeten gedeeld worden, met name de `endpoint` en de `shared secret` (Zie: [Headers](#headers)). Dit gebeurt in samenspraak met meemoo. 
 
-Eén webhook registratie heeft betrekking tot één S3-bucket. Dit wil zeggen dat er naar de endpoint van de webhook events gestuurd worden voor alle SIP-bestanden die in die bucket opgeladen wordt.
+Eén webhook registratie heeft betrekking tot één S3-bucket. Dit wil zeggen dat er naar de endpoint van de webhook events gestuurd worden voor alle SIP-bestanden die in die bucket opgeladen worden.
 
 ## Payload
 
