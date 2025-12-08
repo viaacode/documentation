@@ -116,7 +116,7 @@ Voorbeeld:
 }
 ```
 
-Een SIP is succesvol gearchiveerd indien het event, met bijhorende `correlation_id`, als `type` de waarde `meemoo.sip.archived` én als `outcome` de waarde `success` heeft. Indien de `outcome` de waarde `failure` heeft, onafhankelijk van het `type`, is de SIP gefaald tijdens instroom. Opgepast: wanneer er niet-fatale (herstelbare) fouten voorkomen tijdens instroom, is het mogelijk dat er een "success" wordt uitgestuurd voor een SIP waarvoor er eerder een "failure" werd ontvangen.
+Een SIP is succesvol gearchiveerd indien het event, met bijhorende `correlation_id`, als `type` de waarde `meemoo.sip.archived` én als `outcome` de waarde `success` heeft. Indien de `outcome` de waarde `failure` heeft, onafhankelijk van het `type`, is de SIP gefaald tijdens instroom. Opgepast: wanneer er niet-fatale (herstelbare) fouten voorkomen tijdens instroom, is het mogelijk dat er een "success" wordt uitgestuurd voor een SIP waarvoor er eerder een "failure" werd uitgestuurd.
 
 De formele specificatie in de vorm van een JSON-schema vind je in de [OpenAPI specificatie](https://github.com/viaacode/sipin-status-webhook-documentation/blob/main/openapi.yml)
 
