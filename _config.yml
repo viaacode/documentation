@@ -25,9 +25,7 @@ email: support@meemoo.be
 twitter_username: meemoo_be
 #github_username:  jekyll
 
-#remote_theme: pmarsceill/just-the-docs
-# TEMP: use pdmosses template until his PR is merged
-remote_theme: pdmosses/just-the-docs@combination-rec-nav
+remote_theme: just-the-docs/just-the-docs
 
 # Build settings
 #theme: "just-the-docs"
