@@ -1,5 +1,6 @@
-FROM jekyll/jekyll:3
-RUN gem install bundler -v 2.4.22
+FROM jekyll/jekyll:4.2.2
+RUN gem install bundler -v 2.6.9
+WORKDIR /srv/jekyll
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 COPY . .
