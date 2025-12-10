@@ -77,7 +77,7 @@ Deze correlation ID wordt gebruikt door het hele proces heen om de levensloop va
 
 # Webhook
 
-De implementatie van de webhooks is geïnspireerd op de [standard-webhooks](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md) richtlijnen.  Er is [een formele specificatie]({{ site.baseurl }}{% link assets/webhooks/openapi.yml %}) beschikbaar in de vorm van [de OpenAPI specificatie v3.1.x](https://spec.openapis.org/oas/v3.1.1.html). Dit beschrijft zowel de HTTP-request als de structuur van het uitgestuurde event.
+De implementatie van de webhooks is geïnspireerd op de [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md) richtlijnen.  Er is [een formele specificatie]({{ site.baseurl }}{% link assets/webhooks/openapi.yml %}) beschikbaar in de vorm van [de OpenAPI specificatie v3.1.x](https://spec.openapis.org/oas/v3.1.1.html). Dit beschrijft zowel de HTTP-request als de structuur van het uitgestuurde event.
 
 Hieronder staan we even stil bij enkele elementen van de specificatie, maar ook bij bepaalde aspecten die buiten de scope van de formele specificatie vallen.
 
@@ -99,7 +99,7 @@ De structuur van de payload:
 - `data`: De eigenlijke event data geassocieerd met het event.
     - `correlation_id`: Dit is de correlation ID zoals [hierboven](#aanlevering-van-de-sip-op-s3) beschreven.
     - `outcome`: De uitkomst van het event: "success" of "failure".
-    - `messsage`: Bijhorende informatie over het event, in het geval van een gefaald event. [Optioneel]
+    - `message`: Bijhorende informatie over het event, in het geval van een gefaald event. [Optioneel]
     - `pid`: De meemoo-PID van de ingestroomde SIP, indien aanwezig. [Optioneel]
 
 
@@ -182,7 +182,7 @@ De serverimplementatie heeft een zekere vrijheid om te verifiëren wat die zelf 
 Er is nog een extra laag van beveiliging in de vorm van TLS. De endpoint **moet** een HTTPS-endpoint zijn. Op deze manier is de payload geëncrypteerd.
 
 ## Leverbaarheid en betrouwbaarheid
-Het uitsturen van webhooks kan op meerdere manieren falen, van problemen in de connectie, tot problemen aan de serverkant. Als het event succesvol is toegekomen, stuurt de webhook een response met de status code `2xx` terug. In alle andere gevallen proberen we het event opnieuw uit te sturen gebaseerd op een herhalingsschema met een *incremental backoff*. Een mogelijk herhalingschema:
+Het uitsturen van webhooks kan op meerdere manieren falen, van problemen in de connectie, tot problemen aan de serverkant. Als het event succesvol is toegekomen, stuurt de webhook een response met de status code `2xx` terug. In alle andere gevallen proberen we het event opnieuw uit te sturen gebaseerd op een herhalingsschema met een *incremental backoff*. Een mogelijk herhalingsschema:
 
 | Vertraging      | Tijd sinds start  |
 | --------------- | ----------------- |
