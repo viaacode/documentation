@@ -1,7 +1,7 @@
-FROM jekyll/jekyll:4.2.2
+FROM ruby:trixie
 RUN gem install bundler -v 2.6.9
 WORKDIR /srv/jekyll
-COPY --chown=jekyll:jekyll Gemfile Gemfile.lock ./
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
-COPY --chown=jekyll:jekyll . .
+COPY . .
 ENTRYPOINT ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
