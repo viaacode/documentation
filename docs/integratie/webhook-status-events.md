@@ -23,7 +23,7 @@ Dit document beschrijft het gebruik van webhooks om update events te ontvangen o
 
 Na aanlevering wordt er een event uitgestuurd als:
 - het SIP-pakket volledig en correct gearchiveerd is in het meemoo-archiefsysteem
-- er ergens een fout is opgetreden in het verwerkingsproces, inclusief het meemoo-archiefsysteem Deze events bevatten een beschrijving van de fout.
+- er ergens een fout is opgetreden in het verwerkingsproces, inclusief het meemoo-archiefsysteem. Deze events bevatten een beschrijving van de fout.
 
 Er worden geen tussentijdse _in progress_ events uitgestuurd. Enkel als de status verandert.
 
