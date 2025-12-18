@@ -24,7 +24,6 @@ Deze pagina beschrijft hoe een meemoo-SIP aan te leveren via S3.
 
 # Vooraf
 
-* Je hebt het voortraject gevolgd (zie: [https://support.meemoo.be/hc/nl/articles/8341026782365](https://support.meemoo.be/hc/nl/articles/8341026782365)).
 * Je kan meemoo-SIPs maken (zie: [docs/diginstroom/sip/]({{ site.baseurl }}{% link docs/diginstroom/sip/index.md %})).
 * Je hebt een S3-bucket aangevraagd via [support@meemoo.be](mailto:support@meemoo.be).
 
@@ -37,7 +36,36 @@ Met je meemoo-account kan je een S3-token aanvragen. Hiervoor heb je nodig:
 * een vrij te kiezen _secret_ (een combinatie van letters, cijfers en tekens dat verschilt van je paswoord) die je zal gebruiken samen met je S3-token,
 * de [OR-id](https://support.meemoo.be/hc/nl/articles/6089958726673-Communicatie-over-mijn-organisatie#hoe-vermeldt-meemoo-mijn-organisatienaam-op-interne-en-externe-platformen) van de organisatie waartoe je behoort.
 
-Je "_common name_" is doorgaans gewoon je voornaam en je familienaam. Om zeker te zijn van de schrijfwijze kan je dit verifiëren via de meemoo-IDP (_Identity Provider_). Ook de OR-id van jouw organisatie kan je daar vinden. De IDP – afhankelijk van de omgeving – beschikbaar op volgende URL's:
+Je "_common name_" is doorgaans gewoon je voornaam en je familienaam. Om zeker te zijn van de schrijfwijze kan je dit verifiëren via de _Mijn profiel_ pagina. 
+De _Mijn profiel_ pagina is – afhankelijk van de omgeving – beschikbaar op volgende URL's:
+
+<table >
+  <colgroup>
+    <col style="width: 15%;">
+    <col style="width: 85%;">
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>
+        <p style="text-align: center;"><strong>QAS</strong></p>
+      </th>
+      <td>
+        <p>https://qas.hetarchief.be/nl/account/mijn-profiel</p>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <p style="text-align: center;"><strong>PRD</strong></p>
+      </th>
+      <td>
+        <p>https://hetarchief.be/nl/account/mijn-profiel</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+De OR-id van jouw organisatie vind je terug in de metadata van elk object in het [MAM](https://support.meemoo.be/hc/nl/categories/6039894771857-Het-meemoo-archiefsysteem), naast _CP ID_. 
+Het MAM is - afhankelijk van de omgeving - beschikbaar op volgende URL's:
 
 <table >
   <colgroup>
@@ -50,7 +78,7 @@ Je "_common name_" is doorgaans gewoon je voornaam en je familienaam. Om zeker t
         <p style="text-align: center;"><strong>INT</strong></p>
       </th>
       <td>
-        <p>https://hetarchief-idp-int.do.viaa.be/module.php/core/authenticate.php?as=idp</p>
+        <p>https://archief-int.do.viaa.be/</p>
       </td>
     </tr>
     <tr>
@@ -58,7 +86,7 @@ Je "_common name_" is doorgaans gewoon je voornaam en je familienaam. Om zeker t
         <p style="text-align: center;"><strong>QAS</strong></p>
       </th>
       <td>
-        <p>https://idp-qas.hetarchief.be/module.php/core/authenticate.php?as=idp</p>
+        <p>https://archief-qas.viaa.be/</p>
       </td>
     </tr>
     <tr>
@@ -66,18 +94,13 @@ Je "_common name_" is doorgaans gewoon je voornaam en je familienaam. Om zeker t
         <p style="text-align: center;"><strong>PRD</strong></p>
       </th>
       <td>
-        <p>https://idp.hetarchief.be/module.php/core/authenticate.php?as=idp</p>
+        <p>https://archief.viaa.be/</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-<figure class="mx-auto">
-  <img src="../../assets/images_spec/saml-attributes.png" alt="SAML attributen" /> 
-  <figcaption>Je SAML-attributen in de IDP.</figcaption>
-</figure>
-
-De gebruikersnaam waarmee je een S3-token aanvraagt is: `common name+or-id`. In bovenstaand geval, bv:
+De gebruikersnaam waarmee je een S3-token aanvraagt is: `common name+or-id`. Bijvoorbeeld:
 
 ```
 Jef Metdepet+or-123abcd
