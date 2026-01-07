@@ -182,7 +182,7 @@ De serverimplementatie heeft een zekere vrijheid om te verifiëren wat die zelf 
 Er is nog een extra laag van beveiliging in de vorm van TLS. De endpoint **moet** een HTTPS-endpoint zijn. Op deze manier is de payload geëncrypteerd.
 
 ## Leverbaarheid en betrouwbaarheid
-Het uitsturen van webhooks kan op meerdere manieren falen, van problemen in de connectie, tot problemen aan de serverkant. Als het event succesvol is toegekomen, stuurt de webhook een response met de status code `2xx` terug. In alle andere gevallen proberen we het event opnieuw uit te sturen gebaseerd op een herhalingsschema met een *incremental backoff*. Een mogelijk herhalingsschema:
+De aanlevering van een webhook wordt als succesvol aanzien als deze beantwoord wordt met een `2xx` statuscode. In alle andere scenario's wordt de aanlevering als gefaald gemarkeerd. In het geval dat de aanlevering gefaald is, proberen we het event opnieuw uit te sturen, tot de aanlevering geslaagd is of als alle pogingen zijn uitgeput. Dit is gebaseerd op een herhalingsschema met een *incremental backoff*. Het geïmplementeerde herhalingsschema:
 
 | Vertraging      | Tijd sinds start  |
 | --------------- | ----------------- |
