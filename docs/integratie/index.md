@@ -63,13 +63,14 @@ Dit zijn de paden waarop de verschillende API's bereikbaar zijn. Onderstaande
 paden, gecombineerd met de netwerk locaties van hierboven, geven je de
 volledige URL waarop de API kan worden aangesproken.
 
-| Documentatie                                                                          | Pad                                                      |
-|---------------------------------------------------------------------------------------|----------------------------------------------------------|
-| [OAI-PMH API]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %})                | /mediahaven-oai/oai/                                     |
-| [MH REST API v1](https://archief.viaa.be/mediahaven-rest-api/)                        | ~~/mediahaven-rest-api/~~ **Deprecated sinds juni '23!** |
-| [MH REST API v2](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/)            | /mediahaven-rest-api/v2/                                 |
-| [IIIF 3.0 Image API]({{ site.baseurl }}{% link docs/integratie/iiif.md %})            |                                                          |
-| [Organizations API v2]({{ site.baseurl }}{% link docs/integratie/org-api/index.md %}) |                                                          |
+| Documentatie                                                                                   | Pad                                                      |
+|------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| [OAI-PMH API]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %})                         | /mediahaven-oai/oai/                                     |
+| [MH REST API v1](https://archief.viaa.be/mediahaven-rest-api/)                                 | ~~/mediahaven-rest-api/~~ **Deprecated sinds juni '23!** |
+| [MH REST API v2](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/)                     | /mediahaven-rest-api/v2/                                 |
+| [IIIF 3.0 Image API]({{ site.baseurl }}{% link docs/integratie/iiif.md %})                     |                                                          |
+| [Organizations API v2]({{ site.baseurl }}{% link docs/integratie/org-api/index.md %})          |                                                          |
+| [Webhook Status Events]({{ site.baseurl }}{% link docs/integratie/webhook-status-events.md %}) |                                                          |
 
 # Mediahaven API's
 
