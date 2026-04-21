@@ -352,18 +352,14 @@ query GetRefsetPersonsmetTimestamps {
   integraties die de volledige service-output willen verwerken.
 
 ## Voorbeeldimplementaties
-## Over Hasura
-Hasura is een open-source engine die automatisch een GraphQL APO genereert bovenop een relationele database, zoals PostgreSQL.
-Hierdoor kan je queries uitvoeren zonder zelf complexe backend code te schrijven.
-
-## Over de repository
-Er worden twee voorbeeldscript ter beschikking gesteld om alle data gelinkt aan een contentpartner te downloaden via Hasura en GraphQL queries.
+Er worden twee voorbeeldscript ter beschikking gesteld om alle data gelinkt aan een contentpartner te downloaden via GraphQL queries.
 
 ## Vooraf te doen
 - Zorg dat python beschikbaar is op je systeem:
   - [Python installatie](https://www.python.org/downloads/)
+- Download het zip-bestand met de scripts [`.env-template`]({{ site.baseurl }}/assets/ai_scripts/graphql-query-examples)
 
-- Kopieer het [`.env-template`]({{ site.baseurl }}/assets/ai_scripts/.env-template) en hernoem het naar `.env`
+- Kopieer het `.env-template` en hernoem het naar `.env`
 - In het nieuwe `.env` bestand:
   - Vul de USER_EMAIL en PASSWORD velden in van een account gelinkt aan jouw organisatie
 
@@ -388,7 +384,7 @@ python -m pip install -r requirements.txt
 ## De voorbeeldscripts uitvoeren
 
 ### Metadata downloaden
-Gebruik [`download_meemoo_ai_data.py`]({{ site.baseurl }}/assets/ai_scripts/download_meemoo_ai_data.py) om alle beschikbare metadata voor je organisatie op te halen en lokaal als JSON op te slaan.
+Gebruik `download_meemoo_ai_data.py` om alle beschikbare metadata voor je organisatie op te halen en lokaal als JSON op te slaan.
 
 Het script maakt in `output/` een submap per view aan:
 
@@ -410,7 +406,7 @@ python download_meemoo_ai_data.py
 ```
 
 ### Ruwe AI output downloaden
-Gebruik daarna [`download_meemoo_raw_ai_files.py`]({{ site.baseurl }}/assets/ai_scripts/download_meemoo_raw_ai_files.py) om per taak de ruwe bestanden op te halen.
+Gebruik daarna `download_meemoo_raw_ai_files.py` om per taak de ruwe bestanden op te halen.
 
 Voer dit script pas uit nadat `download_meemoo_ai_data.py` succesvol heeft gedraaid. Het script gebruikt namelijk de eerder geëxporteerde metadata in `output/` om te bepalen welke taken moeten worden opgehaald.
 
