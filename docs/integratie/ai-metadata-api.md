@@ -56,9 +56,9 @@ De authenticatieflow gebruikt `client_credentials` als
 
 ```shell
 curl -X POST "https://oas.hetarchief.be/token" \
-–u "<email>:<password>" \
+-u "<email>:<password>" \
 -d "grant_type=client_credentials" \
--d "expires_in=3600
+-d "expires_in=3600"
 ```
 
 ### RESPONSE
@@ -210,8 +210,8 @@ referentieset.
 | `cluster_uuid`          | een unieke identifier voor de cluster waartoe de match behoort |
 | `cp`                    | de unieke identifier van de content partner                  |
 | `match_score`           | de score van de match                                      |
-| `matched_time`          | het moment waarop de match gemaakt is in in [ISO-8601](https://developer.meemoo.be/docs/metadata/viaa/datatypes.html#iso8601)|
-| `refset_person_id`      | de refset identifier van de gematchte persoon        |
+| `matched_time`          | het moment waarop de match gemaakt is, in [ISO-8601](https://developer.meemoo.be/docs/metadata/viaa/datatypes.html#iso8601)|
+| `refset_person_id`      | de refset-identifier van de gematchte persoon        |
 | `refset_person_name`    | de naam van de gematchte persoon                             |
 | `refset_person_wiki_id` | de wiki/Q-identifier van de gematchte persoon                |
 | `time_intervals`        | een lijst van start- en eindtijden (in seconden) waarin de gematchte persoon voorkomt |
@@ -233,7 +233,7 @@ Geeft resultaten terug van gezichts- en persoonsdetectie op fragmenten.
 | `n_persons`              | het totaal aantal personen in de task                            |
 | `n_persons_per_frame`    | het aantal personen per frame                         |
 | `n_scenes`               | het totaal aantal scènes in de task                              |
-| `perc_frames_with_faces` | het  precentage aan frames met een gezicht             |
+| `perc_frames_with_faces` | het percentage aan frames met een gezicht             |
 | `pid`                    | de pid van het fragment gelinkt aan de task                     |
 | `processed_time`         | het tijdstip waarop de task verwerkt is, in [ISO-8601](https://developer.meemoo.be/docs/metadata/viaa/datatypes.html#iso8601)         |
 | `status`                 | de verwerkingsstatus van de task, bijvoorbeeld `succeeded` of `failed`                     |
@@ -270,7 +270,7 @@ Geeft speech-to-textresultaten, transcripties en aanverwante metadata terug.
 | `media_object_id`           | het mediaobject-id van het fragment gelinkt aan de task          |
 | `pid`                       | de pid van het fragment gelinkt aan de task                     |
 | `processed_time`            | het tijdstip waarop de task verwerkt is, in [ISO-8601](https://developer.meemoo.be/docs/metadata/viaa/datatypes.html#iso8601)             |
-| `statistics`                | een reeks van speechmatics stastieken                        |
+| `statistics`                | een reeks van Speechmatics-statistieken                      |
 | `status`                    | de verwerkingsstatus van de task, bijvoorbeeld `succeeded` of `failed`                       |
 | `task_id`                   | een unieke identifier voor de task                           |
 | `title`                     | de titel van het fragment                                    |
@@ -289,7 +289,7 @@ Geeft metadata terug over personen in de referentieset.
 | `created_at`   | het tijdstip waarop de refset-entry is aangemaakt, in [ISO-8601](https://developer.meemoo.be/docs/metadata/viaa/datatypes.html#iso8601)  |
 | `id`           | de unieke identifier van de refset-entry                     |
 | `label`        | een label van de refset-entry, bijvoorbeeld een naam                     |
-| `description`  | een omschrijving van de refset entry                         |
+| `description`  | een omschrijving van de refset-entry                         |
 | `modified_at`  | het tijdstip waarop de refset-entry het laatst aangepast is, in [ISO-8601](https://developer.meemoo.be/docs/metadata/viaa/datatypes.html#iso8601) |
 | `public_links` | een lijst van publieke links van de refset-entry             |
 | `status`       | de status van de refset-entry  |
@@ -311,7 +311,7 @@ Zie ook de [README.md in de repository](https://github.com/viaacode/give-graphql
 - git clone [de repository](https://github.com/viaacode/give-graphql-query-examples)
 - Kopieer het `.env-template` en hernoem het naar `.env`
 - Vul in het `.env` bestand de `USER_EMAIL` en `PASSWORD` velden in met de waarden van een account gelinkt aan jouw organisatie
-- Voer de volgende commando's uit in een terminal om de virtuele omgeving te activeren zodat de scripts kunnen gerund worden:
+- Voer de volgende commando's uit in een terminal om de virtuele omgeving te activeren zodat de scripts uitgevoerd kunnen worden:
 
 **Linux/MacOS:**
 
