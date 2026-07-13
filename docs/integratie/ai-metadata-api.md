@@ -5,7 +5,7 @@ parent: Een integratie ontwikkelen
 has_children: false
 has_toc: true
 nav_order: 8
-last_modified_date: 2026-04-21
+last_modified_date: 2026-07-13
 ---
 
 <details markdown="block">
@@ -17,10 +17,7 @@ last_modified_date: 2026-04-21
 {:toc}
 </details>
 
-## AI metadata API
-
-Status: `v1.1.0`  
-Laatst bijgewerkt: `28/05/26`
+Versie: `v1.1.1`
 
 ## 1. Inleiding
 
@@ -82,10 +79,10 @@ uitgevoerd op een mediafragment of een match met een referentieset.
 
 De beschikbare views en de metadatabeschrijving zijn:
 
-- `face_tasks:` detectie van gezichten/personen op videofragmenten
-- `image_tasks:` detectie van gezichten/personen op foto
-- `face_matches:` matches tussen gedetecteerde personen en de referentieset voor video
-- `image_matches:` matches tussen gedetecteerde personen en de referentieset voor foto
+- `face_tasks`: detectie van gezichten/personen op videofragmenten
+- `image_tasks`: detectie van gezichten/personen op foto
+- `face_matches`: matches tussen gedetecteerde personen en de referentieset voor video
+- `image_matches`: matches tussen gedetecteerde personen en de referentieset voor foto
 - `refset_persons`: metadata van personen in de referentieset
 - `speech_tasks`: speech-to-text metadata en transcripties
 - `ner_tasks`: NER en textrazor metadata
@@ -106,7 +103,7 @@ query. De velden waarop gefiltered kan worden kunnen met een standaard
 introspect query opgevraagd worden of worden ingevuld door een query builder te
 gebruiken.
 
-Bijvoorbeeld voor face_tasks:
+Bijvoorbeeld voor face_matches:
 
 - cluster_uuid
 - cp
@@ -117,14 +114,14 @@ Bijvoorbeeld voor face_tasks:
 - refset_person_wiki_id
 - time_intervals
 
-Voor meer informatie over GraphQL queries, zie [Queries | GraphQL](https://graphql.org/learn/queries/).
+Voor meer informatie over GraphQL queries, zie [Learn GraphQL: Queries](https://graphql.org/learn/queries/).
 
 Het onderstaande voorbeeld van een typische query vraagt de `face_tasks` view op
 via het GraphQL endpoint, waarbij `<...>` de in de response gewenste datavelden
 van de view zijn. Zie verder bij hoofdstuk '5. Data views' voor een volledig
 overzicht van de beschikbare velden per view.
 
-## GRAPHQL QUERY
+### GRAPHQL QUERY
 
 ```graphql
 query GetFaceTasks($limit: Int!, $offset: Int!, $status: [String!]) {
@@ -138,7 +135,7 @@ query GetFaceTasks($limit: Int!, $offset: Int!, $status: [String!]) {
 }
 ```
 
-## cURL REQUEST
+### cURL REQUEST
 
 ```shell
 echo '{
@@ -163,7 +160,7 @@ echo '{
   "variables": {
     "limit": 1,
     "offset": 1,
-    "status": "succeeded"
+    "status": ["succeeded"]
   }
 }' | tr -d '\n' | curl --silent \
   -X POST "https://services.viaa.be/ai-results/v1/graphql" \
@@ -172,7 +169,7 @@ echo '{
   -d @-
 ```
 
-## RESPONSE
+### RESPONSE
 
 ```json
 {
@@ -202,8 +199,6 @@ echo '{
 
 Geeft matches terug tussen gedetecteerde personen en personen in de
 referentieset.
-
-#### Velden
 
 | **Veld**                | **Beschrijving**                                             |
 | :---------------------- | :----------------------------------------------------------- |
@@ -274,7 +269,7 @@ Geeft speech-to-textresultaten, transcripties en aanverwante metadata terug.
 | `status`                    | de verwerkingsstatus van de task, bijvoorbeeld `succeeded` of `failed`                       |
 | `task_id`                   | een unieke identifier voor de task                           |
 | `title`                     | de titel van het fragment                                    |
-| `transcript_json`           | de onbewerkte output van textrazor in JSON-formaat                           |
+| `transcript_json`           | de onbewerkte transcriptie-output in JSON-formaat                            |
 | `transcript_srt`            | de transcriptie als .srt ondertitels            |
 | `transcript_txt`            | de transcriptie als platte tekst      |
 | `transcript_vtt`            | de transcriptie als .vtt ondertitels              |
@@ -354,12 +349,12 @@ In elke submap wordt de data gepagineerd opgeslagen. Elk JSON-bestand bevat dus
 Het script verwacht dat de uitvoermap nog niet bestaat. Wil je de export opnieuw
 uitvoeren, verwijder dan eerst de map `output/`.
 
-```shell-script
+```shell
 # vergeet niet eerst je virtuele omgeving te activeren
 python download_meemoo_ai_data.py
 ```
 
-### Ruwe AI output downloaden
+#### Ruwe AI output downloaden
 
 Gebruik daarna `download_meemoo_raw_ai_files.py` om per taak de ruwe bestanden
 op te halen.
@@ -385,7 +380,7 @@ start. Wil je de ruwe bestanden opnieuw downloaden, verwijder die map dan eerst.
 Afhankelijk van het aantal taken kan dit script enige tijd duren. Tijdens het
 uitvoeren toont het script een voortgangsbalk.
 
-```shell-script
+```shell
 # vergeet niet eerst je virtuele omgeving te activeren
 python download_meemoo_raw_ai_files.py
 ```
