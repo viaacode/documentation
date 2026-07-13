@@ -19,6 +19,8 @@ last_modified_date: 2026-07-13
 
 Versie: `v1.1.1`
 
+# De AI metadata API gebruiken
+
 ## 1. Inleiding
 
 Met verschillende AI-technieken zoals spraak- en gezichtsherkenning, wordt door
@@ -359,7 +361,7 @@ python download_meemoo_ai_data.py
 Gebruik daarna `download_meemoo_raw_ai_files.py` om per taak de ruwe bestanden
 op te halen.
 
-Voer dit script pas uit nadat `download_meemoo_ai_data.py` succesvol heeft
+Voer dit script pas uit nadat `download_meemoo_ai_data.py` succesvol heeft
 gedraaid. Het script gebruikt namelijk de eerder geëxporteerde metadata in
 `output/` om te bepalen welke taken moeten worden opgehaald.
 
