@@ -338,9 +338,9 @@ organisatie op te halen en lokaal als JSON op te slaan.
 Het script maakt in `output/` een submap per view aan:
 
 - `face_tasks`
-- `face_image_tasks`
+- `image_tasks`
 - `face_matches`
-- `face_image_matches`
+- `image_matches`
 - `refset_persons`
 - `speech_tasks`
 - `ner_tasks`
