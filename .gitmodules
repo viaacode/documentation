@@ -22,3 +22,11 @@
 	path = _data/2_1
 	url = https://github.com/viaacode/sip-specification.git
 	branch = 2.1
+[submodule "docs/diginstroom/sip/3.0"]
+	path = docs/diginstroom/sip/3.0
+	url = https://github.com/viaacode/sip-specification.git
+	branch = 3.0
+[submodule "_data/3_0"]
+	path = _data/3_0
+	url = https://github.com/viaacode/sip-specification.git
+	branch = 3.0
