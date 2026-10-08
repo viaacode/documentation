@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Data model Organizations"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: False
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -56,7 +53,7 @@ Data model to describe organizations.
 ## Classes & Properties
 
 **Classes:** 
- [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/en#skos%3AConcept){:target="_blank"} |  [Contact point](#schema%3AContactPoint) |  [Content partner](#haOrg%3AContentPartner) |  [Country](#schema%3ACountry) |  [Digitization partner](#haOrg%3ADigitizationPartner) |  [Educational partner](#haOrg%3AEducationalPartner) |  [Logo](#haOrg%3ALogo) |  [Organization](#org%3AOrganization) |  [Organization type](#haOrg%3AOrganizationType) |  [OrganizationalUnit](#org%3AOrganizationalUnit) |  [Person](#schema%3APerson) |  [Post](#org%3APost) |  [Postal address](#schema%3APostalAddress) |  [Project partner](#haOrg%3AProjectPartner) |  [Role](#org%3ARole) |  [Service consumer](#haOrg%3AServiceConsumer) |  [Service provider](#haOrg%3AServiceProvider) |  [Site](#org%3ASite)
+ [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/en#skos%3AConcept){ target="_blank" } |  [Contact point](#schema%3AContactPoint) |  [Content partner](#haOrg%3AContentPartner) |  [Country](#schema%3ACountry) |  [Digitization partner](#haOrg%3ADigitizationPartner) |  [Educational partner](#haOrg%3AEducationalPartner) |  [Logo](#haOrg%3ALogo) |  [Organization](#org%3AOrganization) |  [Organization type](#haOrg%3AOrganizationType) |  [OrganizationalUnit](#org%3AOrganizationalUnit) |  [Person](#schema%3APerson) |  [Post](#org%3APost) |  [Postal address](#schema%3APostalAddress) |  [Project partner](#haOrg%3AProjectPartner) |  [Role](#org%3ARole) |  [Service consumer](#haOrg%3AServiceConsumer) |  [Service provider](#haOrg%3AServiceProvider) |  [Site](#org%3ASite)
 ## <a id="schema%3AContactPoint"></a>Contact point <small>[(schema:ContactPoint)](https://schema.org/ContactPoint)</small>
 
 
@@ -82,7 +79,7 @@ A content partner is an organization that has signed a collaboration agreement w
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
 | <a id='haOrg%3AhasAccountManager'></a>has account manager <br> <small>[(haOrg:hasAccountManager)](https://data.hetarchief.be/ns/organization/hasAccountManager)</small> | The account manager of the content partner. | `1..1` | [Person](#schema%3APerson)  |
-| <a id='haOrg%3AhasPreference'></a>has preference <br> <small>[(haOrg:hasPreference)](https://data.hetarchief.be/ns/organization/hasPreference)</small> | Expresses a preference of an organization with respect to their collaboration with meemoo, such as whether or not to perform or allow a certain service. | `0..*` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/en#skos%3AConcept){:target="_blank"}  |
+| <a id='haOrg%3AhasPreference'></a>has preference <br> <small>[(haOrg:hasPreference)](https://data.hetarchief.be/ns/organization/hasPreference)</small> | Expresses a preference of an organization with respect to their collaboration with meemoo, such as whether or not to perform or allow a certain service. | `0..*` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/en#skos%3AConcept){ target="_blank" }  |
 | <a id='org%3Aidentifier'></a>identifier <br> <small>[(org:identifier)](http://www.w3.org/ns/org#identifier)</small> | Indicates the unique identifier of the content partner. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='haOrg%3ArequestForm'></a>request form <br> <small>[(haOrg:requestForm)](https://data.hetarchief.be/ns/organization/requestForm)</small> | A link to a form with which a user can request content from the content partner. | `0..*` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 

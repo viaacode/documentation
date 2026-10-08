@@ -1,24 +1,14 @@
 ---
-layout: default
 title: "Velden: Registratie dragers"
-parent: VIAA Metadatamodel
 nav_order: 2
 ---
 
-{: .fw-300 }
 Deze velden worden ingevuld door contentpartners tijdens de registratie van analoog materiaal, met oog op een digitaliseringsproject uitgevoerd door meemoo. Deze informatie wordt standaard automatisch overgenomen uit de registratieinformatie in de [registratietool](http://registratie.meemoo.be).
 
-{: .important }
-Deze pagina dient louter ter documentatie van de relevante velden bij registratie. Onderstaande velden kunnen dus niet gebruikt worden bij bv. een digitaal instroomproces.
+!!! important
 
-<details markdown="block">
-  <summary>
-    Inhoudstafel
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+    Deze pagina dient louter ter documentatie van de relevante velden bij registratie. Onderstaande velden kunnen dus niet gebruikt worden bij bv. een digitaal instroomproces.
+
                                                                                                                           
 # Dragerinformatie
 
@@ -114,7 +104,7 @@ Dit is de (geschatte) productiedatum van de materiële drager.
 
 
 | **XML element**        | `<date/>`                                                                                                          |
-| **Datatype**           | [Extended Date Time Format (EDTF)]({{ site.baseurl }}{% link docs/metadata/viaa/datatypes.md %}#edtf)                                                                                |
+| **Datatype**           | [Extended Date Time Format (EDTF)](datatypes.md#edtf)                                                                                |
 | **Verplichting**       | Verplicht |
 | **Herhaalbaar**        | Nee                                                                                                                |
 

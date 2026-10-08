@@ -1,23 +1,9 @@
 ---
-layout: default
 title: Een integratie ontwikkelen
-has_children: true
-has_toc: true
 nav_order: 3
-last_modified_date: 2021-03-25T06:33:08+0100
 ---
 
-<details markdown="block">
-  <summary>
-    Inhoudstafel
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
-Status: WIP
-{: .label .label-yellow }
+<span class="label label-yellow">Status: WIP</span>
 
 # Ontwikkeling van een integratie
 
@@ -65,12 +51,12 @@ volledige URL waarop de API kan worden aangesproken.
 
 | Documentatie                                                                                   | Pad                                                      |
 |------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| [OAI-PMH API]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %})                         | /mediahaven-oai/oai/                                     |
+| [OAI-PMH API](oai-pmh.md)                         | /mediahaven-oai/oai/                                     |
 | [MH REST API v1](https://archief.viaa.be/mediahaven-rest-api/)                                 | ~~/mediahaven-rest-api/~~ **Deprecated sinds juni '23!** |
 | [MH REST API v2](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/)                     | /mediahaven-rest-api/v2/                                 |
-| [IIIF 3.0 Image API]({{ site.baseurl }}{% link docs/integratie/iiif.md %})                     |                                                          |
-| [Organizations API v2]({{ site.baseurl }}{% link docs/integratie/org-api/index.md %})          |                                                          |
-| [Webhook Status Events]({{ site.baseurl }}{% link docs/integratie/webhook-status-events.md %}) |                                                          |
+| [IIIF 3.0 Image API](iiif.md)                     |                                                          |
+| [Organizations API v2](org-api/index.html)        |                                                          |
+| [Webhook Status Events](webhook-status-events.md) |                                                          |
 
 # Mediahaven API's
 
@@ -85,8 +71,9 @@ API een welomlijnde standaard en is de REST API MediaHaven-specifiek.
 
 ## REST API
 
-{: .note }
-Opgelet: de REST API versie 1 werd uitgefaseerd en is vanaf 1 juni '23 niet meer ondersteund!
+!!! note
+
+    Opgelet: de REST API versie 1 werd uitgefaseerd en is vanaf 1 juni '23 niet meer ondersteund!
 
 De documentatie is hier te vinden:
 
@@ -135,4 +122,4 @@ persoonlijke account zijn of een "technische" account (bv. `mediahaven.api@<org>
 
 ## OAI-PMH API
 
-Zie [https://developer.meemoo.be/docs/integratie/oai-pmh]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %}) voor meer informatie.
+Zie [https://developer.meemoo.be/docs/integratie/oai-pmh](oai-pmh.md) voor meer informatie.

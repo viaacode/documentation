@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Data model Film"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -61,7 +58,7 @@ Data model to provide a detailed description of Film objects and their component
 ## Classes & Properties
 
 **Classes:** 
- [Audio reel](#haDes%3AAudioReel) |  [Carrier representation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/en#haObj%3ACarrierRepresentation){:target="_blank"} |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/en#skos%3AConcept){:target="_blank"} |  [Film](#haDes%3AFilm) |  [Image reel](#haDes%3AImageReel) |  [Open captions](#ebucore%3AOpenCaptions) |  [Open captions](#ebucore%3AOpenCaptions) |  [Silent film](#haDes%3ASilentFilm) |  [Sound film](#haDes%3ASoundFilm)
+ [Audio reel](#haDes%3AAudioReel) |  [Carrier representation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/en#haObj%3ACarrierRepresentation){ target="_blank" } |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/en#skos%3AConcept){ target="_blank" } |  [Film](#haDes%3AFilm) |  [Image reel](#haDes%3AImageReel) |  [Open captions](#ebucore%3AOpenCaptions) |  [Open captions](#ebucore%3AOpenCaptions) |  [Silent film](#haDes%3ASilentFilm) |  [Sound film](#haDes%3ASoundFilm)
 ## <a id="haDes%3AAudioReel"></a>Audio reel <small>[(haDes:AudioReel)](https://data.hetarchief.be/ns/description/AudioReel)</small>
 
 
@@ -88,7 +85,7 @@ This class applies to media in meemoo's archive that is originally derived from 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
 | <a id='haDes%3AbroadcastingOrganization'></a>broadcasting organization <br> <small>[(haDes:broadcastingOrganization)](https://data.hetarchief.be/ns/description/broadcastingOrganization)</small> | The entity primarily responsible for distributing and making accessible an audiovisual item to third parties through broadcasting, sale, rental, etc. | `0..1` | [`org:Organization`](http://www.w3.org/ns/org#Organization)  |
-| <a id='haObj%3AhasCarrierCopy'></a>has carrier copy <br> <small>[(haObj:hasCarrierCopy)](https://data.hetarchief.be/ns/object/hasCarrierCopy)</small> | The representation stored on a physical carrier. | `1..1` | [Carrier representation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/en#haObj%3ACarrierRepresentation){:target="_blank"}  |
+| <a id='haObj%3AhasCarrierCopy'></a>has carrier copy <br> <small>[(haObj:hasCarrierCopy)](https://data.hetarchief.be/ns/object/hasCarrierCopy)</small> | The representation stored on a physical carrier. | `1..1` | [Carrier representation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/en#haObj%3ACarrierRepresentation){ target="_blank" }  |
 
 
 
@@ -102,7 +99,7 @@ A reel of an analog film carrier that contains video.
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='haDes%3AcoloringType'></a>coloring type <br> <small>[(haDes:coloringType)](https://data.hetarchief.be/ns/description/coloringType)</small> | Indication of the coloring of the image reel. | `0..*` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/en#skos%3AConcept){:target="_blank"} <br>_Possible values: [`haCt:BandW`](https://data.hetarchief.be/id/color-type/BandW), [`haCt:Color`](https://data.hetarchief.be/id/color-type/Color), [`haCt:Colorized`](https://data.hetarchief.be/id/color-type/Colorized), [`haCt:Composite`](https://data.hetarchief.be/id/color-type/Composite), [`haCt:Tinted`](https://data.hetarchief.be/id/color-type/Tinted), [`haCt:Toned`](https://data.hetarchief.be/id/color-type/Toned), [`haCt:UnknownColorType`](https://data.hetarchief.be/id/color-type/UnknownColorType)_ |
+| <a id='haDes%3AcoloringType'></a>coloring type <br> <small>[(haDes:coloringType)](https://data.hetarchief.be/ns/description/coloringType)</small> | Indication of the coloring of the image reel. | `0..*` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/en#skos%3AConcept){ target="_blank" } <br>_Possible values: [`haCt:BandW`](https://data.hetarchief.be/id/color-type/BandW), [`haCt:Color`](https://data.hetarchief.be/id/color-type/Color), [`haCt:Colorized`](https://data.hetarchief.be/id/color-type/Colorized), [`haCt:Composite`](https://data.hetarchief.be/id/color-type/Composite), [`haCt:Tinted`](https://data.hetarchief.be/id/color-type/Tinted), [`haCt:Toned`](https://data.hetarchief.be/id/color-type/Toned), [`haCt:UnknownColorType`](https://data.hetarchief.be/id/color-type/UnknownColorType)_ |
 | <a id='ebucore%3AhasCaptioning'></a>has (embedded) captioning <br> <small>[(ebucore:hasCaptioning)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning)</small> | Indicates the (embedded) captioning of an image reel . | `0..*` | [Open captions](#ebucore%3AOpenCaptions)  |
 
 

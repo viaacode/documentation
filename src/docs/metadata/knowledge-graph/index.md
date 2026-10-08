@@ -1,10 +1,5 @@
 ---
-layout: default
 title: Knowledge Graph
-parent: Metadata
-has_children: true
-has_toc: true
-nav_exclude:  false
 nav_order: 1
 ---
 
@@ -21,8 +16,9 @@ Voor het beschrijven van deze brede kennis hanteren we een modulair datamodel da
 De thesauri zijn gecontroleerde (hierarchische) termenlijsten om dingen te classificeren.
 Alle datamodellen zijn beschikbaar in [RDFS](https://www.w3.org/TR/rdf-schema/) en [SHACL](https://www.w3.org/TR/shacl/); de thesauri als [SKOS](https://www.w3.org/TR/skos-reference/).
 
-{: .note }
-Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet beschikbaar in productie.
+!!! note
+
+    Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet beschikbaar in productie.
 
 
 
@@ -43,11 +39,11 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 
 |Naam|Documentatie (NL)|Documentation (EN)|
 |----|:-----------------------------:|:-------------------------:|
-| **Objectstructuur (kernmodel)** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/objects/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/objects/en/index.md %}) |
-| **Organisaties** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/organizations/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/organizations/en/index.md %}) |
-| **Descriptie** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/description/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/description/en/index.md %}) |
-| **Data herkomst** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/events/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/events/en/index.md %}) |
-| **Termenlijsten** | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/terms/nl/index.md %}) | [1.0.0]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/1.0.0/terms/en/index.md %}) |
+| **Objectstructuur (kernmodel)** | [1.0.0](1.0.0/objects/nl/index.md) | [1.0.0](1.0.0/objects/en/index.md) |
+| **Organisaties** | [1.0.0](1.0.0/organizations/nl/index.md) | [1.0.0](1.0.0/organizations/en/index.md) |
+| **Descriptie** | [1.0.0](1.0.0/description/nl/index.md) | [1.0.0](1.0.0/description/en/index.md) |
+| **Data herkomst** | [1.0.0](1.0.0/events/nl/index.md) | [1.0.0](1.0.0/events/en/index.md) |
+| **Termenlijsten** | [1.0.0](1.0.0/terms/nl/index.md) | [1.0.0](1.0.0/terms/en/index.md) |
 
 ## Termenlijsten
 

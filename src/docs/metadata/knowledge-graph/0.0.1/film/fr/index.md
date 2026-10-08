@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Modèle de données Film"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -62,7 +59,7 @@ Modèle de données pour fournir une description détaillée des objets Film et 
 ## Classes & Propriétés
 
 **Classes:** 
- [OpenCaptions](#ebucore%3AOpenCaptions) |  [Bobine audio](#haDes%3AAudioReel) |  [Bobine d'image](#haDes%3AImageReel) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){:target="_blank"} |  [Film](#haDes%3AFilm) |  [Film muet](#haDes%3ASilentFilm) |  [Film sonore](#haDes%3ASoundFilm) |  [Représentation de porteur <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/fr#haObj%3ACarrierRepresentation){:target="_blank"}
+ [OpenCaptions](#ebucore%3AOpenCaptions) |  [Bobine audio](#haDes%3AAudioReel) |  [Bobine d'image](#haDes%3AImageReel) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){ target="_blank" } |  [Film](#haDes%3AFilm) |  [Film muet](#haDes%3ASilentFilm) |  [Film sonore](#haDes%3ASoundFilm) |  [Représentation de porteur <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/fr#haObj%3ACarrierRepresentation){ target="_blank" }
 ## <a id="ebucore%3AOpenCaptions"></a>OpenCaptions <small>[(ebucore:OpenCaptions)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#OpenCaptions)</small>
 
 
@@ -86,7 +83,7 @@ Une bobine d'un porte-film analogique qui contient une vidéo.
 | Propriété | Description | Cardinalité | Type de données |
 | :------ | :---------- | :---------- | :------- |
 | <a id='ebucore%3AhasCaptioning'></a>a des sous-titres (intégrés) <br> <small>[(ebucore:hasCaptioning)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning)</small> | Indique les sous-titres (intégrés) d'une bobine d'image. | `0..*` | [OpenCaptions](#ebucore%3AOpenCaptions)  |
-| <a id='haDes%3AcoloringType'></a>type de coloration <br> <small>[(haDes:coloringType)](https://data.hetarchief.be/ns/description/coloringType)</small> | Indication de la coloration de la bobine d'image. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){:target="_blank"} <br>_Valeurs possibles: [`haCt:BandW`](https://data.hetarchief.be/id/color-type/BandW), [`haCt:Color`](https://data.hetarchief.be/id/color-type/Color), [`haCt:Colorized`](https://data.hetarchief.be/id/color-type/Colorized), [`haCt:Composite`](https://data.hetarchief.be/id/color-type/Composite), [`haCt:UnknownColorType`](https://data.hetarchief.be/id/color-type/UnknownColorType)_ |
+| <a id='haDes%3AcoloringType'></a>type de coloration <br> <small>[(haDes:coloringType)](https://data.hetarchief.be/ns/description/coloringType)</small> | Indication de la coloration de la bobine d'image. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){ target="_blank" } <br>_Valeurs possibles: [`haCt:BandW`](https://data.hetarchief.be/id/color-type/BandW), [`haCt:Color`](https://data.hetarchief.be/id/color-type/Color), [`haCt:Colorized`](https://data.hetarchief.be/id/color-type/Colorized), [`haCt:Composite`](https://data.hetarchief.be/id/color-type/Composite), [`haCt:UnknownColorType`](https://data.hetarchief.be/id/color-type/UnknownColorType)_ |
 
 ## <a id="haDes%3AFilm"></a>Film <small>[(haDes:Film)](https://data.hetarchief.be/ns/description/Film)</small>
 
@@ -102,7 +99,7 @@ Cette classe s'applique aux médias dans les archives de meemoo qui proviennent 
 
 | Propriété | Description | Cardinalité | Type de données |
 | :------ | :---------- | :---------- | :------- |
-| <a id='haObj%3AhasCarrierCopy'></a>est porteur du copie <br> <small>[(haObj:hasCarrierCopy)](https://data.hetarchief.be/ns/object/hasCarrierCopy)</small> | La représentation stockée sur un porteur physique. | `1..1` | [Représentation de porteur <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/fr#haObj%3ACarrierRepresentation){:target="_blank"}  |
+| <a id='haObj%3AhasCarrierCopy'></a>est porteur du copie <br> <small>[(haObj:hasCarrierCopy)](https://data.hetarchief.be/ns/object/hasCarrierCopy)</small> | La représentation stockée sur un porteur physique. | `1..1` | [Représentation de porteur <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/fr#haObj%3ACarrierRepresentation){ target="_blank" }  |
 
 
 

@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Modèle de données Events"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -61,7 +58,7 @@ Modèle de données pour décrire des événements.
 ## Classes & Propriétés
 
 **Classes:** 
- [Brand](#schema%3ABrand) |  [Activité](#prov%3AActivity) |  [Logiciel acteur](#premis%3ASoftwareAgent) |  [Matériel acteur](#premis%3AHardwareAgent) |  [Objet](#premis%3AObject) |  [Organisation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#org%3AOrganization){:target="_blank"} |  [Personne <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#schema%3APerson){:target="_blank"} |  [Statut de résultat](#premis%3AOutcomeStatus) |  [Événement](#premis%3AEvent)
+ [Brand](#schema%3ABrand) |  [Activité](#prov%3AActivity) |  [Logiciel acteur](#premis%3ASoftwareAgent) |  [Matériel acteur](#premis%3AHardwareAgent) |  [Objet](#premis%3AObject) |  [Organisation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#org%3AOrganization){ target="_blank" } |  [Personne <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#schema%3APerson){ target="_blank" } |  [Statut de résultat](#premis%3AOutcomeStatus) |  [Événement](#premis%3AEvent)
 ## <a id="schema%3ABrand"></a>Brand <small>[(schema:Brand)](https://schema.org/Brand)</small>
 
 
@@ -84,7 +81,7 @@ Une activité est quelque chose qui se passe pendant un certain temps et qui agi
 | <a id='prov%3AstartedAtTime'></a>a date de début <br> <small>[(prov:startedAtTime)](http://www.w3.org/ns/prov#startedAtTime)</small> | La date de début de l'activité. | `1..1` | [`xsd:dateTime`](http://www.w3.org/2001/XMLSchema#dateTime)  |
 | <a id='prov%3AendedAtTime'></a>a date de fin <br> <small>[(prov:endedAtTime)](http://www.w3.org/ns/prov#endedAtTime)</small> | La date de fin de l'activité. | `1..1` | [`xsd:dateTime`](http://www.w3.org/2001/XMLSchema#dateTime)  |
 | <a id='prov%3Agenerated'></a>a généré <br> <small>[(prov:generated)](http://www.w3.org/ns/prov#generated)</small> | L'objet généré. | `0..1` | [`IRI`](https://www.rfc-editor.org/rfc/rfc3987.txt)  |
-| <a id='prov%3AwasAssociatedWith'></a>a été associé à <br> <small>[(prov:wasAssociatedWith)](http://www.w3.org/ns/prov#wasAssociatedWith)</small> | Un `prov:Agent` qui avait une responsabilité (non spécifiée) avant la survenue de cette `prov:Activity`. | `0..*` | [Personne <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#schema%3APerson){:target="_blank"} _ou_ [Organisation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#org%3AOrganization){:target="_blank"} _ou_ [Logiciel acteur](#premis%3ASoftwareAgent) _ou_ [Matériel acteur](#premis%3AHardwareAgent)  |
+| <a id='prov%3AwasAssociatedWith'></a>a été associé à <br> <small>[(prov:wasAssociatedWith)](http://www.w3.org/ns/prov#wasAssociatedWith)</small> | Un `prov:Agent` qui avait une responsabilité (non spécifiée) avant la survenue de cette `prov:Activity`. | `0..*` | [Personne <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#schema%3APerson){ target="_blank" } _ou_ [Organisation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#org%3AOrganization){ target="_blank" } _ou_ [Logiciel acteur](#premis%3ASoftwareAgent) _ou_ [Matériel acteur](#premis%3AHardwareAgent)  |
 
 ## <a id="premis%3ASoftwareAgent"></a>Logiciel acteur <small>[(premis:SoftwareAgent)](http://www.loc.gov/premis/rdf/v3/SoftwareAgent)</small>
 
@@ -162,7 +159,7 @@ Action réalisée à l'intérieur ou à l'extérieur du dépôt qui affecte sa c
 | <a id='premis%3AoutcomeNote'></a>a une note de résultat <br> <small>[(premis:outcomeNote)](http://www.loc.gov/premis/rdf/v3/outcomeNote)</small> | Une note sur le résultat de l'événement (Event). | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='evtObjRole%3Asou'></a>a une source <br> <small>[(evtObjRole:sou)](http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou)</small> | L'object utilisé comme source pour l'événement (Event) | `0..*` | [Objet](#premis%3AObject)  |
 | <a id='evtAgRole%3Aexe'></a>exécuté par <br> <small>[(evtAgRole:exe)](http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/exe)</small> | Le logiciel qui a exécuté l'événement (Event). | `0..1` | [Logiciel acteur](#premis%3ASoftwareAgent)  |
-| <a id='evtAgRole%3Aimp'></a>implementé par <br> <small>[(evtAgRole:imp)](http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp)</small> | L'organisation qui a implementé l'événement (Event). | `1..1` | [Organisation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#org%3AOrganization){:target="_blank"}  |
+| <a id='evtAgRole%3Aimp'></a>implementé par <br> <small>[(evtAgRole:imp)](http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp)</small> | L'organisation qui a implementé l'événement (Event). | `1..1` | [Organisation <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/fr#org%3AOrganization){ target="_blank" }  |
 | <a id='schema%3Ainstrument'></a>instrument <br> <small>[(schema:instrument)](https://schema.org/instrument)</small> | Le matériel qui a été utilisé pour exécuter l'événement (Event). | `0..*` | [Matériel acteur](#premis%3AHardwareAgent)  |
 | <a id='evtObjRole%3Aout'></a>résultat <br> <small>[(evtObjRole:out)](http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out)</small> | L'objet généré par l'événement (Event). | `0..*` | [Objet](#premis%3AObject)  |
 

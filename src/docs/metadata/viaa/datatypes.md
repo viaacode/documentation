@@ -1,17 +1,14 @@
 ---
-layout: default
 title: Datatypes
-parent: VIAA Metadatamodel
 nav_order: 4
 ---
 
 # Datatypes
 
-{: .fw-300 }
 Datatypes zijn gangbare formaten voor het neerschrijven van een datum, een tijdstip of een taal.
 
 ## ISO 8601
-{: #iso8601}
+<a id="iso8601"></a>
 
 De [ISO 8601](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=40874) standaard is een wijdverspreid formaat om datum en tijd te noteren.
 Dit formaat wordt gebruikt wanneer het moment _gekend_ en _exact_ is (bv. het moment van instroom).
@@ -25,7 +22,7 @@ Een tijdzone kan worden aangeduid door het uurverschil met GMT achteraan met een
 
 Meer info vind je op de [wikipedia pagina over ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601)
 ## Extended Date Time Format (EDTF)
-{: #edtf}
+<a id="edtf"></a>
 
 Om verfijning en benaderende waarden toe te staan wordt [Extended Date Time Format (EDTF)](https://www.loc.gov/standards/datetime/) gebruikt.
 De EDTF-standaard voegt verschillende vormen van verfijning, veralgemening en benaderende waarden toe aan de [ISO 8601](#iso8601) notatie.

@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Datamodel Organisaties"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -58,7 +55,7 @@ Datamodel voor het beschrijven van organisaties.
 ## Klassen & Eigenschappen
 
 **Klassen:** 
- [Aanspreek-/meldpunt](#schema%3AContactPoint) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){:target="_blank"} |  [Contentpartner](#haOrg%3AContentPartner) |  [Dienstenafnemer](#haOrg%3AServiceConsumer) |  [Dienstenleverancier](#haOrg%3AServiceProvider) |  [Digitaliseringspartner](#haOrg%3ADigitizationPartner) |  [Educatieve partner](#haOrg%3AEducationalPartner) |  [Land](#schema%3ACountry) |  [Logo](#haOrg%3ALogo) |  [Organisatie](#org%3AOrganization) |  [Organisatie-eenheid](#org%3AOrganizationalUnit) |  [Organisatietype](#haOrg%3AOrganizationType) |  [Persoon](#schema%3APerson) |  [Positie](#org%3APost) |  [Postadres](#schema%3APostalAddress) |  [Projectpartner](#haOrg%3AProjectPartner) |  [Rol](#org%3ARole) |  [Vestiging](#org%3ASite)
+ [Aanspreek-/meldpunt](#schema%3AContactPoint) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){ target="_blank" } |  [Contentpartner](#haOrg%3AContentPartner) |  [Dienstenafnemer](#haOrg%3AServiceConsumer) |  [Dienstenleverancier](#haOrg%3AServiceProvider) |  [Digitaliseringspartner](#haOrg%3ADigitizationPartner) |  [Educatieve partner](#haOrg%3AEducationalPartner) |  [Land](#schema%3ACountry) |  [Logo](#haOrg%3ALogo) |  [Organisatie](#org%3AOrganization) |  [Organisatie-eenheid](#org%3AOrganizationalUnit) |  [Organisatietype](#haOrg%3AOrganizationType) |  [Persoon](#schema%3APerson) |  [Positie](#org%3APost) |  [Postadres](#schema%3APostalAddress) |  [Projectpartner](#haOrg%3AProjectPartner) |  [Rol](#org%3ARole) |  [Vestiging](#org%3ASite)
 ## <a id="schema%3AContactPoint"></a>Aanspreek-/meldpunt <small>[(schema:ContactPoint)](https://schema.org/ContactPoint)</small>
 
 
@@ -86,7 +83,7 @@ Een contentpartner is een organisatie die een samenwerkingovereenkomst heeft ond
 | <a id='haOrg%3ArequestForm'></a>aanvraagformulier <br> <small>[(haOrg:requestForm)](https://data.hetarchief.be/ns/organization/requestForm)</small> | Een link naar een formulier waarmee een gebruiker content kan aanvragen bij de contentpartner. | `0..*` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='haOrg%3AhasAccountManager'></a>heeft account manager <br> <small>[(haOrg:hasAccountManager)](https://data.hetarchief.be/ns/organization/hasAccountManager)</small> | De account manager van de contentpartner. | `1..1` | [Persoon](#schema%3APerson)  |
 | <a id='org%3Aidentifier'></a>heeft een identificator <br> <small>[(org:identifier)](http://www.w3.org/ns/org#identifier)</small> | Verwijst naar de unieke identificator van de contentpartner. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
-| <a id='haOrg%3AhasPreference'></a>verkiest <br> <small>[(haOrg:hasPreference)](https://data.hetarchief.be/ns/organization/hasPreference)</small> | Geeft een voorkeur van een organisatie weer met betrekking tot hun samenwerking met meemoo, bijvoorbeeld om een ​​bepaalde service al dan niet uit te voeren of toe te staan. | `0..*` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){:target="_blank"}  |
+| <a id='haOrg%3AhasPreference'></a>verkiest <br> <small>[(haOrg:hasPreference)](https://data.hetarchief.be/ns/organization/hasPreference)</small> | Geeft een voorkeur van een organisatie weer met betrekking tot hun samenwerking met meemoo, bijvoorbeeld om een ​​bepaalde service al dan niet uit te voeren of toe te staan. | `0..*` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){ target="_blank" }  |
 
 _Eigenschappen van [Organisatie](#org%3AOrganization):_  [aanspreekpunt](#schema%3AcontactPoint),  [alternatieve naam/label](#skos%3AaltLabel),  [beschrijving](#dct%3Adescription),  [classificatie](#org%3Aclassification),  [heeft account manager](#haOrg%3AhasAccountManager),  [heeft een eenheid](#org%3AhasUnit),  [heeft een identificator](#org%3Aidentifier),  [heeft positie](#org%3AhasPost),  [heeft primaire vestiging](#org%3AhasPrimarySite),  [heeft vestiging](#org%3AhasSite),  [homepagina](#foaf%3Ahomepage),  [hoofdlogo](#schema%3Alogo),  [logo](#haOrg%3AhasLogo),  [sector](#haOrg%3Asector),  [tenant naam](#mh%3AtenantName),  [voorkeursnaam/-label](#skos%3AprefLabel)
 

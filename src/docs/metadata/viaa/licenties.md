@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Licenties
-parent: VIAA Metadatamodel
 nav_order: 5
 ---
 

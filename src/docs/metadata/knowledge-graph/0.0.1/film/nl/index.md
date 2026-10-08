@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Datamodel Film"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -62,7 +59,7 @@ Datamodel voor de gedetailleerde beschrijving van Filmobjecten en hun componente
 ## Klassen & Eigenschappen
 
 **Klassen:** 
- [OpenCaptions](#ebucore%3AOpenCaptions) |  [Beeldspoel](#haDes%3AImageReel) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){:target="_blank"} |  [Drager representatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/nl#haObj%3ACarrierRepresentation){:target="_blank"} |  [Film](#haDes%3AFilm) |  [Geluidsfilm](#haDes%3ASoundFilm) |  [Geluidsspoel](#haDes%3AAudioReel) |  [Stomme film](#haDes%3ASilentFilm)
+ [OpenCaptions](#ebucore%3AOpenCaptions) |  [Beeldspoel](#haDes%3AImageReel) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){ target="_blank" } |  [Drager representatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/nl#haObj%3ACarrierRepresentation){ target="_blank" } |  [Film](#haDes%3AFilm) |  [Geluidsfilm](#haDes%3ASoundFilm) |  [Geluidsspoel](#haDes%3AAudioReel) |  [Stomme film](#haDes%3ASilentFilm)
 ## <a id="ebucore%3AOpenCaptions"></a>OpenCaptions <small>[(ebucore:OpenCaptions)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#OpenCaptions)</small>
 
 
@@ -80,7 +77,7 @@ Een speo van een analoge film drager die beeld bevat.
 | Eigenschap | Beschrijving | Kardinaliteit | Datatype |
 | :------ | :---------- | :---------- | :------- |
 | <a id='ebucore%3AhasCaptioning'></a>heeft (ingebedde) ondertiteling <br> <small>[(ebucore:hasCaptioning)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning)</small> | Geeft de (ingebedde) ondertiteling aan van een beeldrol/-spoel. | `0..*` | [OpenCaptions](#ebucore%3AOpenCaptions)  |
-| <a id='haDes%3AcoloringType'></a>type kleuring <br> <small>[(haDes:coloringType)](https://data.hetarchief.be/ns/description/coloringType)</small> | Indicatie van de kleuring van de beeldrol/-spoel. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){:target="_blank"} <br>_Mogelijke waarden: [`haCt:BandW`](https://data.hetarchief.be/id/color-type/BandW), [`haCt:Color`](https://data.hetarchief.be/id/color-type/Color), [`haCt:Colorized`](https://data.hetarchief.be/id/color-type/Colorized), [`haCt:Composite`](https://data.hetarchief.be/id/color-type/Composite), [`haCt:UnknownColorType`](https://data.hetarchief.be/id/color-type/UnknownColorType)_ |
+| <a id='haDes%3AcoloringType'></a>type kleuring <br> <small>[(haDes:coloringType)](https://data.hetarchief.be/ns/description/coloringType)</small> | Indicatie van de kleuring van de beeldrol/-spoel. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){ target="_blank" } <br>_Mogelijke waarden: [`haCt:BandW`](https://data.hetarchief.be/id/color-type/BandW), [`haCt:Color`](https://data.hetarchief.be/id/color-type/Color), [`haCt:Colorized`](https://data.hetarchief.be/id/color-type/Colorized), [`haCt:Composite`](https://data.hetarchief.be/id/color-type/Composite), [`haCt:UnknownColorType`](https://data.hetarchief.be/id/color-type/UnknownColorType)_ |
 
 ## <a id="haDes%3AFilm"></a>Film <small>[(haDes:Film)](https://data.hetarchief.be/ns/description/Film)</small>
 
@@ -96,7 +93,7 @@ Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk af
 
 | Eigenschap | Beschrijving | Kardinaliteit | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='haObj%3AhasCarrierCopy'></a>heeft dragerkopie <br> <small>[(haObj:hasCarrierCopy)](https://data.hetarchief.be/ns/object/hasCarrierCopy)</small> | De representatie opgeslagen op een fysieke drager. | `1..1` | [Drager representatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/nl#haObj%3ACarrierRepresentation){:target="_blank"}  |
+| <a id='haObj%3AhasCarrierCopy'></a>heeft dragerkopie <br> <small>[(haObj:hasCarrierCopy)](https://data.hetarchief.be/ns/object/hasCarrierCopy)</small> | De representatie opgeslagen op een fysieke drager. | `1..1` | [Drager representatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../audiovisual/nl#haObj%3ACarrierRepresentation){ target="_blank" }  |
 
 
 

@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Modèle de données Objets"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -66,7 +63,7 @@ Modèle de données pour décrire des objets.
 ## Classes & Propriétés
 
 **Classes:** 
- [Emplacement de stockage](#premis%3AStorageLocation) |  [Enregistrement Mediahaven](#mh%3ARecord) |  [Entité intellectuelle](#premis%3AIntellectualEntity) |  [Fichier](#premis%3AFile) |  [Fixité](#premis%3AFixity) |  [Format de fichier](#dct%3AFileFormat) |  [Fragment Mediahaven](#mh%3AFragment) |  [Identifiant local](#haObj%3ALocalIdentifier) |  [Objet](#premis%3AObject) |  [Porteur physique](#haObj%3APhysicalCarrier) |  [Représentation](#premis%3ARepresentation) |  [Représentation de porteur](#haObj%3ACarrierRepresentation) |  [Représentation digitale](#haObj%3ADigitalRepresentation) |  [Représentation fragment](#haObj%3AFragmentRepresentation) |  [Support de stockage](#premis%3AStorageMedium) |  [Valeur quantitative <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/fr#schema%3AQuantitativeValue){:target="_blank"}
+ [Emplacement de stockage](#premis%3AStorageLocation) |  [Enregistrement Mediahaven](#mh%3ARecord) |  [Entité intellectuelle](#premis%3AIntellectualEntity) |  [Fichier](#premis%3AFile) |  [Fixité](#premis%3AFixity) |  [Format de fichier](#dct%3AFileFormat) |  [Fragment Mediahaven](#mh%3AFragment) |  [Identifiant local](#haObj%3ALocalIdentifier) |  [Objet](#premis%3AObject) |  [Porteur physique](#haObj%3APhysicalCarrier) |  [Représentation](#premis%3ARepresentation) |  [Représentation de porteur](#haObj%3ACarrierRepresentation) |  [Représentation digitale](#haObj%3ADigitalRepresentation) |  [Représentation fragment](#haObj%3AFragmentRepresentation) |  [Support de stockage](#premis%3AStorageMedium) |  [Valeur quantitative <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/fr#schema%3AQuantitativeValue){ target="_blank" }
 ## <a id="premis%3AStorageLocation"></a>Emplacement de stockage <small>[(premis:StorageLocation)](http://www.loc.gov/premis/rdf/v3/StorageLocation)</small>
 
 
@@ -143,8 +140,8 @@ Séquence nommée et ordonnée d'octets/bytes connue par un système d'exploitat
 | <a id='edm%3AisNextInSequence'></a>fichier suivant dans l'ordre <br> <small>[(edm:isNextInSequence)](http://www.europeana.eu/schemas/edm/isNextInSequence)</small> | Le fichier qui suit sur ce fichier. | `0..1` | [Fichier](#premis%3AFile)  |
 | <a id='premis%3Afixity'></a>fixity <br> <small>[(premis:fixity)](http://www.loc.gov/premis/rdf/v3/fixity)</small> | La somme de contrôle de fixité calculée du fichier. | `0..1` | [Fixité](#premis%3AFixity)  |
 | <a id='dct%3Aformat'></a>format <br> <small>[(dct:format)](http://purl.org/dc/terms/format)</small> | Le format de fichier du fichier. | `0..1` | [Format de fichier](#dct%3AFileFormat)  |
-| <a id='schema%3Aheight'></a>hauteur <br> <small>[(schema:height)](https://schema.org/height)</small> | La hauteur d'un fichier | `0..1` | [Valeur quantitative <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/fr#schema%3AQuantitativeValue){:target="_blank"}  |
-| <a id='schema%3Awidth'></a>largeur <br> <small>[(schema:width)](https://schema.org/width)</small> | La largeur d'un fichier. | `0..1` | [Valeur quantitative <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/fr#schema%3AQuantitativeValue){:target="_blank"}  |
+| <a id='schema%3Aheight'></a>hauteur <br> <small>[(schema:height)](https://schema.org/height)</small> | La hauteur d'un fichier | `0..1` | [Valeur quantitative <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/fr#schema%3AQuantitativeValue){ target="_blank" }  |
+| <a id='schema%3Awidth'></a>largeur <br> <small>[(schema:width)](https://schema.org/width)</small> | La largeur d'un fichier. | `0..1` | [Valeur quantitative <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/fr#schema%3AQuantitativeValue){ target="_blank" }  |
 | <a id='ebucore%3AhasMimeType'></a>mime type <br> <small>[(ebucore:hasMimeType)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType)</small> | Le type MIME ou le type de média IANA du fichier. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='premis%3AoriginalName'></a>porte le nom d'origine <br> <small>[(premis:originalName)](http://www.loc.gov/premis/rdf/v3/originalName)</small> | Le nom d'origine de ce fichier. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='rel%3Asup'></a>remplace <br> <small>[(rel:sup)](http://id.loc.gov/vocabulary/preservation/relationshipSubType/sup)</small> | Le fichier qui remplace ou succède à ce fichier. | `0..*` | [Fichier](#premis%3AFile)  |

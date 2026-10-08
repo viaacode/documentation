@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Modèle de données Objets d'archive audiovisuelle"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -59,7 +56,7 @@ Modèle de données pour décrire le contenu des objets audiovisuels.
 ## Classes & Propriétés
 
 **Classes:** 
- [Audio](#haDes%3AAudio) |  [Chapitre DVD](#haDes%3ADVDChapter) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){:target="_blank"} |  [DVD](#haDes%3ADVD) |  [Image](#haDes%3AImage) |  [Porteur physique](#haObj%3APhysicalCarrier) |  [Représentation de porteur](#haObj%3ACarrierRepresentation) |  [Vidéo](#haDes%3AVideo)
+ [Audio](#haDes%3AAudio) |  [Chapitre DVD](#haDes%3ADVDChapter) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){ target="_blank" } |  [DVD](#haDes%3ADVD) |  [Image](#haDes%3AImage) |  [Porteur physique](#haObj%3APhysicalCarrier) |  [Représentation de porteur](#haObj%3ACarrierRepresentation) |  [Vidéo](#haDes%3AVideo)
 ## <a id="haDes%3AAudio"></a>Audio <small>[(haDes:Audio)](https://data.hetarchief.be/ns/description/Audio)</small>
 
 
@@ -125,9 +122,9 @@ Un porteur physique dans lequel les données, le son, les images, etc., sont sto
 
 | Propriété | Description | Cardinalité | Type de données |
 | :------ | :---------- | :---------- | :------- |
-| <a id='haDes%3Aiec60094Type'></a>iec-60094 type <br> <small>[(haDes:iec60094Type)](https://data.hetarchief.be/ns/description/iec60094Type)</small> | Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){:target="_blank"} <br>_Valeurs possibles: [`<https://data.hetarchief.be/id/iec60094-type/I>`](https://data.hetarchief.be/id/iec60094-type/I), [`<https://data.hetarchief.be/id/iec60094-type/II>`](https://data.hetarchief.be/id/iec60094-type/II), [`<https://data.hetarchief.be/id/iec60094-type/III>`](https://data.hetarchief.be/id/iec60094-type/III), [`<https://data.hetarchief.be/id/iec60094-type/IV>`](https://data.hetarchief.be/id/iec60094-type/IV)_ |
+| <a id='haDes%3Aiec60094Type'></a>iec-60094 type <br> <small>[(haDes:iec60094Type)](https://data.hetarchief.be/ns/description/iec60094Type)</small> | Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){ target="_blank" } <br>_Valeurs possibles: [`<https://data.hetarchief.be/id/iec60094-type/I>`](https://data.hetarchief.be/id/iec60094-type/I), [`<https://data.hetarchief.be/id/iec60094-type/II>`](https://data.hetarchief.be/id/iec60094-type/II), [`<https://data.hetarchief.be/id/iec60094-type/III>`](https://data.hetarchief.be/id/iec60094-type/III), [`<https://data.hetarchief.be/id/iec60094-type/IV>`](https://data.hetarchief.be/id/iec60094-type/IV)_ |
 | <a id='haDes%3AaudioNoiseReduction'></a>réduction du bruit audio <br> <small>[(haDes:audioNoiseReduction)](https://data.hetarchief.be/ns/description/audioNoiseReduction)</small> | La technologie utilisée pour la réduction du bruit de l'audio. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) <br>_Valeurs possibles: [`"DBX"`](DBX), [`"Dolby A"`](Dolby A), [`"Dolby B"`](Dolby B), [`"Dolby C"`](Dolby C), [`"Dolby D"`](Dolby D)_ |
-| <a id='haDes%3AaudioRecordingSpeed'></a>vitesse d'enregistrement audio <br> <small>[(haDes:audioRecordingSpeed)](https://data.hetarchief.be/ns/description/audioRecordingSpeed)</small> | La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement gramophone est enregistré. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){:target="_blank"}  |
+| <a id='haDes%3AaudioRecordingSpeed'></a>vitesse d'enregistrement audio <br> <small>[(haDes:audioRecordingSpeed)](https://data.hetarchief.be/ns/description/audioRecordingSpeed)</small> | La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement gramophone est enregistré. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){ target="_blank" }  |
 
 
 

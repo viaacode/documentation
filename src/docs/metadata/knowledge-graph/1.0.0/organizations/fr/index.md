@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Modèle de données Organisations"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -56,7 +53,7 @@ Modèle de données pour décrire des organisations.
 ## Classes & Propriétés
 
 **Classes:** 
- [Adresse postale](#schema%3APostalAddress) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/fr#skos%3AConcept){:target="_blank"} |  [Consomatteur de services](#haOrg%3AServiceConsumer) |  [Fournisseur de services](#haOrg%3AServiceProvider) |  [Logo](#haOrg%3ALogo) |  [Organisation](#org%3AOrganization) |  [Partenaire de contenus](#haOrg%3AContentPartner) |  [Partenaire de digitalisation](#haOrg%3ADigitizationPartner) |  [Partenaire de projet](#haOrg%3AProjectPartner) |  [Partenaire éducatif](#haOrg%3AEducationalPartner) |  [Pays](#schema%3ACountry) |  [Personne](#schema%3APerson) |  [Point de contact](#schema%3AContactPoint) |  [Poste](#org%3APost) |  [Rôle](#org%3ARole) |  [Site](#org%3ASite) |  [Type de organisation](#haOrg%3AOrganizationType) |  [Unité opérationnelle](#org%3AOrganizationalUnit)
+ [Adresse postale](#schema%3APostalAddress) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/fr#skos%3AConcept){ target="_blank" } |  [Consomatteur de services](#haOrg%3AServiceConsumer) |  [Fournisseur de services](#haOrg%3AServiceProvider) |  [Logo](#haOrg%3ALogo) |  [Organisation](#org%3AOrganization) |  [Partenaire de contenus](#haOrg%3AContentPartner) |  [Partenaire de digitalisation](#haOrg%3ADigitizationPartner) |  [Partenaire de projet](#haOrg%3AProjectPartner) |  [Partenaire éducatif](#haOrg%3AEducationalPartner) |  [Pays](#schema%3ACountry) |  [Personne](#schema%3APerson) |  [Point de contact](#schema%3AContactPoint) |  [Poste](#org%3APost) |  [Rôle](#org%3ARole) |  [Site](#org%3ASite) |  [Type de organisation](#haOrg%3AOrganizationType) |  [Unité opérationnelle](#org%3AOrganizationalUnit)
 ## <a id="schema%3APostalAddress"></a>Adresse postale <small>[(schema:PostalAddress)](https://schema.org/PostalAddress)</small>
 
 
@@ -158,7 +155,7 @@ Un partenaire de contenu est une organisation qui a signé une convention de col
 | <a id='haOrg%3AhasAccountManager'></a>a gestionnaire de comptes <br> <small>[(haOrg:hasAccountManager)](https://data.hetarchief.be/ns/organization/hasAccountManager)</small> | Le gestionnaire de comptes de l'contentpartner. | `1..1` | [Personne](#schema%3APerson)  |
 | <a id='haOrg%3ArequestForm'></a>formulaire de demande <br> <small>[(haOrg:requestForm)](https://data.hetarchief.be/ns/organization/requestForm)</small> | Un lien vers un formulaire avec lequel un utilisateur peut demander du contenu au partenaire de contenu. | `0..*` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='org%3Aidentifier'></a>identifiant <br> <small>[(org:identifier)](http://www.w3.org/ns/org#identifier)</small> | Indique l'identifiant unique du partenaire de contenus. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
-| <a id='haOrg%3AhasPreference'></a>préfère <br> <small>[(haOrg:hasPreference)](https://data.hetarchief.be/ns/organization/hasPreference)</small> | Exprime une préférence d'une organisation concernant sa collaboration avec meemoo, par exemple s'il faut ou non exécuter ou autoriser un certain service. | `0..*` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/fr#skos%3AConcept){:target="_blank"}  |
+| <a id='haOrg%3AhasPreference'></a>préfère <br> <small>[(haOrg:hasPreference)](https://data.hetarchief.be/ns/organization/hasPreference)</small> | Exprime une préférence d'une organisation concernant sa collaboration avec meemoo, par exemple s'il faut ou non exécuter ou autoriser un certain service. | `0..*` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../rights/fr#skos%3AConcept){ target="_blank" }  |
 
 _Propriétés de [Organisation](#org%3AOrganization):_  [a gestionnaire de comptes](#haOrg%3AhasAccountManager),  [a un site](#org%3AhasSite),  [a un site principal](#org%3AhasPrimarySite),  [classification](#org%3Aclassification),  [description](#dct%3Adescription),  [identifiant](#org%3Aidentifier),  [label alternatif](#skos%3AaltLabel),  [label préféré](#skos%3AprefLabel),  [logo](#haOrg%3AhasLogo),  [logo principal](#schema%3Alogo),  [nom du locataire](#mh%3AtenantName),  [page d'accueil](#foaf%3Ahomepage),  [point de contact](#schema%3AcontactPoint),  [possède un poste](#org%3AhasPost),  [possède une Unité](#org%3AhasUnit),  [secteur](#haOrg%3Asector)
 
