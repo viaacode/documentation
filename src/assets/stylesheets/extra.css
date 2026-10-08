@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "SofiaPro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://meemoo.be/fonts/3AFA78_2_0.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SofiaPro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("https://meemoo.be/fonts/3AFA78_3_0.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SofiaPro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://meemoo.be/fonts/3AFA78_0_0.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SofiaPro";
+  font-style: italic;
+  font-weight: 700;
+  src: url("https://meemoo.be/fonts/3AFA78_1_0.woff2") format("woff2");
+}
+
+:root {
+  --md-primary-fg-color: #009690;
+  --md-accent-fg-color: #009690;
+  --md-text-font: "SofiaPro";
+}
+
+.md-content__inner {
+  max-width: 900px;
+}
+
+.md-typeset figure {
+  border: 1px solid #ccc;
+  padding: 4px;
+  text-align: center;
+}
+
+.md-typeset figcaption {
+  font-style: italic;
+  padding: 2px;
+}
+
+.md-typeset .label {
+  border-radius: 0.2rem;
+  color: #111;
+  display: inline-block;
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.25em 0.4em;
+  vertical-align: middle;
+}
+
+.md-typeset .label-yellow { background: #ffd859; }
+.md-typeset .label-blue { background: #72c5e8; }
+.md-typeset .label-green { background: #83d17a; }
+.md-typeset .label-orange { background: #f5a623; }
+.md-typeset .label-red { background: #ef6f6c; }
