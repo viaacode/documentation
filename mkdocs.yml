@@ -1,0 +1,234 @@
+site_name: Developer documentatie meemoo
+site_url: https://developer.meemoo.be/
+docs_dir: src
+site_dir: site
+use_directory_urls: false
+strict: true
+
+watch:
+  - src/docs/diginstroom/sip/2.1/_data
+  - src/docs/diginstroom/sip/3.0/_data
+
+theme:
+  name: material
+  language: nl
+  logo: assets/meemoo-logo_lockup-pos-rgb.svg
+  favicon: favicon.ico
+  features:
+    - navigation.indexes
+    - navigation.path
+    - navigation.sections
+    - content.code.copy
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: [nl, en]
+  - macros:
+      render_by_default: false
+      force_render_paths: |
+        docs/diginstroom/sip/2.1/
+        docs/diginstroom/sip/3.0/
+      include_dir: src
+      on_error_fail: true
+      on_undefined: strict
+      include_yaml:
+        - sip_2_1_basic: src/docs/diginstroom/sip/2.1/_data/BASIC_PROFILE.json
+        - sip_2_1_bibliographic: src/docs/diginstroom/sip/2.1/_data/BIBLIOGRAPHIC_PROFILE.json
+        - sip_2_1_film: src/docs/diginstroom/sip/2.1/_data/FILM_PROFILE.json
+        - sip_2_1_general: src/docs/diginstroom/sip/2.1/_data/GENERAL.json
+        - sip_2_1_material_artwork: src/docs/diginstroom/sip/2.1/_data/MATERIAL_ARTWORK_PROFILE.json
+        - sip_3_0_basic: src/docs/diginstroom/sip/3.0/_data/BASIC_PROFILE.json
+        - sip_3_0_bibliographic: src/docs/diginstroom/sip/3.0/_data/BIBLIOGRAPHIC_PROFILE.json
+        - sip_3_0_film: src/docs/diginstroom/sip/3.0/_data/FILM_PROFILE.json
+        - sip_3_0_general: src/docs/diginstroom/sip/3.0/_data/GENERAL.json
+        - sip_3_0_material_artwork: src/docs/diginstroom/sip/3.0/_data/MATERIAL_ARTWORK_PROFILE.json
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Metadata:
+      - docs/metadata/index.md
+      - VIAA Metadatamodel:
+          - docs/metadata/viaa/index.md
+          - "Velden: Algemeen": docs/metadata/viaa/algemeen.md
+          - "Velden: Registratie dragers": docs/metadata/viaa/registratie.md
+          - "Velden: Digitaliseringsproces": docs/metadata/viaa/digitalisering.md
+          - Datatypes: docs/metadata/viaa/datatypes.md
+          - Licenties: docs/metadata/viaa/licenties.md
+      - Knowledge Graph:
+          - docs/metadata/knowledge-graph/index.md
+          - Objecten: docs/metadata/knowledge-graph/1.0.0/objects/en/index.md
+          - Organisaties: docs/metadata/knowledge-graph/1.0.0/organizations/en/index.md
+          - Descriptie: docs/metadata/knowledge-graph/1.1.0/description/en/index.md
+          - Data herkomst: docs/metadata/knowledge-graph/1.0.0/events/en/index.md
+          - Termenlijsten: docs/metadata/knowledge-graph/1.0.0/terms/en/index.md
+          - Rechten: docs/metadata/knowledge-graph/1.1.0/rights/en/index.md
+  - Digitale instroom:
+      - docs/diginstroom/index.md
+      - SIP Specification:
+          - docs/diginstroom/sip/index.md
+          - "2.1":
+              - docs/diginstroom/sip/2.1/index.md
+              - Introduction: docs/diginstroom/sip/2.1/1_introduction.md
+              - Terminology: docs/diginstroom/sip/2.1/2_terminology.md
+              - Core concepts: docs/diginstroom/sip/2.1/3_core-concepts.md
+              - Structure:
+                  - docs/diginstroom/sip/2.1/sip_structure/index.md
+                  - Package level: docs/diginstroom/sip/2.1/sip_structure/5_structure_package.md
+                  - Representation level: docs/diginstroom/sip/2.1/sip_structure/6_structure_representation.md
+              - Profiles:
+                  - docs/diginstroom/sip/2.1/profiles/index.md
+                  - Basic: docs/diginstroom/sip/2.1/profiles/basic.md
+                  - Bibliographic: docs/diginstroom/sip/2.1/profiles/bibliographic.md
+                  - Material artwork: docs/diginstroom/sip/2.1/profiles/material-artwork.md
+                  - Film: docs/diginstroom/sip/2.1/profiles/film.md
+              - Use cases:
+                  - docs/diginstroom/sip/2.1/usecases/index.md
+                  - Single file: docs/diginstroom/sip/2.1/usecases/single-file.md
+                  - Video file with subtitles: docs/diginstroom/sip/2.1/usecases/video-with-subtitles.md
+                  - Newspaper edition (with PDF): docs/diginstroom/sip/2.1/usecases/newspaper-pdf.md
+                  - Newspaper edition (without PDF): docs/diginstroom/sip/2.1/usecases/newspaper.md
+                  - Two-dimensional artwork: docs/diginstroom/sip/2.1/usecases/2d-artwork.md
+                  - Gigapixel artwork: docs/diginstroom/sip/2.1/usecases/gigapixel-artwork.md
+                  - Scan of a three-dimensional artwork: docs/diginstroom/sip/2.1/usecases/3d-scan.md
+          - "2.0":
+              - docs/diginstroom/sip/2.0/index.md
+              - Introduction: docs/diginstroom/sip/2.0/1_introduction.md
+              - Terminology: docs/diginstroom/sip/2.0/2_terminology.md
+              - Core concepts: docs/diginstroom/sip/2.0/3_core-concepts.md
+              - Structure:
+                  - docs/diginstroom/sip/2.0/sip_structure/index.md
+                  - Package level: docs/diginstroom/sip/2.0/sip_structure/5_structure_package.md
+                  - Representation level: docs/diginstroom/sip/2.0/sip_structure/6_structure_representation.md
+              - Profiles:
+                  - docs/diginstroom/sip/2.0/profiles/index.md
+                  - Basic: docs/diginstroom/sip/2.0/profiles/basic.md
+                  - Bibliographic: docs/diginstroom/sip/2.0/profiles/bibliographic.md
+                  - Material artwork: docs/diginstroom/sip/2.0/profiles/material-artwork.md
+              - Use cases:
+                  - docs/diginstroom/sip/2.0/usecases/index.md
+                  - Single file: docs/diginstroom/sip/2.0/usecases/single-file.md
+                  - Video file with subtitles: docs/diginstroom/sip/2.0/usecases/video-with-subtitles.md
+                  - Newspaper edition (with PDF): docs/diginstroom/sip/2.0/usecases/newspaper-pdf.md
+                  - Newspaper edition (without PDF): docs/diginstroom/sip/2.0/usecases/newspaper.md
+                  - Two-dimensional artwork: docs/diginstroom/sip/2.0/usecases/2d-artwork.md
+                  - Gigapixel artwork: docs/diginstroom/sip/2.0/usecases/gigapixel-artwork.md
+                  - Scan of a three-dimensional artwork: docs/diginstroom/sip/2.0/usecases/3d-scan.md
+          - "1.2":
+              - docs/diginstroom/sip/1.2/index.md
+              - Introduction: docs/diginstroom/sip/1.2/1_introduction.md
+              - Terminology: docs/diginstroom/sip/1.2/2_terminology.md
+              - Core concepts: docs/diginstroom/sip/1.2/3_core-concepts.md
+              - Structure:
+                  - docs/diginstroom/sip/1.2/sip_structure/index.md
+                  - Bag level: docs/diginstroom/sip/1.2/sip_structure/4_structure_bag.md
+                  - Package level: docs/diginstroom/sip/1.2/sip_structure/5_structure_package.md
+                  - Representation level: docs/diginstroom/sip/1.2/sip_structure/6_structure_representation.md
+              - Profiles:
+                  - docs/diginstroom/sip/1.2/profiles/index.md
+                  - Basic: docs/diginstroom/sip/1.2/profiles/basic.md
+                  - Bibliographic: docs/diginstroom/sip/1.2/profiles/bibliographic.md
+                  - Material artwork: docs/diginstroom/sip/1.2/profiles/material-artwork.md
+              - Use cases:
+                  - docs/diginstroom/sip/1.2/usecases/index.md
+                  - Single file: docs/diginstroom/sip/1.2/usecases/single-file.md
+                  - Video file with subtitles: docs/diginstroom/sip/1.2/usecases/video-with-subtitles.md
+                  - Newspaper edition (with PDF): docs/diginstroom/sip/1.2/usecases/newspaper-pdf.md
+                  - Newspaper edition (without PDF): docs/diginstroom/sip/1.2/usecases/newspaper.md
+                  - Two-dimensional artwork: docs/diginstroom/sip/1.2/usecases/2d-artwork.md
+                  - Gigapixel artwork: docs/diginstroom/sip/1.2/usecases/gigapixel-artwork.md
+                  - Scan of a three-dimensional artwork: docs/diginstroom/sip/1.2/usecases/3d-scan.md
+          - "1.1":
+              - docs/diginstroom/sip/1.1/index.md
+              - Introduction: docs/diginstroom/sip/1.1/1_introduction.md
+              - Terminology: docs/diginstroom/sip/1.1/2_terminology.md
+              - Core concepts: docs/diginstroom/sip/1.1/3_core-concepts.md
+              - Structure:
+                  - docs/diginstroom/sip/1.1/sip_structure/index.md
+                  - Bag level: docs/diginstroom/sip/1.1/sip_structure/4_structure_bag.md
+                  - Package level: docs/diginstroom/sip/1.1/sip_structure/5_structure_package.md
+                  - Representation level: docs/diginstroom/sip/1.1/sip_structure/6_structure_representation.md
+              - Profiles:
+                  - docs/diginstroom/sip/1.1/profiles/index.md
+                  - Basic: docs/diginstroom/sip/1.1/profiles/basic.md
+                  - Newspaper: docs/diginstroom/sip/1.1/profiles/newspaper.md
+                  - Material artwork: docs/diginstroom/sip/1.1/profiles/material-artwork.md
+              - Use cases:
+                  - docs/diginstroom/sip/1.1/usecases/index.md
+                  - Single file: docs/diginstroom/sip/1.1/usecases/single-file.md
+                  - Video file with subtitles: docs/diginstroom/sip/1.1/usecases/video-with-subtitles.md
+                  - Newspaper edition (with PDF): docs/diginstroom/sip/1.1/usecases/newspaper-pdf.md
+                  - Newspaper edition (without PDF): docs/diginstroom/sip/1.1/usecases/newspaper.md
+                  - Two-dimensional artwork: docs/diginstroom/sip/1.1/usecases/2d-artwork.md
+                  - Gigapixel artwork: docs/diginstroom/sip/1.1/usecases/gigapixel-artwork.md
+                  - Scan of a three-dimensional artwork: docs/diginstroom/sip/1.1/usecases/3d-scan.md
+          - "1.0":
+              - docs/diginstroom/sip/1.0/index.md
+              - Introduction: docs/diginstroom/sip/1.0/1_introduction.md
+              - Terminology: docs/diginstroom/sip/1.0/2_terminology.md
+              - Core concepts: docs/diginstroom/sip/1.0/3_core-concepts.md
+              - Structure:
+                  - docs/diginstroom/sip/1.0/sip_structure/index.md
+                  - Bag level: docs/diginstroom/sip/1.0/sip_structure/4_structure_bag.md
+                  - Package level: docs/diginstroom/sip/1.0/sip_structure/5_structure_package.md
+                  - Representation level: docs/diginstroom/sip/1.0/sip_structure/6_structure_representation.md
+              - Profiles:
+                  - docs/diginstroom/sip/1.0/profiles/index.md
+                  - Basic: docs/diginstroom/sip/1.0/profiles/basic.md
+              - Use cases:
+                  - docs/diginstroom/sip/1.0/usecases/index.md
+                  - Single file: docs/diginstroom/sip/1.0/usecases/single-file.md
+                  - Video file with subtitles: docs/diginstroom/sip/1.0/usecases/video-with-subtitles.md
+      - Aanlevering van SIPs: docs/diginstroom/aanlevering-van-sips.md
+  - Een integratie ontwikkelen:
+      - docs/integratie/index.md
+      - REST API v1 en v2: docs/integratie/rest-api.md
+      - OAI-PMH: docs/integratie/oai-pmh.md
+      - IIIF 3.0 Image API: docs/integratie/iiif.md
+      - Organizations API: /docs/integratie/org-api/
+      - Webhook Status Events: docs/integratie/webhook-status-events.md
+      - AI metadata API: docs/integratie/ai-metadata-api.md
+
+not_in_nav: |
+  assets/sip_assets/README.md
+  docs/diginstroom/sip/3.0/**
+  docs/metadata/knowledge-graph/0.0.1/**
+  docs/metadata/knowledge-graph/**/fr/**
+  docs/metadata/knowledge-graph/**/nl/**
+  docs/metadata/knowledge-graph/1.0.0/audiovisual/**
+  docs/metadata/knowledge-graph/1.0.0/bibliographic/**
+  docs/metadata/knowledge-graph/1.0.0/description/**
+  docs/metadata/knowledge-graph/1.0.0/film/**
+  docs/metadata/knowledge-graph/1.1.0/audiovisual/**
+
+exclude_docs: |
+  **/_data/**
+  **/*.j2
+  **/.github/**
+  docs/diginstroom/sip/*/README.md
+  **/scripts/**
+  **/tests/**
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: info
+    absolute_links: relative_to_docs
+  links:
+    # Phase 4 performs full legacy-link and fragment validation.
+    not_found: info
+    absolute_links: relative_to_docs
+    unrecognized_links: info
+    anchors: info
