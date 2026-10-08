@@ -1,22 +1,7 @@
 ---
-layout: default
 title: Aanlevering van SIPs
-parent: Digitale instroom
-has_children: false
-has_toc: true
 nav_order: 2
-last_modified_date: 2024-01-25T11:15:40+0100
 ---
-
-<details markdown="block">
-  <summary>
-    Inhoudstafel
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 
 # Introductie
 
@@ -24,7 +9,7 @@ Deze pagina beschrijft hoe een meemoo-SIP aan te leveren via S3.
 
 # Vooraf
 
-* Je kan meemoo-SIPs maken (zie: [docs/diginstroom/sip/]({{ site.baseurl }}{% link docs/diginstroom/sip/index.md %})).
+* Je kan meemoo-SIPs maken (zie: [docs/diginstroom/sip/](sip/index.md)).
 * Je hebt een S3-bucket aangevraagd via [support@meemoo.be](mailto:support@meemoo.be).
 
 # S3-token aanvragen
@@ -106,8 +91,9 @@ De gebruikersnaam waarmee je een S3-token aanvraagt is: `common name+or-id`. Bij
 Jef Metdepet+or-123abcd
 ```
 
-{: .important }
-**Let op**: zet het `or`\-gedeelte van je OR-id om in kleine letters! `OR-123abcd` moet dus `or-123abcd` worden.
+!!! important
+
+    **Let op**: zet het `or`\-gedeelte van je OR-id om in kleine letters! `OR-123abcd` moet dus `or-123abcd` worden.
 
 Een token vraag je aan via een POST-call naar het token-endpoint per omgeving:
 
@@ -144,8 +130,9 @@ Een token vraag je aan via een POST-call naar het token-endpoint per omgeving:
   </tbody>
 </table>
 
-{: .important }
-**Let op**: de INT-omgeving is niet publiek bereikbaar! Wens je hiervoor een token aan te vragen, neem dan contact op met meemoo via [support@meemoo.be](mailto:support@meemoo.be).
+!!! important
+
+    **Let op**: de INT-omgeving is niet publiek bereikbaar! Wens je hiervoor een token aan te vragen, neem dan contact op met meemoo via [support@meemoo.be](mailto:support@meemoo.be).
 
 Om voor een gebruiker een token aan te vragen, voer je een POST-call uit met de nodige metadata als headers naar het endpoint van de omgeving waarvoor je een token wil aanvragen.
 

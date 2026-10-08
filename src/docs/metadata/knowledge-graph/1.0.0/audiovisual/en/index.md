@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Data model Audiovisual archive objects"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -59,7 +56,7 @@ Data model to describe the content of audiovisual objects.
 ## Classes & Properties
 
 **Classes:** 
- [Audio](#haDes%3AAudio) |  [Carrier representation](#haObj%3ACarrierRepresentation) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/en#skos%3AConcept){:target="_blank"} |  [DVD](#haDes%3ADVD) |  [DVD chapter](#haDes%3ADVDChapter) |  [Image](#haDes%3AImage) |  [Physical carrier](#haObj%3APhysicalCarrier) |  [Video](#haDes%3AVideo)
+ [Audio](#haDes%3AAudio) |  [Carrier representation](#haObj%3ACarrierRepresentation) |  [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/en#skos%3AConcept){ target="_blank" } |  [DVD](#haDes%3ADVD) |  [DVD chapter](#haDes%3ADVDChapter) |  [Image](#haDes%3AImage) |  [Physical carrier](#haObj%3APhysicalCarrier) |  [Video](#haDes%3AVideo)
 ## <a id="haDes%3AAudio"></a>Audio <small>[(haDes:Audio)](https://data.hetarchief.be/ns/description/Audio)</small>
 
 
@@ -141,8 +138,8 @@ A physical carrier in which data, sound, images, etc., are stored.  For certain 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
 | <a id='haDes%3AaudioNoiseReduction'></a>audio noise reduction <br> <small>[(haDes:audioNoiseReduction)](https://data.hetarchief.be/ns/description/audioNoiseReduction)</small> | The technology used for noise reduction in audio. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) <br>_Possible values: [`"DBX"`](DBX), [`"Dolby A"`](Dolby A), [`"Dolby B"`](Dolby B), [`"Dolby C"`](Dolby C), [`"Dolby D"`](Dolby D)_ |
-| <a id='haDes%3AaudioRecordingSpeed'></a>audio recording speed <br> <small>[(haDes:audioRecordingSpeed)](https://data.hetarchief.be/ns/description/audioRecordingSpeed)</small> | The speed with which open reel audio or a gramophone record is recorded. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/en#skos%3AConcept){:target="_blank"}  |
-| <a id='haDes%3Aiec60094Type'></a>iec-60094 type <br> <small>[(haDes:iec60094Type)](https://data.hetarchief.be/ns/description/iec60094Type)</small> | The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/en#skos%3AConcept){:target="_blank"} <br>_Possible values: [`<https://data.hetarchief.be/id/iec60094-type/I>`](https://data.hetarchief.be/id/iec60094-type/I), [`<https://data.hetarchief.be/id/iec60094-type/II>`](https://data.hetarchief.be/id/iec60094-type/II), [`<https://data.hetarchief.be/id/iec60094-type/III>`](https://data.hetarchief.be/id/iec60094-type/III), [`<https://data.hetarchief.be/id/iec60094-type/IV>`](https://data.hetarchief.be/id/iec60094-type/IV)_ |
+| <a id='haDes%3AaudioRecordingSpeed'></a>audio recording speed <br> <small>[(haDes:audioRecordingSpeed)](https://data.hetarchief.be/ns/description/audioRecordingSpeed)</small> | The speed with which open reel audio or a gramophone record is recorded. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/en#skos%3AConcept){ target="_blank" }  |
+| <a id='haDes%3Aiec60094Type'></a>iec-60094 type <br> <small>[(haDes:iec60094Type)](https://data.hetarchief.be/ns/description/iec60094Type)</small> | The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/en#skos%3AConcept){ target="_blank" } <br>_Possible values: [`<https://data.hetarchief.be/id/iec60094-type/I>`](https://data.hetarchief.be/id/iec60094-type/I), [`<https://data.hetarchief.be/id/iec60094-type/II>`](https://data.hetarchief.be/id/iec60094-type/II), [`<https://data.hetarchief.be/id/iec60094-type/III>`](https://data.hetarchief.be/id/iec60094-type/III), [`<https://data.hetarchief.be/id/iec60094-type/IV>`](https://data.hetarchief.be/id/iec60094-type/IV)_ |
 
 
 

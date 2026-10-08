@@ -1,21 +1,7 @@
 ---
-layout: default
 title: AI metadata API
-parent: Een integratie ontwikkelen
-has_children: false
-has_toc: true
 nav_order: 8
-last_modified_date: 2026-07-13
 ---
-
-<details markdown="block">
-  <summary>
-    Inhoudstafel
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 Versie: `v1.1.1`
 

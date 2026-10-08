@@ -1,24 +1,13 @@
 ---
-layout: default
 title: "Velden: Digitaliseringsproces"
-parent: VIAA Metadatamodel
 nav_order: 3
 ---
 
-{: .fw-300 }
 Deze velden worden gebruikt door de digitaliseringspartners van meemoo in kader van het digitaliseringsproject.
 
-{: .important }
-Deze pagina dient louter ter documentatie van de relevante velden bij digitalisering. Onderstaande velden kunnen dus niet gebruikt worden bij bv. een digitaal instroomproces.
+!!! important
 
-<details markdown="block">
-  <summary>
-    Inhoudstafel
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+    Deze pagina dient louter ter documentatie van de relevante velden bij digitalisering. Onderstaande velden kunnen dus niet gebruikt worden bij bv. een digitaal instroomproces.
 
 # Digitaliseringspartner
 
@@ -387,7 +376,7 @@ Het aantal geluidssporen dat op de drager werd vastgelegd.
 
 ## PID
 
-{: #pid}
+<a id="pid"></a>
 
 De *Persistent Identifier*. Een door meemoo toegekende unieke naam.
 

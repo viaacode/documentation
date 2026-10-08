@@ -1,27 +1,13 @@
 ---
-layout: default
 title: REST API v1 en v2
-parent: Een integratie ontwikkelen
-has_children: false
-has_toc: true
 nav_order: 1
-last_modified_date: 2021-04-19T09:27:33+02:00
 ---
-
-<details markdown="block">
-  <summary>
-    Inhoudstafel
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 
 # REST API v1 vs v2
 
-{: .note }
-Opgelet: de REST API versie 1 werd uitgefaseerd en is vanaf 1 juni '23 niet meer ondersteund!
+!!! note
+
+    Opgelet: de REST API versie 1 werd uitgefaseerd en is vanaf 1 juni '23 niet meer ondersteund!
 
 MediaHaven biedt sinds het begin een REST API aan om bewerkingen uit te kunnen
 voeren op mediaobjecten. Vanaf MediaHaven versie 21.1 (uitgebracht op 16 april
@@ -52,8 +38,7 @@ de v2 van de REST API te bereiken. Concreet:
 
 **Note**: Dit zijn de _endpoints_ voor de productieomgeving! Voor een
 beschrijving van de verschillende omgevingen en hun _endpoints_, zie [Alles om te
-starten met het bouwen van een integratie]({{ site.baseurl }}{% link
-docs/integratie/index.md %}).
+starten met het bouwen van een integratie](index.md).
 
 ## Verschillen tussen REST API v1 en v2
 
@@ -97,8 +82,7 @@ via de `Authorization` _header_ maar met de  `Bearer` prefix, bijvoorbeeld:
     Authorization: Bearer RsT5OjbzRn430zqMLgV3Ia
 
 Op deze pagina vind je meer informatie over de OAuth2 authenticatie: [Alles om
-te starten met het bouwen van een integratie]({{ site.baseurl }}{% link
-docs/integratie/index.md %}).
+te starten met het bouwen van een integratie](index.md).
 
 **Waarom is dit belangrijk?** Integraties gebaseerd op REST API v1 zullen niet
 meer werken aangezien ze niet meer geauthenticeerd zijn.

@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Datamodel Objecten"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -66,7 +63,7 @@ Datamodel voor het beschrijven van objecten.
 ## Klassen & Eigenschappen
 
 **Klassen:** 
- [Bestand](#premis%3AFile) |  [Bestandsformaat](#dct%3AFileFormat) |  [Digitale representatie](#haObj%3ADigitalRepresentation) |  [Drager representatie](#haObj%3ACarrierRepresentation) |  [Fixity](#premis%3AFixity) |  [Fragment representatie](#haObj%3AFragmentRepresentation) |  [Fysieke drager](#haObj%3APhysicalCarrier) |  [Intellectuele entiteit](#premis%3AIntellectualEntity) |  [Kwantitatieve waarde <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/nl#schema%3AQuantitativeValue){:target="_blank"} |  [Lokale identificatie](#haObj%3ALocalIdentifier) |  [Mediahavenfragment](#mh%3AFragment) |  [Mediahavenrecord](#mh%3ARecord) |  [Object](#premis%3AObject) |  [Opslagmedium](#premis%3AStorageMedium) |  [Opslagplaats](#premis%3AStorageLocation) |  [Representatie](#premis%3ARepresentation)
+ [Bestand](#premis%3AFile) |  [Bestandsformaat](#dct%3AFileFormat) |  [Digitale representatie](#haObj%3ADigitalRepresentation) |  [Drager representatie](#haObj%3ACarrierRepresentation) |  [Fixity](#premis%3AFixity) |  [Fragment representatie](#haObj%3AFragmentRepresentation) |  [Fysieke drager](#haObj%3APhysicalCarrier) |  [Intellectuele entiteit](#premis%3AIntellectualEntity) |  [Kwantitatieve waarde <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/nl#schema%3AQuantitativeValue){ target="_blank" } |  [Lokale identificatie](#haObj%3ALocalIdentifier) |  [Mediahavenfragment](#mh%3AFragment) |  [Mediahavenrecord](#mh%3ARecord) |  [Object](#premis%3AObject) |  [Opslagmedium](#premis%3AStorageMedium) |  [Opslagplaats](#premis%3AStorageLocation) |  [Representatie](#premis%3ARepresentation)
 ## <a id="premis%3AFile"></a>Bestand <small>[(premis:File)](http://www.loc.gov/premis/rdf/v3/File)</small>
 
 
@@ -77,14 +74,14 @@ Genoemde en geordende sequentie van bytes gekend door een besturingssysteem.
 
 | Eigenschap | Beschrijving | Kardinaliteit | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3Awidth'></a>breedte <br> <small>[(schema:width)](https://schema.org/width)</small> | De breedte van een bestand. | `0..1` | [Kwantitatieve waarde <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/nl#schema%3AQuantitativeValue){:target="_blank"}  |
+| <a id='schema%3Awidth'></a>breedte <br> <small>[(schema:width)](https://schema.org/width)</small> | De breedte van een bestand. | `0..1` | [Kwantitatieve waarde <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/nl#schema%3AQuantitativeValue){ target="_blank" }  |
 | <a id='rel%3Adoc'></a>documenteert <br> <small>[(rel:doc)](http://id.loc.gov/vocabulary/preservation/relationshipSubType/doc)</small> | Het bestand dat dit bestand beschrijft of documenteert. | `0..*` | [Bestand](#premis%3AFile)  |
 | <a id='premis%3Afixity'></a>fixity <br> <small>[(premis:fixity)](http://www.loc.gov/premis/rdf/v3/fixity)</small> | De berekende fixity checksum van het bestand. | `0..1` | [Fixity](#premis%3AFixity)  |
 | <a id='dct%3Aformat'></a>formaat <br> <small>[(dct:format)](http://purl.org/dc/terms/format)</small> | Het bestandsformaat van het bestand. | `0..1` | [Bestandsformaat](#dct%3AFileFormat)  |
 | <a id='premis%3Asize'></a>heeft (bestands)grootte <br> <small>[(premis:size)](http://www.loc.gov/premis/rdf/v3/size)</small> | De grootte van dit bestand. | `1..1` | [`xsd:nonNegativeInteger`](http://www.w3.org/2001/XMLSchema#nonNegativeInteger)  |
 | <a id='ebucore%3AhasMediaFragment'></a>heeft media fragment <br> <small>[(ebucore:hasMediaFragment)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment)</small> | Een fragment uit dit bestand. | `0..*` | [Fragment representatie](#haObj%3AFragmentRepresentation)  |
 | <a id='premis%3AoriginalName'></a>heeft originele naam <br> <small>[(premis:originalName)](http://www.loc.gov/premis/rdf/v3/originalName)</small> | De oorspronkelijke naam van dit bestand. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
-| <a id='schema%3Aheight'></a>hoogte <br> <small>[(schema:height)](https://schema.org/height)</small> | De hoogte van een bestand. | `0..1` | [Kwantitatieve waarde <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/nl#schema%3AQuantitativeValue){:target="_blank"}  |
+| <a id='schema%3Aheight'></a>hoogte <br> <small>[(schema:height)](https://schema.org/height)</small> | De hoogte van een bestand. | `0..1` | [Kwantitatieve waarde <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/nl#schema%3AQuantitativeValue){ target="_blank" }  |
 | <a id='rel%3Aisi'></a>is opgenomen in <br> <small>[(rel:isi)](http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi)</small> | De digitale representatie waarvan dit bestand deel uitmaakt. | `0..*` | [Digitale representatie](#haObj%3ADigitalRepresentation)  |
 | <a id='ebucore%3AhasMimeType'></a>mime type <br> <small>[(ebucore:hasMimeType)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType)</small> | Het MIME type of IANA media type van het bestand. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='premis%3AstoredAt'></a>opgeslagen op <br> <small>[(premis:storedAt)](http://www.loc.gov/premis/rdf/v3/storedAt)</small> | De (fysieke) locatie waar het bestand is opgeslagen. | `1..1` | [Opslagplaats](#premis%3AStorageLocation)  |

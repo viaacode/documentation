@@ -1,25 +1,11 @@
 ---
-layout: default
 title: Webhook Status Events
-parent: Een integratie ontwikkelen
-has_children: false
-has_toc: true
 nav_order: 5
-last_modified_date: 2025-12-02 17:14:05 +0200
 ---
-
-<details markdown="block">
-  <summary>
-    Inhoudstafel
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 # Inleiding
 
-Dit document beschrijft het gebruik van webhooks om update events te ontvangen over aangeleverde [meemoo SIP v2.x]({{ site.baseurl }}{% link docs/diginstroom/sip/index.md %}) bestanden.
+Dit document beschrijft het gebruik van webhooks om update events te ontvangen over aangeleverde [meemoo SIP v2.x](../diginstroom/sip/index.md) bestanden.
 
 Na aanlevering wordt er een event uitgestuurd als:
 - het SIP-pakket volledig en correct gearchiveerd is in het meemoo-archiefsysteem
@@ -31,7 +17,7 @@ Er worden geen tussentijdse _in progress_ events uitgestuurd. Enkel als de statu
 
 ## Aanlevering van de SIP op S3
 
-Op [de SIP-aanlevering pagina]({{ site.baseurl }}{% link docs/diginstroom/aanlevering-van-sips.md %}) staat de procedure om een S3-token aan te vragen, zodat het pakket opgeladen kan worden. Na een succesvolle transfer, vind je in de headers van het response object van de S3-transfer een correlation ID terug in de custom key `X-Correlation-ID`. Zie voorbeeld via `aws s3 cp` commando:
+Op [de SIP-aanlevering pagina](../diginstroom/aanlevering-van-sips.md) staat de procedure om een S3-token aan te vragen, zodat het pakket opgeladen kan worden. Na een succesvolle transfer, vind je in de headers van het response object van de S3-transfer een correlation ID terug in de custom key `X-Correlation-ID`. Zie voorbeeld via `aws s3 cp` commando:
 
 ``` json
 {
@@ -77,7 +63,7 @@ Deze correlation ID wordt gebruikt door het hele proces heen om de levensloop va
 
 # Webhook
 
-De implementatie van de webhooks is geïnspireerd op de [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md) richtlijnen.  Er is [een formele specificatie]({{ site.baseurl }}{% link assets/webhooks/openapi.yml %}) beschikbaar in de vorm van [de OpenAPI specificatie v3.1.x](https://spec.openapis.org/oas/v3.1.1.html). Dit beschrijft zowel de HTTP-request als de structuur van het uitgestuurde event.
+De implementatie van de webhooks is geïnspireerd op de [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md) richtlijnen.  Er is [een formele specificatie](../../assets/webhooks/openapi.yml) beschikbaar in de vorm van [de OpenAPI specificatie v3.1.x](https://spec.openapis.org/oas/v3.1.1.html). Dit beschrijft zowel de HTTP-request als de structuur van het uitgestuurde event.
 
 Hieronder staan we even stil bij enkele elementen van de specificatie, maar ook bij bepaalde aspecten die buiten de scope van de formele specificatie vallen.
 

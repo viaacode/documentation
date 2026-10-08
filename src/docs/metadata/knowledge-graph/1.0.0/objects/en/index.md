@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Data model Objects"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: False
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -64,7 +61,7 @@ Data model to describe objects.
 ## Classes & Properties
 
 **Classes:** 
- [Carrier representation](#haObj%3ACarrierRepresentation) |  [Digital representation](#haObj%3ADigitalRepresentation) |  [File](#premis%3AFile) |  [File format](#dct%3AFileFormat) |  [Fixity](#premis%3AFixity) |  [Fragment representation](#haObj%3AFragmentRepresentation) |  [Intellectual entity](#premis%3AIntellectualEntity) |  [Local identifier](#haObj%3ALocalIdentifier) |  [Mediahaven fragment](#mh%3AFragment) |  [Mediahaven record](#mh%3ARecord) |  [Object](#premis%3AObject) |  [Physical carrier](#haObj%3APhysicalCarrier) |  [Quantitative Value <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/en#schema%3AQuantitativeValue){:target="_blank"} |  [Representation](#premis%3ARepresentation) |  [Storage location](#premis%3AStorageLocation) |  [Storage medium](#premis%3AStorageMedium)
+ [Carrier representation](#haObj%3ACarrierRepresentation) |  [Digital representation](#haObj%3ADigitalRepresentation) |  [File](#premis%3AFile) |  [File format](#dct%3AFileFormat) |  [Fixity](#premis%3AFixity) |  [Fragment representation](#haObj%3AFragmentRepresentation) |  [Intellectual entity](#premis%3AIntellectualEntity) |  [Local identifier](#haObj%3ALocalIdentifier) |  [Mediahaven fragment](#mh%3AFragment) |  [Mediahaven record](#mh%3ARecord) |  [Object](#premis%3AObject) |  [Physical carrier](#haObj%3APhysicalCarrier) |  [Quantitative Value <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/en#schema%3AQuantitativeValue){ target="_blank" } |  [Representation](#premis%3ARepresentation) |  [Storage location](#premis%3AStorageLocation) |  [Storage medium](#premis%3AStorageMedium)
 ## <a id="haObj%3ACarrierRepresentation"></a>Carrier representation <small>[(haObj:CarrierRepresentation)](https://data.hetarchief.be/ns/object/CarrierRepresentation)</small>
 
 
@@ -126,14 +123,14 @@ Named and ordered sequence of bytes that is known to an operating system.
 | <a id='dct%3Aformat'></a>format <br> <small>[(dct:format)](http://purl.org/dc/terms/format)</small> | The file format of the file. | `0..1` | [File format](#dct%3AFileFormat)  |
 | <a id='ebucore%3AhasMediaFragment'></a>has media fragment <br> <small>[(ebucore:hasMediaFragment)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment)</small> | A fragment from this file. | `0..*` | [Fragment representation](#haObj%3AFragmentRepresentation)  |
 | <a id='premis%3AoriginalName'></a>has original name <br> <small>[(premis:originalName)](http://www.loc.gov/premis/rdf/v3/originalName)</small> | The original name of this file. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
-| <a id='schema%3Aheight'></a>height <br> <small>[(schema:height)](https://schema.org/height)</small> | The height of a file | `0..1` | [Quantitative Value <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/en#schema%3AQuantitativeValue){:target="_blank"}  |
+| <a id='schema%3Aheight'></a>height <br> <small>[(schema:height)](https://schema.org/height)</small> | The height of a file | `0..1` | [Quantitative Value <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/en#schema%3AQuantitativeValue){ target="_blank" }  |
 | <a id='rel%3Aisi'></a>is Included In <br> <small>[(rel:isi)](http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi)</small> | The digital representation this file is part of. | `0..*` | [Digital representation](#haObj%3ADigitalRepresentation)  |
 | <a id='ebucore%3AhasMimeType'></a>mime type <br> <small>[(ebucore:hasMimeType)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType)</small> | The MIME type or IANA media type of the file. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='edm%3AisNextInSequence'></a>next file in sequence <br> <small>[(edm:isNextInSequence)](http://www.europeana.eu/schemas/edm/isNextInSequence)</small> | The file that follows on this file. | `0..1` | [File](#premis%3AFile)  |
 | <a id='premis%3AstoredAt'></a>stored at <br> <small>[(premis:storedAt)](http://www.loc.gov/premis/rdf/v3/storedAt)</small> | The location where the file is stored. | `1..1` | [Storage location](#premis%3AStorageLocation)  |
 | <a id='rel%3Asup'></a>supersedes <br> <small>[(rel:sup)](http://id.loc.gov/vocabulary/preservation/relationshipSubType/sup)</small> | The file that replaces or succeeds this file. | `0..*` | [File](#premis%3AFile)  |
 | <a id='prov%3AwasDerivedFrom'></a>was derived from <br> <small>[(prov:wasDerivedFrom)](http://www.w3.org/ns/prov#wasDerivedFrom)</small> | The Mediahaven record from which this file was derived. | `1..1` | [Mediahaven fragment](#mh%3AFragment)  |
-| <a id='schema%3Awidth'></a>width <br> <small>[(schema:width)](https://schema.org/width)</small> | The width of a file | `0..1` | [Quantitative Value <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/en#schema%3AQuantitativeValue){:target="_blank"}  |
+| <a id='schema%3Awidth'></a>width <br> <small>[(schema:width)](https://schema.org/width)</small> | The width of a file | `0..1` | [Quantitative Value <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../description/en#schema%3AQuantitativeValue){ target="_blank" }  |
 
 _Properties from [Object](#premis%3AObject):_  [relationship](#premis%3Arelationship)
 

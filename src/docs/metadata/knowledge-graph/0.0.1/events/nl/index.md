@@ -1,9 +1,6 @@
 ---
-layout: "default"
 title: "Datamodel Events"
-parent: "Knowledge Graph"
 nav_order: 1
-nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
@@ -63,7 +60,7 @@ Datamodel voor het beschrijven van gebeurtenissen.
 ## Klassen & Eigenschappen
 
 **Klassen:** 
- [Brand](#schema%3ABrand) |  [Activiteit](#prov%3AActivity) |  [Gebeurtenis](#premis%3AEvent) |  [Hardware agent](#premis%3AHardwareAgent) |  [Object](#premis%3AObject) |  [Organisatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#org%3AOrganization){:target="_blank"} |  [Persoon <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#schema%3APerson){:target="_blank"} |  [Software agent](#premis%3ASoftwareAgent) |  [Uitkomststatus](#premis%3AOutcomeStatus)
+ [Brand](#schema%3ABrand) |  [Activiteit](#prov%3AActivity) |  [Gebeurtenis](#premis%3AEvent) |  [Hardware agent](#premis%3AHardwareAgent) |  [Object](#premis%3AObject) |  [Organisatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#org%3AOrganization){ target="_blank" } |  [Persoon <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#schema%3APerson){ target="_blank" } |  [Software agent](#premis%3ASoftwareAgent) |  [Uitkomststatus](#premis%3AOutcomeStatus)
 ## <a id="schema%3ABrand"></a>Brand <small>[(schema:Brand)](https://schema.org/Brand)</small>
 
 
@@ -86,7 +83,7 @@ Een activiteit is iets dat zich gedurende een bepaalde periode voordoet en op/me
 | <a id='prov%3AendedAtTime'></a>heeft einddatum <br> <small>[(prov:endedAtTime)](http://www.w3.org/ns/prov#endedAtTime)</small> | De einddatum van de activiteit. | `1..1` | [`xsd:dateTime`](http://www.w3.org/2001/XMLSchema#dateTime)  |
 | <a id='prov%3Agenerated'></a>heeft gegenereerd <br> <small>[(prov:generated)](http://www.w3.org/ns/prov#generated)</small> | Het gegenereerde object. | `0..1` | [`IRI`](https://www.rfc-editor.org/rfc/rfc3987.txt)  |
 | <a id='prov%3AstartedAtTime'></a>heeft startdatum <br> <small>[(prov:startedAtTime)](http://www.w3.org/ns/prov#startedAtTime)</small> | De startdatum van de activiteit. | `1..1` | [`xsd:dateTime`](http://www.w3.org/2001/XMLSchema#dateTime)  |
-| <a id='prov%3AwasAssociatedWith'></a>is geassocieerd met <br> <small>[(prov:wasAssociatedWith)](http://www.w3.org/ns/prov#wasAssociatedWith)</small> | Een `prov:Agent` die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze `prov:Activity`. | `1..1` | [Persoon <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#schema%3APerson){:target="_blank"} _of_ [Organisatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#org%3AOrganization){:target="_blank"} _of_ [Software agent](#premis%3ASoftwareAgent) _of_ [Hardware agent](#premis%3AHardwareAgent)  |
+| <a id='prov%3AwasAssociatedWith'></a>is geassocieerd met <br> <small>[(prov:wasAssociatedWith)](http://www.w3.org/ns/prov#wasAssociatedWith)</small> | Een `prov:Agent` die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze `prov:Activity`. | `1..1` | [Persoon <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#schema%3APerson){ target="_blank" } _of_ [Organisatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#org%3AOrganization){ target="_blank" } _of_ [Software agent](#premis%3ASoftwareAgent) _of_ [Hardware agent](#premis%3AHardwareAgent)  |
 
 ## <a id="premis%3AEvent"></a>Gebeurtenis <small>[(premis:Event)](http://www.loc.gov/premis/rdf/v3/Event)</small>
 
@@ -98,7 +95,7 @@ Handeling uitgevoerd binnen of buiten het archief die het vermogen beïnvloedt o
 
 | Eigenschap | Beschrijving | Kardinaliteit | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='evtAgRole%3Aimp'></a>geimplementeerd door <br> <small>[(evtAgRole:imp)](http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp)</small> | De organisatie die de gebeurtenis (Event) heeft geimplementeerd. | `1..1` | [Organisatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#org%3AOrganization){:target="_blank"}  |
+| <a id='evtAgRole%3Aimp'></a>geimplementeerd door <br> <small>[(evtAgRole:imp)](http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp)</small> | De organisatie die de gebeurtenis (Event) heeft geimplementeerd. | `1..1` | [Organisatie <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/nl#org%3AOrganization){ target="_blank" }  |
 | <a id='evtObjRole%3Asou'></a>heeft bron <br> <small>[(evtObjRole:sou)](http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou)</small> | Het object dat als bron gebruikt is voor de gebeurtenis (Event). | `0..*` | [Object](#premis%3AObject)  |
 | <a id='premis%3Anote'></a>heeft opmerking <br> <small>[(premis:note)](http://www.loc.gov/premis/rdf/v3/note)</small> | Een opmerking over de gebeurtenis (Event). | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='premis%3Aoutcome'></a>heeft uitkomst <br> <small>[(premis:outcome)](http://www.loc.gov/premis/rdf/v3/outcome)</small> | De uitkomststatus van de gebeurtenis (Event). | `0..1` | [Uitkomststatus](#premis%3AOutcomeStatus) <br>_Mogelijke waarden: [`evtOutcome:fai`](http://id.loc.gov/vocabulary/preservation/eventOutcome/fai), [`evtOutcome:suc`](http://id.loc.gov/vocabulary/preservation/eventOutcome/suc), [`evtOutcome:war`](http://id.loc.gov/vocabulary/preservation/eventOutcome/war)_ |

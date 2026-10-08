@@ -1,22 +1,9 @@
 ---
-layout: default
 title:  "Velden: Algemeen"
-parent: VIAA Metadatamodel
 nav_order: 1
 ---
 
-{: .fw-300 }
 Deze velden zijn van toepassing op gedigitaliseerd als *digital born* materiaal.
-
-<details markdown="block">
-  <summary>
-    Inhoudstafel
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 
 # Administratieve en beschrijvende metadata
 
@@ -48,8 +35,9 @@ De unieke identifier van de Content Partner.
 
 ## Sub CP naam
 
-{: .important }
-Dit veld is verouderd en wordt niet langer gebruikt.
+!!! important
+
+    Dit veld is verouderd en wordt niet langer gebruikt.
 
 De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing indien uw organisatie onderverdeeld is in suborganisaties).
 
@@ -64,7 +52,7 @@ De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing ind
 
 ## Hoofd lokale CP ID
 
-{: #dc_identifier_localid}
+<a id="dc_identifier_localid"></a>
 
 De hoofd ID van de oorspronkelijke drager of het *born digital* item. Dit is de registratiecode die het meest courant wordt gebruikt door de CP binnen ***het eigen*** archief- of collectiemanagementsysteem.
 
@@ -83,7 +71,7 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 
 ## Overige lokale CP ID
 
-{: #dc_identifier_localids}
+<a id="dc_identifier_localids"></a>
 
 Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* item, gebruikt door de CP binnen het eigen archief- of collectiebeheerssysteem.
 
@@ -113,7 +101,6 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 
 ### Mogelijke sleutels
 
-{: .no_toc }
 
 | `<Acquisition_number />`       | |
 | `<Alternative_number />`       | |
@@ -397,7 +384,7 @@ _Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens d
 
 ## Datum creatie
 
-{: #dcterms_created}
+<a id="dcterms_created"></a>
 
 De datum waarop de inhoud van het object werd gecreëerd.
 
@@ -407,7 +394,7 @@ _Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht 
 
 
 | **XML element**            | `<dcterms_created/>`                                                                             |
-| **Datatype**               | [Extended Date Time Format (EDTF)]({{ site.baseurl }}{% link docs/metadata/viaa/datatypes.md %}#edtf)                                                             |
+| **Datatype**               | [Extended Date Time Format (EDTF)](datatypes.md#edtf)                                                             |
 | **Verplichting**           | Verplicht (indien 'datum uitgave' niet is ingevuld).                                             |
 | **Herhaalbaar**            | Nee                                                                                              |
 
@@ -418,13 +405,13 @@ _Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht 
 
 ## Datum uitgave / uitzending
 
-{: #dcterms_issued}
+<a id="dcterms_issued"></a>
 
 De datum waarop het item is uitgegeven of uitgezonden.
 
 
 | **XML element**            | `<dcterms_issued/>`                                                                             |
-| **Datatype**               | [Extended Date Time Format (EDTF)]({{ site.baseurl }}{% link docs/metadata/viaa/datatypes.md %}#edtf)                                                                      |
+| **Datatype**               | [Extended Date Time Format (EDTF)](datatypes.md#edtf)                                                                      |
 | **Verplichting**           | Verplicht (indien 'datum creatie' niet is ingevuld).                                            |
 | **Herhaalbaar**            | Nee                                                                                             |
 
@@ -436,7 +423,7 @@ De datum waarop het item is uitgegeven of uitgezonden.
 
 ## Maker
 
-{: #dc_creators}
+<a id="dc_creators"></a>
 
 De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie van de inhoud van het item.
 
@@ -455,7 +442,6 @@ De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie 
 
 ### Mogelijke sleutels
 
-{: .no_toc }
 
 Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
 
@@ -500,7 +486,6 @@ De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud 
 
 ### Mogelijke sleutels
 
-{: .no_toc }
 
 Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan.
 
@@ -552,7 +537,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 
 ## Publisher
 
-{: #publisher}
+<a id="publisher"></a>
 
 De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een item voor derden door omroep, verkoop, verhuur,...
 
@@ -569,7 +554,6 @@ De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk 
 
 ### Mogelijke sleutels
 
-{: .no_toc }
 
 Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast.
 
@@ -584,7 +568,7 @@ Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worde
 
 ## Hoofdbeschrijving
 
-{: #dc_description }
+<a id="dc_description"></a>
 
 Een korte, algemene omschrijving van de intellectuele inhoud van een item.
 
@@ -600,7 +584,7 @@ Een korte, algemene omschrijving van de intellectuele inhoud van een item.
 
 ## Lange beschrijving
 
-{: #dc_description_lang }
+<a id="dc_description_lang"></a>
 
 Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbeeld door puntsgewijs de voornaamste scènes, stock-shots, aparte items... te beschrijven. Voor ondertitels is een apart veld voorzien.
 
@@ -620,7 +604,7 @@ Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbee
 
 ## Programmabeschrijving
 
-{: #dc_description_programme }
+<a id="dc_description_programme"></a>
 
 Een korte beschrijving van het programma waar het item een onderdeel van vormt.
 
@@ -632,7 +616,7 @@ Een korte beschrijving van het programma waar het item een onderdeel van vormt.
 
 ## Cast
 
-{: #dc_description_cast }
+<a id="dc_description_cast"></a>
 
 Een oplijsting van de voornaamste acteurs/performers en hun respectievelijke rol.
 
@@ -668,7 +652,7 @@ _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden 
 
 ## Genre
 
-{: #genre}
+<a id="genre"></a>
 
 Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door meemoo beheerd wordt.
 
@@ -685,7 +669,6 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 ### Mogelijke waarden
 
-{: .no_toc }
 
 | `Actualiteit` | Een verslag van de gebeurtenissen van de dag of van het ogenblik; het nieuws dat op dat moment aan de orde is. |
 | `Animatie` | Een film of video met getekende of andere levenloze figuren, waarbij animatie toegepast is. |
@@ -718,7 +701,7 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 ## Object type
 
-{: #ebu_objectType }
+<a id="ebu_objectType"></a>
 
 Het type uitzending (programma of item).
 
@@ -769,7 +752,7 @@ Let wel: het betreft hier de tijdsperiode waar het item *inhoudelijk* betrekking
 
 ## Trefwoorden
 
-{: #dc_subjects}
+<a id="dc_subjects"></a>
 
 Thematische trefwoorden met betrekking tot de inhoud van het item.
 
@@ -787,7 +770,7 @@ Thematische trefwoorden met betrekking tot de inhoud van het item.
 
 ## Taal
 
-{: #dc_languages }
+<a id="dc_languages"></a>
 
 De (belangrijkste) taal/talen die in het item worden gesproken of gebruikt.
 
@@ -809,7 +792,7 @@ Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitel
 
 ## Licentie
 
-{: #licentie}
+<a id="licentie"></a>
 
 Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewerking) van het item wordt bepaald. De licenties zijn zo opgesteld dat er een onderscheid gemaakt kan worden tussen het hergebruik van het object en de metadata.
 
@@ -826,7 +809,6 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 
 ### Mogelijke waarden
 
-{: .no_toc }
 
 - VIAA-ONDERWIJS
 - VIAA-ONDERZOEK
@@ -854,11 +836,11 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 - BEZOEKERTOOL-CONTENT
 - BEZOEKERTOOL-METADATA-ALL
 
-Zie de [detailpagina]({{ site.baseurl }}{% link docs/metadata/viaa/licenties.md %}) over licenties voor meer informatie over de betekenis van de verschillende waarden.
+Zie de [detailpagina](licenties.md) over licenties voor meer informatie over de betekenis van de verschillende waarden.
 
 ## Auteursrechthouder
 
-{: #dc_rights_rightsOwners}
+<a id="dc_rights_rightsOwners"></a>
 
 De persoon of organisatie die de auteursrechten bezit. Dit kan de eigenlijke auteur zijn, zijn erfgenamen of een derde partij aan wie de rechten zijn overgedragen.
 
@@ -909,7 +891,7 @@ Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.
 
 ## Opmerkingen rechten
 
-{: #dc_rights_comment}
+<a id="dc_rights_comment"></a>
 
 Hier kunnen bijkomende opmerkingen en voorwaarden met betrekking tot de gebruiksrechten van toepassing op het item worden vastgelegd.
 
