@@ -1,0 +1,9 @@
+{
+  "name": "meemoo-graphql-documentation",
+  "private": true,
+  "dependencies": {
+    "@graphql-markdown/cli": "1.1.0",
+    "@graphql-markdown/formatters": "1.1.1",
+    "graphql": "17.0.2"
+  }
+}
