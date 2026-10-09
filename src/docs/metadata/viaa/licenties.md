@@ -13,16 +13,22 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 ### Onderwijs 
 
+| | |
+| --- | --- |
 | **MAM-naam** | `VIAA-ONDERWIJS` |
 | **Defaultwaarde**|  AAN |
 | **Implicatie** | meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op [onderwijs.hetarchief.be](https://onderwijs.hetarchief.be/). |
 
+| | |
+| --- | --- |
 | **MAM-naam** | `ONDERWIJS-FRAGMENT` |
 | **Defaultwaarde**|  UIT |
 | **Implicatie** | meemoo mag de content en metadata van één dan wel meerdere fragmenten van het item gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op [onderwijs.hetarchief.be](https://onderwijs.hetarchief.be/). |
 
 ### Wetenschappelijk onderzoek 
 
+| | |
+| --- | --- |
 | **MAM-naam** | `VIAA-ONDERZOEK` |
 | **Defaultwaarde** | AAN |
 | **Implicatie** | meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar. |
@@ -31,12 +37,16 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 #### Content
 
+| | |
+| --- | --- |
 | **MAM-naam** |  `VIAA-INTRA_CP-CONTENT` |
 | **Defaultwaarde** | AAN |
 | **Implicatie** | De lage resolutiekopie van het object mag getoond worden tussen contentpartners. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
 
 #### Metadata
 
+| | |
+| --- | --- |
 | **MAM-naam** | `VIAA-INTRA_CP-METADATA-ALL` |
 | **Defaultwaarde** | AAN |
 | **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
@@ -45,6 +55,8 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 #### Content
 
+| | |
+| --- | --- |
 | **MAM-naam** | `VIAA-PUBLIEK-CONTENT` |
 | **Defaultwaarde** | UIT |
 | **Implicatie** | De lage resolutiekopie van het object mag beschikbaar gemaakt worden aan het brede publiek. Deze licentie impliceert dat ook de `VIAA-PUBLIEK-METADATA-LTD` of `VIAA-PUBLIEK-METADATA-ALL` gegeven wordt. Deze licentie is nog niet in gebruik. |
@@ -53,12 +65,16 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 **Beperkte metadataset**
 
+| | |
+| --- | --- |
 | **MAM-naam** | `VIAA-PUBLIEK-METADATA-LTD` |
 | **Defaultwaarde** | AAN |
 | **Implicatie** | Een beperkte set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
 
 **Uitgebreide metadataset**
 
+| | |
+| --- | --- |
 | **MAM-naam** | `VIAA-PUBLIEK-METADATA-ALL` |
 | **Defaultwaarde** | UIT |
 | **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
@@ -67,18 +83,24 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 #### Content
 
+| | |
+| --- | --- |
 | **MAM-naam** | `BEZOEKERTOOL-CONTENT` |
 | **Defaultwaarde** | AAN |
 | **Implicatie** | De lage resolutiekopie van het object mag gedeeld worden aan gebruikers van de bezoekertool. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
 
 #### Metadata
 
+| | |
+| --- | --- |
 | **MAM-naam** | `BEZOEKERTOOL-METADATA-ALL` |
 | **Defaultwaarde** | AAN |
 | **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan gebruikers van de bezoekertool. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
 
 ### VIAA-licentie intra-muros
 
+| | |
+| --- | --- |
 | **MAM naam** | `VIAA-INTRAMUROS` |
 | **Default waarde** | UIT |
 | **Implicatie** | wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de meemoo-muren ontsloten zou worden. |
@@ -87,6 +109,8 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 #### Content
 
+| | |
+| --- | --- |
 | **MAM-naam** | `CC_BY-CONTENT`, `CC_BY-SA-CONTENT`, `CC0-CONTENT`, `CC_BY-NC-CONTENT`, `CC_BY-ND-CONTENT`, `CC_BY-NC-ND-CONTENT` |
 | **Defaultwaarde** | UIT |
 | **Implicatie** | naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). |
@@ -94,6 +118,8 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 #### Metadata
 
 | **MAM-naam** | `CC_BY-METADATA`, `CC_BY-SA-METADATA`, `CC0-METADATA`, `CC_BY-NC-METADATA`, `CC_BY-ND-METADATA`, `CC_BY-NC-ND-METADATA`
+| | |
+| --- | --- |
 | **Defaultwaarde** | UIT |
 | **Implicatie** | naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). |
 
@@ -107,6 +133,8 @@ Voor bestanden uit digitale collecties worden de licenties meegegeven bij de aan
 
 Standaard zal meemoo op dit moment onderstaande licenties activeren:
 
+  | | |
+  | --- | --- |
   | VIAA-ONDERWIJS  |    AAN |
   | ONDERWIJS-FRAGMENT  |    UIT |
   | VIAA-ONDERZOEK   |   AAN |
