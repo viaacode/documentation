@@ -197,13 +197,15 @@ nav:
       - REST API v1 en v2: docs/integratie/rest-api.md
       - OAI-PMH: docs/integratie/oai-pmh.md
       - IIIF 3.0 Image API: docs/integratie/iiif.md
-      - Organizations API: /docs/integratie/org-api/
+      - Organizations API: docs/integratie/org-api/2/index.md
       - Webhook Status Events: docs/integratie/webhook-status-events.md
       - AI metadata API: docs/integratie/ai-metadata-api.md
 
 not_in_nav: |
   assets/sip_assets/README.md
   docs/diginstroom/sip/3.0/**
+  docs/integratie/org-api/2/operations/**
+  docs/integratie/org-api/2/types/**
   docs/metadata/knowledge-graph/0.0.1/**
   docs/metadata/knowledge-graph/**/fr/**
   docs/metadata/knowledge-graph/**/nl/**
