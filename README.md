@@ -2,44 +2,52 @@
 
 This repository generates [https://developer.meemoo.be/](https://developer.meemoo.be/).
 
-## Build the docs locally
+## Run the docs locally
 
-First, [install Ruby 2.7.](https://www.ruby-lang.org/en/documentation/installation/)
-
-Next, install [Jekyll](https://jekyllrb.com/) and other dependencies from the `Gemfile` with 
+Install Python 3.12, then run:
 
 ```bash
-bundle install
+git submodule update --init --recursive
+python3.12 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+mkdocs serve
 ```
 
-Finally, run
+Open `http://127.0.0.1:8000` to browse the docs.
 
-```bash
-bundle exec jekyll serve
-```
+## Run the docs with Docker
 
-## Build the docs via Docker
-
-First, make sure that [Docker is installed](https://docs.docker.com/get-docker/).
-
-Next, build the Docker image:
+Build and run the preview image:
 
 ```bash
 docker build -t meemoo-docs .
+docker run --rm -it -p 8000:8000 meemoo-docs
 ```
 
-Then, start the container serving the docs:
+Open `http://127.0.0.1:8000`. This image is for local preview only; production serves the static `site/` artifact.
+
+## Update the Organizations API documentation
+
+[Install Docker](https://docs.docker.com/get-docker/), then regenerate the committed Markdown from the current schema snapshot:
 
 ```bash
-docker container run --rm -it -p 4000:4000 meemoo-docs
+make graphql-docs
 ```
 
-Finally, go to `http://127.0.0.1:4000` using your preferred browser to browse the docs.
+To refresh the schema snapshot first, provide the URL of the introspection JSON:
+
+```bash
+make graphql-schema SCHEMA_URL=https://example.test/schema.json
+make graphql-docs
+```
+
+Commit changes to `graphql/schema.json`, `graphql/introduction.md`, and the generated files under `src/docs/integratie/org-api/` together. Node.js and npm run inside `graphql/Dockerfile`; they are not host prerequisites.
 
 ## Convert legacy files
 
-Get pandoc
+Install Pandoc, then run:
 
-```
+```bash
 pandoc -s <file> -t markdown -o ./docs/output.md --wrap=none
 ```

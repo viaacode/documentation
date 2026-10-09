@@ -1,6 +1,11 @@
-FROM jekyll/jekyll:3
-RUN gem install bundler -v 2.4.22
-COPY Gemfile Gemfile.lock ./
-RUN bundle install
+FROM python:3.12.12-slim-bookworm
+
+WORKDIR /docs
+
+COPY requirements.txt ./
+RUN python -m pip install --no-cache-dir -r requirements.txt
+
 COPY . .
-ENTRYPOINT ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
+
+EXPOSE 8000
+CMD ["mkdocs", "serve", "--dev-addr=0.0.0.0:8000"]
