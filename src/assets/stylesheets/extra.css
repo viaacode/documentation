@@ -47,6 +47,10 @@
   padding: 2px;
 }
 
+.md-typeset table thead:not(:has(th:not(:empty))) {
+  display: none;
+}
+
 .md-typeset .label {
   border-radius: 0.2rem;
   color: #111;

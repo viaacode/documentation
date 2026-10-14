@@ -87,6 +87,8 @@ Not applicable
 
 The meemoo SIP specification adheres to the following publication statuses:
 
+| | |
+| --- | --- |
 | <span class="label label-yellow">Editor's Draft</span> | This version of the specification is still being developed. |
 | <span class="label label-blue">Release Candidate</span> | This version of the specification is ready for _public review_ and _implementation_. The text can still undergo changes and meemoo does not give any guarantees that material can be supplied in this way. |
 | <span class="label label-green">Stable</span> | This version of the specification will no longer change and has been fully implemented. Meemoo guarantees that material supplied in this way can be archived. |

@@ -11,6 +11,8 @@ Deze velden zijn van toepassing op gedigitaliseerd als *digital born* materiaal.
 
 De naam van de Content Partner (CP).
 
+| | |
+| --- | --- |
 | **XML element**        | `<CP>`                                 |
 | **Datatype**           | Vrije tekst                            |
 | **Verplichting**       | Verplicht                              |
@@ -24,6 +26,8 @@ De naam van de Content Partner (CP).
 
 De unieke identifier van de Content Partner.
 
+| | |
+| --- | --- |
 | **XML element**        | `<CP_id>`                                      |
 | **Datatype**           | ID                                             |
 | **Verplichting**       | Verplicht                                      |
@@ -41,6 +45,8 @@ De unieke identifier van de Content Partner.
 
 De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing indien uw organisatie onderverdeeld is in suborganisaties).
 
+| | |
+| --- | --- |
 | **XML element**        | `<Sub_CP>`                           |
 | **Datatype**           | Vrije tekst                          |
 | **Verplichting**       | Verplicht indien van toepassing (VA) |
@@ -60,6 +66,8 @@ Dit is de unieke ID van de content partner die de linkt vormt naar het eigen col
 
 Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registratienummer bijhoudt (ook al raadt meemoo aan om vóór registratie in de [registratietool](http://registratie.meemoo.be) dit alsnog toe te kennen). In dat geval blijft dit veld leeg.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_identifier_localid>`                                                                        |
 | **Data type**              | ID                                                                                               |
 | **Verplichting**           | Verplicht indien van toepassing (VA)                                                             |
@@ -75,6 +83,8 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 
 Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* item, gebruikt door de CP binnen het eigen archief- of collectiebeheerssysteem.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_identifier_localids type="list"><ARDOME/><priref/>...</dc_identifier_localids>`             |
 | **Data type**              | Vrije tekst                                                             |
 | **Verplichting**           | Optioneel                                                                                        |
@@ -102,6 +112,8 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 ### Mogelijke sleutels
 
 
+| | |
+| --- | --- |
 | `<Acquisition_number />`       | |
 | `<Alternative_number />`       | |
 | `<Analoge_drager />`           | |
@@ -130,6 +142,8 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 
 De ID van de batch waarin de drager van de contentpartner naar de Service Provider of meemoo werd verstuurd. 
 
+| | |
+| --- | --- |
 | **XML element**        | `<batch_id/>`                                                                                                     |
 | **Datatype**           | ID                                                                                                                |
 | **Verplichting**       | Verplicht indien gekend |
@@ -143,6 +157,8 @@ De ID van de batch waarin de drager van de contentpartner naar de Service Provid
 
 De naam van de batch waarin de drager van de contentpartner naar de Service Provider of meemoo werd verstuurd. 
 
+| | |
+| --- | --- |
 | **XML element**        | `<batch_name/>`                                                                                                     |
 | **Datatype**           | Vrije tekst                                                                                                               |
 | **Verplichting**       | Optioneel |
@@ -162,6 +178,8 @@ De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele r
 \"Is_deel_van\" geeft aan van welk digitale object (parent file) het beschreven bestand deel uitmaakt.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_relations type="list"><is_deel_van/></dc_relations>`                                                |
 | **Datatype**           | [PID](#pid) of [dc_identifier_localid](#dc_identifier_localid) in de vorm `dc_identifier_localid:<id>`                                                                              |
 | **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                                    |
@@ -172,6 +190,8 @@ De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele r
 \"bevat\" geeft aan welke digitale objecten deel uit maken van het beschreven bestand.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_relations type="list"><bevat/></dc_relations>`                                    |
 | **Datatype**           | [PID](#pid) of [dc_identifier_localid](#dc_identifier_localid) in de vorm `dc_identifier_localid:<id>`                                                                                 |
 | **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                  |
@@ -182,6 +202,8 @@ De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele r
 In dit veld worden verwante digitale objecten (PIDs) aangegeven.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_relations type="list"><is_verwant_aan/></dc_relations>`       |
 | **Datatype**           | [PID](#pid) of [dc_identifier_localid](#dc_identifier_localid) in de vorm `dc_identifier_localid:<id>`                                                               |
 | **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)              |
@@ -192,6 +214,8 @@ In dit veld worden verwante digitale objecten (PIDs) aangegeven.
 In dit veld worden versies van digitale objecten (PIDs) aangegeven. (vb. Dubbele kopieën)
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_relations type="list"><is_versie_van/></dc_relations>`                                 |
 | **Datatype**           | [PID](#pid) of [dc_identifier_localid](#dc_identifier_localid) in de vorm `dc_identifier_localid:<id>`                                                                                         |
 | **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                       |
@@ -205,6 +229,8 @@ De algemene benaming of hoofdtitel.
 
 _Voor andere versies (lange titels, vertalingen) kan het veld 'Alternatieve Titel' worden gebruikt._
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_title/>`                                                                                           |
 | **Datatype**               | Vrije tekst                                                                                          |
 | **Verplichting**           | Verplicht                                                                                            |
@@ -218,6 +244,8 @@ _Voor andere versies (lange titels, vertalingen) kan het veld 'Alternatieve Tite
 
 De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><serie/></dc_titles>`                                  |
 | **Datatype**           | Vrije tekst                                                                    |
 | **Verplichting**       | Optioneel                                                                      |
@@ -234,6 +262,8 @@ De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.
 De titel van de episode waar het item deel van uitmaakt.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><episode/></dc_titles>`            |
 | **Datatype**           | Vrije tekst                                                |
 | **Verplichting**       | Optioneel                                                  |
@@ -249,6 +279,8 @@ De titel van de episode waar het item deel van uitmaakt.
 
 Dit is de titel van de aflevering waar het item deel van uitmaakt.
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><aflevering/></dc_titles>`                   |
 | **Datatype**           | Vrije tekst                                                          |
 | **Verplichting**       | Optioneel                                                            |
@@ -259,6 +291,8 @@ Dit is de titel van de aflevering waar het item deel van uitmaakt.
 De alternatieve titel. Dit is een alternatieve titel voor het digitale object. Een alternatieve titel kan bijvoorbeeld een vertaling van de originele (hoofd)titel zijn.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><alternatief/></dc_titles>`         |
 | **Datatype**           | Vrije tekst                                                 |
 | **Verplichting**       | Optioneel                                                   |
@@ -268,6 +302,8 @@ De alternatieve titel. Dit is een alternatieve titel voor het digitale object. E
 
 De programmatitel. Dit is de titel van het programma waarvan het item deel uitmaakt. Hiermee wordt een specifieke aflevering of episode van een serie bedoeld.
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><programma/></dc_titles>` |
 | **Datatype**           | Vrije tekst                                       |
 | **Verplichting**       | Optioneel                                         |
@@ -278,6 +314,8 @@ De programmatitel. Dit is de titel van het programma waarvan het item deel uitma
 Het nummer van de serie waarvan het item deel uitmaakt.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><serienummer/></dc_titles>`       |
 | **Datatype**           | Vrije tekst                                               |
 | **Verplichting**       | Optioneel                                                 |
@@ -288,6 +326,8 @@ Het nummer van de serie waarvan het item deel uitmaakt.
 Het seizoen/jaargang van de serie waarvan het item deel uitmaakt.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><seizoen></dc_titles>`                      |
 | **Datatype**           | Vrije tekst                                                         |
 | **Verplichting**       | Optioneel                                                           |
@@ -298,6 +338,8 @@ Het seizoen/jaargang van de serie waarvan het item deel uitmaakt.
 Het nummer van het seizoen waarvan het item deel uitmaakt.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><seizoennummer></dc_titles>`         |
 | **Datatype**           | Vrije tekst                                                  |
 | **Verplichting**       | Optioneel                                                    |
@@ -308,6 +350,8 @@ Het nummer van het seizoen waarvan het item deel uitmaakt.
 Het hoogste beschrijvingsniveau: het archief waar het object deel van uitmaakt.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><archief/></dc_titles>`                                   |
 | **Datatype**           | Vrije tekst                                                                       |
 | **Verplichting**       | Optioneel                                                                         |
@@ -323,6 +367,8 @@ Het hoogste beschrijvingsniveau: het archief waar het object deel van uitmaakt.
 
 Een deel van een archief dat bestaat uit een geheel van onderling gerelateerde archiefstukken.
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><deelarchief/></dc_titles>`                                             |
 | **Datatype**           | Vrije tekst                                                                                     |
 | **Verplichting**       | Optioneel                                                                                       |
@@ -337,6 +383,8 @@ Een deel van een archief dat bestaat uit een geheel van onderling gerelateerde a
 
 Documenten gerangschikt volgens een ordeningsplan of beheerd als een eenheid omdat ze het resultaat zijn van een zelfde proces van archiefvorming of opslag, of van eenzelfde activiteit, of omdat ze een bepaalde vorm hebben, of wegens enige andere samenhang die voortkomt uit creatie, ontvangst of gebruik.
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><reeks/></dc_titles>` |
 | **Datatype**           | Vrije tekst                                   |
 | **Verplichting**       | Optioneel                                     |
@@ -352,6 +400,8 @@ Documenten gerangschikt volgens een ordeningsplan of beheerd als een eenheid omd
 
 Een reeks, een onderdeel van een bovenliggende reeks zoals hierboven omschreven.
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><deelreeks/></dc_titles>`                                  |
 | **Datatype**           | Vrije tekst                                                                        |
 | **Verplichting**       | Optioneel                                                                          |
@@ -369,6 +419,8 @@ Dit is de registratie-titel zoals ingegeven in de [registratietool](http://regis
 
 _Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens de registratie werd ingegeven in dede [registratietool](http://registratie.meemoo.be) registratiesoftware opgeschoond dient te worden maar tegelijk ook interessante informatie bevat. Op dat moment kan de registratietitel bewaard worden onder de secundaire titel 'registratie' en kan de hoofdtitel vervangen worden door een opgeschoonde titel._
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_titles type="list"><registratie/></dc_titles>` |
 | **Datatype**           | Vrije tekst                                         |
 | **Verplichting**       | Optioneel                                           |
@@ -393,6 +445,8 @@ _Bij de mapping naar het meemoo datamodel wordt de creatiedatum ook gemapt naar 
 _Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht bij registratie in de [registratietool](http://registratie.meemoo.be)) gekozen, aangezien deze doorgaans met de datum van de creatie van de originele inhoud samenvalt of er toch dicht bij aansluit. Het is evenwel mogelijk dat de intellectuele inhoud ('content') vastgelegd op de drager een latere kopie is van een ouder origineel (bijvoorbeeld een kopie van een film op Umatic). In dit geval verschillen de datum van creatie van de datum van de originele drager._
 
 
+| | |
+| --- | --- |
 | **XML element**            | `<dcterms_created/>`                                                                             |
 | **Datatype**               | [Extended Date Time Format (EDTF)](datatypes.md#edtf)                                                             |
 | **Verplichting**           | Verplicht (indien 'datum uitgave' niet is ingevuld).                                             |
@@ -410,6 +464,8 @@ _Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht 
 De datum waarop het item is uitgegeven of uitgezonden.
 
 
+| | |
+| --- | --- |
 | **XML element**            | `<dcterms_issued/>`                                                                             |
 | **Datatype**               | [Extended Date Time Format (EDTF)](datatypes.md#edtf)                                                                      |
 | **Verplichting**           | Verplicht (indien 'datum creatie' niet is ingevuld).                                            |
@@ -428,6 +484,8 @@ De datum waarop het item is uitgegeven of uitgezonden.
 De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie van de inhoud van het item.
 
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_creators type="list"><Maker /><Regisseur /></Archiefvormer>...</dc_creators>` |
 | **Datatype**               | Vrije tekst                                                                                     |
 | **Verplichting**           | Verplicht indien gekend (VA)                                                                                                        |
@@ -445,6 +503,8 @@ De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie 
 
 Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
 
+| | |
+| --- | --- |
 | `<Maker />` | |
 | `<Archiefvormer />` | |
 | `<Architect>` | De architect van het afgebeelde gebouw. |
@@ -471,6 +531,8 @@ Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecif
 
 De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud van het item heeft geleverd.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_contributors type="list"><Bijdrager /><Auteur /><Cameraman />...</dc_contributors>` |
 | **Datatype**               | Vrije tekst                                                                  |
 | **Verplichting**           | Optioneel                                                                                                                 |
@@ -489,6 +551,8 @@ De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud 
 
 Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan.
 
+| | |
+| --- | --- |
 | `<Aanwezig />` | |
 | `<Adviseur />` | |
 | `<Afwezig />` | |
@@ -541,6 +605,8 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 
 De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een item voor derden door omroep, verkoop, verhuur,...
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_publishers type="list"><Publisher /><Distributeur />...</dc_publishers>` |
 | **Datatype**               | Vrije tekst                                                                  |
 | **Verplichting**           | Optioneel                                                                                                                |
@@ -559,6 +625,8 @@ Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gesp
 
 Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
 
+| | |
+| --- | --- |
 | `<Distributeur />` | |
 | `<Exposant />` | |
 | `<Persagentschap />` | |
@@ -573,6 +641,8 @@ Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worde
 Een korte, algemene omschrijving van de intellectuele inhoud van een item.
 
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_description/>`                                                                                                                                             |
 | **Datatype**               | Vrije tekst                                                                                                                                                  |
 | **Verplichting**           | Verplicht indien geen minimum van vijf trefwoorden.                                                                                                          |
@@ -589,6 +659,8 @@ Een korte, algemene omschrijving van de intellectuele inhoud van een item.
 Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbeeld door puntsgewijs de voornaamste scènes, stock-shots, aparte items... te beschrijven. Voor ondertitels is een apart veld voorzien.
 
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_description_lang/>`                                                                                                                                                       |
 | **Datatype**               | Vrije tekst                                                                                                                                                                    |
 | **Verplichting**           | Optioneel                                                                                                                                                                      |
@@ -609,6 +681,8 @@ Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbee
 Een korte beschrijving van het programma waar het item een onderdeel van vormt.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_description_programme/>`                                                     |
 | **Datatype**           | Vrije tekst                                                                       |
 | **Verplichting**       | Optioneel                                                                         |
@@ -621,6 +695,8 @@ Een korte beschrijving van het programma waar het item een onderdeel van vormt.
 Een oplijsting van de voornaamste acteurs/performers en hun respectievelijke rol.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_description_cast/>`                                                                                      |
 | **Datatype**           | Vrije tekst                                                                                                   |
 | **Verplichting**       | Optioneel                                                                                                     |
@@ -634,6 +710,8 @@ Een oplijsting van de voornaamste acteurs/performers en hun respectievelijke rol
 
 Een weergave van de ondertitels die bij het digitale object horen.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_description_ondertitels/>`                                                                                                                                                |
 | **Datatype**               | Vrije tekst                                                                                                                                                                    |
 | **Verplichting**           | Optioneel                                                                                                                                                                      |
@@ -645,6 +723,8 @@ Een weergave van de transcriptie van het digitale object.
 
 _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden door een speech to text engine._
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_description_transcriptie/>`                                                                                                                                               |
 | **Datatype**               | Vrije tekst                                                                                                                                                                    |
 | **Verplichting**           | Optioneel                                                                                                                                                                      |
@@ -656,6 +736,8 @@ _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden 
 
 Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door meemoo beheerd wordt.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_types type="list"><multiselect/></dc_types>`                                                                   |
 | **Datatype**               | Gecontroleerde lijst                                                           |
 | **Verplichting**           | Optioneel                                                                                                     |
@@ -670,6 +752,8 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 ### Mogelijke waarden
 
 
+| | |
+| --- | --- |
 | `Actualiteit` | Een verslag van de gebeurtenissen van de dag of van het ogenblik; het nieuws dat op dat moment aan de orde is. |
 | `Animatie` | Een film of video met getekende of andere levenloze figuren, waarbij animatie toegepast is. |
 | `Concert` | Een voorstelling waar muziek gespeeld wordt voor publiek. |
@@ -705,6 +789,8 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 Het type uitzending (programma of item).
 
+| | |
+| --- | --- |
 | **XML element**            | `<ebu_objectType/>`                                                                                                                                             |
 | **Datatype**               | Vrije tekst                                                                                                                                                  |
 | **Verplichting**           | Nee                                                                                                                                                            |
@@ -719,6 +805,8 @@ Het type uitzending (programma of item).
 
 Een beschrijvende afbakening van het geografisch gebied (straat, stad, land, continent) waar de inhoud van het item betrekking op heeft.
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_coverages type="list"><ruimte/></dc_coverages>` |
 | **Datatype**           | Vrije tekst                                          |
 | **Verplichting**       | Optioneel                                            |
@@ -738,6 +826,8 @@ Een beschrijvende afbakening van de tijdsperiode waar de inhoud van het item bet
 Let wel: het betreft hier de tijdsperiode waar het item *inhoudelijk* betrekking op heeft, niet de datum van creatie. Een documentaire uit de jaren 1950 over de Gulden Sporenslag heeft dus bijvoorbeeld als temporele coverage 'middeleeuwen'.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_coverages type="list"><tijd/></dc_coverages>`                  |
 | **Datatype**           | Vrije tekst                                                         |
 | **Verplichting**       | Optioneel                                                           |
@@ -756,6 +846,8 @@ Let wel: het betreft hier de tijdsperiode waar het item *inhoudelijk* betrekking
 
 Thematische trefwoorden met betrekking tot de inhoud van het item.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_subjects type="list"><Trefwoord/></dc_subjects>`                                                                                                          |
 | **Datatype**               | Vrije tekst                                                                                                                                                      |
 | **Verplichting**           | Verplicht (minimaal 5 trefwoorden) indien geen (korte) beschrijving                                                                                              |
@@ -776,6 +868,8 @@ De (belangrijkste) taal/talen die in het item worden gesproken of gebruikt.
 
 Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitels. In het geval van een stomme film, is de taal van de eventuele tussentitels indicatief.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_languages type="list"><multiselect/></dc_languages>`                                                                                                               |
 | **Datatype**               | [ISO 639-1](https://nl.wikipedia.org/wiki/Lijst_van_ISO_639-codes) ("nl" = Nederlands; "fr" = Frans; "de" = Duits; "it" = Italiaans; "en" = Engels; "es" = Spaans; ...) |
 | **Verplichting**           | Verplicht                                                                                                                                                               |
@@ -796,6 +890,8 @@ Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitel
 
 Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewerking) van het item wordt bepaald. De licenties zijn zo opgesteld dat er een onderscheid gemaakt kan worden tussen het hergebruik van het object en de metadata.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_rights_licenses type="list"><multiselect/></dc_rights_licences>`        |
 | **Datatype**               | Gecontroleerde lijst |
 | **Verplichting**           | Verplicht                                                                 |
@@ -844,6 +940,8 @@ Zie de [detailpagina](licenties.md) over licenties voor meer informatie over de 
 
 De persoon of organisatie die de auteursrechten bezit. Dit kan de eigenlijke auteur zijn, zijn erfgenamen of een derde partij aan wie de rechten zijn overgedragen.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_rights_rightsOwners type="list"><Auteursrechthouder/></dc_rights_rightsOwners>`             |
 | **Datatype**               | Vrije tekst                                                                                      |
 | **Verplichting**           | Verplicht (indien gekend)                                                                        |
@@ -863,6 +961,8 @@ De persoon of organisatie die eigenaar is van de resource of de rechten beheert.
 Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de inkomsten gegenereerd uit het gebruik van auteursrechtelijk beschermde werken uitbesteed aan een externe persoon of organisatie (een zogenaamd auteursrechtvennootschappen zoals SABAM, SEMU,...).
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_rights_rightsHolders type="list"><Licentiehouder/></dc_rights_rightsHolders>`                   |
 | **Datatype**           | Vrije tekst                                                                                          |
 | **Verplichting**       | Optioneel                                                                                            |
@@ -878,6 +978,8 @@ Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de in
 
 Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.
 
+| | |
+| --- | --- |
 | **XML element**        | `<dc_rights_credit/>` |
 | **Datatype**           | Vrije tekst           |
 | **Verplichting**       | Optioneel             |
@@ -895,6 +997,8 @@ Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.
 
 Hier kunnen bijkomende opmerkingen en voorwaarden met betrekking tot de gebruiksrechten van toepassing op het item worden vastgelegd.
 
+| | |
+| --- | --- |
 | **XML element**            | `<dc_rights_comment/>`                                                                                                                             |
 | **Datatype**               | Vrije tekst                                                                                                                                        |
 | **Verplichting**           | Optioneel                                                                                                                                          |
@@ -913,6 +1017,8 @@ De technische metadata wordt automatisch uitgelezen uit de header van de archief
 Het videoformaat waarin de master copy van het digitale item bewaard wordt.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<VideoFormat/>`                                                              |
 | **Datatype**           | Vrije tekst                                                                   |
 | **Herhaalbaar**        | Nee                                                                           |
@@ -925,6 +1031,8 @@ Het videoformaat waarin de master copy van het digitale item bewaard wordt.
 
 Dit is de videotechnische metadata van de archiefmaster die uit de header van de mxf wordt opgehaald.
 
+| | |
+| --- | --- |
 | **XML element**        | `<VideoTechnical/>` |
 | **Datatype**           | Vrije tekst         |
 | **Herhaalbaar**        | Nee                 |
@@ -937,6 +1045,8 @@ Dit is de videotechnische metadata van de archiefmaster die uit de header van de
 
 Dit is de audiotechnische metadata van de archiefmaster die uit de header van de mxf wordt opgehaald.
 
+| | |
+| --- | --- |
 | **XML element**        | `<AudioTechnical/>`                                                                                     |
 | **Datatype**           | Vrije tekst                                                                                             |
 | **Herhaalbaar**        | Nee                                                                                                     |
@@ -949,6 +1059,8 @@ Dit is de audiotechnische metadata van de archiefmaster die uit de header van de
 
 Dit zijn de tijdscodes die overgenomen zijn van de analoge drager in de digitale kopie.
 
+| | |
+| --- | --- |
 | **XML element**        | `<TcInTimecode/>`                                                                         |
 | **Herhaalbaar**        | Nee                                                                                       |
 
@@ -957,6 +1069,8 @@ Dit zijn de tijdscodes die overgenomen zijn van de analoge drager in de digitale
 Dit zijn de tijdscodes die overgenomen zijn van de analoge drager in de digitale kopie.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<TcOutTimecode/>`                                                                        |
 | **Herhaalbaar**        | Nee                                                                                       |
 
@@ -964,6 +1078,8 @@ Dit zijn de tijdscodes die overgenomen zijn van de analoge drager in de digitale
 
 De totale duur van het digitale item.
 
+| | |
+| --- | --- |
 | **XML element**        | `<DurationTimecode/>`                                                  |
 | **Datatype**           | Duur (`hh:mm:ss:sss`) |
 | **Herhaalbaar**        | Nee                                                                    |
@@ -977,6 +1093,8 @@ De totale duur van het digitale item.
 De dimensie van het beeld, uitgedrukt in pixels.
 
 
+| | |
+| --- | --- |
 | **XML element**        | `<ImageSize/>`                                     |
 | **Datatype**           | Breedte x Hoogte (in pixels)                       |
 | **Herhaalbaar**        | Nee                                                |
@@ -989,6 +1107,8 @@ De dimensie van het beeld, uitgedrukt in pixels.
 
 MD5 (Message Digest Algorithm 5) is een veelgebruikte standaard om de integriteit van digitale bestanden te controleren.
 
+| | |
+| --- | --- |
 | **XML element**        | `<md5/>`                                                      |
 | **Datatype**           | [MD5 Checksum](https://nl.wikipedia.org/wiki/MD5#MD5-hashes) |
 | **Herhaalbaar**        | Nee                                                           |

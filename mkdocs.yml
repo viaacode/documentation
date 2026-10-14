@@ -229,7 +229,6 @@ validation:
     not_found: info
     absolute_links: relative_to_docs
   links:
-    # Phase 4 performs full legacy-link and fragment validation.
     not_found: info
     absolute_links: relative_to_docs
     unrecognized_links: info
