@@ -23,7 +23,7 @@ jobs:
           submodules: recursive
 
       - name: Regenerate Organizations API documentation
-        run: make graphql-docs
+        run: sudo make graphql-docs
 
       - name: Check generated documentation is current
         run: |
