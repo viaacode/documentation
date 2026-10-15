@@ -1,154 +1,153 @@
 ---
-title: Licenties
+title: Licenses
 nav_order: 5
 ---
 
-# Licenties
+# Licenses
 
-Op deze pagina vind je een overzicht van alle bestaande licenties in het _VIAA-metadatamodel_, het metadatamodel dat momenteel in gebruik is bij meemoo, en meer informatie over het moment waarop welke licentie actief wordt.
+On this page you will find an overview of all existing licenses in the _VIAA-metadata model_, the metadata model currently in use by meemoo, and more information about when each license becomes active.
 
-## Overzicht van de licenties
+## Overview of the Licenses
 
-Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metadatamodel_. Per licentie wordt aangegeven wat de waarde is in het meemoo archief en wat de waarde betekent.
+Below you will find an overview of all existing licenses in the _VIAA-metadata model_. For each license, the value it has in the meemoo archive and what the value means is indicated.
 
-### Onderwijs 
-
-| | |
-| --- | --- |
-| **MAM-naam** | `VIAA-ONDERWIJS` |
-| **Defaultwaarde**|  AAN |
-| **Implicatie** | meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op [onderwijs.hetarchief.be](https://onderwijs.hetarchief.be/). |
+### Education 
 
 | | |
 | --- | --- |
-| **MAM-naam** | `ONDERWIJS-FRAGMENT` |
-| **Defaultwaarde**|  UIT |
-| **Implicatie** | meemoo mag de content en metadata van één dan wel meerdere fragmenten van het item gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op [onderwijs.hetarchief.be](https://onderwijs.hetarchief.be/). |
-
-### Wetenschappelijk onderzoek 
+| **MAM name** | `VIAA-ONDERWIJS` |
+| **Default value** | ON |
+| **Implication** | meemoo may use the content and metadata for opening towards education, for example on [education.hetarchief.be](https://education.hetarchief.be/). |
 
 | | |
 | --- | --- |
-| **MAM-naam** | `VIAA-ONDERZOEK` |
-| **Defaultwaarde** | AAN |
-| **Implicatie** | meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar. |
+| **MAM name** | `ONDERWIJS-FRAGMENT` |
+| **Default value** | OFF |
+| **Implication** | meemoo may use the content and metadata of one or multiple fragments of the item for opening towards education, for example on [education.hetarchief.be](https://education.hetarchief.be/). |
 
-### Contentpartners
+### Scientific Research 
+
+| | |
+| --- | --- |
+| **MAM name** | `VIAA-ONDERZOEK` |
+| **Default value** | ON |
+| **Implication** | meemoo may use the content and metadata for research purposes. There is currently no concrete application for this available. |
+
+### Content Partners
 
 #### Content
 
 | | |
 | --- | --- |
-| **MAM-naam** |  `VIAA-INTRA_CP-CONTENT` |
-| **Defaultwaarde** | AAN |
-| **Implicatie** | De lage resolutiekopie van het object mag getoond worden tussen contentpartners. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
+| **MAM name** | `VIAA-INTRA_CP-CONTENT` |
+| **Default value** | ON |
+| **Implication** | The low-resolution copy of the object may be shown between content partners. If this license is given, the license `VIAA-INTRA_CP-METADATA-ALL` will also be applied. This license is used on [hetarchief.be](https://hetarchief.be). |
 
 #### Metadata
 
 | | |
 | --- | --- |
-| **MAM-naam** | `VIAA-INTRA_CP-METADATA-ALL` |
-| **Defaultwaarde** | AAN |
-| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
+| **MAM name** | `VIAA-INTRA_CP-METADATA-ALL` |
+| **Default value** | ON |
+| **Implication** | A comprehensive set of metadata of the object may be shared between content partners. This license is used on [hetarchief.be](https://hetarchief.be). |
 
-### Brede publiek
+### Broad Public
 
 #### Content
 
 | | |
 | --- | --- |
-| **MAM-naam** | `VIAA-PUBLIEK-CONTENT` |
-| **Defaultwaarde** | UIT |
-| **Implicatie** | De lage resolutiekopie van het object mag beschikbaar gemaakt worden aan het brede publiek. Deze licentie impliceert dat ook de `VIAA-PUBLIEK-METADATA-LTD` of `VIAA-PUBLIEK-METADATA-ALL` gegeven wordt. Deze licentie is nog niet in gebruik. |
+| **MAM name** | `VIAA-PUBLIEK-CONTENT` |
+| **Default value** | OFF |
+| **Implication** | The low-resolution copy of the object may be made available to the broad public. This license implies that either the `VIAA-PUBLIEK-METADATA-LTD` or `VIAA-PUBLIEK-METADATA-ALL` is given. This license is not yet in use. |
 
 #### Metadata
 
-**Beperkte metadataset**
+**Limited Metadata Set**
 
 | | |
 | --- | --- |
-| **MAM-naam** | `VIAA-PUBLIEK-METADATA-LTD` |
-| **Defaultwaarde** | AAN |
-| **Implicatie** | Een beperkte set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
+| **MAM name** | `VIAA-PUBLIEK-METADATA-LTD` |
+| **Default value** | ON |
+| **Implication** | A limited set of metadata of the object may be shared with the broad public. This license is used on [hetarchief.be](https://hetarchief.be). |
 
-**Uitgebreide metadataset**
+**Extended Metadata Set**
 
 | | |
 | --- | --- |
-| **MAM-naam** | `VIAA-PUBLIEK-METADATA-ALL` |
-| **Defaultwaarde** | UIT |
-| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
+| **MAM name** | `VIAA-PUBLIEK-METADATA-ALL` |
+| **Default value** | OFF |
+| **Implication** | A comprehensive set of metadata of the object may be shared with the broad public. This license is used on [hetarchief.be](https://hetarchief.be). |
 
-### Bezoekertool van de contentpartner
+### Visitor Tool of the Content Partner
 
 #### Content
 
 | | |
 | --- | --- |
-| **MAM-naam** | `BEZOEKERTOOL-CONTENT` |
-| **Defaultwaarde** | AAN |
-| **Implicatie** | De lage resolutiekopie van het object mag gedeeld worden aan gebruikers van de bezoekertool. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
+| **MAM name** | `BEZOEKERTOOL-CONTENT` |
+| **Default value** | ON |
+| **Implication** | The low-resolution copy of the object may be shared with users of the visitor tool. This license is used on [hetarchief.be](https://hetarchief.be). |
 
 #### Metadata
 
 | | |
 | --- | --- |
-| **MAM-naam** | `BEZOEKERTOOL-METADATA-ALL` |
-| **Defaultwaarde** | AAN |
-| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan gebruikers van de bezoekertool. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
+| **MAM name** | `BEZOEKERTOOL-METADATA-ALL` |
+| **Default value** | ON |
+| **Implication** | A comprehensive set of metadata of the object may be shared with users of the visitor tool. This license is used on [hetarchief.be](https://hetarchief.be). |
 
-### VIAA-licentie intra-muros
+### VIAA License Intra-muros
 
 | | |
 | --- | --- |
-| **MAM naam** | `VIAA-INTRAMUROS` |
-| **Default waarde** | UIT |
-| **Implicatie** | wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de meemoo-muren ontsloten zou worden. |
+| **MAM name** | `VIAA-INTRAMUROS` |
+| **Default value** | OFF |
+| **Implication** | Currently not used and will remain so. It may be used in the future if material would be opened via applications within the meemoo walls. |
 
-### Andere licenties
+### Other Licenses
 
 #### Content
 
 | | |
 | --- | --- |
-| **MAM-naam** | `CC_BY-CONTENT`, `CC_BY-SA-CONTENT`, `CC0-CONTENT`, `CC_BY-NC-CONTENT`, `CC_BY-ND-CONTENT`, `CC_BY-NC-ND-CONTENT` |
-| **Defaultwaarde** | UIT |
-| **Implicatie** | naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). |
+| **MAM name** | `CC_BY-CONTENT`, `CC_BY-SA-CONTENT`, `CC0-CONTENT`, `CC_BY-NC-CONTENT`, `CC_BY-ND-CONTENT`, `CC_BY-NC-ND-CONTENT` |
+| **Default value** | OFF |
+| **Implication** | Naming in line with the licenses at [Creative Commons](https://creativecommons.org/). All metadata and the browse copy can be shared in line with the license as described by [Creative Commons](https://creativecommons.org/). |
 
 #### Metadata
 
-| **MAM-naam** | `CC_BY-METADATA`, `CC_BY-SA-METADATA`, `CC0-METADATA`, `CC_BY-NC-METADATA`, `CC_BY-ND-METADATA`, `CC_BY-NC-ND-METADATA`
+| **MAM name** | `CC_BY-METADATA`, `CC_BY-SA-METADATA`, `CC0-METADATA`, `CC_BY-NC-METADATA`, `CC_BY-ND-METADATA`, `CC_BY-NC-ND-METADATA` |
 | | |
-| --- | --- |
-| **Defaultwaarde** | UIT |
-| **Implicatie** | naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). |
+| **Default value** | OFF |
+| **Implication** | Naming in line with the licenses at [Creative Commons](https://creativecommons.org/). All metadata and the browse copy can be shared in line with the license as described by [Creative Commons](https://creativecommons.org/). |
 
-## Wanneer worden de standaardwaardes ingevuld?
+## When are the default values filled in?
 
-Voor bestanden uit meemoo-digitaliseringsprojecten worden de standaardlicenties (zie tabel hierboven) automatisch actief op het moment van import in het archiefsysteem. Let wel: aangezien het materiaal zich op dat moment nog in de ingest-ruimte of workspace bevindt, zal het niet gebruikt worden. Contentpartners hebben zes maanden de tijd om het materiaal te publiceren en indien nodig de licenties aan te passen. Pas na publicatie wordt de licentie echt actief en kan het materiaal dus ontsloten worden volgens de licenties.
+For files from meemoo digitalization projects, the default licenses (see the table above) are automatically activated at the moment of import into the archive system. Note well: since the material is still in the ingest space or workspace at that moment, it will not be used. Content partners have six months to publish the material and, if necessary, to adjust the licenses. Only after publication does the license become truly active and the material can be opened according to the licenses.
 
-Voor bestanden uit digitale collecties worden de licenties meegegeven bij de aanlevering van het materiaal. Indien geen licentie aangeleverd werd, zal meemoo de standaardlicenties activeren.
+For files from digital collections, the licenses are provided with the submission of the material. If no license was submitted, meemoo will activate the default licenses.
 
-## Overzicht standaardwaardes
+## Overview of Default Values
 
-Standaard zal meemoo op dit moment onderstaande licenties activeren:
+By default, meemoo will currently activate the following licenses:
 
   | | |
   | --- | --- |
-  | VIAA-ONDERWIJS  |    AAN |
-  | ONDERWIJS-FRAGMENT  |    UIT |
-  | VIAA-ONDERZOEK   |   AAN |
-  | VIAA-INTRAMUROS  |   UIT |
-  | VIAA-INTRA_CP-CONTENT  |  AAN |
-  | VIAA-INTRA_CP-METADATA-ALL | AAN |
-  | VIAA-PUBLIEK-METADATA-LTD  | AAN |
-  | VIAA-PUBLIEK-METADATA-ALL |  UIT |
-  | BEZOEKERTOOL-CONTENT | AAN |
-  | BEZOEKERTOOL-METADATA-ALL | AAN |
-  | Alle andere licenties  | UIT |
+  | VIAA-ONDERWIJS | ON |
+  | ONDERWIJS-FRAGMENT | OFF |
+  | VIAA-ONDERZOEK | ON |
+  | VIAA-INTRAMUROS | OFF |
+  | VIAA-INTRA_CP-CONTENT | ON |
+  | VIAA-INTRA_CP-METADATA-ALL | ON |
+  | VIAA-PUBLIEK-METADATA-LTD | ON |
+  | VIAA-PUBLIEK-METADATA-ALL | OFF |
+  | BEZOEKERTOOL-CONTENT | ON |
+  | BEZOEKERTOOL-METADATA-ALL | ON |
+  | All other licenses | OFF |
 
-## Kan ik de licentie nog aanpassen?
+## Can I adjust the license?
 
-Licenties kunnen ten allen tijde aangepast worden. Tegelijkertijd wensen we er op te wijzen dat deze defaultsettings conform de afgesloten samenwerkingsovereenkomst zijn en er normaal gezien enkel wegens bepaalde redenen (zoals exclusieve rechten met derden, gevoelig materiaal, ...) aanpassingen nodig zijn.  
+Licenses can be adjusted at any time. At the same time, we would like to point out that these default settings are in line with the closed cooperation agreement and are normally only adjusted for certain reasons (such as exclusive rights with third parties, sensitive material, etc.). 
 
-Ontsluitingsplatformen zijn zo ontworpen dat ze rekening houden met de licentie en op basis hiervan een item al dan niet zullen gebruiken. Hou er wel rekening mee dat het even (typisch 24u, maar afhankelijk van platform tot platform) kan duren eer het ontsluitingsplatform aangepast is. Voor dringende gevallen kan een update gevraagd worden via <support@meemoo.be>.
+The opening platforms are designed to take the license into account and thus decide whether an item will be used or not. Please note that it may take (typically 24 hours, but depending on the platform) for the opening platform to be adjusted. For urgent cases, an update can be requested via <support@meemoo.be>.

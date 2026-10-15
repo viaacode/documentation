@@ -1,121 +1,113 @@
----
-title: REST API v1 en v2
-nav_order: 1
----
+**REST API v1 vs v2**
 
-# REST API v1 vs v2
+**Note**
 
-!!! note
+    Please: the REST API version 1 was phased out and is no longer supported
+    starting June 1st '23!
 
-    Opgelet: de REST API versie 1 werd uitgefaseerd en is vanaf 1 juni '23 niet meer ondersteund!
+MediaHaven has offered a REST API since the beginning to perform operations on
+media objects. Since MediaHaven version 21.1 (released on April 16, 2021) a new
+version of this REST API has been rolled out. We will further discuss these two
+versions of each other with the designations "v1" and "v2".
 
-MediaHaven biedt sinds het begin een REST API aan om bewerkingen uit te kunnen
-voeren op mediaobjecten. Vanaf MediaHaven versie 21.1 (uitgebracht op 16 april
-2021) werd van deze REST API een nieuwe versie uitgerold. We zullen verder in
-de tekst deze twee versies van elkaar onderscheiden met de aanduidingen "v1" en
-"v2".
+Although much of the basic functionality in the new REST API (such as querying a
+_resource_, executing a search,...) has remained largely unchanged, changes have
+been introduced that are **backwards incompatible**. This means that existing
+integrations that use the REST API v1 could break when they are transferred to the
+new endpoint.
 
-Hoewel veel van de basisfuncties in de nieuwe REST API (zoals het opvragen
-van een _resource_, het uitvoeren van een zoekopdracht,...) quasi onveranderd
-zijn gebleven, werden er ook wijzigingen ingevoerd die _backwards incompatible_
-zijn. Hierdoor zouden bestaande integraties die gebruik maken van de REST API
-v1 kunnen breken wanneer ze naar het nieuwe _endpoint_ worden overgezet.
-
-De oude REST API v1, op het huidige _endpoint_, wordt nog ondersteund tot
-**MediaHaven versie 22.1**, maar we raden sterk aan om naar de nieuwe REST
-API v2, op het nieuwe _endpoint_, over te stappen.
+The old REST API v1, at the current endpoint, is still supported until
+**MediaHaven version 22.1**, but we strongly recommend switching to the new REST
+API v2, at the new endpoint.
 
 ## Endpoints
 
-Zeticon koos voor het versiebeheer van hun REST API voor versiebeheer via het
-URL-pad. Dit betekent dat het versienummer toegevoegd wordt aan het URL-pad om
-de v2 van de REST API te bereiken. Concreet:
+Zeticon chose to manage their REST API versioning via the URL path. This means
+that the version number is added to the URL path to reach the v2 of the REST API.
+Specifically:
 
-| API versie | Endpoint                                        |
-|-----------:|-------------------------------------------------|
-| v1         | https://archief.viaa.be/mediahaven-rest-api/    |
-| v2         | https://archief.viaa.be/mediahaven-rest-api/v2/ |
+| API version | Endpoint                                    |
+|-------------:|---------------------------------------------|
+| v1           | https://archief.viaa.be/mediahaven-rest-api/ |
+| v2           | https://archief.viaa.be/mediahaven-rest-api/v2/ |
 
-**Note**: Dit zijn de _endpoints_ voor de productieomgeving! Voor een
-beschrijving van de verschillende omgevingen en hun _endpoints_, zie [Alles om te
-starten met het bouwen van een integratie](index.md).
+**Note**: These are the endpoints for the production environment! For a
+description of the different environments and their endpoints, see [Everything to
+get started with building an integration](index.md).
 
-## Verschillen tussen REST API v1 en v2
+## Differences between REST API v1 and v2
 
-Hieronder lijsten we eerst kort de belangrijkste _backwards incompatible_
-verschillen op tussen de REST API v1 en v2. Daarna gaan we dieper in op wat
-dat concreet inhoudt.
+First, we list here the main **backwards incompatible** differences between the
+REST API v1 and v2. Then we go into detail about what this means concretely.
 
-- authenticatie kan énkel nog via OAuth2: _Basic Auth_ wordt niet meer ondersteund
-- de structuur van de JSON _response_ wijzigt
-- de _resource_ `/media` is nu `/records` geworden
+- authentication can be done **only via OAuth2**: **Basic Auth** is no longer
+  supported
+- the structure of the JSON response changes
+- the resource `/media` has become `/records`
 
-Voor een volledig overzicht van de verschillen verwijzen we je naar de links
-onderaan deze pagina.
+For a full overview of the differences, see the links below this page.
 
-### Authenticatie
+### Authentication
 
-- **Authenticatie** is het proces waarbij gebruikers aantonen dat ze werkelijk
-  zijn wie ze beweren te zijn, of liever: dat ze de werkelijke eigenaar zijn
-  van de identiteit die ze beweren te hebben.
-- **Autorisatie** is het proces waarbij een applicatie, op basis van de
-  vastgestelde en geverifieerde identiteit, bepaalde acties toelaat of net
-  weigert.
+- **Authentication** is the process where users prove they are who they claim to
+  be, or more precisely: that they are the actual owner of the identity they claim
+  to have.
+- **Authorization** is the process where an application, based on the verified
+  identity, allows or denies certain actions.
 
-De REST API v1 liet twee manieren van authenticatie toe:
+The REST API v1 allowed two ways of authentication:
 
-- _basic authentication_
+- **basic authentication**
 - OAuth2
 
-_Basic authentication_ is een heel simpele vorm van authenticatie die deel
-uitmaakt van het HTTP-protocol. Hierbij worden gebruikersnaam en wachtwoord met
-elke _call_ naar de API meegegeven in de HTTP `Authorization` _header_ met de
-`Basic` prefix, bijvoorbeeld:
+**Basic authentication** is a very simple form of authentication that is part of
+the HTTP protocol. Here, the username and password are included with each call to
+the API in the HTTP `Authorization` header with the `Basic` prefix, for example:
 
     Authorization: Basic ZGVtbzpwQDU1dzByZA==
 
-OAuth2 daarentegen is een "autorisatie framework", een standaard op zich naast
-het HTTP-protocol. Hierbij wordt gebruik gemaakt van _access tokens_ met een
-korte levensduur. Ook deze worden − gewoonlijk − meegegeven in de HTTP-requests
-via de `Authorization` _header_ maar met de  `Bearer` prefix, bijvoorbeeld:
+OAuth2, on the other hand, is an "authorization framework", a standard alongside the
+HTTP protocol. Here, access tokens with a short lifespan are used. These are
+usually included in the HTTP requests via the `Authorization` header but with the
+`Bearer` prefix, for example:
 
     Authorization: Bearer RsT5OjbzRn430zqMLgV3Ia
 
-Op deze pagina vind je meer informatie over de OAuth2 authenticatie: [Alles om
-te starten met het bouwen van een integratie](index.md).
+On this page you can find more information about the OAuth2 authentication:
+[Everything to get started with building an integration](index.md).
 
-**Waarom is dit belangrijk?** Integraties gebaseerd op REST API v1 zullen niet
-meer werken aangezien ze niet meer geauthenticeerd zijn.
+**Why is this important?** Integrations based on REST API v1 will no longer work
+since they are no longer authenticated.
 
-### Responseformaten
+### Response Formats
 
-In REST API v1 was het al mogelijk om de nieuwe responseformaten (zowel voor
-JSON als voor XML) te verkrijgen via _content negotiation_ in de HTTP `Accept`
-_header_. In de REST API v1 waren volgende responseformaten mogelijk:
+In REST API v1 it was already possible to obtain the new response formats (both
+for JSON and XML) via content negotiation in the HTTP `Accept` header. In the
+REST API v1 the following response formats were possible:
 
-| Formaat | `Accept` header                      |
+| Format | `Accept` header                      |
 |--------:|--------------------------------------|
 | JSON v1 | `application/json`                   |
 |  XML v1 | `application/xml`                    |
 | JSON v2 | `application/vnd.mediahaven.v2+json` |
 |  XML v2 | `application/vnd.mediahaven.v2+xml`  |
 
-De nieuwere responseformaten in de REST API v1 (in de tabel hierboven: `JSON
-v2` en `XML v2`) worden de standaard in de REST API v2. Dit betekent dat de
-`Accept` _headers_ `application/vnd.mediahaven.v2+json` en
-`application/vnd.mediahaven.v2+xml` komen te vervallen. Het standaardformaat
-van de _response_ in de REST API v2 is nu quasi gelijk aan het v2 formaat in
-de REST API v1.
+The newer response formats in the REST API v1 (shown in the table above:
+`JSON v2` and `XML v2`) are now the standard in the REST API v2. This means that
+the `Accept` headers `application/vnd.mediahaven.v2+json` and
+`application/vnd.mediahaven.v2+xml` will become obsolete. The default format of
+the response in the REST API v2 is now essentially the same as the v2 format in
+the REST API v1.
 
-Naast een wijziging aan de structuur (i.e. op welk JSON-pad bepaalde data te
-vinden is) van de _response_, is ook de _casing_ gewijzigd:
+In addition to a change in the structure (i.e., where certain data is located in
+the JSON) of the response, the casing has also changed:
 
-- de JSON _keys_ in het v1 formaat zijn camelCase (e.g., `totalNrOfResults`)
-- de JSON _keys_ in het v2 formaat zijn PascalCase (e.g., `TotalNrOfResults`)
+- the JSON keys in the v1 format are camelCase (e.g., `totalNrOfResults`)
+- the JSON keys in the v2 format are PascalCase (e.g., `TotalNrOfResults`)
 
-#### Voorbeelden
+#### Examples
 
-- JSON responseformaat `application/json` in REST API v1
+- JSON response format `application/json` in REST API v1
 
 ```json
 {
@@ -129,7 +121,7 @@ vinden is) van de _response_, is ook de _casing_ gewijzigd:
 }
 ```
 
-- JSON responseformaat `application/vnd.mediahaven.v2+json` in REST API v1
+- JSON response format `application/vnd.mediahaven.v2+json` in REST API v1
 
 ```json
 {
@@ -143,7 +135,7 @@ vinden is) van de _response_, is ook de _casing_ gewijzigd:
 }
 ```
 
-- JSON responseformaat `application/json` in REST API v2
+- JSON response format `application/json` in REST API v2
 
 ```json
 {
@@ -158,37 +150,35 @@ vinden is) van de _response_, is ook de _casing_ gewijzigd:
 }
 ```
 
-Zo zien we hier ook dat de _array_ die de resultaten bevat in de REST API v2
-nu altijd `Results` is.
+We see here that the array containing the results is now always `Results` in the
+REST API v2.
 
-**Waarom is dit belangrijk?** Integraties zijn meestal hoofdlettergevoelig en
-verwachten bepaalde data op een bepaalde plaats te vinden, deze assumpties
-zouden niet meer gelden in de REST API v2.
+**Why is this important?** Integrations are usually case-sensitive and expect
+certain data to be located at a certain place, these assumptions would no longer
+hold in the REST API v2.
 
-### Van `/media` resource naar `/records`
+### From `/media` resource to `/records`
 
-De belangrijkste resource, de mediaobjecten, heetten in de REST API v1 `media`.
-Dit is nu gewijzigd naar `records`.
+The main resource, the media objects, used to be called `media` in the REST API
+v1. This has been changed to `records`.
 
-## Nieuwe _features_
+## New Features
 
-Zie [MediaHaven Customer Support > REST API > Rest V2 vs v1 changes >
+See [MediaHaven Customer Support > REST API > Rest V2 vs v1 changes >
 New-features](https://mediahaven.atlassian.net/wiki/spaces/CS/pages/2432303184/Rest+V2+vs+v1+changes#New-features)
 
 ## Links
 
-### Documentatie
+### Documentation
 
-De documentatie van beide versies is hier te vinden:
+The documentation for both versions can be found here:
 
 - REST API v1:
   [https://archief.viaa.be/mediahaven-rest-api](https://archief.viaa.be/mediahaven-rest-api)
 - REST API v2:
   [https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html)
 
-Raadpleeg hier de MediaHaven-documentatie over de verschillen tussen REST API
-v1 en v2:
+Please refer to the MediaHaven documentation about the differences between REST
+API v1 and v2:
 
-- [MediaHaven Customer Support > REST API > Rest V2 vs v1
-  changes](https://mediahaven.atlassian.net/wiki/spaces/CS/pages/2432303184/Rest+V2+vs+v1+changes)
-
+- [MediaHaven Customer Support > REST API > Rest V2 vs v1 changes](https://mediahaven.atlassian.net/wiki/spaces/CS/pages/2432303184/Rest+V2+vs+v1+changes)

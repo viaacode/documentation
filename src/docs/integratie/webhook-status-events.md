@@ -3,21 +3,21 @@ title: Webhook Status Events
 nav_order: 5
 ---
 
-# Inleiding
+# Introduction
 
-Dit document beschrijft het gebruik van webhooks om update events te ontvangen over aangeleverde [meemoo SIP v2.x](../diginstroom/sip/index.md) bestanden.
+This document describes the use of webhooks to receive update events about submitted [meemoo SIP v2.x](../diginstroom/sip/index.md) files.
 
-Na aanlevering wordt er een event uitgestuurd als:
-- het SIP-pakket volledig en correct gearchiveerd is in het meemoo-archiefsysteem
-- er ergens een fout is opgetreden in het verwerkingsproces, inclusief het meemoo-archiefsysteem. Deze events bevatten een beschrijving van de fout.
+After submission, an event is sent out when:
+- the SIP package is fully and correctly archived in the meemoo archive system
+- there is an error somewhere in the processing pipeline, including the meemoo archive system. These events contain a description of the error.
 
-Er worden geen tussentijdse _in progress_ events uitgestuurd. Enkel als de status verandert.
+No interim _in progress_ events are sent out. Only when the status changes.
 
-# Het proces vooraf
+# Pre-process
 
-## Aanlevering van de SIP op S3
+## Submitting the SIP to S3
 
-Op [de SIP-aanlevering pagina](../diginstroom/aanlevering-van-sips.md) staat de procedure om een S3-token aan te vragen, zodat het pakket opgeladen kan worden. Na een succesvolle transfer, vind je in de headers van het response object van de S3-transfer een correlation ID terug in de custom key `X-Correlation-ID`. Zie voorbeeld via `aws s3 cp` commando:
+On the [SIP Submission page](../diginstroom/aanlevering-van-sips.md) you will find the procedure to request an S3 token so that the package can be uploaded. After a successful transfer, you will find a correlation ID in the custom key `X-Correlation-ID` in the headers of the response object of the S3 transfer:
 
 ``` json
 {
@@ -33,7 +33,7 @@ Op [de SIP-aanlevering pagina](../diginstroom/aanlevering-van-sips.md) staat de 
 }
 ```
 
-Indien je bv. de Python bibliotheek `boto3` gebruikt, is het response object in de vorm van een Python dictionary, met de volgende structuur:
+If you are using the Python library `boto3`, the response object is in the form of a Python dictionary, with the following structure:
 
 ``` json
 {
@@ -57,39 +57,38 @@ Indien je bv. de Python bibliotheek `boto3` gebruikt, is het response object in 
     }
 }
 ```
-De correlation ID is beschikbaar via `response['ResponseMetadata']['HTTPHeaders']['x-correlation-id']`.
+The correlation ID is available via `response['ResponseMetadata']['HTTPHeaders']['x-correlation-id']`.
 
-Deze correlation ID wordt gebruikt door het hele proces heen om de levensloop van die SIP te identificeren. Deze correlation ID is eigen aan één aanlevering van één SIP. Indien dezelfde SIP meerdere malen wordt aangeleverd dan resulteert dit in verschillende correlation ID's.
+This correlation ID is used throughout the process to identify the lifecycle of that SIP. It is unique to one submission of one SIP. If the same SIP is submitted multiple times, different correlation IDs will result.
 
 # Webhook
 
-De implementatie van de webhooks is geïnspireerd op de [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md) richtlijnen.  Er is [een formele specificatie](../../assets/webhooks/openapi.yml) beschikbaar in de vorm van [de OpenAPI specificatie v3.1.x](https://spec.openapis.org/oas/v3.1.1.html). Dit beschrijft zowel de HTTP-request als de structuur van het uitgestuurde event.
+The implementation of the webhooks is inspired by the [Standard Webhooks](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md) guidelines. There is also a [formal specification](../../assets/webhooks/openapi.yml) available in the form of an [OpenAPI specification v3.1.x](https://spec.openapis.org/oas/v3.1.1.html). This describes both the HTTP request and the structure of the sent event.
 
-Hieronder staan we even stil bij enkele elementen van de specificatie, maar ook bij bepaalde aspecten die buiten de scope van de formele specificatie vallen.
+Here, we will discuss some elements of the specification, as well as certain aspects that fall outside the scope of the formal specification.
 
-## Registratie
+## Registration
 
-Indien je geïnteresseerd bent om statusupdates te krijgen via webhooks moet je contact opnemen met [meemoo support](mailto:support@meemoo.be). Het is momenteel niet mogelijk om op een automatische manier, zoals bv. web-interface of REST API, webhooks te registreren en/of te beheren.
+If you are interested in receiving status updates via webhooks, you should contact [meemoo support](mailto:support@meemoo.be). It is currently not possible to register or manage webhooks automatically, such as through a web interface or REST API.
 
-Er zijn wel enkele administratieve zaken die moeten gedeeld worden, met name de `endpoint` en de `shared secret` (Zie: [Headers](#headers)). Dit gebeurt in samenspraak met meemoo. 
+There are some administrative items to share, particularly the `endpoint` and the `shared secret` (See: [Headers](#headers)). This is done in collaboration with meemoo.
 
-Eén webhook registratie heeft betrekking tot één S3-bucket. Dit wil zeggen dat er naar de endpoint van de webhook events gestuurd worden voor alle SIP-bestanden die in die bucket opgeladen worden.
+One webhook registration pertains to one S3 bucket. This means that events will be sent to the webhook endpoint for all SIP files uploaded to that bucket.
 
 ## Payload
 
-De webhook is een HTTP POST-verzoek. Het feitelijke event bevindt zich in de HTTP-body in de vorm van een JSON.
+The webhook is an HTTP POST request. The actual event is contained in the HTTP body in the form of JSON.
 
-De structuur van de payload:
-- `type`: Het type van het event, in dot-notated vorm. Dit is momenteel altijd `meemoo.sip.archived`.
-- `timestamp`: De tijdstempel wanneer het event heeft plaats gevonden. Dit is niet noodzakelijk wanneer het event wordt verzonden.  Deze tijdstempel is in het ISO 8601 formaat.
-- `data`: De eigenlijke event data geassocieerd met het event.
-    - `correlation_id`: Dit is de correlation ID zoals [hierboven](#aanlevering-van-de-sip-op-s3) beschreven.
-    - `outcome`: De uitkomst van het event: "success" of "failure".
-    - `message`: Bijhorende informatie over het event, in het geval van een gefaald event. [Optioneel]
-    - `pid`: De meemoo-PID van de ingestroomde SIP, indien aanwezig. [Optioneel]
+The structure of the payload:
+- `type`: The type of the event, in dot-notated form. Currently, it is always `meemoo.sip.archived`.
+- `timestamp`: The timestamp when the event occurred. This is not necessarily when the event is sent. This timestamp is in ISO 8601 format.
+- `data`: The actual event data associated with the event.
+    - `correlation_id`: This is the correlation ID as described above.
+    - `outcome`: The outcome of the event: "success" or "failure".
+    - `message`: Additional information about the event, in the case of a failed event. [Optional]
+    - `pid`: The meemoo PID of the ingested SIP, if present. [Optional]
 
-
-Voorbeeld:
+Example:
 ``` json
 {
   "type": "meemoo.sip.archived",
@@ -102,87 +101,85 @@ Voorbeeld:
 }
 ```
 
-Een SIP is succesvol gearchiveerd indien het event, met bijhorende `correlation_id`, als `type` de waarde `meemoo.sip.archived` én als `outcome` de waarde `success` heeft. Indien de `outcome` de waarde `failure` heeft, onafhankelijk van het `type`, is de SIP gefaald tijdens instroom. Opgepast: wanneer er niet-fatale (herstelbare) fouten voorkomen tijdens instroom, is het mogelijk dat er een "success" wordt uitgestuurd voor een SIP waarvoor er eerder een "failure" werd uitgestuurd.
+A SIP is successfully archived if the event, with its associated `correlation_id`, has the `type` as `meemoo.sip.archived` and the `outcome` as `success`. If the `outcome` is `failure`, regardless of the `type`, the SIP has failed during ingestion. Note: non-fatal (recoverable) errors may result in a "success" being sent for a SIP that previously had a "failure".
 
-De formele specificatie in de vorm van een JSON-schema vind je in de [OpenAPI specificatie](https://github.com/viaacode/sipin-status-webhook-documentation/blob/main/openapi.yml)
+The formal specification in the form of a JSON schema can be found in the [OpenAPI specification](https://github.com/viaacode/sipin-status-webhook-documentation/blob/main/openapi.yml)
 
 ## Headers
 
-De payload van de webhook wordt verzonden als de body van een HTTP POST-verzoek. De aanvullende data over de webhook zit dan vervat in de HTTP-headers:
+The payload of the webhook is sent as the body of an HTTP POST request. The additional data about the webhook resides in the HTTP headers:
 
-- `webhook-id`: de unieke identificatie van het event van de webhook. Deze is geassocieerd met het event en blijft dezelfde indien het event meerdere malen zou uitgestuurd worden.
-- `webhook-timestamp`: een integer UNIX tijdstempel (aantal seconden sinds de epoch). Deze tijdstempel beschrijft het moment van het uitsturen van de webhook. Indien éénzelfde event meerdere malen wordt uitgestuurd, zal deze tijdstempel een andere waarde hebben.
-- `webhook-signature`: één of meerdere (door een spatie gescheiden) handtekening(en) van deze webhook, waarvan er minstens 1 geldig is.
+- `webhook-id`: the unique identification of the event from the webhook. This is associated with the event and remains the same if the event is sent multiple times.
+- `webhook-timestamp`: an integer UNIX timestamp (seconds since the epoch). This timestamp describes the moment the webhook was sent. If the same event is sent multiple times, this timestamp will have a different value.
+- `webhook-signature`: one or more (space-separated) signatures of this webhook, at least one of which is valid.
 
-Een handtekening in `webhook-signature` is een symmetrische handtekening met de volgende inhoud: `{msg_id}.{timestamp}.{payload}` (concatenatie van deze drie velden, gescheiden door een punt), en met de volgende eigenschappen:
+A signature in `webhook-signature` consists of the following content: `{msg_id}.{timestamp}.{payload}` (concatenation of these three fields, separated by a dot), with the following properties:
 
-|                         | Symmetrische handtekening                                             |
+|                         | Symmetric signature                                             |
 | ----------------------- | --------------------------------------------------------------------- |
-| Handtekening schema     | `HMAC-SHA256`                                                         |
-| Signering secret        | Shared secret. Willekeurig, minstens 24 bytes (192 bits)              |
-| Serialisatie secret     | base64 geëncodeerd, met prefix `whsec_` voor eenvoudige identificatie. |
-| Handtekening identifier | `v1`                                                                  |
+| Signature scheme        | `HMAC-SHA256`                                                         |
+| Signing secret          | Shared secret. Random, at least 24 bytes (192 bits)                  |
+| Serialization secret    | Base64 encoded, with prefix `whsec_` for easy identification.        |
+| Signature identifier    | `v1`                                                                  |
 
-De "serialisatie secret" beschrijft hoe de secret geserialiseerd wordt. Zoals hierboven beschreven, is de secret key een aantal willekeurige bytes. Stel dat de eigenlijke secret b"alongwebhookmeemoosecret" is, dan is de serialisatie `whsec_YWxvbmd3ZWJob29rbWVlbW9vc2VjcmV0` (whsec_{base64encode(b"alongwebhookmeemoosecret")}).
+The "serialization secret" describes how the secret is serialized. For example, if the actual secret is `alongwebhookmeemoosecret`, the serialization is `whsec_YWxvbmd3ZWJob29rbWVlbW9vc2VjcmV0` (whsec_{base64encode(b"alongwebhookmeemoosecret")}).
 
-De "handtekening identifier" wordt als een soort versie vooraan aan de handtekening toegevoegd, wanneer deze geserialiseerd en doorgestuurd wordt in de webhook. De handtekening zelf wordt geëncodeerd als base64. Bijvoorbeeld: `v1,K5oZfzN95Z9UVu1EsfQmfVNQhnkZ2pj9o9NDN/H/pI4=` (v1,{base64encode(signature_in_bytes)}).
+The "signature identifier" is added as a version prefix to the signature when serialized and sent in the webhook. The signature itself is encoded as base64. For example: `v1,K5oZfzN95Z9UVu1EsfQmfVNQhnkZ2pj9o9NDN/H/pI4=` (v1,{base64encode(signature_in_bytes)}).
 
-### Voorbeeld
-Laten we even alles samen brengen. Neem een webhook met volgende `id` en `tijdstempel`:
+### Example
+Let's put everything together. Suppose a webhook with the following `id` and `timestamp`:
 
 ```
 webhook-id: msg_333a3NGSYKk1vyFtMgj9Qy8gm3y
 webhook-timestamp: 1758548009
 ```
 
-Met als payload (de exacte body van het HTTP-verzoek):
+With the payload (the exact body of the HTTP request):
 ``` json
 {"type": "meemoo.sip.archived", "timestamp": "2025-09-03T20:26:10.344522Z", "data": {"correlation_id": "843e9ba457593d0edf69a24baa0babf3", "outcome": "success", "pid": "kdleipkyuj"}}
 ```
 
-Dit resulteert in de volgende te signeren inhoud:
+This results in the following to be signed:
 ```
 msg_333a3NGSYKk1vyFtMgj9Qy8gm3y.1758548009.{"type": "meemoo.sip.archived", "timestamp": "2025-09-03T20:26:10.344522Z", "data": {"correlation_id": "843e9ba457593d0edf69a24baa0babf3", "outcome": "success", "pid": "kdleipkyuj"}}
 ```
-Voor de secret `whsec_YWxvbmd3ZWJob29rbWVlbW9vc2VjcmV0` krijg je de volgende handtekening, geserialiseerd in de header:
+Using the secret `whsec_YWxvbmd3ZWJob29rbWVlbW9vc2VjcmV0` (whsec_{base64encode(b"alongwebhookmeemoosecret")}), the signature becomes:
 ```
 webhook-signature: v1,cVueLJYV5JY6qXHw3+MIHbZCPHHnX7N7jjaebaI2+5o=
 ```
 
+You can find libraries for several common languages, such as Python, Golang, Java, etc., in the [standard-webhooks repository](https://github.com/standard-webhooks/standard-webhooks/tree/main/libraries). These libraries facilitate signing and validating webhooks. We recommend using these implementations where possible, or at least incorporating them in a way that makes sense. Many of these libraries are also published in their respective repositories.
 
-Je vindt in de [standard-webhooks repo](https://github.com/standard-webhooks/standard-webhooks/tree/main/libraries) bibliotheken voor enkele gangbare talen zoals bv. Python, Golang, Java... Deze faciliteren o.m. het signeren en het valideren van de webhook. We raden aan deze implementaties, indien mogelijk, te gebruiken, of op zijn minst op een manier te incorporeren. Vele van deze bibliotheken zijn ook gepubliceerd in hun respectievelijke repositories.
+## Security
+In the context of webhooks, we can identify these security aspects:
+- **Authenticity**: Is the sender indeed the sender they claim to be?
+- **Integrity**: Has the webhook been intercepted and modified along the way?
+- **Replayability**: Can we determine if a webhook has been sent and processed before?
 
-## Beveiliging
-In het kader van webhooks, kunnen we deze verschillende beveiligingsaspecten identificeren:
-- `authenticiteit`: is de afzender wel degelijk de afzender die die beweert te zijn?
-- `integriteit`: is de webhook onderweg niet onderschept, en aangepast?
-- `herspeelbaarheid`: kunnen we identificeren of een webhook al uitgezonden en verwerkt is?
+| Authenticity   | Integrity  | Replayability                                          |
+| --------------- | ----------- | ------------------------------------------------------ |
+| Signature      | Signature  | Combination of webhook identifier and webhook timestamp |
 
+The server implementation has some freedom in how it verifies what it needs.
 
-| Authenticiteit   | Integriteit  | Herspeelbaarheid                                          |
-| ---------------- | ------------ | --------------------------------------------------------  |
-| handtekening     | handtekening | Combinatie van webhook identifier en webhook tijdstempel  | 
+There is an additional layer of security in the form of TLS. The endpoint **must** be a HTTPS endpoint. This encrypts the payload.
 
-De serverimplementatie heeft een zekere vrijheid om te verifiëren wat die zelf nodig acht.
+## Deliverability and Reliability
+The submission of a webhook is considered successful if it receives a `2xx` status code. All other scenarios are marked as failed. If the submission is failed, we will retry sending the event up to the point of success or until all attempts are exhausted. This is based on an incremental backoff schedule:
 
-Er is nog een extra laag van beveiliging in de vorm van TLS. De endpoint **moet** een HTTPS-endpoint zijn. Op deze manier is de payload geëncrypteerd.
+| Delay      | Time since start  |
+| ----------- | ----------------- |
+| Immediate   | 00:00:00          |
+| 5 seconds   | 00:00:05          |
+| 5 minutes   | 00:05:05          |
+| 30 minutes  | 00:35:05          |
+| 2 hours     | 02:35:05          |
+| 5 hours     | 07:35:05          |
+| 10 hours    | 17:35:05          |
+| 10 hours    | 27:35:05          |
 
-## Leverbaarheid en betrouwbaarheid
-De aanlevering van een webhook wordt als succesvol aanzien als deze beantwoord wordt met een `2xx` statuscode. In alle andere scenario's wordt de aanlevering als gefaald gemarkeerd. In het geval dat de aanlevering gefaald is, proberen we het event opnieuw uit te sturen, tot de aanlevering geslaagd is of als alle pogingen zijn uitgeput. Dit is gebaseerd op een herhalingsschema met een *incremental backoff*. Het geïmplementeerde herhalingsschema:
+If no successful webhooks can be sent to the agreed endpoint after a period of 72 hours, the system will stop sending events to the designated endpoint. Contact [meemoo support](mailto:support@meemoo.be) in such cases.
 
-| Vertraging      | Tijd sinds start  |
-| --------------- | ----------------- |
-| Onmiddellijk    | 00:00:00          |
-| 5 seconden      | 00:00:05          |
-| 5 minuten       | 00:05:05          |
-| 30 minuten      | 00:35:05          |
-| 2 uren          | 02:35:05          |
-| 5 uren          | 07:35:05          |
-| 10 uren         | 17:35:05          |
-| 10 uren         | 27:35:05          |
+Note that we implement a timeout of 15 seconds. If no response is received after 15 seconds, the webhook is interpreted as failed and will be resent according to the above principles.
 
-Indien er na een periode van 72 uur geen succesvolle webhooks kunnen uitgestuurd worden, zal het systeem stoppen met het uitsturen van events naar de afgesproken endpoint. Er moet dan contact opgenomen worden met [meemoo support](mailto:support@meemoo.be).
-
-Merk op dat we een time-out implementeren van 15 seconden. Indien er na 15 seconden geen antwoord is, wordt de webhook als gefaald geïnterpreteerd. De webhook zal opnieuw uitgestuurd worden volgens het hierboven beschreven principe.
-
-We garanderen niet dat elk event exact eenmaal wordt uitgestuurd. Hou er dus rekening mee dat (in uitzonderlijke gevallen) een event meerdere keren kan uitgezonden worden ("at least once semantics").
+Keep in mind that we do not guarantee that each event is sent exactly once. Be aware that (in exceptional cases) an event may be sent multiple times ("at least once semantics").

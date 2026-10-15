@@ -1,89 +1,84 @@
----
-title: OAI-PMH
-nav_order: 2
----
+# OAI-PMH
 
-# Over OAI-PMH
+## OAI-PMH Overview
 
-OAI-PMH is een gestandaardiseerd protocol dat werkt op basis van 'Providers' en 'Harvesters'. Een provider is een applicatie die metadata ter beschikking stelt aan derde applicaties. Een harvester is een gebruiker van deze metadata. OAI-PMH stelt de gebruikers in staat om:
+OAI-PMH is a standardized protocol that operates on the basis of 'Providers' and 'Harvesters'. A provider is an application that makes metadata available to third-party applications. A harvester is a user of this metadata. OAI-PMH enables users to:
 
-* De metadata van items of collecties aan te bieden op het web (als 'provider')
-* De metadata te verbruiken (als 'harvester')
+* Provide metadata of items or collections on the web (as 'provider')
+* Consume metadata (as 'harvester')
 
-Het meemoo-archief gedraagt zich als data **provider** en kan dus jouw gearchiveerde collecties geheel of gedeeltelijk ter beschikking stellen via deze standaard. Voor use cases verwijzen we door naar [de integratie pagina](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-bouw-ik-een-integratie-met-meemoo) op onze website.
+The meemoo archive behaves as a data **provider** and can thus make your archived collections available in whole or in part via this standard. For use cases, refer to [the integration page](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-bouw-ik-een-integratie-met-meemoo) on our website.
 
-OAI-PMH is een gestandaardiseerd protocol. De meemoo-implementatie voldoet aan versie 2 van deze standaard. Voor de technische documentatie verwijzen we dan ook naar de documentatie van de standaard zelf: [https://www.openarchives.org/OAI/openarchivesprotocol.html](https://www.openarchives.org/OAI/openarchivesprotocol.html).
+OAI-PMH is a standardized protocol. The meemoo implementation complies with version 2 of this standard. For the technical documentation, refer to the documentation of the standard itself: [https://www.openarchives.org/OAI/openarchivesprotocol.html](https://www.openarchives.org/OAI/openarchivesprotocol.html).
 
-In dit document worden de voor meemoo specifieke implementatiedetails besproken zoals authenticatie, het gebruik van sets en de afhandeling van files die verwijderd werden in het meemoo-archief. Verder wordt op deze pagina een typisch scenario uitgewerkt aan de hand van het meemoo-archief.
+## Authentication
 
-## Authenticatie
+The meemoo OAI-PMH implementation is not publicly available: only users who have the right to view certain items or collections will be able to do so via OAI-PMH. The user's rights determine the visibility via OAI-PMH.
 
-De meemoo-implementatie van OAI-PMH is niet publiek beschikbaar: enkel gebruikers die het recht hebben om bepaalde items of collecties te zien, zullen die ook kunnen raadplegen via OAI-PMH. De rechten van de gebruiker bepalen de zichtbaarheid via OAI-PMH.
+Authentication currently only occurs via OAuth 2.0, as with the REST API v2. You will first need to register the application. Instructions can be found [here](https://developer.meemoo.be/docs/integratie/).
 
-Net zoals bij de REST API v2 verloopt de authenticatie tegenwoordig enkel via OAuth 2.0. Je zal dus eerst de applicatie moeten registeren. Hoe je dit doet vind je [hier](https://developer.meemoo.be/docs/integratie/) terug.
+### Users
 
-### Gebruikers
+Every user of the meemoo archive also has access to the OAI-PMH API. This can be handy for quick testing, but for specific applications, we strongly recommend creating a dedicated account. You can request such an account by contacting [support@meemoo.be](mailto:support@meemoo.be). You only need to provide a valid email address so the password for this user can be set.
 
-Elke gebruiker van het meemoo-archief heeft meteen ook toegang tot de OAI-PMH API. Dit kan handig zijn om snel zaken te testen, maar voor specifieke applicaties raden we sterk aan een gebruiker te laten aanmaken voor dit doel. Het aanmaken van een dergelijk account gebeurt op eenvoudige vraag bij [support@meemoo.be](mailto:support@meemoo.be). Je hoeft enkel een geldig e-mailadres te voorzien, zodat het wachtwoord van deze gebruiker ingesteld kan worden.
+### Rights
 
-### Rechten
+By default, all items that are part of your meemoo archive and published will be available via OAI-PMH. If only part of the records are needed in the harvesting application, there are two options:
 
-Standaard zullen alle items die zich in jouw meemoo-archief bevinden en die gepubliceerd zijn, beschikbaar zijn via OAI-PMH. Indien slechts een deel van de records nodig zijn in de harvestende applicatie, zijn er twee opties:
+* The harvesting application itself filters the items.
+* An OAI user is created that only provides a part of your material.
 
-* De harvestende applicatie staat zelf in voor de filtering
-* Er wordt een OAI-gebruiker aangemaakt die maar een deel van jouw materiaal ter beschikking stelt.
+For the first option, no further configuration is needed: the harvesting application decides which items should be shown and which not. For the second option, a specific account with limited rights must be created, and items must be assigned to this account.
 
-Voor de eerste optie is geen verdere configuratie nodig: de harvestende applicatie beslist zelf welke items getoond moeten worden en welke niet. Voor de tweede optie moet een specifiek account aangemaakt worden met beperkte rechten en moeten items aan dit account toegekend worden.
+For assistance and advice regarding this configuration, you can always contact [support@meemoo.be](mailto:support@meemoo.be).
 
-Voor hulp en advies omtrent deze configuratie kan je steeds terecht bij [support@meemoo.be](mailto:support@meemoo.be).
+## Endpoint and Verbs
 
-## Endpoint en verbs
+The meemoo OAI-PMH endpoint is available at: [https://archief.meemoo.be/mediahaven-oai/oai](https://archief-meemoo.be/mediahaven-oai/oai)
 
-Het meemoo OAI-PMH endpoint is hier terug te vinden: [https://archief.meemoo.be/mediahaven-oai/oai](https://archief.meemoo.be/mediahaven-oai/oai)
+Implemented verbs include:
 
-Volgende verbs zijn geïmplementeerd:
+* **```Identify```** - Displays information about the meemoo archive.
+  * Example: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=Identify](https://archief-meemoo.be/mediahaven-oai/oai?verb=Identify)"
+* **```ListMetadataFormats```** - Lists the supported metadata formats.
+  * Example: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=ListMetadataFormats](https://archief-meemoo.be/mediahaven-oai/oai?verb=ListMetadataFormats)"
+  * Meemoo currently supports the following metadata formats:
+    * oai_dc - Provides only descriptive metadata and the header.
+    * mediahaven - Provides the main technical and content metadata, and links to browse copies.
+    * mets - Provides all metadata as in mediahaven, including PREMIS metadata and links to browse copies.
+* **```ListIdentifiers```** - Lists all identifiers in the archive. Only the headers of the records are given.
+  * Example: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=ListIdentifiers&metadataPrefix=mets](https://archief-meemoo.be/mediahaven-oai/oai?verb=ListIdentifiers&metadataPrefix=mets)"
+* **```ListRecords```** - Lists all records in the archive. Alongside the header, all metadata is provided.
+  * Example: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=oai_dc](https://archief-meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=oai_dc)"
+* **```ListSets```** - Lists all defined sets.
+  * Example: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=ListSets](https://archief-meemoo.be/mediahaven-oai/oai?verb=ListSets)"
+* **```GetRecord```** - Retrieves all metadata for a specific record. The record ID and metadata format must be specified. The meemoo identifier ("noid:7940r9mw4c") is the unique identifier of the record.
+  * Example: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=noid:7940r9mw4c](https://archief-meemoo.be/mediahaven-oai/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=noid:7940r9mw4c)"
 
-* **```Identify```** geeft informatie over het meemoo-archief weer
-    * Voorbeeld: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=Identify](https://archief-qas.meemoo.be/mediahaven-oai/oai?verb=Identify)”
-* **```ListMetadataFormats```** geeft een lijst van de ondersteunde metadataformaten.
-    * Voorbeeld: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=ListMetadataFormats](https://archief-qas.meemoo.be/mediahaven-oai/oai?verb=ListMetadataFormats)"
-    * Meemoo ondersteunt momenteel de volgende metadataformaten:
-        * oai_dc: geeft enkel de beschrijvende metadata en de header.
-        * mediahaven: geeft de belangrijkste technische en inhoudelijke metadata, en links naar de browsekopies.
-        * mets: geeft alle metadata als in mediahaven, inclusief de PREMIS-metadata en links naar de browsekopies.
-* **```ListIdentifiers```** geeft een lijst van alle identifiers in het archief. Enkel de headers van de records worden gegeven.
-    * Voorbeeld: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=ListIdentifiers&metadataPrefix=mets](https://archief.meemoo.be/mediahaven-oai/oai?verb=ListIdentifiers&metadataPrefix=mets)"
-* **```ListRecords```** geeft een lijst van alle records in het archief. Naast de header wordt hier ook alle metadata meegegeven.
-    * Voorbeeld: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=oai_dc](https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=oai_dc)"
-* **```ListSets```** geeft een lijst van alle gedefinieerde sets.
-    * Voorbeeld: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=ListSets](https://archief.meemoo.be/mediahaven-oai/oai?verb=ListSets)"
-* **```GetRecord```** geeft alle metadata voor één specifieke record. De ID van het record en het metadataformat moeten meegegeven worden. De meemoo identifier ("noid:7940r9mw4c") is hier de unieke identifier van het record.
-    * Voorbeeld: "[https://archief.meemoo.be/mediahaven-oai/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=noid:7940r9mw4c](https://archief.meemoo.be/mediahaven-oai/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=noid:7940r9mw4c)"
+## Use Case
 
-# Use case
+### General
 
-## Algemeen
+In this paragraph, a use case is described where items stored in the meemoo archive need to be shown on an external platform, such as the website of a content partner. The metadata and essence (audio, video, or photo) are stored locally on the external platform's CMS.
 
-In deze paragraaf wordt een use case omschreven waarbij items die in het meemoo-archief opgeslagen zijn getoond moeten worden op een extern platform, bvb. de website van een content partner. De metadata en essence (audio, video of foto) worden hierbij lokaal opgeslagen, bijvoorbeeld in het CMS van het extern platform.
+If the metadata in the archive is updated, or new items are added to the collection, they must also be shown on the external website.
 
-Indien de metadata in het archief geüpdatet wordt, of indien nieuwe items aan de collectie toegevoegd worden, moeten ze ook getoond worden op de externe website.
+For this use case, we assume:
 
-Voor deze use case gaan we ervan uit dat:
+1. The items to be disclosed belong to a specific collection.
+2. There is a user and password available with access to this collection.
 
-1. de items die we willen ontsluiten tot een bepaalde collectie behoren
-2. er een user en paswoord beschikbaar is met toegang tot deze collectie
+The use case is worked out in the following steps:
 
-De use case wordt uitgewerkt in de volgende stappen:
+1. To achieve an initial synchronization, all records are retrieved using ```ListRecords```. The records contain both metadata and links to browse copies that can be used to display audio, video, or photo or to download them.
 
-1.  Om een initiële synchronisatie te realiseren wordt aan de hand van listrecords alle records opgehaald. De records bevatten zowel metadata als links naar de browse kopies die gebruikt kunnen worden om audio, video of foto weer te geven of te downloaden.
+2. Once this synchronization is complete, updated records are requested periodically via OAI-PMH. In this example, we assume updates occur every 24 hours. During the update, both newly added items are harvested and updates to existing items are harvested.
 
-2.  Eens deze synchronisatie gelopen heeft worden via OAI-PMH periodiek de geüpdatete records opgevraagd. In dit voorbeeld gaan we ervan uit dat dit elke 24u gebeurt. Tijdens de update worden zowel nieuw toegevoegde items ‘geharvest’ als updates van reeds bestaande items.
-
-## Stap 1: Initiële synchronisatie
+## Step 1: Initial Synchronization
 
 ### ListRecords
 
-In deze stap worden alle records opgehaald. We kiezen ervoor om alle metadata van de records op te halen in mets formaat:
+In this step, all records are retrieved. We choose to retrieve all metadata records in METS format:
 
 **REQUEST:**
 
@@ -91,10 +86,10 @@ In deze stap worden alle records opgehaald. We kiezen ervoor om alle metadata va
 https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets
 ```
 
-* we gebruiken ```listRecords```, waarmee we een lijst van alle metadata records opvragen uit het archief.
-* als metadataschema gebruiken we ```mets```, wat meteen alle metadata weergeeft, inclusief links naar de audio/foto of video bestanden.
+* We use ```listRecords```, which retrieves a list of all metadata records from the archive.
+* As metadata schema, we use ```mets```, which immediately provides all metadata, including links to audio/video or photo files.
 
-**RESPONSE:** De response bevat een aantal records, waarvan we hier de eerste tonen:
+**RESPONSE:** The response contains several records, of which we show the first few:
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -249,35 +244,35 @@ https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=met
         </record>
 ```
 
-(!) Let op dat de response alle bestanden zal weergeven waar de user recht op heeft. Dat betekent dat niet alleen audio, foto of video zal teruggegeven worden maar ook (indien aanwezig) xml bestanden met rapporten omtrent kwaliteitscontrole, ondertitels, etc. Filteren in de call is niet mogelijk, dus de harvestende applicatie moet instaan voor de filtering. Dat kan op basis van het veld type (bvb. door documenten te negeren worden alle
+(!) Note that the response will include all files the user has rights to access. This means not only audio, video, or photo will be returned but also (if present) XML files containing quality control reports, subtitles, etc. Filtering in the call is not possible, so the harvesting application must implement the filtering. This can be done based on the type field (e.g., by ignoring documents).
 
-Een response is gepagineerd en geeft per default 25 records terug per request. Indien extra records beschikbaar zijn wordt dit aangegeven onderaan de response:
+A response is paginated and defaults to returning 25 records per request. If additional records are available, the following will be indicated at the bottom of the response:
 
-* Er wordt onderin de XML response een ```resumptionToken``` meegegeven. Om de volgende pagina op te halen, moet dit token aan de volgende request worden meegegeven.
-* Het ```completeListSize``` attribuut geeft het totaal aantal records aan.
-* Het ```cursor``` attribuut geeft het aantal reeds teruggegeven records weer.
+* A ```resumptionToken``` is provided, which must be included in the next request to retrieve the next page.
+* The ```completeListSize``` attribute indicates the total number of records.
+* The ```cursor``` attribute indicates the number of records already retrieved.
 
-In dit voorbeeld zal de volgende request er dus als volgt uit moeten zien. De response hierop zal records 25 t.e.m. 49 bevatten:
+In this example, the next request should look like this. The response will contain records 26 to 49:
 
 ``` shell
 https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&resumptionToken=UMDA6MDA6MDBaLCB1bnRpbD0yMTAwLTEyLTMwVDIzOjU5OjU5WiwgdG9rZW5TdGFydD0yNX0=
 ```
 
-Op deze manier kan de volledige lijst overlopen worden tot de ```resumptionToken``` leeg is. Dat wil zeggen dat je op de laatste pagina bent. In onderstaand voorbeeld zijn we aangekomen op de laatste pagina van in totaal 9 pagina's. We hebben reeds 200 reocrds opgehaald (8*25), de laatste pagina bevat dus nog 7 records.
+To loop through the entire list until the ```resumptionToken``` is empty, the harvesting application must perform this pagination. In this example, we have retrieved 200 records (8 pages), and there are 7 records left on the last page.
 
 ``` xml
 <resumptionToken completeListSize="207" cursor="200"></resumptionToken>
 ```
 
-### De opgehaalde gegevens bewaren
+### Storing Retrieved Data
 
-Het is aan de harvestende applicatie om de response te verwerken en voor elke ```record``` in de XML de metadata en/of de link naar de browsekopies op te slaan in de doeldatabase, bv. het CMS of DMS van de externe website.
+It is up to the harvesting application to process the response and store the metadata and/or links to browse copies in the target database, such as the CMS or DMS of the external website.
 
-## Stap 2: Periodieke updates
+## Step 2: Periodic Updates
 
-### 'Selective harvesting'
+### 'Selective Harvesting'
 
-Om periodieke updates te realiseren kan gewerkt worden met ```from``` en ```until``` datumvelden als bijkomende query parameter. Stel dat je bijvoorbeeld alle records wil opvragen die sinds 1 januari 2018 om 10:00:00 toegevoegd of aangepast werden, dan gebruik je deze request:
+To perform periodic updates, you can use ```from``` and ```until``` date fields as additional query parameters. Suppose you want to retrieve all records added or modified since January 1, 2018, at 10:00:00, you would use this request:
 
 **REQUEST:**
 
@@ -285,11 +280,11 @@ Om periodieke updates te realiseren kan gewerkt worden met ```from``` en ```unti
 https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&from=2018-01-01T10:00:00Z
 ```
 
-Het formaat van de response zal identiek zijn aan deze uit stap 1 maar zal typisch minder records bevatten. Namelijk enkel de records die sinds de opgegeven datum toegevoegd of gewijzigd zijn. Ook hier wordt overigens gewerkt met paginering via een resumptionToken in het geval de complete lijst meer dan 25 records bevat.
+The response format will be identical to that in Step 1 but will typically contain fewer records. Only records added or modified since the specified date will be returned. Pagination is also handled via a ```resumptionToken``` if the complete list contains more than 25 records.
 
-Om de eigen data up-to-date te houden wordt dit type request best op gezette tijdstippen uitgevoerd, waarbij de from datestamp de datum van de laatste periodieke update is.
+To keep your data up-to-date, this type of request should be executed at scheduled intervals, with the ```from``` datestamp being the date of the last periodic update.
 
-Wil je enkel de data van 1 bepaalde dag ophalen dan kan dat door ook een ```until``` parameter mee te sturen, bijvoorbeeld:
+To retrieve data for a specific day only, you can add an ```until``` parameter, for example:
 
 **REQUEST:**
 
@@ -297,18 +292,18 @@ Wil je enkel de data van 1 bepaalde dag ophalen dan kan dat door ook een ```unti
 https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&from=2018-01-01T00:00:00Z&until=2019-01-01T00:00:00Z
 ```
 
-# Geavanceerde concepten
+## Advanced Concepts
 
-## Gebruik van sets
+### Use of Sets
 
-De meemoo-implementatie ondersteunt sets. Op dit moment worden sets gedefinieerd op het niveau van content providers.
+The meemoo implementation supports sets. Currently, sets are defined at the level of content providers.
 
-## Omgaan met verwijderde items
+### Handling Deleted Items
 
-Op dit moment is er beperkte support voor verwijderde items. Records die uit het meemoo-archief verwijderd werden, zullen niet meer zichtbaar zijn met de verbs ListIdentifiers en ListRecords. Een GetRecord-request zal een foutmelding opleveren waaruit afgeleid kan worden dat het record gedeletet werd.
+Currently, there is limited support for deleted items. Records that have been removed from the meemoo archive will not be visible through ```ListIdentifiers``` and ```ListRecords```. A ```GetRecord``` request will return an error indicating that the record has been deleted.
 
-Organisaties die records deleten in het archiefsysteem en willen controleren of hun geharveste data nog "in sync" is, kunnen bijvoorbeeld alle items id's opvragen aan de hand van een ```ListIdentifiers``` request en de lijst in de response vergelijken met de lijst van id's in de eigen database.
+Organizations that delete items in the archive and want to ensure their harvested data remains in sync can compare the list of IDs obtained via a ```ListIdentifiers``` request with the list of IDs in their own database.
 
-In de toekomst en indien er voldoende vraag is vanuit de CP's kan het delete-support verhoogd worden naar persistent of transient. [Zie: http://www.openarchives.org/OAI/2.0/openarchivesprotocol.htm#DeletedRecords](http://www.openarchives.org/OAI/2.0/openarchivesprotocol.htm#DeletedRecords)
+In the future, if there is sufficient demand from content partners, support for deleted records can be increased to persistent or transient. [See: http://www.openarchives.org/OAI/2.0/openarchivesprotocol.htm#DeletedRecords](http://www.openarchives.org/OAI/2.0/openarchivesprotocol.htm#DeletedRecords)
 
-Contacteer [support@meemoo.be](mailto:support@meemoo.be) indien je hier vragende partij voor bent.
+Contact [support@meemoo.be](mailto:support@meemoo.be) if you are interested in this feature.

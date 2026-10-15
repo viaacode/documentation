@@ -5,5 +5,4 @@ nav_order: 1
 
 # Metadata
 
-Hier vind je alle informatie over het gebruiken van metadata bij meemoo.
-
+Here you will find all information about using metadata with meemoo.
