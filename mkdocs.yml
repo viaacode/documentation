@@ -197,7 +197,46 @@ nav:
       - REST API v1 en v2: docs/integratie/rest-api.md
       - OAI-PMH: docs/integratie/oai-pmh.md
       - IIIF 3.0 Image API: docs/integratie/iiif.md
-      - Organizations API: /docs/integratie/org-api/
+      - Organizations API:
+          - Overview: docs/integratie/org-api/2/index.md
+          - Operations:
+              - Queries:
+                  - contentpartners: docs/integratie/org-api/2/operations/queries/contentpartners.md
+                  - organizations: docs/integratie/org-api/2/operations/queries/organizations.md
+                  - persons: docs/integratie/org-api/2/operations/queries/persons.md
+                  - schools: docs/integratie/org-api/2/operations/queries/schools.md
+              - Directives:
+                  - include: docs/integratie/org-api/2/operations/directives/include.md
+                  - skip: docs/integratie/org-api/2/operations/directives/skip.md
+          - Types:
+              - Objects:
+                  - Concept: docs/integratie/org-api/2/types/objects/concept.md
+                  - ContactPoint: docs/integratie/org-api/2/types/objects/contact-point.md
+                  - ContentPartner: docs/integratie/org-api/2/types/objects/content-partner.md
+                  - Logo: docs/integratie/org-api/2/types/objects/logo.md
+                  - Organization: docs/integratie/org-api/2/types/objects/organization.md
+                  - OrganizationalUnit: docs/integratie/org-api/2/types/objects/organizational-unit.md
+                  - Person: docs/integratie/org-api/2/types/objects/person.md
+                  - Post: docs/integratie/org-api/2/types/objects/post.md
+                  - PostalAddress: docs/integratie/org-api/2/types/objects/postal-address.md
+                  - School: docs/integratie/org-api/2/types/objects/school.md
+                  - Site: docs/integratie/org-api/2/types/objects/site.md
+              - Interfaces:
+                  - IContactPoint: docs/integratie/org-api/2/types/interfaces/icontact-point.md
+                  - IOrganization: docs/integratie/org-api/2/types/interfaces/iorganization.md
+              - Enums:
+                  - OrgType: docs/integratie/org-api/2/types/enums/org-type.md
+                  - Sector: docs/integratie/org-api/2/types/enums/sector.md
+              - Scalars:
+                  - Boolean: docs/integratie/org-api/2/types/scalars/boolean.md
+                  - ID: docs/integratie/org-api/2/types/scalars/id.md
+                  - Int: docs/integratie/org-api/2/types/scalars/int.md
+                  - String: docs/integratie/org-api/2/types/scalars/string.md
+              - Directives:
+                  - deprecated: docs/integratie/org-api/2/types/directives/deprecated.md
+                  - grasp: docs/integratie/org-api/2/types/directives/grasp.md
+                  - oneOf: docs/integratie/org-api/2/types/directives/one-of.md
+                  - specifiedBy: docs/integratie/org-api/2/types/directives/specified-by.md
       - Webhook Status Events: docs/integratie/webhook-status-events.md
       - AI metadata API: docs/integratie/ai-metadata-api.md
 

@@ -1,0 +1,14 @@
+schema: ./schema.json
+extensions:
+  graphql-markdown:
+    rootPath: src/docs/integratie/org-api
+    baseURL: "2"
+    linkRoot: /
+    homepage: ./introduction.md
+    formatter: "@graphql-markdown/formatters/mkdocs"
+    loaders:
+      JsonFileLoader: "@graphql-tools/json-file-loader"
+    docOptions:
+      index: true
+    printTypeOptions:
+      hierarchy: api

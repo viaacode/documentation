@@ -55,7 +55,7 @@ volledige URL waarop de API kan worden aangesproken.
 | [MH REST API v1](https://archief.viaa.be/mediahaven-rest-api/)                                 | ~~/mediahaven-rest-api/~~ **Deprecated sinds juni '23!** |
 | [MH REST API v2](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/)                     | /mediahaven-rest-api/v2/                                 |
 | [IIIF 3.0 Image API](iiif.md)                     |                                                          |
-| [Organizations API v2](org-api/index.html)        |                                                          |
+| [Organizations API v2](org-api/2/index.md)        |                                                          |
 | [Webhook Status Events](webhook-status-events.md) |                                                          |
 
 # Mediahaven API's
