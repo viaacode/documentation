@@ -1,0 +1,53 @@
+name: Build preview
+
+on:
+  pull_request:
+  push:
+    branches:
+      - prepare-mkdocs-ci
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Regenerate Organizations API documentation
+        run: sudo make graphql-docs
+
+      - name: Check generated documentation is current
+        run: |
+          git status --short --untracked-files=all -- .graphqlrc.yml graphql src/docs/integratie/org-api
+          test -z "$(git status --porcelain --untracked-files=all -- .graphqlrc.yml graphql src/docs/integratie/org-api)"
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: 3.12.12
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Check submodules are clean
+        run: git submodule foreach --recursive 'test -z "$(git status --porcelain)"'
+
+      - name: Build documentation
+        run: mkdocs build --strict
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: site/
+          if-no-files-found: error
+          retention-days: 14
