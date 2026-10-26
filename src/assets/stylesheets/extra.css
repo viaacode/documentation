@@ -47,6 +47,21 @@
   padding: 2px;
 }
 
+.md-typeset dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+.md-typeset dd {
+  margin: 0;
+}
+
+.md-typeset dd > p {
+  margin: 0;
+}
+
 .md-typeset .label {
   border-radius: 0.2rem;
   color: #111;

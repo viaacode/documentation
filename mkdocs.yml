@@ -49,6 +49,7 @@ plugins:
 markdown_extensions:
   - admonition
   - attr_list
+  - def_list
   - footnotes
   - md_in_html
   - tables
@@ -266,7 +267,6 @@ validation:
     not_found: info
     absolute_links: relative_to_docs
   links:
-    # Phase 4 performs full legacy-link and fragment validation.
     not_found: info
     absolute_links: relative_to_docs
     unrecognized_links: info

@@ -17,10 +17,21 @@ Deze velden worden ingevuld door contentpartners tijdens de registratie van anal
 Type drager (onderverdeeld in `audio`, `video`, `film`, en `paper`).
 
 
-| **XML element**            | `<type/>`                                                                                                                                           |
-| **Datatype**               | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
-| **Verplichting**           | Verplicht indien gekend                                   |
-| **Herhaalbaar**            | Nee                                                                                                                                                 |
+**XML element**
+
+:   `<type/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <type>video</type>
@@ -31,10 +42,21 @@ Type drager (onderverdeeld in `audio`, `video`, `film`, en `paper`).
 Een omschrijving van het type materiële drager waarop het item oorspronkelijk is vastgelegd.
 
 
-| **XML element**        | `<format/>`                                                                                                                                         |
-| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
-| **Verplichting**       | Verplicht indien gekend                                   |
-| **Herhaalbaar**        | Nee                                                                                                                                                 |
+**XML element**
+
+:   `<format/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <format>Betacam SP</format>
@@ -45,10 +67,21 @@ Een omschrijving van het type materiële drager waarop het item oorspronkelijk i
 Een specifieke formaatversie, die voor sommige dragerformaten wordt gevraagd, zoals voor VHS of DVCPRO.
 
 
-| **XML element**        | `<format_version/>`                                                                                                                                         |
-| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
-| **Verplichting**       | Verplicht                                   |
-| **Herhaalbaar**        | Nee                                                                                                                                                 |
+**XML element**
+
+:   `<format_version/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <format_version>DVCPRO HD</format_version>
@@ -59,10 +92,21 @@ Een specifieke formaatversie, die voor sommige dragerformaten wordt gevraagd, zo
 Dit is de barcode van meemoo die op de materiële drager werd aangebracht.
 
 
-| **XML element**        | `<carrier_barcode/>`                                                                                              |
-| **Datatype**           | ID                                                                                                                |
-| **Verplichting**       | Verplicht |
-| **Herhaalbaar**        | Nee                                                                                                               |
+**XML element**
+
+:   `<carrier_barcode/>`
+
+**Datatype**
+
+:   ID
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <carrier_barcode>AACC_AMS_000540</carrier_barcode>
@@ -73,10 +117,21 @@ Dit is de barcode van meemoo die op de materiële drager werd aangebracht.
 Dit is de standplaats van de originele materiële drager. Dit kan een lokaal- of reknummer, een plaatskenmerk of de naam van een collectie zijn.
 
 
-| **XML element**        | `<original_location/>`                                                                                            |
-| **Datatype**           | Vrije tekst                                                                                                       |
-| **Verplichting**       | Optioneel |
-| **Herhaalbaar**        | Nee                                                                                                               |
+**XML element**
+
+:   `<original_location/>`
+
+**Datatype**
+
+:   Vrije tekst
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <original_location>10A</original_location>
@@ -89,10 +144,21 @@ Dit is de standplaats van de originele materiële drager. Dit kan een lokaal- of
 Dit is het merk of de fabrikant van de materiële drager.
 
 
-| **XML element**        | `<brand/>`                                                                                                                                          |
-| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams) |
-| **Verplichting**       | Verplicht                                   |
-| **Herhaalbaar**        | Nee                                                                                                                                                 |
+**XML element**
+
+:   `<brand/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <brand>Philips</brand>
@@ -103,10 +169,21 @@ Dit is het merk of de fabrikant van de materiële drager.
 Dit is de (geschatte) productiedatum van de materiële drager.
 
 
-| **XML element**        | `<date/>`                                                                                                          |
-| **Datatype**           | [Extended Date Time Format (EDTF)](datatypes.md#edtf)                                                                                |
-| **Verplichting**       | Verplicht |
-| **Herhaalbaar**        | Nee                                                                                                                |
+**XML element**
+
+:   `<date/>`
+
+**Datatype**
+
+:   [Extended Date Time Format (EDTF)](datatypes.md#edtf)
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <date>1937-09-07</date>
@@ -117,10 +194,21 @@ Dit is de (geschatte) productiedatum van de materiële drager.
 In dit veld kan worden aangegeven of de tape op een kern dan wel op een open spoel is bevestigd.
 
 
-| **XML element**        | `<core_reel/>`                                                                                                                                                        |
-| **Datatype**           | "Kern" / "Spoel" (zie ook onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)) |
-| **Verplichting**       | Verplicht indien gekend                                                    |
-| **Herhaalbaar**        | Nee                                                                                                                                                                   |
+**XML element**
+
+:   `<core_reel/>`
+
+**Datatype**
+
+:   "Kern" / "Spoel" (zie ook onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams))
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <core_reel>Spoel</core_reel>
@@ -131,10 +219,21 @@ In dit veld kan worden aangegeven of de tape op een kern dan wel op een open spo
 Fenomenen -- doorgaans onder invloed van fysische of chemische factoren -- die mogelijks de integriteit en raadpleegbaarheid van de gegevens op de drager in gevaar kunnen brengen.
 
 
-| **XML element**        | `<preservation_problems/>`                                                                                                                           |
-| **Datatype**           | Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams)) |
-| **Verplichting**       | Optioneel                                   |
-| **Herhaalbaar**        | Ja                                                                                                                                                   |
+**XML element**
+
+:   `<preservation_problems/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst: zie onze pagina over [drager registratie in de registratietool](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-registreer-ik-een-nieuwe-drager-in-ams))
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <preservation_problems>disc rot</preservation_problems>
@@ -144,10 +243,21 @@ Fenomenen -- doorgaans onder invloed van fysische of chemische factoren -- die m
 
 Bijbehorende documenten/dragers die de contentpartner niet apart kan bewaren. Bij registratie wordt dus aangeduid dat er bij de verpakte drager andere dragers zitten. Deze bijbehorende documenten/dragers worden dus niet mee gedigitaliseerd, maar wel gesignaleerd aan de Service Provider, o.m. om verlies tegen te gaan.
 
-| **XML element**            | `<related_documents />`                                                                   |
-| **Datatype**               | "0" of "1"                                                           |
-| **Verplichting**           | Verplicht                                                                                                     |
-| **Herhaalbaar**            | Nee                                                                                                            |
+**XML element**
+
+:   `<related_documents />`
+
+**Datatype**
+
+:   "0" of "1"
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <related_documents>0</related_documents>
@@ -157,10 +267,21 @@ Bijbehorende documenten/dragers die de contentpartner niet apart kan bewaren. Bi
 
 De kleur van de inhoud van de drager. Dit duidt bijvoorbeeld het verschil tussen zwart-wit en kleur fotografie of film.
 
-| **XML element**            | `<color />`                                                                   |
-| **Datatype**               | Gecontroleerde lijst                                                         |
-| **Verplichting**           | Verplicht                                                                                                     |
-| **Herhaalbaar**            | Nee                                                                                                            |
+**XML element**
+
+:   `<color />`
+
+**Datatype**
+
+:   Gecontroleerde lijst
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <color>Color</color>
@@ -176,10 +297,21 @@ De kleur van de inhoud van de drager. Dit duidt bijvoorbeeld het verschil tussen
 
 Het al dan niet aanwezig zijn van een label op de drager.
 
-| **XML element**            | `<label_present/>`                                                                   |
-| **Datatype**               | "0" of "1"                                                          |
-| **Verplichting**           | Verplicht                                                                                                     |
-| **Herhaalbaar**            | Nee                                                                                                            |
+**XML element**
+
+:   `<label_present/>`
+
+**Datatype**
+
+:   "0" of "1"
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <label_present>1</label_present>
@@ -189,10 +321,21 @@ Het al dan niet aanwezig zijn van een label op de drager.
 
 Een kopie van eventuele opschriften op de originele bewaardoos van de drager.
 
-| **XML element**            | `<inscription_original_carrier_box/>`                                                                   |
-| **Datatype**               | Vrije tekst                                                          |
-| **Verplichting**           | Optioneel                                                                                                     |
-| **Herhaalbaar**            | Nee                                                                                                            |
+**XML element**
+
+:   `<inscription_original_carrier_box/>`
+
+**Datatype**
+
+:   Vrije tekst
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <inscription_original_carrier_box>1234</inscription_original_carrier_box>
@@ -202,10 +345,21 @@ Een kopie van eventuele opschriften op de originele bewaardoos van de drager.
 
 Identifier van de krantentitel die ervoor zorgt dat de link met Abraham - Catalogus van Belgische kranten, een databank van de Vlaamse Erfgoedbibliotheek waarin het krantenbezit van bijna honderd bewaarinstellingen in Vlaanderen en Brussel is opgenomen - blijft bewaard.
 
-| **XML element**            | `<abraham_ID/>`                                                                   |
-| **Datatype**               | ID                                                          |
-| **Verplichting**           | Verplicht                                                                                                     |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<abraham_ID/>`
+
+**Datatype**
+
+:   ID
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <abraham_ID>c:bnc:5224</abraham_ID>
@@ -215,10 +369,21 @@ Identifier van de krantentitel die ervoor zorgt dat de link met Abraham - Catalo
 	
 Hierbij gaat het om de soort uitgave van de editie. Een krant kent meerdere soorten edities: ochtend-, middag-, avond- of weekendeditie.
 
-| **XML element**            | `<edition />`                                                                   |
-| **Datatype**               | Gecontroleerde lijst _of_ Vrije tekst                                                          |
-| **Verplichting**           | Verplicht indien gekend                                                                                                    |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<edition />`
+
+**Datatype**
+
+:   Gecontroleerde lijst _of_ Vrije tekst
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <edition>Afternoon</edition>
@@ -235,10 +400,21 @@ Hierbij gaat het om de soort uitgave van de editie. Een krant kent meerdere soor
 
 Een krant verschijnt serieel. Via jaargangen en volumenummers wordt aangegeven om welke uitgave van een langlopende titel het gaat. 
 
-| **XML element**            | `<number />`                                                                   |
-| **Datatype**               | Tekst die een numerieke waarde, gevolgd met een punt als onderscheidingsteken en opnieuw een numerieke waarde bevat. Als onbekende kan een 'x' worden gebruikt.                                                           |
-| **Verplichting**           | Verplicht indien gekend                                                                                                     |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<number />`
+
+**Datatype**
+
+:   Tekst die een numerieke waarde, gevolgd met een punt als onderscheidingsteken en opnieuw een numerieke waarde bevat. Als onbekende kan een 'x' worden gebruikt.
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <number>1.6</number>
@@ -248,10 +424,21 @@ Een krant verschijnt serieel. Via jaargangen en volumenummers wordt aangegeven o
 
 Hoe het voornaamste deel van de tekst van deze drager is weergegeven: gedrukt, getypt of handgeschreven.
 
-| **XML element**            | `<text_type />`                                                                   |
-| **Datatype**               | Gecontroleerde lijst                                                      |
-| **Verplichting**           | Verplicht                                                                                            |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<text_type />`
+
+**Datatype**
+
+:   Gecontroleerde lijst
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <text_type>Printed</text_type>
@@ -270,10 +457,21 @@ Hoe het voornaamste deel van de tekst van deze drager is weergegeven: gedrukt, g
 
 Het aantal pagina's waaruit de drager bestaat.
 
-| **XML element**            | `<number_of_pages/>`                                                                   |
-| **Datatype**               | Numeriek                                                      |
-| **Verplichting**           | Verplicht                                                                                            |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<number_of_pages/>`
+
+**Datatype**
+
+:   Numeriek
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <number_of_pages>2</number_of_pages>
@@ -283,10 +481,21 @@ Het aantal pagina's waaruit de drager bestaat.
 
 De omvang van het papier volgens hoogte x breedte (in cm).
 
-| **XML element**            | `<dimensions/>`                                                                   |
-| **Datatype**               | hoogte x breedte                                                       |
-| **Verplichting**           | Verplicht                                                                                            |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<dimensions/>`
+
+**Datatype**
+
+:   hoogte x breedte
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <dimensions>46 x 30</dimensions>
@@ -296,10 +505,21 @@ De omvang van het papier volgens hoogte x breedte (in cm).
 
 De dragereenheid toont aan hoe de drager bijeen wordt gehouden.
 
-| **XML element**            | `<carrier_unity/>`                                                                   |
-| **Datatype**               | Gecontroleerde lijst |
-| **Verplichting**           | Verplicht                                                                                            |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<carrier_unity/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <carrier_unity>Bound - 180° opening</carrier_unity>
@@ -317,10 +537,21 @@ De dragereenheid toont aan hoe de drager bijeen wordt gehouden.
 
 Evaluatie in welke staat de band zich bevindt. 
 
-| **XML element**            | `<cover_and_bindings/>`                                                                   |
-| **Datatype**               | Gecontroleerde lijst |
-| **Verplichting**           | Verplicht indien van toepassing (VA) is enkel van toepassing indien de dragereenheid Gebonden - 180° of Gebonden - niet 180° te openen is.                                                                                             |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<cover_and_bindings/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst
+
+**Verplichting**
+
+:   Verplicht indien van toepassing (VA) is enkel van toepassing indien de dragereenheid Gebonden - 180° of Gebonden - niet 180° te openen is.
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <cover_and_bindings>Poor</cover_and_bindings>
@@ -340,10 +571,21 @@ Evaluatie in welke staat de band zich bevindt.
 
 Evaluatie in welke staat het papier zich bevindt. 
 
-| **XML element**            | `<paper/>`                                                                   |
-| **Datatype**               | Gecontroleerde lijst |
-| **Verplichting**           | Verplicht indien van toepassing (VA) is enkel van toepassing indien de dragereenheid Gebonden - 180° of Gebonden - niet 180° te openen is.                                                                                             |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<paper/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst
+
+**Verplichting**
+
+:   Verplicht indien van toepassing (VA) is enkel van toepassing indien de dragereenheid Gebonden - 180° of Gebonden - niet 180° te openen is.
+
+**Herhaalbaar**
+
+:   Ja
 
 ### Mogelijke waarden
 
@@ -363,10 +605,21 @@ Evaluatie in welke staat het papier zich bevindt.
 
 Verschijnselen die een uitdaging kunnen vormen voor een geautomatiseerde optische tekstherkenning.
 
-| **XML element**            | `<text_quality_for_ocr><multiselect/></text_quality_for_ocr>`                                                                   |
-| **Datatype**               | Gecontroleerde lijst |
-| **Verplichting**           | Verplicht                                                                                             |
-| **Herhaalbaar**            | Ja                                                                                                            |
+**XML element**
+
+:   `<text_quality_for_ocr><multiselect/></text_quality_for_ocr>`
+
+**Datatype**
+
+:   Gecontroleerde lijst
+
+**Verplichting**
+
+:   Verplicht
+
+**Herhaalbaar**
+
+:   Ja
 	
 ```xml
 <text_quality_for_ocr>
@@ -398,10 +651,21 @@ Verschijnselen die een uitdaging kunnen vormen voor een geautomatiseerde optisch
 
 Het aantal folio’s van een handschrift of manuscript. Eén folio zijn twee opeenvolgende pagina’s. De rectozijde is de voorkant, de versozijde de achterkant.
 
-| **XML element**        | `<number_of_folios/>`                                                                                                     |
-| **Datatype**           | Numeriek                                                                                                            |
-| **Verplichting**       | Optioneel     |
-| **Herhaalbaar**        | Nee                                                                                                                |
+**XML element**
+
+:   `<number_of_folios/>`
+
+**Datatype**
+
+:   Numeriek
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <number_of_folios>174</number_of_folios>
@@ -411,10 +675,21 @@ Het aantal folio’s van een handschrift of manuscript. Eén folio zijn twee ope
 
 Het materiaal waaruit het object bestaat.
 
-| **XML element**        | `<materials><material /></materials>`                                                                                                     |
-| **Datatype**           | Vrije tekst                                                                                                            |
-| **Verplichting**       | Optioneel     |
-| **Herhaalbaar**        | Ja                                                                                                                |
+**XML element**
+
+:   `<materials><material /></materials>`
+
+**Datatype**
+
+:   Vrije tekst
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <materials type="list">
@@ -427,10 +702,21 @@ Het materiaal waaruit het object bestaat.
 
 Neerslag van de herkomst van dit exemplaar van het object in kwestie, of de opeenvolging van eigenaars of beheerders, die verantwoordelijk zijn voor het creëeren, ontvangen of accumuleren van het object.
 
-| **XML element**        | `<dc_provenances><dc_provenance /></dc_provenances>`                                                                                                     |
-| **Datatype**           | Vrije tekst                                                                                                            |
-| **Verplichting**       | Optioneel     |
-| **Herhaalbaar**        | Ja                                                                                                                |
+**XML element**
+
+:   `<dc_provenances><dc_provenance /></dc_provenances>`
+
+**Datatype**
+
+:   Vrije tekst
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Ja
 
 ```xml
 <dc_provenances type="list">
@@ -443,20 +729,53 @@ Neerslag van de herkomst van dit exemplaar van het object in kwestie, of de opee
 
 De afmetingen van het object in mm, volgens hoogte x breedte x (indien driedimensionaal) dikte.
 
-| **XML element**        | `<dimensions type="list"></height_in_mm></dimensions>`                                                                                                    |
-| **Datatype**           | Numeriek                                                                                                            |
-| **Verplichting**       | Optioneel     |
-| **Herhaalbaar**        | Nee                                                                                                                |
+**XML element**
 
-| **XML element**        | `<dimensions type="list"></width_in_mm></dimensions>`                                                                                                    |
-| **Datatype**           | Numeriek                                                                                                            |
-| **Verplichting**       | Optioneel     |
-| **Herhaalbaar**        | Nee                                                                                                                |
+:   `<dimensions type="list"></height_in_mm></dimensions>`
 
-| **XML element**        | `<dimensions type="list"></depth_in_mm></dimensions>`                                                                                                    |
-| **Datatype**           | Numeriek                                                                                                            |
-| **Verplichting**       | Optioneel     |
-| **Herhaalbaar**        | Nee                                                                                                                |
+**Datatype**
+
+:   Numeriek
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Nee
+
+**XML element**
+
+:   `<dimensions type="list"></width_in_mm></dimensions>`
+
+**Datatype**
+
+:   Numeriek
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Nee
+
+**XML element**
+
+:   `<dimensions type="list"></depth_in_mm></dimensions>`
+
+**Datatype**
+
+:   Numeriek
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <dimensions type="list">
@@ -474,10 +793,21 @@ De afmetingen van het object in mm, volgens hoogte x breedte x (indien driedimen
 De datum waarop de drager in de registratietool werd geregistreerd.
 
 
-| **XML element**        | `<created_on/>`                                                                                                   |
-| **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum en tijd (`YYYY-MM-DDThh:mm:ss`)                          |
-| **Verplichting**       | Verplicht indien gekend |
-| **Herhaalbaar**        | Nee                                                                                                               |
+**XML element**
+
+:   `<created_on/>`
+
+**Datatype**
+
+:   [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum en tijd (`YYYY-MM-DDThh:mm:ss`)
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <created_on>2014-11-27T14:11:11</created_on>
@@ -488,10 +818,21 @@ De datum waarop de drager in de registratietool werd geregistreerd.
 De barcode van meemoo die werd bevestigd op de verzameldoos waarin de drager zich bevindt.
 
 
-| **XML element**        | `<collection_box_barcode/>`                                                                                       |
-| **Datatype**           | ID                                                                                                                |
-| **Verplichting**       | Verplicht indien gekend |
-| **Herhaalbaar**        | Nee                                                                                                               |
+**XML element**
+
+:   `<collection_box_barcode/>`
+
+**Datatype**
+
+:   ID
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <collection_box_barcode>BBMX_AMS_000007</collection_box_barcode>
@@ -502,10 +843,21 @@ De barcode van meemoo die werd bevestigd op de verzameldoos waarin de drager zic
 De barcode van meemoo die werd bevestigd op de transportbak waarin de verzameldozen zich bevinden.
 
 
-| **XML element**        | `<transport_box_barcode/>`                                                                                       |
-| **Datatype**           | ID                                                                                                                |
-| **Verplichting**       | Verplicht indien gekend |
-| **Herhaalbaar**        | Nee                                                                                                               |
+**XML element**
+
+:   `<transport_box_barcode/>`
+
+**Datatype**
+
+:   ID
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <transport_box_barcode>VIAA-AKF-0022</transport_box_barcode>
@@ -516,10 +868,21 @@ De barcode van meemoo die werd bevestigd op de transportbak waarin de verzameldo
 Status van de shipment om het logistieke proces te monitoren.
 
 
-| **XML element**        | `<status/>` |
-| **Datatype**           | Gecontroleerde lijst |
-| **Verplichting**       | Optioneel |
-| **Herhaalbaar**        | Nee |
+**XML element**
+
+:   `<status/>`
+
+**Datatype**
+
+:   Gecontroleerde lijst
+
+**Verplichting**
+
+:   Optioneel
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <status>Pending</status>
@@ -541,10 +904,21 @@ Status van de shipment om het logistieke proces te monitoren.
 De ID van de verzending waarin de drager van de contentpartner naar de Service Provider werd verstuurd. Deze is vooral van belang voor de Service Provider en meemoo.
 
 
-| **XML element**        | `<shipment_id/>`                                                                                                  |
-| **Datatype**           | ID                                                                                                                |
-| **Verplichting**       | Verplicht indien gekend |
-| **Herhaalbaar**        | Nee                                                                                                               |
+**XML element**
+
+:   `<shipment_id/>`
+
+**Datatype**
+
+:   ID
+
+**Verplichting**
+
+:   Verplicht indien gekend
+
+**Herhaalbaar**
+
+:   Nee
 
 ```xml
 <shipment_id>14314364782</shipment_id>
@@ -557,37 +931,81 @@ De ID van de verzending waarin de drager van de contentpartner naar de Service P
 Na het uitvoeren van de manuele kwaliteitscontrole wordt de contentpartner gevraagd de kwaliteit van het digitale bestand te beoordelen. Dit kan door aan te geven of de kwaliteit 'ok' is of 'not ok'. Hierbij kan de dropdownlijst onder het veld 'Resultaat manuele kwaliteitscontrole' geraadpleegd worden. De waarden in de lijst 'audio' en 'video' geven aan wat er visueel en auditief gedetecteerd kan worden. Deze lijsten zullen verder uitgebreid worden. Indien er vragen of feedback zijn, kan dit steeds gemeld worden via [support@meemoo.be](mailto:support@meemoo.be)].
 
 
-| **XML element**        | `<QCoutcome/>`                                                                                                                                       |
-| **Datatype**           | "OK" / "NOT OK"                                                                                                                                      |
-| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, meemoo adviseert om een statistische selectie van 10% te maken) |
-| **Herhaalbaar**        | Neen                                                                                                                                                 |
+**XML element**
+
+:   `<QCoutcome/>`
+
+**Datatype**
+
+:   "OK" / "NOT OK"
+
+**Verplichting**
+
+:   Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, meemoo adviseert om een statistische selectie van 10% te maken)
+
+**Herhaalbaar**
+
+:   Neen
 
 ## QC Audio
 
 Indien de kwaliteit van de audio in het digitaal object niet ok is dan kan in deze dropdownlijst een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlijst aanwezig is kan het opmerkingenveld gebruikt worden.
 
 
-| **XML element**        | `<QCaudio/>`                                                                                                                                       |
-| **Datatype**           | "OK" / "NOT OK"                                                                                                                                    |
-| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, meemoo adviseert om een statistische selectie van 10% te maken) |
-| **Herhaalbaar**        | Neen                                                                                                                                               |
+**XML element**
+
+:   `<QCaudio/>`
+
+**Datatype**
+
+:   "OK" / "NOT OK"
+
+**Verplichting**
+
+:   Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, meemoo adviseert om een statistische selectie van 10% te maken)
+
+**Herhaalbaar**
+
+:   Neen
 
 ## QC Video
 
 Indien de kwaliteit van de video in het digitaal object niet ok is dan kan in deze dropdownlijst een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlijst aanwezig is kan het opmerkingenveld gebruikt worden.
 
 
-| **XML element**        | `<QCvideo/>`                                                                                                                                       |
-| **Datatype**           | "OK" / "NOT OK"                                                                                                                                    |
-| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, meemoo adviseert om een statistische selectie van 10% te maken) |
-| **Herhaalbaar**        | Neen                                                                                                                                               |
+**XML element**
+
+:   `<QCvideo/>`
+
+**Datatype**
+
+:   "OK" / "NOT OK"
+
+**Verplichting**
+
+:   Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, meemoo adviseert om een statistische selectie van 10% te maken)
+
+**Herhaalbaar**
+
+:   Neen
 
 ## QC Opmerkingen
 
 Dit is een vrij tekstveld dat gebruikt kan worden om alle bijkomende opmerkingen rond de uitgevoerde kwaliteitscontrole te bewaren.
 
 
-| **XML element**        | `<QCcomment/>`                                                                                                                                     |
-| **Datatype**           | Vrij tekstveld                                                                                                                                     |
-| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, meemoo adviseert om een statistische selectie van 10% te maken) |
-| **Herhaalbaar**        | Neen                    
+**XML element**
+
+:   `<QCcomment/>`
+
+**Datatype**
+
+:   Vrij tekstveld
+
+**Verplichting**
+
+:   Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, meemoo adviseert om een statistische selectie van 10% te maken)
+
+**Herhaalbaar**
+
+:   Neen
