@@ -18,6 +18,7 @@ Hier vind je alle informatie over het gebruiken van het _VIAA-metadatamodel_, he
 3. [Licenties](licenties.md)
 
 In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden:
+
 - [dc_identifier_localid](algemeen.md#dc_identifier_localid) of [dc_identifier_localids](algemeen.md#dc_identifier_localids): lokale ID('s)
 - [dc_title](algemeen.md#dc_title)
   - Programma: reekstitel (indien materiaal deel is van reeks of coherent geheel van items)
