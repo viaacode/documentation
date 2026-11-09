@@ -11,7 +11,7 @@ git submodule update --init --recursive
 python3.12 -m venv .venv
 . .venv/bin/activate
 python -m pip install -r requirements.txt
-mkdocs serve
+zensical serve
 ```
 
 Open `http://127.0.0.1:8000` to browse the docs.

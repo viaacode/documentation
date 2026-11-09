@@ -11,6 +11,7 @@ watch:
 
 theme:
   name: material
+  variant: classic
   language: nl
   logo: assets/meemoo-logo_lockup-pos-rgb.svg
   favicon: favicon.ico
@@ -34,17 +35,6 @@ plugins:
       include_dir: src
       on_error_fail: true
       on_undefined: strict
-      include_yaml:
-        - sip_2_1_basic: src/docs/diginstroom/sip/2.1/_data/BASIC_PROFILE.json
-        - sip_2_1_bibliographic: src/docs/diginstroom/sip/2.1/_data/BIBLIOGRAPHIC_PROFILE.json
-        - sip_2_1_film: src/docs/diginstroom/sip/2.1/_data/FILM_PROFILE.json
-        - sip_2_1_general: src/docs/diginstroom/sip/2.1/_data/GENERAL.json
-        - sip_2_1_material_artwork: src/docs/diginstroom/sip/2.1/_data/MATERIAL_ARTWORK_PROFILE.json
-        - sip_3_0_basic: src/docs/diginstroom/sip/3.0/_data/BASIC_PROFILE.json
-        - sip_3_0_bibliographic: src/docs/diginstroom/sip/3.0/_data/BIBLIOGRAPHIC_PROFILE.json
-        - sip_3_0_film: src/docs/diginstroom/sip/3.0/_data/FILM_PROFILE.json
-        - sip_3_0_general: src/docs/diginstroom/sip/3.0/_data/GENERAL.json
-        - sip_3_0_material_artwork: src/docs/diginstroom/sip/3.0/_data/MATERIAL_ARTWORK_PROFILE.json
 
 markdown_extensions:
   - admonition
@@ -267,7 +257,7 @@ validation:
     not_found: info
     absolute_links: relative_to_docs
   links:
-    not_found: info
+    not_found: ignore
     absolute_links: relative_to_docs
     unrecognized_links: info
-    anchors: info
+    anchors: ignore
