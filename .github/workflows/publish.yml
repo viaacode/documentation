@@ -3,7 +3,7 @@ name: Publish documentation
 on:
   push:
     branches:
-      - mkdocs
+      - zensical
   workflow_dispatch:
 
 permissions:
