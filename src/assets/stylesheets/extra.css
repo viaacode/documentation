@@ -87,3 +87,30 @@
 .md-typeset .label-green { background: #83d17a; }
 .md-typeset .label-orange { background: #f5a623; }
 .md-typeset .label-red { background: #ef6f6c; }
+
+.md-typeset .preview-table-toggle td {
+  padding: 0;
+}
+
+.md-typeset .preview-table-toggle button {
+  display: block;
+  width: 100%;
+  padding: 0.3em 1em;
+  color: var(--md-primary-fg-color);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.md-typeset .preview-table-toggle td:hover {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent);
+}
+
+.md-typeset .preview-table-toggle button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}

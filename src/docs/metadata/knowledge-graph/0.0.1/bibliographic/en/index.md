@@ -37,6 +37,8 @@ Data model to provide a detailed description of bibliographic objects and their 
 
 ## Namespaces
 
+<div class="preview-table" markdown="1">
+
 | Prefix | URI      |
 | :----- | :------- |
 | bf     | [http://id.loc.gov/ontologies/bibframe/](http://id.loc.gov/ontologies/bibframe/) |
@@ -55,6 +57,8 @@ Data model to provide a detailed description of bibliographic objects and their 
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
 | vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
+
+</div>
 
 ## Classes & Properties
 

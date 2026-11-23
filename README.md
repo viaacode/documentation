@@ -16,6 +16,13 @@ zensical serve
 
 Open `http://127.0.0.1:8000` to browse the docs.
 
+## Add a table preview
+
+Wrap a Markdown table in `<div class="preview-table" markdown="1">`, with blank
+lines around the table, and close it with `</div>`. Tables show their first three
+rows with a “See more” / “See less” button in a full-width footer row. Tables with
+three or fewer rows stay fully visible. Without JavaScript, all rows remain visible.
+
 ## Run the docs with Docker
 
 Build and run the preview image:

@@ -37,6 +37,8 @@ Data model to describe structured lists of terms such as thesauri.
 
 ## Namespaces
 
+<div class="preview-table" markdown="1">
+
 | Prefix | URI      |
 | :----- | :------- |
 |      | [http://publications.europa.eu/ontology/skosShapes#](http://publications.europa.eu/ontology/skosShapes#) |
@@ -54,6 +56,8 @@ Data model to describe structured lists of terms such as thesauri.
 | vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
 | vs     | [http://www.w3.org/2003/06/sw-vocab-status/ns#](http://www.w3.org/2003/06/sw-vocab-status/ns#) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
+
+</div>
 
 ## Classes & Properties
 

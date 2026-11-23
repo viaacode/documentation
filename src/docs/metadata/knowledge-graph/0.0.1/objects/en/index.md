@@ -37,6 +37,8 @@ Data model to describe objects.
 
 ## Namespaces
 
+<div class="preview-table" markdown="1">
+
 | Prefix | URI      |
 | :----- | :------- |
 | dc11     | [http://purl.org/dc/elements/1.1/](http://purl.org/dc/elements/1.1/) |
@@ -59,6 +61,8 @@ Data model to describe objects.
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
 | vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
+
+</div>
 
 ## Classes & Properties
 

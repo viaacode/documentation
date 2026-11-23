@@ -35,6 +35,8 @@ Data model to provide a detailed description of Film objects and their component
 
 ## Namespaces
 
+<div class="preview-table" markdown="1">
+
 | Prefix | URI      |
 | :----- | :------- |
 | dct     | [http://purl.org/dc/terms/](http://purl.org/dc/terms/) |
@@ -54,6 +56,8 @@ Data model to provide a detailed description of Film objects and their component
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
 | vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
+
+</div>
 
 ## Classes & Properties
 

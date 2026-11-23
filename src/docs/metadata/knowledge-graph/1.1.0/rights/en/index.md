@@ -32,6 +32,8 @@ Data model to describe rights and distribution policy.
 
 ## Namespaces
 
+<div class="preview-table" markdown="1">
+
 | Prefix | URI      |
 | :----- | :------- |
 | copyrightStatus     | [http://id.loc.gov/vocabulary/preservation/copyrightStatus/](http://id.loc.gov/vocabulary/preservation/copyrightStatus/) |
@@ -55,6 +57,8 @@ Data model to describe rights and distribution policy.
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
 | vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
+
+</div>
 
 ## Classes & Properties
 
