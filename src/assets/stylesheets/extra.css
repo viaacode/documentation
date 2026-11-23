@@ -36,6 +36,15 @@
   max-width: 900px;
 }
 
+.md-typeset__table,
+.md-typeset table:not([class]) {
+  width: 100%;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+}
+
 .md-typeset figure {
   border: 1px solid #ccc;
   padding: 4px;
