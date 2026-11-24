@@ -1,1 +1,5 @@
+.git
+.venv
 _site
+site
+__pycache__

@@ -1,0 +1,134 @@
+@font-face {
+  font-family: "SofiaPro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://meemoo.be/fonts/3AFA78_2_0.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SofiaPro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("https://meemoo.be/fonts/3AFA78_3_0.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SofiaPro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://meemoo.be/fonts/3AFA78_0_0.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SofiaPro";
+  font-style: italic;
+  font-weight: 700;
+  src: url("https://meemoo.be/fonts/3AFA78_1_0.woff2") format("woff2");
+}
+
+:root {
+  --md-primary-fg-color: #009690;
+  --md-accent-fg-color: #009690;
+  --md-text-font: "SofiaPro";
+}
+
+.md-content__inner {
+  max-width: 900px;
+}
+
+.sip-version-chart {
+  overflow-x: auto;
+}
+
+.sip-version-chart svg {
+  width: 100%;
+  min-width: 640px;
+  max-width: none !important;
+}
+
+.sip-version-chart .taskText {
+  fill: #111 !important;
+}
+
+.sip-version-chart svg > g.grid > g:nth-child(5) > text{
+  font-size: x-large;
+}
+
+.md-typeset__table,
+.md-typeset table:not([class]) {
+  width: 100%;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+}
+
+.md-typeset figure {
+  border: 1px solid #ccc;
+  padding: 4px;
+  text-align: center;
+}
+
+.md-typeset figcaption {
+  font-style: italic;
+  padding: 2px;
+}
+
+.md-typeset dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+.md-typeset dd {
+  margin: 0;
+}
+
+.md-typeset dd > p {
+  margin: 0;
+}
+
+.md-typeset .label {
+  border-radius: 0.2rem;
+  color: #111;
+  display: inline-block;
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.25em 0.4em;
+  vertical-align: middle;
+}
+
+.md-typeset .label-yellow { background: #ffd859; }
+.md-typeset .label-blue { background: #72c5e8; }
+.md-typeset .label-green { background: #83d17a; }
+.md-typeset .label-orange { background: #f5a623; }
+.md-typeset .label-red { background: #ef6f6c; }
+
+.md-typeset .preview-table-toggle td {
+  padding: 0;
+}
+
+.md-typeset .preview-table-toggle button {
+  display: block;
+  width: 100%;
+  padding: 0.3em 1em;
+  color: var(--md-primary-fg-color);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.md-typeset .preview-table-toggle td:hover {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent);
+}
+
+.md-typeset .preview-table-toggle button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
