@@ -1,11 +1,40 @@
 ---
 title: SIP Specification
 nav_order: 1
+render_macros: true
 ---
 
 # meemoo SIP Specification
 
+
 The meemoo SIP specification is available in the following versions:
+
+```mermaid
+---
+config:
+  gantt:
+    useMaxWidth: true
+    barHeight: 48
+    barGap: 12
+    fontSize: 32
+    leftPadding: 30
+    rightPadding: 20
+    displayMode: 'compact'
+---
+gantt
+    dateFormat YYYY-MM-DD
+    axisFormat %Y
+    tickInterval 12month
+    section V1
+    1.0 :done, v10, 2022-09-30, 2024-04-01
+    1.1 :done, v11, 2023-06-13, 2025-08-01
+    1.2 :active, v12, 2024-03-01, {{ build_date }}
+    section V2
+    2.0 :active, v20, 2024-04-23, {{ build_date }}
+    2.1 :active, v21, 2024-10-28, {{ build_date }}
+    section V3
+    3.0 :active, v30, 2026-10-01, {{ build_date }}
+```
 
 ## Version [3.0](3.0/index.md) <span class="label label-yellow">Editor's Draft</span>
 

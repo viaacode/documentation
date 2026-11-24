@@ -1,4 +1,5 @@
 import json
+from datetime import date
 from pathlib import Path
 
 
@@ -18,6 +19,7 @@ DATA_FILES = {
 
 
 def define_env(env):
+    env.variables["build_date"] = date.today().isoformat()
     root = Path(__file__).parent
     for name, path in DATA_FILES.items():
         env.variables[name] = json.loads((root / path).read_text(encoding="utf-8"))

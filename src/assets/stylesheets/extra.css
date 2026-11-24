@@ -36,6 +36,24 @@
   max-width: 900px;
 }
 
+.sip-version-chart {
+  overflow-x: auto;
+}
+
+.sip-version-chart svg {
+  width: 100%;
+  min-width: 640px;
+  max-width: none !important;
+}
+
+.sip-version-chart .taskText {
+  fill: #111 !important;
+}
+
+.sip-version-chart svg > g.grid > g:nth-child(5) > text{
+  font-size: x-large;
+}
+
 .md-typeset__table,
 .md-typeset table:not([class]) {
   width: 100%;
